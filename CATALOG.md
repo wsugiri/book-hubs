@@ -6,9 +6,9 @@ Katalog terpusat yang mencatat seluruh koleksi buku, status ringkasan, kategori,
 
 ## 📊 Statistik Koleksi
 
-- **Total Buku Terdaftar**: 1
-- **Status Selesai Dirangkum**: 1
-- **Kategori Tersedia**: Pengembangan Diri (1)
+- **Total Buku Terdaftar**: 2
+- **Status Selesai Dirangkum**: 2
+- **Kategori Tersedia**: Pengembangan Diri (1), Bisnis & Teknologi (1)
 
 ---
 
@@ -17,6 +17,7 @@ Katalog terpusat yang mencatat seluruh koleksi buku, status ringkasan, kategori,
 | No | Judul Buku | Penulis | Kategori | Tahun | Rating | File Ringkasan | Status |
 | :---: | :--- | :--- | :--- | :---: | :---: | :--- | :---: |
 | 1 | **Atomic Habits** | James Clear | Pengembangan Diri | 2018 | ⭐⭐⭐⭐⭐ (5.0) | [Lihat Hub & Teardown](books/atomic-habits/index.md) | ✅ Selesai (6 Part) |
+| 2 | **AI for Small Business** | Phil Pallen | Bisnis & Teknologi | 2024 | ⭐⭐⭐⭐⭐ (4.8) | [Lihat Hub & Teardown](books/ai-for-small-business/index.md) | ✅ Selesai (4 Modul) |
 
 ---
 
