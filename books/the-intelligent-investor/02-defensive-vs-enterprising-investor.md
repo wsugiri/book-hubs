@@ -1,7 +1,6 @@
 # Part 2: Menentukan Posisi — Investor Defensif vs Investor Enterprising
 
-> 📖 Hub Buku: **[The Intelligent Investor](index.md)**  
-> ⬅️ **[Part 1: Investasi vs Spekulasi](01-investment-vs-speculation.md)** | **[Part 3: Mr. Market & Fluktuasi Harga](03-mr-market-and-market-fluctuations.md)** ➡️
+> 📖 Hub Buku: **[The Intelligent Investor](index.md)**
 
 ---
 
@@ -110,3 +109,9 @@ Strategi "membeli puntung cerutu yang masih menyisakan satu hisapan gratis" ini 
 
 **Pertanyaan Refleksi Diri**:
 - *Apakah Anda selama ini mengharapkan imbal hasil kelas dunia (seperti investor enterprising) namun hanya meluangkan usaha ala kadarnya (membaca tips saham di grup media sosial)? Bagaimana Anda bisa menyelaraskan ekspektasi tersebut hari ini?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 1 (Investasi vs Spekulasi)](01-investment-vs-speculation.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 3: Psikologi Pasar & Perumpamaan Mr. Market →](03-mr-market-and-market-fluctuations.md)**

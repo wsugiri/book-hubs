@@ -1,7 +1,6 @@
 # Part 3: Psikologi Pasar — Perumpamaan Legendaris 'Mr. Market'
 
-> 📖 Hub Buku: **[The Intelligent Investor](index.md)**  
-> ⬅️ **[Part 2: Investor Defensif vs Enterprising](02-defensive-vs-enterprising-investor.md)** | **[Part 4: Batas Pengaman (Margin of Safety)](04-margin-of-safety-and-core-principles.md)** ➡️
+> 📖 Hub Buku: **[The Intelligent Investor](index.md)**
 
 ---
 
@@ -103,3 +102,9 @@ Investor cerdas adalah mereka yang membangun **sistem imun emosional**: menyadar
 
 **Pertanyaan Refleksi Diri**:
 - *Apakah selama ini Anda memperlakukan Mr. Market sebagai pemandu yang Anda takuti, atau sebagai rekan bisnis eksentrik yang kebodohannya siap Anda manfaatkan?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 2 (Investor Defensif vs Enterprising)](02-defensive-vs-enterprising-investor.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 4: Doktrin Paling Sakral — Margin of Safety →](04-margin-of-safety-and-core-principles.md)**

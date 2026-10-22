@@ -2,7 +2,7 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-3%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-4%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
 
@@ -124,6 +124,42 @@
     <p>
       <b>🔑 Kerangka Berpikir Utama:</b><br/>
       <i>Investasi vs Spekulasi</i>, <i>Perumpamaan Mr. Market (Bab 8)</i>, <i>Investor Defensif vs Investor Enterprising</i>, dan <i>Doktrin Margin of Safety (Bab 20)</i>.
+</tr>
+</table>
+
+<br/>
+
+<table width="100%">
+<tr>
+  <td width="160" align="center" valign="top">
+    <a href="books/the-psychology-of-money/index.md">
+      <img src="books/the-psychology-of-money/cover.jpg" width="140" alt="The Psychology of Money Cover" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+    </a>
+    <br/>
+    <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+  </td>
+  <td valign="top">
+    <h3><a href="books/the-psychology-of-money/index.md">The Psychology of Money: Pelajaran Abadi Mengenai Kekayaan, Ketamakan, dan Kebahagiaan</a></h3>
+    <p>
+      <b>Penulis:</b> Morgan Housel &nbsp;|&nbsp; 
+      <b>Tahun:</b> 2020 &nbsp;|&nbsp; 
+      <b>Penerbit:</b> Harriman House &nbsp;|&nbsp; 
+      <b>Estimasi Baca:</b> ~45–60 Menit (4 Modul)
+    </p>
+    <p>
+      <code>💰 Psikologi Finansial</code> 
+      <code>🧠 Perilaku & Emosi</code> 
+      <code>⏳ Bunga Majemuk</code> 
+      <code>🕊️ Kemerdekaan Waktu</code>
+    </p>
+    <p>
+      <b>💡 The Big Idea:</b><br/>
+      <i>"Keberhasilan finansial bukanlah ilmu eksak seperti fisika, melainkan keterampilan lunak (soft skill) di mana cara Anda berperilaku jauh lebih menentukan daripada seberapa banyak rumus yang Anda tahu. Kekayaan sejati adalah kebebasan mengendalikan waktu Anda sendiri, bukan memamerkan barang mewah yang mengikis saldo masa depan Anda."</i>
+    </p>
+    <p>
+      <b>🔑 Kerangka Berpikir Utama:</b><br/>
+      <i>Tak Seorang Pun Gila (No One's Crazy)</i>, <i>Misteri Waktu Warren Buffett</i>, <i>The Man in the Car Paradox</i>, <i>Menjadi Kaya vs Bertahan Kaya</i>, dan <i>Kekayaan Tak Kasatmata</i>.
+    </p>
   </td>
 </tr>
 </table>

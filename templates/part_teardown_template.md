@@ -1,7 +1,6 @@
 # Part [X]: [Judul Bagian / Part]
 
-> 📖 Hub Buku: **[[Judul Buku]](index.md)**  
-> ⬅️ **[Part Sebelumnya]([link])** | **[Part Berikutnya]([link])** ➡️
+> 📖 Hub Buku: **[[Judul Buku]](index.md)**
 
 ---
 
@@ -46,3 +45,9 @@ Langkah konkret yang bisa diambil khusus dari pembelajaran bab ini:
 
 **Pertanyaan Refleksi Diri**:
 - *[Pertanyaan introspektif bagi pembaca untuk menguji dirinya sendiri berdasarkan materi bab ini]*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part [X-1]]([link-sebelumnya])** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part [X+1]: [Judul Bagian]]([link-berikutnya])**

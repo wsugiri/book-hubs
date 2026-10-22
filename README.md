@@ -24,7 +24,10 @@ books/
 │   ├── ai-for-small-business/
 │   │   ├── cover.jpg
 │   │   └── index.md + modul part 1-4
-│   └── the-intelligent-investor/
+│   ├── the-intelligent-investor/
+│   │   ├── cover.jpg
+│   │   └── index.md + modul part 1-4
+│   └── the-psychology-of-money/
 │       ├── cover.jpg
 │       └── index.md + modul part 1-4
 ├── templates/

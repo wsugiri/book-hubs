@@ -1,7 +1,6 @@
 # Part 1: Garis Batas Fundamental — Investasi vs Spekulasi
 
-> 📖 Hub Buku: **[The Intelligent Investor](index.md)**  
-> **Bagian Berikutnya**: **[Part 2: Investor Defensif vs Enterprising](02-defensive-vs-enterprising-investor.md)** ➡️
+> 📖 Hub Buku: **[The Intelligent Investor](index.md)**
 
 ---
 
@@ -92,3 +91,9 @@ Banyak orang merasa aman dengan hanya menyimpan uang tunai di bawah bantal atau 
 
 **Pertanyaan Refleksi Diri**:
 - *Jika bursa saham ditutup total selama 5 tahun ke depan dan Anda tidak bisa melihat grafik harga saham Anda, apakah Anda masih merasa tenang dan nyaman memiliki bisnis-bisnis yang ada di portofolio Anda saat ini?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+📖 **[Kembali ke Hub Buku](index.md)** &nbsp;&nbsp;•&nbsp;&nbsp; ➡️ **[Lanjut ke Part 2: Investor Defensif vs Investor Enterprising →](02-defensive-vs-enterprising-investor.md)**

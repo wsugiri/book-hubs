@@ -1,7 +1,6 @@
 # Part 4: Doktrin Paling Sakral — 'Margin of Safety' (Batas Pengaman)
 
-> 📖 Hub Buku: **[The Intelligent Investor](index.md)**  
-> ⬅️ **[Part 3: Mr. Market & Fluktuasi Harga](03-mr-market-and-market-fluctuations.md)** | **[Kembali ke Hub Buku](index.md)**
+> 📖 Hub Buku: **[The Intelligent Investor](index.md)**
 
 ---
 
@@ -108,3 +107,9 @@ Di bagian penutup bukunya yang paling agung, Graham merumuskan bahwa **"Investas
 
 **Pertanyaan Refleksi Akhir**:
 - *Apakah portofolio finansial Anda hari ini dirancang seperti jembatan kokoh yang memiliki batas pengaman berlebih, atau seperti tali rapuh yang akan putus begitu badai krisis ekonomi pertama menerpa?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 3 (Psikologi Pasar & Mr. Market)](03-mr-market-and-market-fluctuations.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Selesai — Kembali ke Hub Utama (The Intelligent Investor)](index.md)**
