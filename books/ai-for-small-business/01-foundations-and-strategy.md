@@ -1,7 +1,6 @@
 # Part 1: Fondasi & Strategi — Mengubah Ketakutan Menjadi Kekuatan Pertumbuhan
 
-> 📖 Hub Buku: **[AI for Small Business](index.md)**  
-> **Bagian Berikutnya**: **[Part 2: Mesin Pendapatan (Sales, Marketing, Content)](02-revenue-sales-marketing-content.md)** ➡️
+> 📖 Hub Buku: **[AI for Small Business](index.md)**
 
 ---
 
@@ -115,3 +114,9 @@ Setiap kali Anda meminta AI menuliskan materi bisnis apa pun, tempelkan kit ini 
 
 **Pertanyaan Refleksi Diri**:
 - *Tugas operasional apa yang jika berhasil diotomatiskan hari ini, akan membebaskan energi kreatif Anda untuk membawa bisnis melompat ke tingkat berikutnya?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+📖 **[Kembali ke Hub Buku](index.md)** &nbsp;&nbsp;•&nbsp;&nbsp; ➡️ **[Lanjut ke Part 2: Mesin Pendapatan (Sales, Marketing, Content) →](02-revenue-sales-marketing-content.md)**

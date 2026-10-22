@@ -1,7 +1,6 @@
 # Part 2: Hukum ke-1 — Menjadikannya Terlihat Jelas (Make It Obvious)
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> ⬅️ **[Part 1: Dasar-Dasar](01-the-fundamentals.md)** | **[Part 3: Hukum ke-2 (Make It Attractive)](03-the-2nd-law-make-it-attractive.md)** ➡️
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -101,3 +100,9 @@ Riset menunjukkan bahwa orang-orang paling disiplin adalah mereka yang **paling 
 
 **Pertanyaan Refleksi Diri**:
 - *Isyarat negatif apa di meja kerja atau kamar tidur Anda yang secara diam-diam terus memicu kebiasaan buruk tanpa Anda sadari? Bagaimana Anda bisa menyingkirkannya dari pandangan hari ini?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 1 (Dasar-Dasar)](01-the-fundamentals.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 3: Hukum ke-2 — Make It Attractive →](03-the-2nd-law-make-it-attractive.md)**

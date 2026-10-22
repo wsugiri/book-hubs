@@ -1,7 +1,6 @@
 # Part 2: Mesin Pendapatan — Penjualan, Pemasaran, Iklan, & Konten Media Sosial
 
-> 📖 Hub Buku: **[AI for Small Business](index.md)**  
-> ⬅️ **[Part 1: Fondasi & Strategi](01-foundations-and-strategy.md)** | **[Part 3: Otomasi Operasional](03-operations-customer-service-finance.md)** ➡️
+> 📖 Hub Buku: **[AI for Small Business](index.md)**
 
 ---
 
@@ -101,3 +100,9 @@ Anda tidak perlu menciptakan ide baru setiap hari. Cukup buat satu ide substansi
 
 **Pertanyaan Refleksi Diri**:
 - *Berapa banyak peluang bisnis dan pelanggan yang hilang tahun lalu hanya karena Anda lupa melakukan tindak lanjut (follow-up) atau kehabisan waktu untuk membuat materi pemasaran? Bagaimana AI bisa menutup kebocoran tersebut mulai minggu ini?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 1 (Fondasi & Strategi)](01-foundations-and-strategy.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 3: Otomasi Operasional (CS & Keuangan) →](03-operations-customer-service-finance.md)**

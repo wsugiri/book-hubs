@@ -1,7 +1,6 @@
 # Part 6: Taktik Lanjutan — Dari Kebiasaan Bagus Menjadi Kebiasaan Luar Biasa
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> ⬅️ **Bagian Sebelumnya**: **[Part 5: Hukum ke-4 (Make It Satisfying)](05-the-4th-law-make-it-satisfying.md)**
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -131,3 +130,9 @@ Definisikan kembali identitas Anda berdasarkan nilai fundamental:
 
 **Pertanyaan Refleksi Akhir**:
 - *Apakah Anda bersedia tetap muncul dan melakukan pekerjaan Anda besok pagi, bahkan ketika motivasi sedang nol dan rasa bosan datang menyerang? Itulah garis batas pembeda antara siapa Anda hari ini dan siapa diri Anda di masa depan.*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 5 (Hukum ke-4 — Make It Satisfying)](05-the-4th-law-make-it-satisfying.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Selesai — Kembali ke Hub Utama (Atomic Habits)](index.md)**

@@ -1,7 +1,6 @@
 # Part 3: Hukum ke-2 — Menjadikannya Menarik (Make It Attractive)
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> ⬅️ **[Part 2: Hukum ke-1 (Make It Obvious)](02-the-1st-law-make-it-obvious.md)** | **[Part 4: Hukum ke-3 (Make It Easy)](04-the-3rd-law-make-it-easy.md)** ➡️
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -123,3 +122,9 @@ Untuk memutus kebiasaan buruk, kita harus **merekonseptualisasikan manfaat semun
 
 **Pertanyaan Refleksi Diri**:
 - *Kesenangan apa yang bisa Anda gunakan sebagai "umpan manis" untuk menarik diri Anda menyelesaikan kebiasaan produktif yang selama ini terasa berat?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 2 (Hukum ke-1 — Make It Obvious)](02-the-1st-law-make-it-obvious.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 4: Hukum ke-3 — Make It Easy →](04-the-3rd-law-make-it-easy.md)**

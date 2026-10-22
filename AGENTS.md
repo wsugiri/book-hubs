@@ -22,6 +22,7 @@ Anda bertindak sebagai **Pustakawan AI & Analis Literatur**. Anda membantu pengg
    - Di dalam folder tersebut, buat file master `index.md` menggunakan template [templates/book_index_template.md](templates/book_index_template.md).
    - Buat file bedah mendalam per bagian/Part (`01-<nama-part>.md`, `02-...`, dst.) menggunakan [templates/part_teardown_template.md](templates/part_teardown_template.md).
    - **Gaya Penulisan**: Jangan membuat ringkasan yang terlalu singkat atau sekadar poin-poin kering. Pertahankan gaya bercerita (*narrative flow*), studi kasus nyata, analogi penulis, dan kenyamanan membaca seperti buku aslinya tanpa bertele-tele.
+   - **Posisi Navigasi Modul**: Tautan navigasi ke bab berikutnya/sebelumnya **wajib diletakkan di bagian paling bawah dokumen (setelah tulisan/refleksi terakhir)**, bukan di bagian atas, agar alur membaca mengalir alami (*natural reading flow*).
 
 3. **Sinkronisasi Katalog Visual**:
    - Setiap kali buku baru selesai dibuat atau diperbarui, **wajib** memperbarui [CATALOG.md](CATALOG.md):

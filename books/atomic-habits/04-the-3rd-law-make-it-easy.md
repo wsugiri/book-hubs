@@ -1,7 +1,6 @@
 # Part 4: Hukum ke-3 — Menjadikannya Mudah (Make It Easy)
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> ⬅️ **[Part 3: Hukum ke-2 (Make It Attractive)](03-the-2nd-law-make-it-attractive.md)** | **[Part 5: Hukum ke-4 (Make It Satisfying)](05-the-4th-law-make-it-satisfying.md)** ➡️
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -114,3 +113,9 @@ Untuk menghentikan kebiasaan buruk, naikkan friksi hingga ke tingkat yang menyik
 
 **Pertanyaan Refleksi Diri**:
 - *Apakah selama ini Anda lebih sering berada di zona 'Motion' (merencanakan, membaca artikel, browsing) daripada 'Action'? Tindakan nyata 2-menit apa yang bisa Anda lakukan sekarang juga tanpa persiapan tambahan?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 3 (Hukum ke-2 — Make It Attractive)](03-the-2nd-law-make-it-attractive.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 5: Hukum ke-4 — Make It Satisfying →](05-the-4th-law-make-it-satisfying.md)**

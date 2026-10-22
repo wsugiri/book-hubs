@@ -1,7 +1,6 @@
 # Part 1: Dasar-Dasar — Mengapa Perubahan Kecil Menghasilkan Lompatan Raksasa
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> **Bagian Berikutnya**: **[Part 2: Hukum ke-1 (Make It Obvious)](02-the-1st-law-make-it-obvious.md)** ➡️
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -115,3 +114,9 @@ Bandingkan dua orang yang sedang berusaha berhenti merokok ketika ditawari sebat
 
 **Pertanyaan Refleksi Diri**:
 - *Kebiasaan apa dalam hidup Anda saat ini yang sebenarnya bertentangan dengan identitas masa depan yang Anda inginkan? Suara (vote) seperti apa yang ingin Anda berikan besok pagi?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+📖 **[Kembali ke Hub Buku](index.md)** &nbsp;&nbsp;•&nbsp;&nbsp; ➡️ **[Lanjut ke Part 2: Hukum ke-1 — Make It Obvious →](02-the-1st-law-make-it-obvious.md)**

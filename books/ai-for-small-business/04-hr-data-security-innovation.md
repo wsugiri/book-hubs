@@ -1,7 +1,6 @@
 # Part 4: Skalabilitas Bisnis — HR, Analisis Data, Keamanan, & Inovasi R&D
 
-> 📖 Hub Buku: **[AI for Small Business](index.md)**  
-> ⬅️ **[Part 3: Otomasi Operasional](03-operations-customer-service-finance.md)** | **[Kembali ke Hub Buku](index.md)**
+> 📖 Hub Buku: **[AI for Small Business](index.md)**
 
 ---
 
@@ -88,3 +87,9 @@ Pallen membagikan metode **Inovasi Cepat Berbantuan AI**:
 
 **Pertanyaan Refleksi Akhir**:
 - *Jika Anda memiliki waktu luang ekstra 15 jam setiap minggu karena operasional bisnis Anda sudah ditopang oleh AI, inovasi besar apa yang ingin Anda ciptakan untuk komunitas dan pelanggan Anda?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 3 (Otomasi Operasional)](03-operations-customer-service-finance.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Selesai — Kembali ke Hub Utama (AI for Small Business)](index.md)**

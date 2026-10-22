@@ -1,7 +1,6 @@
 # Part 5: Hukum ke-4 — Menjadikannya Memuaskan (Make It Satisfying)
 
-> 📖 Hub Buku: **[Atomic Habits](index.md)**  
-> ⬅️ **[Part 4: Hukum ke-3 (Make It Easy)](04-the-3rd-law-make-it-easy.md)** | **[Part 6: Taktik Lanjutan](06-advanced-tactics.md)** ➡️
+> 📖 Hub Buku: **[Atomic Habits](index.md)**
 
 ---
 
@@ -112,3 +111,9 @@ Gunakan **Mitra Akuntabilitas (*Accountability Partner*)** dan **Kontrak Kebiasa
 
 **Pertanyaan Refleksi Diri**:
 - *Ganjaran instan apa yang selama ini membuat kebiasaan buruk Anda begitu nikmat diulang? Dan hadiah visual apa yang bisa Anda rancang untuk merayakan keberhasilan kecil kebiasaan baik Anda hari ini?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 4 (Hukum ke-3 — Make It Easy)](04-the-3rd-law-make-it-easy.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 6: Taktik Lanjutan (Goldilocks Rule) →](06-advanced-tactics.md)**

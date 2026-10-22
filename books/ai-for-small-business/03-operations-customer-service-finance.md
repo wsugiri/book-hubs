@@ -1,7 +1,6 @@
 # Part 3: Otomasi Operasional — Layanan Pelanggan 24/7, Logistik, & Keuangan
 
-> 📖 Hub Buku: **[AI for Small Business](index.md)**  
-> ⬅️ **[Part 2: Mesin Pendapatan](02-revenue-sales-marketing-content.md)** | **[Part 4: Skalabilitas Bisnis](04-hr-data-security-innovation.md)** ➡️
+> 📖 Hub Buku: **[AI for Small Business](index.md)**
 
 ---
 
@@ -84,3 +83,9 @@ Dengan alat asisten rapat AI (seperti Fireflies, Otter, atau Gemini Live):
 
 **Pertanyaan Refleksi Diri**:
 - *Berapa jam waktu tidur dan istirahat Anda yang tercuri setiap minggu hanya untuk mengurus administrasi dan menjawab pertanyaan berulang? Berapa nilai waktu tersebut jika diinvestasikan untuk mengembangkan inovasi produk baru?*
+
+---
+
+## 🧭 Navigasi Bab Selanjutnya
+
+⬅️ **[Part Sebelumnya: Part 2 (Mesin Pendapatan)](02-revenue-sales-marketing-content.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Part 4: Skalabilitas Bisnis & Inovasi →](04-hr-data-security-innovation.md)**
