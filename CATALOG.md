@@ -2,7 +2,7 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-5%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-6%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
 
@@ -89,6 +89,30 @@
 - **Automation Matrix**: Mengidentifikasi tugas-tugas administratif rutin dan repetitif untuk didelegasikan sepenuhnya ke AI.
 - **High-Converting Prompting**: Menyusun copywriting persuasif, artikel blog, dan konten media sosial bernilai konversi tinggi secara konsisten.
 - **24/7 Smart Customer Service**: Mengotomatiskan respons layanan pelanggan secara cepat dan manusiawi kapan saja tanpa henti.
+
+<br/>
+
+### [Co-Intelligence: Hidup dan Bekerja Bersama AI](books/co-intelligence/index.md)
+
+<div align="center">
+  <a href="books/co-intelligence/index.md">
+    <img src="books/co-intelligence/cover.jpg" width="280" alt="Co-Intelligence Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Ethan Mollick &nbsp;|&nbsp; **Tahun**: 2024 &nbsp;|&nbsp; **Penerbit**: Portfolio / Penguin Random House &nbsp;|&nbsp; **Estimasi Baca**: ~45–60 Menit (4 Modul)  
+> `🤖 Generative AI` `👥 Kolaborasi Manusia-Mesin` `🚀 Inovasi Kerja` `💡 Kreativitas Praktis`
+
+> **💡 The Big Idea:**  
+> *"AI bukanlah perangkat lunak kalkulator atau mesin pencari kaku, melainkan sebuah entitas sosial—rekan kerja (co-worker) cerdas dan eksentrik yang mampu melipatgandakan kecepatan dan kualitas kerja kita. Memenangkan era baru bukan tentang menjadi programmer ahli, melainkan menguasai seni 'Co-Intelligence': kemampuan berdialog, mendelegasikan, dan memverifikasi AI sebagai mitra berpikir yang setara."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Jagged Frontier**: Batas kemampuan AI tidak rata; ia bisa menyelesaikan analisis strategi rumit dalam detik, namun rentan berhalusinasi pada hal sepele.
+- **4 Aturan Emas Kolaborasi**: Selalu undang AI ke meja kerja, jadilah pengawas akhir (*Human-in-the-Loop*), perlakukan AI seperti manusia bertalenta spesifik, dan sadari ini adalah AI terburuk yang akan Anda gunakan.
+- **Dua Model Integrasi (Centaur vs Cyborg)**: Memilih antara pembagian kerja makro yang tegas (Centaur) atau jalinan kerja mikro kalimat demi kalimat (Cyborg).
+- **The Leveler Effect**: AI secara dramatis meningkatkan performa pekerja pemula hingga 43%, meruntuhkan hierarki lama dan mendesentralisasi kekuatan inovasi.
 
 ---
 

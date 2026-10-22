@@ -30,7 +30,10 @@ books/
 │   ├── the-psychology-of-money/
 │   │   ├── cover.jpg
 │   │   └── index.md + modul part 1-4
-│   └── deep-work/
+│   ├── deep-work/
+│   │   ├── cover.jpg
+│   │   └── index.md + modul part 1-4
+│   └── co-intelligence/
 │       ├── cover.jpg
 │       └── index.md + modul part 1-4
 ├── templates/
