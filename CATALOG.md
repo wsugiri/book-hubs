@@ -2,7 +2,7 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-4%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-5%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
 
@@ -39,6 +39,30 @@
 - **Plateau of Latent Potential**: Menembus "Lembah Kekecewaan" sebelum hasil akumulasi eksponensial menampakkan wujudnya.
 - **Identity-Based Habits**: Perubahan perilaku sejati berakar dari pembentukan identitas (*siapa diri Anda*), bukan sekadar target hasil (*apa yang Anda peroleh*).
 - **Habit Stacking & The 2-Minute Rule**: Menempelkan kebiasaan baru pada rutinitas yang sudah mapan, dan memangkas tahap awalnya menjadi kurang dari 120 detik.
+
+<br/>
+
+### [Deep Work: Aturan Sukses Terfokus di Dunia yang Penuh Gangguan](books/deep-work/index.md)
+
+<div align="center">
+  <a href="books/deep-work/index.md">
+    <img src="books/deep-work/cover.jpg" width="280" alt="Deep Work Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Cal Newport &nbsp;|&nbsp; **Tahun**: 2016 &nbsp;|&nbsp; **Penerbit**: Grand Central Publishing &nbsp;|&nbsp; **Estimasi Baca**: ~45–60 Menit (4 Modul)  
+> `🎯 Manajemen Fokus` `⚡ Kinerja Puncak` `🧠 Neurosains Perhatian` `🚫 Detoks Digital`
+
+> **💡 The Big Idea:**  
+> *"Kemampuan untuk berkonsentrasi secara mendalam tanpa distraksi adalah keterampilan yang semakin langka justru di saat nilainya paling berharga dalam ekonomi modern. Menguasai Deep Work adalah satu-satunya jalan untuk memproduksi karya berkualitas elit dan menguasai hal-hal rumit dengan cepat di tengah dunia yang bising."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Deep Work Hypothesis**: Nilai tinggi diciptakan oleh fokus tanpa jeda; multitasking memicu sisa perhatian (*attention residue*) yang melumpuhkan daya pikir.
+- **4 Filosofi Penjadwalan Fokus**: Monastic (isolasi total), Bimodal (pembagian musim/bulan), Rhythmic (jadwal tetap setiap pagi), dan Journalistic.
+- **The Craftsman Approach to Tools**: Menolak media sosial atau aplikasi kecuali dampak positifnya secara substansial melampaui kerugian fokus yang ditimbulkannya.
+- **Fixed-Schedule Productivity & Shutdown Ritual**: Mengakhiri hari kerja pada jam yang pasti dan melakukan ritual penutupan untuk ketenangan mental malam hari.
 
 ---
 

@@ -27,7 +27,10 @@ books/
 │   ├── the-intelligent-investor/
 │   │   ├── cover.jpg
 │   │   └── index.md + modul part 1-4
-│   └── the-psychology-of-money/
+│   ├── the-psychology-of-money/
+│   │   ├── cover.jpg
+│   │   └── index.md + modul part 1-4
+│   └── deep-work/
 │       ├── cover.jpg
 │       └── index.md + modul part 1-4
 ├── templates/
