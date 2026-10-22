@@ -24,13 +24,18 @@ Setiap kali pengguna menyebutkan atau meminta informasi tentang buku tertentu:
 - Periksa apakah judul buku sudah terdaftar dalam tabel.
 
 ### Langkah 2: Evaluasi Status Dokumen
-- **Skenario A: Buku Sudah Ada di Katalog**
+- **Skenario A: Buku Sudah Ada di Koleksi Aktif**
   - Baca file ringkasan atau hub yang ditautkan di `books/<slug>/index.md`.
   - Berikan jawaban atau elaborasi mendalam sesuai pertanyaan spesifik pengguna.
   
-- **Skenario B: Buku Belum Ada di Katalog**
+- **Skenario B: Permintaan Menambah ke Antrean Baca (TBR / Reading Queue)**
+  - Masukkan buku ke tabel `⏳ Daftar Incaran & Antrean Bedah (To-Be-Read)` di [CATALOG.md](CATALOG.md).
+  - Cantumkan target kategori, hook alasan kurasi, dan update badge counter antrean.
+
+- **Skenario C: Memulai Bedah Buku dari Antrean (Teardown & Publikasi)**
   - Berikan ulasan/informasi lengkap tentang buku tersebut kepada pengguna.
   - Buat direktori baru `books/<slug-judul>/`.
+  - Hapus buku dari tabel antrean TBR di `CATALOG.md` dan pindahkan ke showcase koleksi aktif.
   - Lanjut ke Langkah 3.
 
 ### Langkah 3: Membuat Hub & Teardown Mendalam per Part

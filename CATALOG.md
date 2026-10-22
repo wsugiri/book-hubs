@@ -2,9 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-6%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-8%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-2%20Buku-d97706?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -13,6 +14,7 @@
 - [🧠 Pengembangan Diri](#-pengembangan-diri)
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 2 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -114,6 +116,54 @@
 - **Dua Model Integrasi (Centaur vs Cyborg)**: Memilih antara pembagian kerja makro yang tegas (Centaur) atau jalinan kerja mikro kalimat demi kalimat (Cyborg).
 - **The Leveler Effect**: AI secara dramatis meningkatkan performa pekerja pemula hingga 43%, meruntuhkan hierarki lama dan mendesentralisasi kekuatan inovasi.
 
+<br/>
+
+### [Zero to One: Catatan tentang Startup, atau Cara Membangun Masa Depan](books/zero-to-one/index.md)
+
+<div align="center">
+  <a href="books/zero-to-one/index.md">
+    <img src="books/zero-to-one/cover.jpg" width="280" alt="Zero to One Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Peter Thiel bersama Blake Masters &nbsp;|&nbsp; **Tahun**: 2014 &nbsp;|&nbsp; **Penerbit**: Crown Business &nbsp;|&nbsp; **Estimasi Baca**: ~50–65 Menit (4 Modul)  
+> `🚀 Inovasi 0 ke 1` `🏛️ Monopoli Kreatif` `📈 Hukum Pangkat (Power Law)` `🤝 Simbiosis Manusia-Mesin`
+
+> **💡 The Big Idea:**  
+> *"Setiap saat dalam sejarah bisnis hanya terjadi satu kali. Meniru apa yang sudah ada hanya membawa dunia dari 1 ke n. Melompat dari 0 ke 1 menuntut keberanian berpikir kontrarian: meloloskan diri dari neraka kompetisi berdarah dan membangun monopoli kreatif yang mengubah peradaban melalui teknologi yang 10x lipat lebih baik."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Contrarian Question**: Menemukan kebenaran penting yang diyakini sedikit orang untuk membuka rahasia bisnis tersembunyi.
+- **Empat Pilar Monopoli Tahan Lama**: Teknologi hak milik 10x, efek jaringan (*network effects*), skala ekonomi marjinal nol, dan branding berakar substansi.
+- **Definite Optimism & Hukum Pangkat**: Menolak ilusi lotre acak; merancang masa depan konkret di mana satu hasil terbaik melampaui gabungan seluruh portofolio lainnya.
+- **Simbiosis Manusia-Komputer & 7 Uji Pertanyaan**: Komputer adalah pengganda kekuatan intuisi manusia, bukan sekadar pengganti tenaga kerja.
+
+<br/>
+
+### [Coding with AI: Praktik Pemrograman, Pengujian, dan Kolaborasi bersama LLM](books/coding-with-ai/index.md)
+
+<div align="center">
+  <a href="books/coding-with-ai/index.md">
+    <img src="books/coding-with-ai/cover.jpg" width="280" alt="Coding with AI Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>4.9 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Jeremy Morgan &nbsp;|&nbsp; **Tahun**: 2024 &nbsp;|&nbsp; **Penerbit**: Manning Publications &nbsp;|&nbsp; **Estimasi Baca**: ~45–60 Menit (4 Modul)  
+> `💻 Rekayasa Software` `🧪 Otomasi Pengujian (TDD)` `⚡ Pair-Programming AI` `🛡️ Debugging & Keamanan`
+
+> **💡 The Big Idea:**  
+> *"AI tidak datang untuk menggantikan peran seorang programmer; programmer yang menguasai kolaborasi AI lah yang akan menggantikan mereka yang menolak beradaptasi. Nilai tertinggi insinyur perangkat lunak modern bukan lagi kecepatan mengetikkan sintaksis, melainkan ketajaman mendesain arsitektur, menguraikan masalah secara modular, dan memverifikasi sistem melalui pengujian otomatis yang kokoh."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Super-Intern Mental Model**: Memperlakukan AI seperti asisten magang super-cepat yang wajib disupervisi ketat; menghindari jebakan halusinasi paket gaib.
+- **AI-Assisted TDD (Test-Driven Development)**: Membalik alur kerja: gunakan AI menulis 50 kasus uji ekstrem terlebih dahulu untuk menjadi jaring pengaman matematis sebelum implementasi kode.
+- **Formula 4 Pilar Prompt Kode**: Mengunci peran arsitektur, cuplikan konteks eksisting (*scaffolding*), batasan dependensi ketat, dan kontrak format output.
+- **Seni "Vibe Coding" & Agen Otonom**: Beralih dari copy-paste statis ke agen terintegrasi (seperti Antigravity/Cursor) dengan loop eksekusi terminal dan verifikasi mandiri.
+
 ---
 
 ## 📈 Finansial & Investasi
@@ -163,6 +213,23 @@
 - **Misteri Waktu Warren Buffett**: Bunga majemuk membutuhkan ketahanan waktu panjang, bukan return spektakuler sesaat (96% kekayaan Buffett didapat setelah usia 65).
 - **The Man in the Car Paradox**: Orang mengagumi mobil sport mewah yang lewat, bukan pengemudinya; jangan beli barang mewah demi mengejar rasa hormat.
 - **Menjadi Kaya vs Bertahan Kaya**: Menjadi kaya menuntut keberanian mengambil risiko, sementara bertahan kaya menuntut kerendahan hati dan paranoia yang sehat.
+
+---
+
+## ⏳ Daftar Incaran & Antrean Bedah (To-Be-Read)
+
+> Daftar buku yang telah diarsipkan ke dalam antrean baca (*reading backlog / TBR*) untuk dipelajari, diriset, dan dibedah secara mendalam ke dalam repositori ini.
+
+| No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
+| :-: | :--- | :--- | :--- | :-: |
+| 1 | **Thinking, Fast and Slow**<br/><sub>*Daniel Kahneman (2011)*</sub> | 🧠 Pengembangan Diri / Kognisi | Fondasi induk bias manusia (Sistem 1 vs Sistem 2) yang melandasi psikologi habit dan finansial. | 📋 `TBR` *(Siap Dibedah)* |
+| 2 | **Prompt Engineering for LLMs**<br/><sub>*John Berryman & Albert Ziegler (O'Reilly, 2024)*</sub> | 💻 AI Engineering & Context | Ditulis oleh engineer inti GitHub Copilot: menguasai scaffolding codebase, context window, dan prompt kode tingkat produksi. | 📋 `TBR` *(Siap Dibedah)* |
+
+```text
+💡 Panduan Alur Bacaan:
+- Menambah antrean: "Tambahkan buku [Judul] ke daftar incaran / antrean baca (TBR)."
+- Memulai penulisan: "Mulai bedah buku [Judul] untuk dimasukkan ke katalog."
+```
 
 ---
 
