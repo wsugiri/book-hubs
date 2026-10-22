@@ -1,6 +1,10 @@
 # 📖 The Intelligent Investor: Panduan Lengkap & Teardown Naratif
 
-> 📚 **[Kembali ke Katalog Buku](../../CATALOG.md)**  
+<div align="center">
+  <img src="cover.jpg" width="160" alt="The Intelligent Investor Cover" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</div>
+
+> 📚 **[Kembali ke Katalog Buku (CATALOG.md)](../../CATALOG.md)**  
 > **Penulis**: Benjamin Graham (dengan Komentar Jason Zweig)  
 > **Tahun Terbit**: 1949 (Edisi Revisi Abadi) | **Penerbit**: Harper Business  
 > **Genre / Kategori**: Keuangan, Investasi Pasar Modal, Nilai Intrinsik (*Value Investing*)  

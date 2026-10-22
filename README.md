@@ -1,8 +1,8 @@
 # 📚 Book Knowledge Base & AI Agent
 
-Repositori ini adalah sistem manajemen pengetahuan (*Knowledge Base*) untuk buku-buku bacaan, dilengkapi dengan **AI Assistant / Agent** yang bertugas untuk meriset, meringkas, mendetailkan wawasan buku, serta mengelola katalog secara otomatis.
+> Repositori sistem manajemen pengetahuan (*Knowledge Base*) untuk buku-buku bacaan terbaik, dilengkapi **AI Assistant / Agent** yang bertugas meriset, menyusun intisari eksekutif, serta membedah wawasan buku secara mendalam per bab.
 
-Struktur repositori menggunakan **Model Folder Modular per Buku (*Modular Book Hub*)**, di mana setiap buku memiliki direktori mandiri berisi *Roadmap Eksekutif* dan berkas *Teardown Mendalam per Bagian (Part)* agar tetap mempertahankan kenyamanan narasi layaknya membaca buku aslinya tanpa bertele-tele.
+👉 **[📖 Buka Katalog Visual Koleksi Buku (CATALOG.md)](CATALOG.md)** — *Lihat seluruh daftar buku lengkap dengan cover, rating, tesis utama, dan modul baca.*
 
 ---
 
@@ -15,19 +15,23 @@ books/
 │       └── book-assistant/
 │           └── SKILL.md                 # Definisi alur kerja AI Agent (Skill)
 ├── books/                               # Direktori koleksi buku (Model Modular Hub)
-│   └── atomic-habits/
-│       ├── index.md                     # Roadmap eksekutif & playbook buku
-│       ├── 01-the-fundamentals.md       # Part 1: Dasar-dasar (1% rule, British cycling, dll)
-│       ├── 02-the-1st-law-make-it-obvious.md # Part 2: Hukum ke-1 (Habit scorecard, habit stacking)
-│       ├── 03-the-2nd-law-make-it-attractive.md # Part 3: Hukum ke-2 (Dopamin, Polgar sisters)
-│       ├── 04-the-3rd-law-make-it-easy.md    # Part 4: Hukum ke-3 (Motion vs Action, 2-minute rule)
-│       ├── 05-the-4th-law-make-it-satisfying.md # Part 5: Hukum ke-4 (Never miss twice, tracker)
-│       └── 06-advanced-tactics.md       # Part 6: Taktik lanjutan (Goldilocks rule, review tahunan)
+│   ├── atomic-habits/
+│   │   ├── cover.jpg                    # Cover visual buku
+│   │   ├── index.md                     # Roadmap eksekutif & playbook buku
+│   │   ├── 01-the-fundamentals.md       # Part 1: Dasar-dasar (1% rule, British cycling, dll)
+│   │   ├── ...                          # Modul teardown lainnya
+│   │   └── 06-advanced-tactics.md       # Part 6: Taktik lanjutan (Goldilocks rule, review)
+│   ├── ai-for-small-business/
+│   │   ├── cover.jpg
+│   │   └── index.md + modul part 1-4
+│   └── the-intelligent-investor/
+│       ├── cover.jpg
+│       └── index.md + modul part 1-4
 ├── templates/
 │   ├── book_index_template.md           # Template master index hub per buku
 │   └── part_teardown_template.md        # Template teardown mendalam per bagian/bab
 ├── AGENTS.md                            # Aturan otomatis untuk AI Agent dalam workspace
-├── CATALOG.md                           # Berkas tunggal daftar seluruh buku & statusnya
+├── CATALOG.md                           # Showcase visual & katalog seluruh buku
 └── README.md                            # Panduan penggunaan proyek
 ```
 

@@ -1,6 +1,10 @@
 # 📖 Atomic Habits: Panduan Lengkap & Teardown Naratif
 
-> 📚 **[Kembali ke Katalog Buku](../../CATALOG.md)**  
+<div align="center">
+  <img src="cover.jpg" width="160" alt="Atomic Habits Cover" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</div>
+
+> 📚 **[Kembali ke Katalog Buku (CATALOG.md)](../../CATALOG.md)**  
 > **Penulis**: James Clear  
 > **Tahun Terbit**: 2018 | **Penerbit**: Avery (Penguin Random House)  
 > **Kategori**: Psikologi Perilaku, Pengembangan Diri, Produktivitas  

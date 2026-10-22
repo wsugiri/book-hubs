@@ -34,18 +34,23 @@ Setiap kali pengguna menyebutkan atau meminta informasi tentang buku tertentu:
   - Lanjut ke Langkah 3.
 
 ### Langkah 3: Membuat Hub & Teardown Mendalam per Part
-1. Buat `books/<slug-judul>/index.md` menggunakan [templates/book_index_template.md](templates/book_index_template.md).
-2. Buat file teardown naratif per bagian (`01-[part].md`, `02-[part].md`, dst.) menggunakan [templates/part_teardown_template.md](templates/part_teardown_template.md).
-3. **Standar Penulisan**:
+1. Simpan cover buku di `books/<slug-judul>/cover.jpg` (atau `.png`).
+2. Buat `books/<slug-judul>/index.md` menggunakan [templates/book_index_template.md](templates/book_index_template.md).
+3. Buat file teardown naratif per bagian (`01-[part].md`, `02-[part].md`, dst.) menggunakan [templates/part_teardown_template.md](templates/part_teardown_template.md).
+4. **Standar Penulisan**:
    - Jangan membuat ringkasan yang terlalu singkat atau hanya bullet points kering.
    - Pertahankan kenyamanan membaca seperti buku aslinya: sertakan cerita latar belakang (*narrative context*), analogi kunci, studi kasus nyata, dan refleksi mendalam tanpa bertele-tele.
 
-### Langkah 4: Perbarui `CATALOG.md`
+### Langkah 4: Perbarui `CATALOG.md` (Visual Showcase Card)
 Setelah modul buku dibuat:
-1. Tambahkan baris baru ke tabel daftar buku di [CATALOG.md](CATALOG.md) dengan tautan ke `books/<slug-judul>/index.md`.
-2. Perbarui hitungan **Statistik Koleksi** (Total Buku, Selesai Dirangkum, dan daftar kategori).
-3. Pastikan tautan file berformat **relative path**: `[Lihat Hub & Teardown](books/<slug-judul>/index.md)`.
-   > ⚠️ **PENTING**: DILARANG KERAS menggunakan full path/absolute path lokal sistem (seperti `file:///Users/...` atau `/absolute/path/...`) di dalam file apa pun. Selalu gunakan relative path.
+1. Tambahkan kartu visual (*Showcase Card*) ke kategori yang sesuai di [CATALOG.md](CATALOG.md):
+   - Tampilkan thumbnail cover (`books/<slug-judul>/cover.jpg`).
+   - Sertakan judul lengkap, rating, penulis, tahun, badge topik/tags.
+   - Tuliskan *Big Idea* (1 kalimat hook yang kuat) dan *Kerangka Kunci*.
+   - Sediakan tombol pintas langsung ke Master Hub dan Part 1.
+2. Perbarui hitungan **Statistik Koleksi** pada badge di bagian atas [CATALOG.md](CATALOG.md).
+3. Pastikan semua path berformat **relative path**: contoh `books/<slug-judul>/index.md`, `books/<slug-judul>/cover.jpg`.
+   > ⚠️ **PENTING**: DILARANG KERAS menggunakan full path/absolute path lokal sistem (seperti `file:///Users/...` atau `/absolute/path/...`) di dalam file apa pun.
 
 ### Langkah 5: Berikan Respon kepada Pengguna
 - Berikan intisari atau jawaban informatif langsung di chat.
