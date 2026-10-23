@@ -2,7 +2,7 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-8%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-9%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-2%20Buku-d97706?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
@@ -69,6 +69,32 @@
 ---
 
 ## 💼 Bisnis & Teknologi
+
+### [DAYS: Dojang & Athlete Yield System](books/days-dojang-athlete-yield-system/index.md)
+
+<div align="center">
+  <a href="books/days-dojang-athlete-yield-system/index.md">
+    <img src="books/days-dojang-athlete-yield-system/cover.jpg" width="280" alt="DAYS Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Days Prestasi &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Penerbit**: Days Press &nbsp;|&nbsp; **Estimasi Baca**: ~120–140 Menit (7 Modul Lengkap)  
+> `🥋 Manajemen Dojang` `⚡ Ekosistem Olahraga` `🏆 Atlet & Prestasi` `💼 Kemandirian Bisnis` `🧠 Sports Science`
+
+> **💡 The Big Idea:**  
+> *"Tragedi terbesar dalam pembinaan bela diri bukanlah kekalahan di atas matras, melainkan habisnya energi pelatih dan pemilik dojang di meja administrasi sebelum sempat mencurahkan jiwanya untuk melatih sang juara. DAYS hadir untuk mengembalikan sabam ke tatami dan atlet ke panggung juara dengan tata kelola digital terpadu."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Administrative Debt**: Menghapus kebocoran kas 25% dan membebaskan sabam dari tugas canggung penagihan iuran di matras.
+- **The Synergy Triangle**: Integrasi kedaulatan Owner, kepraktisan presensi Sabam (<30 detik), dan ketenangan orang tua murid.
+- **Integrated Yield Pipeline**: Standardisasi pengujian sabuk UKT anti-bodong ber-QR code dan drawing turnamen digital adil.
+- **Autonomous Economic Engine**: Official Dojang Store sebagai penggerak dana abadi beasiswa atlet duafa berprestasi.
+- **Retention & Sports Science**: Menembus *Green Belt Plateau*, edukasi orang tua modern, dan manajemen rasio beban latihan (ACWR) pencegah cedera fatal.
+- **The Young Coach Partnership**: Cetak biru replikasi ekspansi 10+ cabang melalui kemitraan bagi hasil adil tanpa pecah kongsi.
+
+<br/>
 
 ### [AI for Small Business: Panduan Praktis Transformasi Usaha](books/ai-for-small-business/index.md)
 
