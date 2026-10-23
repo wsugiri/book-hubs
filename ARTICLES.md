@@ -36,7 +36,7 @@
   </a>
 </div>
 
-> **Tanggal**: 2026-10-23 &nbsp;|&nbsp; **Kategori**: Bisnis, Karir & Teknologi &nbsp;|&nbsp; **Estimasi Baca**: ~5–6 Menit  
+> **Tanggal**: 2026-10-23 &nbsp;|&nbsp; **Kategori**: Bisnis, Karir & Teknologi &nbsp;|&nbsp; **Estimasi Baca**: ~8–10 Menit  
 > `🏷️ Manajemen Olahraga` `🏷️ Leadership Seni Bela Diri` `🏷️ Dojang Modern` `🏷️ Bedah Buku DAYS`
 
 > **💡 The Core Hook:**  
