@@ -7,7 +7,7 @@
 > `🏷️ Manajemen Olahraga` `🏷️ Leadership Seni Bela Diri` `🏷️ Dojang Modern` `🏷️ Bedah Buku DAYS`
 
 <div align="center">
-  <img src="cover.jpg" width="680" alt="Pelatih Kehabisan Nafas di Meja Kasir Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin: 16px 0;" />
+  <img src="https://raw.githubusercontent.com/wsugiri/book-hubs/refs/heads/master/articles/pelatih-kehabisan-nafas-di-meja-kasir/cover.jpg" width="680" alt="Pelatih Kehabisan Nafas di Meja Kasir Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin: 16px 0;" />
 </div>
 
 ---
@@ -88,7 +88,7 @@ Kata **Yield** lazim digunakan dalam dunia agrikultur (panen bumi yang melimpah)
 ---
 
 <div align="center">
-  <img src="illustrations/focus_coaching.jpg" width="650" alt="Pelatih Fokus Membina Murid di Atas Matras" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); margin: 16px 0;" />
+  <img src="https://raw.githubusercontent.com/wsugiri/book-hubs/master/articles/pelatih-kehabisan-nafas-di-meja-kasir/illustrations/focus_coaching.jpg" width="650" alt="Pelatih Fokus Membina Murid di Atas Matras" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); margin: 16px 0;" />
   <p><em>Ketika seluruh friksi administrasi dialihkan ke sistem digital, pelatih mendapatkan kembali kedaulatannya: hadir 100% mendampingi teknik dan mental setiap anak di matras.</em></p>
 </div>
 
