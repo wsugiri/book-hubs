@@ -2,10 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-10%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-11%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
-[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-1%20Buku-d97706?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -14,7 +14,7 @@
 - [🧠 Pengembangan Diri](#-pengembangan-diri)
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
-- [⏳ Daftar Incaran & Antrean Bedah (TBR: 1 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 0 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -65,6 +65,30 @@
 - **4 Filosofi Penjadwalan Fokus**: Monastic (isolasi total), Bimodal (pembagian musim/bulan), Rhythmic (jadwal tetap setiap pagi), dan Journalistic.
 - **The Craftsman Approach to Tools**: Menolak media sosial atau aplikasi kecuali dampak positifnya secara substansial melampaui kerugian fokus yang ditimbulkannya.
 - **Fixed-Schedule Productivity & Shutdown Ritual**: Mengakhiri hari kerja pada jam yang pasti dan melakukan ritual penutupan untuk ketenangan mental malam hari.
+
+<br/>
+
+### [Thinking, Fast and Slow: Membongkar Dua Sistem Berpikir dan Jebakan Kognitif Manusia](books/thinking-fast-and-slow/index.md)
+
+<div align="center">
+  <a href="books/thinking-fast-and-slow/index.md">
+    <img src="books/thinking-fast-and-slow/cover.jpg" width="280" alt="Thinking, Fast and Slow Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Daniel Kahneman (Nobel Ekonomi 2002) &nbsp;|&nbsp; **Tahun**: 2011 &nbsp;|&nbsp; **Penerbit**: Farrar, Straus and Giroux &nbsp;|&nbsp; **Estimasi Baca**: ~75–90 Menit (5 Modul)  
+> `🧠 Psikologi Kognitif` `⚖️ Behavioral Economics` `🎯 Pengambilan Keputusan` `🎲 Teori Prospek`
+
+> **💡 The Big Idea:**  
+> *"Pikiran manusia bukanlah komputer rasional yang dingin, melainkan mesin lompat kesimpulan yang sangat percaya diri. Kita mengira diri kita adalah nakhoda logis yang memegang kendali penuh (Sistem 2), padahal sebagian besar persepsi dan keputusan kita sehari-hari sebenarnya didikte secara otomatis oleh dorongan emosional dan jalan pintas primitif dari bawah sadar (Sistem 1)."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Sistem 1 vs Sistem 2**: Pilot otomatis yang cepat, emosional, dan hemat energi vs nakhoda lambat yang analitis namun malas (*The Lazy Controller*).
+- **Hukum WYSIATI (*What You See Is All There Is*)**: Pikiran hanya mengolah bukti yang tampak di depan mata dan mengabaikan informasi kritis yang belum diketahui demi merajut cerita yang koheren.
+- **Heuristik & Bias Sistemik**: Jalan pintas mental yang memicu efek jangkar (*Anchoring*), ilusi ketersediaan (*Availability*), sesat pikir konjungsi Linda, dan buta regresi menuju rata-rata.
+- **Teori Prospek & Dua Diri**: Rasa sakit kehilangan (*Loss Aversion*) terasa 2x lipat lebih tajam daripada kenikmatan menang, serta tirani Diri yang Mengingat (*Remembering Self*) yang hanya menilai peristiwa dari *Peak* dan *End*.
 
 ---
 
@@ -272,7 +296,7 @@
 
 | No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **Thinking, Fast and Slow**<br/><sub>*Daniel Kahneman (2011)*</sub> | 🧠 Pengembangan Diri / Kognisi | Fondasi induk bias manusia (Sistem 1 vs Sistem 2) yang melandasi psikologi habit dan finansial. | 📋 `TBR` *(Siap Dibedah)* |
+| - | *Saat ini antrean kosong — seluruh incaran telah berhasil dibedah secara komprehensif!* | 🎉 Koleksi Lengkap | Silakan usulkan judul buku baru untuk dimasukkan ke antrean riset berikutnya. | ✅ `Selesai` |
 
 ```text
 💡 Panduan Alur Bacaan:
