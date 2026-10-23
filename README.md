@@ -1,19 +1,27 @@
-# 📚 Book Knowledge Base & AI Agent
+# 📚 Book & Article Knowledge Base + AI Agent
 
-> Repositori sistem manajemen pengetahuan (*Knowledge Base*) untuk buku-buku bacaan terbaik, dilengkapi **AI Assistant / Agent** yang bertugas meriset, menyusun intisari eksekutif, serta membedah wawasan buku secara mendalam per bab.
+> Repositori sistem manajemen pengetahuan (*Knowledge Base*) untuk buku-buku bacaan terbaik dan artikel singkat lepas, dilengkapi **AI Assistant / Agent** yang bertugas meriset, menyusun intisari eksekutif, membedah buku per bab, serta menulis esai/artikel singkat beserta ilustrasinya.
 
-👉 **[📖 Buka Katalog Visual Koleksi Buku (CATALOG.md)](CATALOG.md)** — *Lihat seluruh daftar buku lengkap dengan cover, rating, tesis utama, dan modul baca.*
+👉 **[📖 Buka Katalog Visual Koleksi Buku (CATALOG.md)](CATALOG.md)** — *Lihat seluruh daftar buku lengkap dengan cover, rating, tesis utama, dan modul baca.*  
+👉 **[📰 Buka Katalog Artikel Singkat Lepas (ARTICLES.md)](ARTICLES.md)** — *Lihat daftar artikel lepas, bedah fenomena, dan mental model.*
 
 ---
 
 ## 🗂️ Struktur Direktori
 
 ```text
-books/
+book-hubs/
 ├── .agents/
 │   └── skills/
-│       └── book-assistant/
-│           └── SKILL.md                 # Definisi alur kerja AI Agent (Skill)
+│       ├── book-assistant/
+│       │   └── SKILL.md                 # Definisi alur kerja AI Agent untuk Buku
+│       └── article-writer/
+│           └── SKILL.md                 # Definisi alur kerja AI Agent untuk Artikel Lepas
+├── articles/                            # Direktori koleksi Artikel Singkat Lepas (per slug)
+│   └── <slug-artikel>/
+│       ├── cover.jpg                    # Ilustrasi utama / cover artikel
+│       ├── illustrations/               # (Opsional) Ilustrasi pendukung di dalam artikel
+│       └── index.md                     # Naskah utuh artikel singkat lepas
 ├── books/                               # Direktori koleksi buku (Model Modular Hub)
 │   ├── atomic-habits/
 │   │   ├── cover.jpg                    # Cover visual buku
@@ -21,26 +29,14 @@ books/
 │   │   ├── 01-the-fundamentals.md       # Part 1: Dasar-dasar (1% rule, British cycling, dll)
 │   │   ├── ...                          # Modul teardown lainnya
 │   │   └── 06-advanced-tactics.md       # Part 6: Taktik lanjutan (Goldilocks rule, review)
-│   ├── ai-for-small-business/
-│   │   ├── cover.jpg
-│   │   └── index.md + modul part 1-4
-│   ├── the-intelligent-investor/
-│   │   ├── cover.jpg
-│   │   └── index.md + modul part 1-4
-│   ├── the-psychology-of-money/
-│   │   ├── cover.jpg
-│   │   └── index.md + modul part 1-4
-│   ├── deep-work/
-│   │   ├── cover.jpg
-│   │   └── index.md + modul part 1-4
-│   └── co-intelligence/
-│       ├── cover.jpg
-│       └── index.md + modul part 1-4
+│   └── ...                              # Koleksi buku lainnya (11 buku)
 ├── templates/
+│   ├── article_template.md              # Template standar artikel singkat lepas
 │   ├── book_index_template.md           # Template master index hub per buku
 │   └── part_teardown_template.md        # Template teardown mendalam per bagian/bab
 ├── AGENTS.md                            # Aturan otomatis untuk AI Agent dalam workspace
-├── CATALOG.md                           # Showcase visual & katalog seluruh buku
+├── ARTICLES.md                          # Showcase visual & katalog seluruh Artikel Singkat Lepas
+├── CATALOG.md                           # Showcase visual & katalog seluruh Buku (Murni Buku)
 └── README.md                            # Panduan penggunaan proyek
 ```
 
