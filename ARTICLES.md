@@ -4,7 +4,7 @@
 > 
 > 📚 *Ingin membaca bedah buku multi-bab? Kunjungi **[Katalog Koleksi Buku (CATALOG.md)](CATALOG.md)**.*
 
-[![Total Artikel](https://img.shields.io/badge/Total%20Artikel-1%20Artikel-2563eb?style=for-the-badge&logo=readthedocs&logoColor=white)](#)
+[![Total Artikel](https://img.shields.io/badge/Total%20Artikel-2%20Artikel-2563eb?style=for-the-badge&logo=readthedocs&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-Siap%20Publikasi-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Ide (Drafts)](https://img.shields.io/badge/Antrean%20Ide-0%20Topik%20(Kosong)-16a34a?style=for-the-badge&logo=buffer&logoColor=white)](#-daftar-ide--antrean-artikel-writing-queue)
@@ -22,7 +22,24 @@
 
 ## 🧠 Pengembangan Diri & Mental Model
 
-*Belum ada artikel di kategori ini. Minta AI Agent untuk menulis artikel pertama Anda!*
+### [The Green Belt Mystery: Mengapa 50% Murid Berbakat Tiba-tiba Hilang Sebelum Sabuk Hitam?](articles/green-belt-mystery-retensi-murid/index.md)
+
+<div align="center">
+  <a href="articles/green-belt-mystery-retensi-murid/index.md">
+    <img src="articles/green-belt-mystery-retensi-murid/cover.jpg" width="420" alt="The Green Belt Mystery Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+</div>
+
+> **Tanggal**: 2026-10-23 &nbsp;|&nbsp; **Kategori**: Pengembangan Diri & Mental Model &nbsp;|&nbsp; **Estimasi Baca**: ~7–9 Menit  
+> `🏷️ Psikologi Anak & Remaja` `🏷️ Retensi Murid` `🏷️ Seni Bela Diri` `🏷️ Bedah Buku DAYS`
+
+> **💡 The Core Hook:**  
+> *"Penyebab separuh murid dojang berhenti latihan sebelum meraih sabuk hitam hampir tidak pernah karena fisik anak yang kurang tahan banting. Mereka berhenti karena terperangkap di 'The Green Belt Plateau'—jurang psikologis di mana euforia pemula telah memudar, sementara orang tua mereka dibiarkan buta arah tanpa kejelasan progres di balik matras."*
+
+**🔑 Poin Kunci Pembahasan:**
+- **The Plateau Effect**: Mengapa murid jenuh saat beralih dari sabuk kuning ke hijau dan bagaimana sistem strip pencapaian mikro (*Skill Stripes*) mengatasinya.
+- **Mitos Orang Tua Helikopter**: Mengubah kecemasan wali murid menjadi kemitraan suportif melalui transparansi data kehadiran dan laporan silabus rutin.
+- **Bela Diri Sebagai Tameng Anti-Bullying**: Tiga lapis pembinaan karakter (postur, ketegasan verbal, dan kontrol fisik) yang membuktikan nilai nyata investasi latihan kepada keluarga.
 
 ---
 
