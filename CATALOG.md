@@ -2,10 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-9%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-10%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
-[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-2%20Buku-d97706?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-1%20Buku-d97706?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -14,7 +14,7 @@
 - [🧠 Pengembangan Diri](#-pengembangan-diri)
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
-- [⏳ Daftar Incaran & Antrean Bedah (TBR: 2 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 1 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -190,6 +190,30 @@
 - **Formula 4 Pilar Prompt Kode**: Mengunci peran arsitektur, cuplikan konteks eksisting (*scaffolding*), batasan dependensi ketat, dan kontrak format output.
 - **Seni "Vibe Coding" & Agen Otonom**: Beralih dari copy-paste statis ke agen terintegrasi (seperti Antigravity/Cursor) dengan loop eksekusi terminal dan verifikasi mandiri.
 
+<br/>
+
+### [Prompt Engineering for LLMs: Seni dan Sains Membangun Aplikasi Berbasis Model Bahasa](books/prompt-engineering-for-llms/index.md)
+
+<div align="center">
+  <a href="books/prompt-engineering-for-llms/index.md">
+    <img src="books/prompt-engineering-for-llms/cover.jpg" width="280" alt="Prompt Engineering for LLMs Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: John Berryman & Albert Ziegler &nbsp;|&nbsp; **Tahun**: 2024 &nbsp;|&nbsp; **Penerbit**: O'Reilly Media &nbsp;|&nbsp; **Estimasi Baca**: ~60–75 Menit (4 Modul)  
+> `💻 AI Engineering` `🧠 Rekayasa Konteks (RAG)` `🛡️ Guardrails & Keamanan` `⚙️ Tool Calling & Evaluasi`
+
+> **💡 The Big Idea:**  
+> *"Prompt Engineering bukanlah trik merangkai kata magis di chatbox, melainkan cabang baru rekayasa perangkat lunak (software engineering). Ini adalah sains deterministik tentang bagaimana menyusun, membatasi, dan mengalirkan konteks komputasi ke dalam mesin pelengkap teks probabilistik agar menghasilkan keluaran produksi yang konsisten, aman, dan teruji secara otomatis."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Document Completer Mental Model**: Memahami bahwa model tidak 'berpikir' atau 'menjawab', melainkan melengkapi dokumen secara statistik; setiap prompt adalah naskah drama penentu perilaku.
+- **Context Window Scaffolding & Budgeting**: Mengisolasi konteks statis, dynamic few-shot, dan data RAG dengan delimiter terstruktur (XML/Markdown) untuk mencegah fenomena *Lost in the Middle*.
+- **Deterministic Taming & Guardrails**: Mengunci parameter inferensi (temperatur mendekati 0, logprobs, stop sequences) dan menegakkan skema terstruktur (JSON Schema/Pydantic) anti-injeksi.
+- **Agency, Workflows & Rigorous Evals**: Mentransformasikan LLM pasif menjadi agen proaktif (ReAct, Tool Calling) dan mengganti 'vibes-based testing' dengan Golden Datasets serta evaluasi otomatis bertingkat.
+
 ---
 
 ## 📈 Finansial & Investasi
@@ -249,7 +273,6 @@
 | No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
 | :-: | :--- | :--- | :--- | :-: |
 | 1 | **Thinking, Fast and Slow**<br/><sub>*Daniel Kahneman (2011)*</sub> | 🧠 Pengembangan Diri / Kognisi | Fondasi induk bias manusia (Sistem 1 vs Sistem 2) yang melandasi psikologi habit dan finansial. | 📋 `TBR` *(Siap Dibedah)* |
-| 2 | **Prompt Engineering for LLMs**<br/><sub>*John Berryman & Albert Ziegler (O'Reilly, 2024)*</sub> | 💻 AI Engineering & Context | Ditulis oleh engineer inti GitHub Copilot: menguasai scaffolding codebase, context window, dan prompt kode tingkat produksi. | 📋 `TBR` *(Siap Dibedah)* |
 
 ```text
 💡 Panduan Alur Bacaan:
