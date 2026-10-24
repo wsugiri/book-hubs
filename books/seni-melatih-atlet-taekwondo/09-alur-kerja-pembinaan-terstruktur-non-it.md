@@ -31,9 +31,9 @@ Tujuan dari bab ini adalah **mensistematisasikan seni melatih** tersebut ke dala
 
 | Prinsip&nbsp;Operasional | Landasan&nbsp;Ilmiah | Level&nbsp;Bukti | Rujukan&nbsp;Ilmiah&nbsp;Utama |
 |---|---|:---:|---|
-| **Standardisasi Titik Sentuh Data** | Pengumpulan data subjektif harian yang konsisten pada waktu yang sama setiap hari meningkatkan keandalan deteksi kelelahan | 🟢 Level A | Saw dkk. (2016) [[14]](#ref-14) |
-| **Pemisahan Jalur Pembinaan Anak** | Penapisan bertahap atlet muda berdasarkan usia biologis mencegah sindrom *dropout* dan cedera akibat spesialisasi dini | 🟢 Level A | Jayanthi dkk. (2015) [[4]](#ref-4); Lloyd & Oliver (2012) [[5]](#ref-5) |
-| **Prosedur Penghentian Medis Tanpa Veto** | Standar operasional penarikan atlet saat dugaan benturan kepala memitigasi komplikasi *Second Impact Syndrome* | 🟢 Level A | Patricios dkk. (2023) [[19]](#ref-19) |
+| **Standardisasi Titik Sentuh Data** | Pengumpulan data subjektif harian yang konsisten pada waktu yang sama setiap hari meningkatkan keandalan deteksi kelelahan | 🟢 Level A | [Saw dkk. (2016)](https://doi.org/10.1136/bjsports-2015-094758) [[14]](#ref-14) |
+| **Pemisahan Jalur Pembinaan Anak** | Penapisan bertahap atlet muda berdasarkan usia biologis mencegah sindrom *dropout* dan cedera akibat spesialisasi dini | 🟢 Level A | [Jayanthi dkk. (2015)](https://doi.org/10.1177/0363546514567298) [[4]](#ref-4); [Lloyd & Oliver (2012)](https://doi.org/10.1519/SSC.0b013e31825760ea) [[5]](#ref-5) |
+| **Prosedur Penghentian Medis Tanpa Veto** | Standar operasional penarikan atlet saat dugaan benturan kepala memitigasi komplikasi *Second Impact Syndrome* | 🟢 Level A | [Patricios dkk. (2023)](https://doi.org/10.1136/bjsports-2023-106898) [[19]](#ref-19) |
 
 ---
 
@@ -378,18 +378,23 @@ mereka tidak perlu pusing memikirkan "fitur apa yang harus dibuat". Seluruh enti
 
 ---
 
-## 📚 <a id="daftar-pustaka-bab-9"></a>Daftar Pustaka Bab 9: Konsolidasi Literatur Operasional Lapangan
+## 📚 <a id="daftar-pustaka-bab-9"></a>Daftar Pustaka Bab 9
 
-> ℹ️ **Catatan Kurikulum:** Sebagai bab penutup operasional (*field playbook*), Bab 9 tidak memperkenalkan literatur baru, melainkan menerjemahkan temuan ilmiah yang telah dibahas pada **Bab 1 hingga Bab 8** (seluruh 28 literatur induk) ke dalam standar operasional prosedur (SOP) dan instrumen cetak lapangan.
+Sebagai bab penutup operasional (*field playbook*), berikut adalah daftar pustaka lengkap beserta tautan jurnal eksternal (DOI & PubMed) untuk literatur yang diintegrasikan dalam bab ini:
 
-### 🔗 Rujukan Ilmiah yang Diintegrasikan dalam Bab Ini:
-
-- <span id="ref-3"></span><span id="ref-4"></span><span id="ref-5"></span>**[[3]](#ref-3)–[[5]](#ref-5)**: PAPE, Pencegahan Spesialisasi Dini & Model Kematangan Biologis YPD → dibahas mendalam di **[Bab 1: Bioenergetika & Fisiologi Latihan](01-bioenergetika-dan-fisiologi-taekwondo.md#daftar-pustaka-bab-1)**
-- <span id="ref-6"></span><span id="ref-10"></span><span id="ref-11"></span><span id="ref-14"></span>**[[6]](#ref-6), [[10]](#ref-10), [[11]](#ref-11), [[14]](#ref-14)**: Protokol Tapering, Validitas Session-RPE & Superioritas Metrik Kesejahteraan Subjektif → dibahas mendalam di **[Bab 2: Beban, Periodisasi & Tapering](02-periodisasi-beban-dan-tapering.md#daftar-pustaka-bab-2)**
-- <span id="ref-17"></span><span id="ref-19"></span>**[[17]](#ref-17), [[19]](#ref-19)**: Epidemiologi Cedera Benturan & Konsensus Protokol Gegar Otak Amsterdam → dibahas mendalam di **[Bab 3: Sports Medicine & Biomekanika Cedera](03-sports-medicine-dan-biomekanika-cedera.md#daftar-pustaka-bab-3)**
-- <span id="ref-20"></span><span id="ref-21"></span>**[[20]](#ref-20), [[21]](#ref-21)**: Batasan Pemotongan Berat Badan & Mitigasi Sindrom Defisit Energi (REDs) → dibahas mendalam di **[Bab 4: Nutrisi & Manajemen Berat Badan](04-nutrisi-hidrasi-dan-manajemen-berat-badan.md#daftar-pustaka-bab-4)**
-- <span id="ref-26"></span>**[[26]](#ref-26)**: Preskripsi HIIT Spesifik Cabang Tarung (Rasio Kerja-Istirahat 1:4) → dibahas mendalam di **[Bab 7: Menyusun Program Terpadu](07-menyusun-program-terpadu.md#daftar-pustaka-bab-7)**
-- <span id="ref-28"></span>**[[28]](#ref-28)**: Integritas Pelaporan Data Atlet & Keamanan Psikologis (*"I lied a little bit"*) → dibahas mendalam di **[Bab 8: Lanskap Sistem Pendamping](08-lanskap-sistem-pendamping-dan-teknologi-atlet.md#daftar-pustaka-bab-8)**
+- <a id="ref-3"></a>**[3]** Blazevich AJ, Babault N. Post-activation potentiation versus post-activation performance enhancement in humans: historical perspective, underlying mechanisms, and current issues. *Front Physiol*. 2019;10:1359. doi:[10.3389/fphys.2019.01359](https://doi.org/10.3389/fphys.2019.01359). PMID: [31736781](https://pubmed.ncbi.nlm.nih.gov/31736781/)
+- <a id="ref-4"></a>**[4]** Jayanthi NA, LaBella CR, Fischer D, Pasulka J, Dugas LR. Sports-specialized intensive training and the risk of injury in young athletes: a clinical case-control study. *Am J Sports Med*. 2015;43(4):794–801. doi:[10.1177/0363546514567298](https://doi.org/10.1177/0363546514567298). PMID: [25646361](https://pubmed.ncbi.nlm.nih.gov/25646361/)
+- <a id="ref-5"></a>**[5]** Lloyd RS, Oliver JL. The Youth Physical Development Model: a new approach to long-term athletic development. *Strength Cond J*. 2012. doi:[10.1519/SSC.0b013e31825760ea](https://doi.org/10.1519/SSC.0b013e31825760ea)
+- <a id="ref-6"></a>**[6]** Bosquet L, Montpetit J, Arvisais D, Mujika I. Effects of tapering on performance: a meta-analysis. *Med Sci Sports Exerc*. 2007;39(8):1358–1365. doi:[10.1249/mss.0b013e31806010e0](https://doi.org/10.1249/mss.0b013e31806010e0). PMID: [17762369](https://pubmed.ncbi.nlm.nih.gov/17762369/)
+- <a id="ref-10"></a>**[10]** Foster C, Florhaug JA, Franklin J, et al. A new approach to monitoring exercise training. *J Strength Cond Res*. 2001;15(1):109–115. PMID: [11708692](https://pubmed.ncbi.nlm.nih.gov/11708692/)
+- <a id="ref-11"></a>**[11]** Haddad M, Chaouachi A, Castagna C, Wong DP, Behm DG, Chamari K. The construct validity of session RPE during an intensive camp in young male taekwondo athletes. *Int J Sports Physiol Perform*. 2011;6(2):252–263. doi:[10.1123/ijspp.6.2.252](https://doi.org/10.1123/ijspp.6.2.252). PMID: [21725110](https://pubmed.ncbi.nlm.nih.gov/21725110/)
+- <a id="ref-14"></a>**[14]** Saw AE, Main LC, Gastin PB. Monitoring the athlete training response: subjective self-reported measures trump commonly used objective measures: a systematic review. *Br J Sports Med*. 2016;50(5):281–291. doi:[10.1136/bjsports-2015-094758](https://doi.org/10.1136/bjsports-2015-094758). PMID: [26423706](https://pubmed.ncbi.nlm.nih.gov/26423706/)
+- <a id="ref-17"></a>**[17]** Lystad RP, Swain MS, Graham PL. Risk factors for injury in Olympic-style competition taekwondo: a systematic review. *J Sports Med Phys Fitness*. 2013;53(6):655–664. PMID: [24247189](https://pubmed.ncbi.nlm.nih.gov/24247189/)
+- <a id="ref-19"></a>**[19]** Patricios JS, Schneider KJ, Dvorak J, et al. Consensus statement on concussion in sport: the 6th International Conference on Concussion in Sport–Amsterdam, October 2022. *Br J Sports Med*. 2023;57(11):695–711. doi:[10.1136/bjsports-2023-106898](https://doi.org/10.1136/bjsports-2023-106898). PMID: [37316210](https://pubmed.ncbi.nlm.nih.gov/37316210/)
+- <a id="ref-20"></a>**[20]** Reale R, Slater G, Burke LM. Acute-weight-loss strategies for combat sports and applications to Olympic success. *Int J Sports Physiol Perform*. 2017;12(2):142–151. doi:[10.1123/ijspp.2016-0211](https://doi.org/10.1123/ijspp.2016-0211). PMID: [27347784](https://pubmed.ncbi.nlm.nih.gov/27347784/)
+- <a id="ref-21"></a>**[21]** Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:[10.1136/bjsports-2023-106994](https://doi.org/10.1136/bjsports-2023-106994). PMID: [37752011](https://pubmed.ncbi.nlm.nih.gov/37752011/)
+- <a id="ref-26"></a>**[26]** Franchini E. High-Intensity Interval Training Prescription for Combat-Sport Athletes. *Int J Sports Physiol Perform*. 2020;15(6):767–776. doi:[10.1123/ijspp.2020-0289](https://doi.org/10.1123/ijspp.2020-0289). PMID: [32502972](https://pubmed.ncbi.nlm.nih.gov/32502972/)
+- <a id="ref-28"></a>**[28]** Coventry M, Timler A, Mosler AB, et al. "I lied a little bit." A qualitative study exploring the perspectives of elite Australian athletes on self-reported data. *Phys Ther Sport*. 2023;60:91–97. doi:[10.1016/j.ptsp.2023.01.009](https://doi.org/10.1016/j.ptsp.2023.01.009). PMID: [36738670](https://pubmed.ncbi.nlm.nih.gov/36738670/)
 
 > 📖 **Bibliografi Induk Lengkap:** Rincian 28 literatur primer lengkap dengan tautan DOI dan nomor PMID terverifikasi terangkum di **[Bibliografi Induk Buku](index.md#-5-bibliografi-induk-sumber-yang-sudah-diperiksa)**.
 

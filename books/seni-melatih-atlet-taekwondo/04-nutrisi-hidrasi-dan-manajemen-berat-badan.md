@@ -160,17 +160,9 @@ timeline
 
 ## 📚 <a id="daftar-pustaka-bab-4"></a>Daftar Pustaka Bab 4
 
-<a id="ref-20"></a>
-20. Reale R, Slater G, Burke LM. Acute-weight-loss strategies for combat sports and applications to Olympic success. *Int J Sports Physiol Perform*. 2017;12(2):142–151. doi:[10.1123/ijspp.2016-0211](https://doi.org/10.1123/ijspp.2016-0211). PMID: [27347784](https://pubmed.ncbi.nlm.nih.gov/27347784/)
-
-<a id="ref-21"></a>
-21. Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:[10.1136/bjsports-2023-106994](https://doi.org/10.1136/bjsports-2023-106994). PMID: [37752011](https://pubmed.ncbi.nlm.nih.gov/37752011/)
-
----
-
-### 🔗 Rujukan Silang Bab Sebelumnya
-
-- <span id="ref-4"></span>**[[4]](#ref-4)**: Jayanthi NA dkk. Sports-specialized intensive training and the risk of injury in young athletes (2015) → dibahas mendalam di **[Bab 1: Bioenergetika & Fisiologi Latihan](01-bioenergetika-dan-fisiologi-taekwondo.md#daftar-pustaka-bab-1)**
+- <a id="ref-4"></a>**[4]** Jayanthi NA, LaBella CR, Fischer D, Pasulka J, Dugas LR. Sports-specialized intensive training and the risk of injury in young athletes: a clinical case-control study. *Am J Sports Med*. 2015;43(4):794–801. doi:[10.1177/0363546514567298](https://doi.org/10.1177/0363546514567298). PMID: [25646361](https://pubmed.ncbi.nlm.nih.gov/25646361/)
+- <a id="ref-20"></a>**[20]** Reale R, Slater G, Burke LM. Acute-weight-loss strategies for combat sports and applications to Olympic success. *Int J Sports Physiol Perform*. 2017;12(2):142–151. doi:[10.1123/ijspp.2016-0211](https://doi.org/10.1123/ijspp.2016-0211). PMID: [27347784](https://pubmed.ncbi.nlm.nih.gov/27347784/)
+- <a id="ref-21"></a>**[21]** Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:[10.1136/bjsports-2023-106994](https://doi.org/10.1136/bjsports-2023-106994). PMID: [37752011](https://pubmed.ncbi.nlm.nih.gov/37752011/)
 
 > ⚕️ **Catatan medis:** Bab ini bersifat edukatif dan bukan pengganti konsultasi dengan dokter spesialis gizi klinis (*clinical nutritionist*) atau dokter kedokteran olahraga berwenang.
 

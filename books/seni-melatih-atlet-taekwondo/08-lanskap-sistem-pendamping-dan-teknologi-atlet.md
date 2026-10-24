@@ -30,9 +30,9 @@ Di era olahraga modern, teknologi hadir bukan untuk menggantikan intuisi tajam p
 
 | Komponen&nbsp;Teknologi | Temuan&nbsp;Ilmiah&nbsp;/&nbsp;Fakta&nbsp;Lapangan | Level&nbsp;Bukti | Rujukan&nbsp;Ilmiah&nbsp;Utama |
 |---|---|:---:|---|
-| **Kelayakan Sistem Elektronik Bela Diri** | Sistem pemantauan elektronik terbukti layak mengumpulkan data beban latihan dan riwayat cedera atlet bela diri Olimpiade secara prospektif | 🟡 Level B | Bromley dkk. (2018) [[27]](#ref-27) |
-| **Kejujuran Data Subjektif Atlet** | Atlet elit rentan memalsukan (*"I lied a little bit"*) data kesiapan/nyeri pada sistem jika mereka merasa data tersebut akan dipakai untuk menghukum atau mencoret mereka dari tim | 🟢 Level A | Coventry dkk. (2023) [[28]](#ref-28) |
-| **Superioritas Skor Subjektif vs Marker Darah** | Pemantauan subjektif (kuesioner kelelahan & RPE) dalam sistem digital lebih konsisten mencerminkan kelelahan daripada tes darah rutin | 🟢 Level A | Saw dkk. (2016) [[14]](#ref-14); Halson (2014) [[24]](#ref-24) |
+| **Kelayakan Sistem Elektronik Bela Diri** | Sistem pemantauan elektronik terbukti layak mengumpulkan data beban latihan dan riwayat cedera atlet bela diri Olimpiade secara prospektif | 🟡 Level B | [Bromley dkk. (2018)](https://doi.org/10.2196/humanfactors.9541) [[27]](#ref-27) |
+| **Kejujuran Data Subjektif Atlet** | Atlet elit rentan memalsukan (*"I lied a little bit"*) data kesiapan/nyeri pada sistem jika mereka merasa data tersebut akan dipakai untuk menghukum atau mencoret mereka dari tim | 🟢 Level A | [Coventry dkk. (2023)](https://doi.org/10.1016/j.ptsp.2023.01.009) [[28]](#ref-28) |
+| **Superioritas Skor Subjektif vs Marker Darah** | Pemantauan subjektif (kuesioner kelelahan & RPE) dalam sistem digital lebih konsisten mencerminkan kelelahan daripada tes darah rutin | 🟢 Level A | [Saw dkk. (2016)](https://doi.org/10.1136/bjsports-2015-094758) [[14]](#ref-14); [Halson (2014)](https://doi.org/10.1007/s40279-014-0253-z) [[24]](#ref-24) |
 
 ---
 
@@ -149,18 +149,10 @@ Jika atlet diminta mengisi kuesioner digital sepanjang 25 pertanyaan setiap pagi
 
 ## 📚 <a id="daftar-pustaka-bab-8"></a>Daftar Pustaka Bab 8
 
-27. <a id="ref-27"></a>Bromley S, Drew M, Talpey S, McIntosh A, Finch C. Collecting Health and Exposure Data in Australian Olympic Combat Sports: Feasibility Study Utilizing an Electronic System. *JMIR Hum Factors*. 2018;5(4):e27. doi:[10.2196/humanfactors.9541](https://doi.org/10.2196/humanfactors.9541). PMID: [30305257](https://pubmed.ncbi.nlm.nih.gov/30305257/)
-
-28. <a id="ref-28"></a>Coventry M, Timler A, Mosler AB, et al. "I lied a little bit." A qualitative study exploring the perspectives of elite Australian athletes on self-reported data. *Phys Ther Sport*. 2023;60:91–97. doi:[10.1016/j.ptsp.2023.01.009](https://doi.org/10.1016/j.ptsp.2023.01.009). PMID: [36738670](https://pubmed.ncbi.nlm.nih.gov/36738670/)
-
----
-
-### 🔗 Rujukan Silang Bab Sebelumnya
-
-Topik pemantauan beban latihan dan arsitektur tidur dalam bab ini juga mengacu pada temuan literatur yang telah dibahas pada bab-bab sebelumnya:
-
-- <span id="ref-14"></span>**[[14]](#ref-14)**: Saw AE, Main LC, Gastin PB. Monitoring the athlete training response: subjective self-reported measures trump commonly used objective measures (2016) → dibahas mendalam di **[Bab 2: Beban, Periodisasi & Tapering](02-periodisasi-beban-dan-tapering.md#daftar-pustaka-bab-2)**
-- <span id="ref-24"></span>**[[24]](#ref-24)**: Halson SL. Monitoring training load to understand fatigue in athletes (2014) → dibahas mendalam di **[Bab 6: Fisiologi Pemulihan & Kualitas Tidur](06-fisiologi-pemulihan-dan-kualitas-tidur.md#daftar-pustaka-bab-6)**
+- <a id="ref-14"></a>**[14]** Saw AE, Main LC, Gastin PB. Monitoring the athlete training response: subjective self-reported measures trump commonly used objective measures: a systematic review. *Br J Sports Med*. 2016;50(5):281–291. doi:[10.1136/bjsports-2015-094758](https://doi.org/10.1136/bjsports-2015-094758). PMID: [26423706](https://pubmed.ncbi.nlm.nih.gov/26423706/)
+- <a id="ref-24"></a>**[24]** Halson SL. Monitoring training load to understand fatigue in athletes. *Sports Med*. 2014;44 Suppl 2(Suppl 2):S139–S147. doi:[10.1007/s40279-014-0253-z](https://doi.org/10.1007/s40279-014-0253-z). PMID: [25200666](https://pubmed.ncbi.nlm.nih.gov/25200666/)
+- <a id="ref-27"></a>**[27]** Bromley S, Drew M, Talpey S, McIntosh A, Finch C. Collecting Health and Exposure Data in Australian Olympic Combat Sports: Feasibility Study Utilizing an Electronic System. *JMIR Hum Factors*. 2018;5(4):e27. doi:[10.2196/humanfactors.9541](https://doi.org/10.2196/humanfactors.9541). PMID: [30305257](https://pubmed.ncbi.nlm.nih.gov/30305257/)
+- <a id="ref-28"></a>**[28]** Coventry M, Timler A, Mosler AB, et al. "I lied a little bit." A qualitative study exploring the perspectives of elite Australian athletes on self-reported data. *Phys Ther Sport*. 2023;60:91–97. doi:[10.1016/j.ptsp.2023.01.009](https://doi.org/10.1016/j.ptsp.2023.01.009). PMID: [36738670](https://pubmed.ncbi.nlm.nih.gov/36738670/)
 
 > 📖 **Bibliografi Lengkap:** Seluruh 28 literatur ilmiah rujukan terangkum dalam tabel terverifikasi di **[Bibliografi Induk Buku](index.md#-5-bibliografi-induk-sumber-yang-sudah-diperiksa)**.
 
