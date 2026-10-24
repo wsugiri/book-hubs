@@ -245,80 +245,22 @@ sequenceDiagram
 
 ## 📚 <a id="daftar-pustaka-bab-7"></a>Daftar Pustaka Bab 7
 
-<a id="ref-1"></a>
-1. Campos FAD, Bertuzzi R, Dourado AC, Santos VG, Franchini E. Energy demands in taekwondo athletes during combat simulation. *Eur J Appl Physiol*. 2012;112(4):1221–1228. doi:[10.1007/s00421-011-2071-4](https://doi.org/10.1007/s00421-011-2071-4). PMID: [21769736](https://pubmed.ncbi.nlm.nih.gov/21769736/)
+26. <a id="ref-26"></a>Franchini E. High-Intensity Interval Training Prescription for Combat-Sport Athletes. *Int J Sports Physiol Perform*. 2020;15(6):767–776. doi:[10.1123/ijspp.2020-0289](https://doi.org/10.1123/ijspp.2020-0289). PMID: [32502972](https://pubmed.ncbi.nlm.nih.gov/32502972/)
 
-<a id="ref-2"></a>
-2. Bridge CA, Ferreira da Silva Santos J, Chaabène H, Pieter W, Franchini E. Physical and physiological profiles of taekwondo athletes. *Sports Med*. 2014;44(6):713–733. doi:[10.1007/s40279-014-0159-9](https://doi.org/10.1007/s40279-014-0159-9). PMID: [24549477](https://pubmed.ncbi.nlm.nih.gov/24549477/)
+---
 
-<a id="ref-3"></a>
-3. Blazevich AJ, Babault N. Post-activation potentiation versus post-activation performance enhancement in humans: historical perspective, underlying mechanisms, and current issues. *Front Physiol*. 2019;10:1359. doi:[10.3389/fphys.2019.01359](https://doi.org/10.3389/fphys.2019.01359). PMID: [31736781](https://pubmed.ncbi.nlm.nih.gov/31736781/)
+### 🔗 Rujukan Silang Bab Sebelumnya (Konsolidasi Kurikulum)
 
-<a id="ref-4"></a>
-4. Jayanthi NA, LaBella CR, Fischer D, Pasulka J, Dugas LR. Sports-specialized intensive training and the risk of injury in young athletes: a clinical case-control study. *Am J Sports Med*. 2015;43(4):794–801. doi:[10.1177/0363546514567298](https://doi.org/10.1177/0363546514567298). PMID: [25646361](https://pubmed.ncbi.nlm.nih.gov/25646361/)
+Bab 7 adalah sintesis terpadu dari seluruh modul sebelumnya. Rujukan `[1]` s/d `[25]` yang dikutip dalam bab ini merujuk pada literatur ilmiah yang telah dibedah lengkap pada bab-bab pendahulu:
 
-<a id="ref-5"></a>
-5. Lloyd RS, Oliver JL. The Youth Physical Development Model: a new approach to long-term athletic development. *Strength Cond J*. 2012;34(3):61–72. doi:[10.1519/SSC.0b013e31825760ea](https://doi.org/10.1519/SSC.0b013e31825760ea)
+- <span id="ref-1"></span><span id="ref-2"></span><span id="ref-3"></span><span id="ref-4"></span><span id="ref-5"></span>**[[1]](#ref-1)–[[5]](#ref-5)**: Bioenergetika, Profil Fisik & Perkembangan Atlet Muda → **[Bab 1: Bioenergetika & Fisiologi Latihan](01-bioenergetika-dan-fisiologi-taekwondo.md#daftar-pustaka-bab-1)**
+- <span id="ref-6"></span><span id="ref-7"></span><span id="ref-8"></span><span id="ref-9"></span><span id="ref-10"></span><span id="ref-11"></span><span id="ref-12"></span><span id="ref-13"></span><span id="ref-14"></span><span id="ref-15"></span><span id="ref-16"></span>**[[6]](#ref-6)–[[16]](#ref-16)**: Periodisasi Beban, Session-RPE, ACWR & Tapering → **[Bab 2: Beban, Periodisasi & Tapering](02-periodisasi-beban-dan-tapering.md#daftar-pustaka-bab-2)**
+- <span id="ref-17"></span><span id="ref-18"></span><span id="ref-19"></span>**[[17]](#ref-17)–[[19]](#ref-19)**: Epidemiologi Cedera, Protokol PEACE & LOVE, Manajemen Gegar Otak → **[Bab 3: Sports Medicine & Biomekanika Cedera](03-sports-medicine-dan-biomekanika-cedera.md#daftar-pustaka-bab-3)**
+- <span id="ref-20"></span><span id="ref-21"></span>**[[20]](#ref-20)–[[21]](#ref-21)**: Manipulasi Berat Badan Bertanggung Jawab & REDs → **[Bab 4: Nutrisi & Manajemen Berat Badan](04-nutrisi-hidrasi-dan-manajemen-berat-badan.md#daftar-pustaka-bab-4)**
+- <span id="ref-22"></span><span id="ref-23"></span>**[[22]](#ref-22)–[[23]](#ref-23)**: Zona Emosi Optimal (IZOF) & Regulasi Mental Matras → **[Bab 5: Psikologi Performa & Ketahanan Mental](05-psikologi-performa-dan-ketahanan-mental.md#daftar-pustaka-bab-5)**
+- <span id="ref-24"></span><span id="ref-25"></span>**[[24]](#ref-24)–[[25]](#ref-25)**: Neurosains Tidur, Monitoring Kelelahan & Waktu CWI → **[Bab 6: Fisiologi Pemulihan & Kualitas Tidur](06-fisiologi-pemulihan-dan-kualitas-tidur.md#daftar-pustaka-bab-6)**
 
-<a id="ref-6"></a>
-6. Bosquet L, Montpetit J, Arvisais D, Mujika I. Effects of tapering on performance: a meta-analysis. *Med Sci Sports Exerc*. 2007;39(8):1358–1365. doi:[10.1249/mss.0b013e31806010e0](https://doi.org/10.1249/mss.0b013e31806010e0). PMID: [17762369](https://pubmed.ncbi.nlm.nih.gov/17762369/)
-
-<a id="ref-7"></a>
-7. Gabbett TJ. The training–injury prevention paradox: should athletes be training smarter and harder? *Br J Sports Med*. 2016;50(5):273–280. doi:[10.1136/bjsports-2015-095788](https://doi.org/10.1136/bjsports-2015-095788). PMID: [26758673](https://pubmed.ncbi.nlm.nih.gov/26758673/)
-
-<a id="ref-8"></a>
-8. Impellizzeri FM, Tenan MS, Kempton T, Novak A, Coutts AJ. Acute:chronic workload ratio: conceptual issues and fundamental pitfalls. *Int J Sports Physiol Perform*. 2020;15(6):907–913. doi:[10.1123/ijspp.2019-0864](https://doi.org/10.1123/ijspp.2019-0864). PMID: [32502973](https://pubmed.ncbi.nlm.nih.gov/32502973/)
-
-<a id="ref-9"></a>
-9. Williams TD, Tolusso DV, Fedewa MV, Esco MR. Comparison of periodized and non-periodized resistance training on maximal strength: a meta-analysis. *Sports Med*. 2017;47(10):2083–2100. doi:[10.1007/s40279-017-0734-y](https://doi.org/10.1007/s40279-017-0734-y). PMID: [28497285](https://pubmed.ncbi.nlm.nih.gov/28497285/)
-
-<a id="ref-10"></a>
-10. Foster C, Florhaug JA, Franklin J, et al. A new approach to monitoring exercise training. *J Strength Cond Res*. 2001;15(1):109–115. PMID: [11708692](https://pubmed.ncbi.nlm.nih.gov/11708692/)
-
-<a id="ref-11"></a>
-11. Haddad M, Chaouachi A, Castagna C, Wong DP, Behm DG, Chamari K. The construct validity of session RPE during an intensive camp in young male taekwondo athletes. *Int J Sports Physiol Perform*. 2011;6(2):252–263. doi:[10.1123/ijspp.6.2.252](https://doi.org/10.1123/ijspp.6.2.252). PMID: [21725110](https://pubmed.ncbi.nlm.nih.gov/21725110/)
-
-<a id="ref-12"></a>
-12. Lupo C, Capranica L, Cortis C, Guidotti F, Bianco A, Tessitore A. Session-RPE for quantifying load of different youth taekwondo training sessions. *J Sports Med Phys Fitness*. 2017;57(3):189–194. doi:[10.23736/S0022-4707.16.06021-X](https://doi.org/10.23736/S0022-4707.16.06021-X). PMID: [26796074](https://pubmed.ncbi.nlm.nih.gov/26796074/)
-
-<a id="ref-14"></a>
-14. Saw AE, Main LC, Gastin PB. Monitoring the athlete training response: subjective self-reported measures trump commonly used objective measures: a systematic review. *Br J Sports Med*. 2016;50(5):281–291. doi:[10.1136/bjsports-2015-094758](https://doi.org/10.1136/bjsports-2015-094758). PMID: [26423706](https://pubmed.ncbi.nlm.nih.gov/26423706/)
-
-<a id="ref-15"></a>
-15. Meeusen R, Duclos M, Foster C, et al. Prevention, diagnosis, and treatment of the overtraining syndrome: joint consensus statement of the European College of Sport Science and the American College of Sports Medicine. *Med Sci Sports Exerc*. 2013;45(1):186–205. doi:[10.1249/MSS.0b013e318279a10a](https://doi.org/10.1249/MSS.0b013e318279a10a). PMID: [23247672](https://pubmed.ncbi.nlm.nih.gov/23247672/)
-
-<a id="ref-16"></a>
-16. Vachon A, Berryman N, Mujika I, Paquet JB, Arvisais D, Bosquet L. Effects of tapering on neuromuscular and metabolic fitness in team sports: a systematic review and meta-analysis. *Eur J Sport Sci*. 2021;21(3):300–311. doi:[10.1080/17461391.2020.1736183](https://doi.org/10.1080/17461391.2020.1736183). PMID: [32172680](https://pubmed.ncbi.nlm.nih.gov/32172680/)
-
-<a id="ref-17"></a>
-17. Lystad RP, Swain MS, Graham PL. Risk factors for injury in Olympic-style competition taekwondo: a systematic review. *J Sports Med Phys Fitness*. 2013;53(6):655–664. PMID: [24247189](https://pubmed.ncbi.nlm.nih.gov/24247189/)
-
-<a id="ref-18"></a>
-18. Dubois B, Esculier JF. Soft-tissue injuries simply need PEACE and LOVE. *Br J Sports Med*. 2020;54(2):72–73. doi:[10.1136/bjsports-2019-101253](https://doi.org/10.1136/bjsports-2019-101253). PMID: [31377722](https://pubmed.ncbi.nlm.nih.gov/31377722/)
-
-<a id="ref-19"></a>
-19. Patricios JS, Schneider KJ, Dvorak J, et al. Consensus statement on concussion in sport: the 6th International Conference on Concussion in Sport–Amsterdam, October 2022. *Br J Sports Med*. 2023;57(11):695–711. doi:[10.1136/bjsports-2023-106898](https://doi.org/10.1136/bjsports-2023-106898). PMID: [37316210](https://pubmed.ncbi.nlm.nih.gov/37316210/)
-
-<a id="ref-20"></a>
-20. Reale R, Slater G, Burke LM. Acute-weight-loss strategies for combat sports and applications to Olympic success. *Int J Sports Physiol Perform*. 2017;12(2):142–151. doi:[10.1123/ijspp.2016-0211](https://doi.org/10.1123/ijspp.2016-0211). PMID: [27347784](https://pubmed.ncbi.nlm.nih.gov/27347784/)
-
-<a id="ref-21"></a>
-21. Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:[10.1136/bjsports-2023-106994](https://doi.org/10.1136/bjsports-2023-106994). PMID: [37752011](https://pubmed.ncbi.nlm.nih.gov/37752011/)
-
-<a id="ref-22"></a>
-22. Robazza C, Bertollo M, Filho E, Hanin Y, Bortoli L. Perceived control and hedonic tone dynamics during performance in elite shooters. *Res Q Exerc Sport*. 2016;87(3):284–294. doi:[10.1080/02701367.2016.1185081](https://doi.org/10.1080/02701367.2016.1185081). PMID: [27253427](https://pubmed.ncbi.nlm.nih.gov/27253427/)
-
-<a id="ref-23"></a>
-23. Robazza C, Pellizzari M, Bertollo M, Hanin YL. Functional impact of emotions on athletic performance: comparing the IZOF model and the directional perception approach. *J Sports Sci*. 2008;26(10):1033–1047. doi:[10.1080/02640410802027352](https://doi.org/10.1080/02640410802027352). PMID: [18608828](https://pubmed.ncbi.nlm.nih.gov/18608828/)
-
-<a id="ref-24"></a>
-24. Halson SL. Monitoring training load to understand fatigue in athletes. *Sports Med*. 2014;44 Suppl 2(Suppl 2):S139–S147. doi:[10.1007/s40279-014-0253-z](https://doi.org/10.1007/s40279-014-0253-z). PMID: [25200666](https://pubmed.ncbi.nlm.nih.gov/25200666/)
-
-<a id="ref-25"></a>
-25. Roberts LA, Raastad T, Markworth JF, et al. Post-exercise cold water immersion attenuates acute anabolic signalling and long-term adaptations in muscle to strength training. *J Physiol*. 2015;593(18):4285–4301. doi:[10.1113/JP270570](https://doi.org/10.1113/JP270570). PMID: [26174323](https://pubmed.ncbi.nlm.nih.gov/26174323/)
-
-<a id="ref-26"></a>
-26. Franchini E. High-Intensity Interval Training Prescription for Combat-Sport Athletes. *Int J Sports Physiol Perform*. 2020;15(6):767–776. doi:[10.1123/ijspp.2020-0289](https://doi.org/10.1123/ijspp.2020-0289). PMID: [32502972](https://pubmed.ncbi.nlm.nih.gov/32502972/)
+> 📖 **Bibliografi Lengkap:** Seluruh 28 literatur ilmiah berbobot tinggi terangkum dalam tabel terverifikasi di **[Bibliografi Induk Buku](index.md#-5-bibliografi-induk-sumber-yang-sudah-diperiksa)**.
 
 ---
 

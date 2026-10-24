@@ -48,7 +48,7 @@ pie showData
 
 Taekwondo sering disebut "olahraga anaerobik" karena tendangannya meledak-ledak. Data di atas menunjukkan gambaran yang lebih bernuansa: **sebagian besar energi total justru dipasok jalur aerobik**, sementara jalur fosfagen memasok aksi-aksi penentu. Kontribusi glikolitik yang kecil juga berbeda dari bayangan umum bahwa "latihan sampai asam laktat tinggi" adalah inti persiapan.
 
-Para penulis sendiri menarik kesimpulan praktis: sesi latihan **sebaiknya diarahkan terutama pada peningkatan sistem anaerobik alaktat** (penyokong aksi intensitas tinggi) **dan sistem aerobik** (penyokong pemulihan di antara aksi-aksi itu) `[1]`.
+Para penulis sendiri menarik kesimpulan praktis: sesi latihan **sebaiknya diarahkan terutama pada peningkatan sistem anaerobik alaktat** (penyokong aksi intensitas tinggi) **dan sistem aerobik** (penyokong pemulihan di antara aksi-aksi itu) [[1]](#ref-1).
 
 ```mermaid
 flowchart LR
@@ -57,14 +57,14 @@ flowchart LR
     B -.->|"pasokan cadangan perlu dipulihkan"| D
 ```
 
-> **Interpretasi.** Garis putus-putus pada diagram adalah tafsir penyusun berdasarkan kesimpulan Campos dkk. bahwa sistem aerobik berperan dalam proses pemulihan di antara aksi intensitas tinggi `[1]`. Ia bukan hasil pengukuran langsung dalam studi tersebut.
+> **Interpretasi.** Garis putus-putus pada diagram adalah tafsir penyusun berdasarkan kesimpulan Campos dkk. bahwa sistem aerobik berperan dalam proses pemulihan di antara aksi intensitas tinggi [[1]](#ref-1). Ia bukan hasil pengukuran langsung dalam studi tersebut.
 
 #### Catatan Kehati-hatian (Penting)
 
-- Sampel **kecil (n = 10)** dan **seluruhnya putra dewasa muda** `[1]`. Data untuk atlet putri dan atlet anak sangat terbatas.
+- Sampel **kecil (n = 10)** dan **seluruhnya putra dewasa muda** [[1]](#ref-1). Data untuk atlet putri dan atlet anak sangat terbatas.
 - Kontribusi energi **diestimasi**, bukan diukur langsung. Besarnya angka, terutama porsi glikolitik, dapat bergeser bila metode estimasinya berbeda.
 - Pertarungan adalah **simulasi**. Pertandingan resmi dengan taruhan sebenarnya bisa memunculkan respons fisiologis yang berbeda.
-- Aturan dan sistem penilaian taekwondo berubah dari waktu ke waktu. Data lama dapat tidak mencerminkan tuntutan kompetisi masa kini `[1]`.
+- Aturan dan sistem penilaian taekwondo berubah dari waktu ke waktu. Data lama dapat tidak mencerminkan tuntutan kompetisi masa kini [[1]](#ref-1).
 
 **Level bukti: 🟠 C** (studi kecil, hasil estimasi). Konsisten sebagai arah umum, belum cukup untuk menetapkan angka latihan yang pasti.
 
@@ -74,7 +74,7 @@ flowchart LR
 
 #### Temuan
 
-Tinjauan Bridge dan rekan (2014) merangkum karakteristik fisik dan fisiologis atlet taekwondo. Poin-poin kuncinya `[2]`:
+Tinjauan Bridge dan rekan (2014) merangkum karakteristik fisik dan fisiologis atlet taekwondo. Poin-poin kuncinya [[2]](#ref-2):
 
 | Aspek | Ringkasan temuan tinjauan |
 |---|---|
@@ -86,7 +86,7 @@ Tinjauan Bridge dan rekan (2014) merangkum karakteristik fisik dan fisiologis at
 | **Daya tahan otot inti** | Sedang, pada otot batang tubuh dan fleksor pinggul |
 | **Fleksibilitas** | Tinggi pada tungkai, sesuai tuntutan teknik |
 
-Para penulis menutup dengan catatan penting: **diperlukan penelitian lebih banyak** agar pengondisian dapat dikhususkan untuk populasi yang berbeda di dalam olahraga ini `[2]`.
+Para penulis menutup dengan catatan penting: **diperlukan penelitian lebih banyak** agar pengondisian dapat dikhususkan untuk populasi yang berbeda di dalam olahraga ini [[2]](#ref-2).
 
 > **Interpretasi.** Profil ini menunjukkan bahwa atlet taekwondo tingkat atas adalah *atlet serba-bisa*: daya, kekuatan, fleksibilitas, dan kebugaran aerobik semuanya dibutuhkan. Tidak ada satu kualitas pun yang cukup berdiri sendiri. Konsekuensinya bagi pelatih: **jangan membangun program dari satu kualitas saja** (misalnya hanya fleksibilitas atau hanya sparring).
 
@@ -96,7 +96,7 @@ Para penulis menutup dengan catatan penting: **diperlukan penelitian lebih banya
 
 ### 3. "Pemanasan Ajaib"? Meluruskan PAP dan PAPE
 
-Di kalangan pelatih beredar gagasan bahwa kontraksi berat singkat sebelum bertanding dapat membuat atlet "lebih meledak". Fenomena yang sering disebut adalah *post-activation potentiation* (PAP). Tinjauan Blazevich dan Babault (2019) menjelaskan bahwa istilah ini sering dicampuradukkan `[3]`:
+Di kalangan pelatih beredar gagasan bahwa kontraksi berat singkat sebelum bertanding dapat membuat atlet "lebih meledak". Fenomena yang sering disebut adalah *post-activation potentiation* (PAP). Tinjauan Blazevich dan Babault (2019) menjelaskan bahwa istilah ini sering dicampuradukkan [[3]](#ref-3):
 
 | | **PAP** (klasik) | **PAPE** |
 |---|---|---|
@@ -104,7 +104,7 @@ Di kalangan pelatih beredar gagasan bahwa kontraksi berat singkat sebelum bertan
 | Waktu paruh / jangka | Sangat singkat (waktu paruh ±28 detik) | Terlihat beberapa menit setelah kontraksi intens |
 | Mekanisme yang diajukan | Fosforilasi rantai ringan miosin pada serat tipe II | Perubahan suhu otot, kadar air sel otot, dan aktivasi otot |
 
-Temuan penting untuk praktik: waktu berlangsungnya PAP **jarang cocok** dengan waktu peningkatan performa sukarela. Sebagian peneliti mempertanyakan apakah PAP benar-benar menyumbang pada PAPE dalam kondisi nyata. Selain itu, bukti bahwa PAP penting secara praktis **minim** bila atlet sudah melakukan **pemanasan aktif yang menyeluruh** `[3]`.
+Temuan penting untuk praktik: waktu berlangsungnya PAP **jarang cocok** dengan waktu peningkatan performa sukarela. Sebagian peneliti mempertanyakan apakah PAP benar-benar menyumbang pada PAPE dalam kondisi nyata. Selain itu, bukti bahwa PAP penting secara praktis **minim** bila atlet sudah melakukan **pemanasan aktif yang menyeluruh** [[3]](#ref-3).
 
 **Pelajaran praktis (interpretasi):** daripada mencari "trik" kontraksi berat sebelum naik matras, prioritaskan **pemanasan aktif yang lengkap**. Bila pelatih ingin bereksperimen dengan aktivasi tambahan, lakukan secara hati-hati, uji pada sesi latihan, dan jangan menjanjikan efek pasti kepada atlet.
 
@@ -116,7 +116,7 @@ Temuan penting untuk praktik: waktu berlangsungnya PAP **jarang cocok** dengan w
 
 #### Temuan: Risiko Spesialisasi dan Beban Berlebih
 
-Studi kasus-kontrol Jayanthi dan rekan (2015) membandingkan **822 atlet muda cedera** dengan **368 atlet muda tidak cedera** (usia 7–18 tahun) dari klinik kedokteran olahraga dan layanan primer di Chicago `[4]`. Setelah memperhitungkan usia dan jumlah jam latihan per minggu:
+Studi kasus-kontrol Jayanthi dan rekan (2015) membandingkan **822 atlet muda cedera** dengan **368 atlet muda tidak cedera** (usia 7–18 tahun) dari klinik kedokteran olahraga dan layanan primer di Chicago [[4]](#ref-4). Setelah memperhitungkan usia dan jumlah jam latihan per minggu:
 
 | Faktor | Hasil (*odds ratio*, 95% CI) |
 |---|:-:|
@@ -125,7 +125,7 @@ Studi kasus-kontrol Jayanthi dan rekan (2015) membandingkan **822 atlet muda ced
 | Jam olahraga per minggu **lebih banyak dari usia dalam tahun** → cedera *overuse* serius | OR 2,07 (1,40–3,05) |
 | Rasio olahraga terorganisir **:** bermain bebas **> 2 : 1** per minggu → cedera *overuse* serius | OR 1,87 (1,26–2,76) |
 
-Satu temuan lagi layak dicatat: **laju pertumbuhan tidak berhubungan dengan risiko cedera** dalam studi ini (4,8 cm/tahun pada kedua kelompok) `[4]`.
+Satu temuan lagi layak dicatat: **laju pertumbuhan tidak berhubungan dengan risiko cedera** dalam studi ini (4,8 cm/tahun pada kedua kelompok) [[4]](#ref-4).
 
 ```mermaid
 flowchart TD
@@ -135,15 +135,15 @@ flowchart TD
     B --> D
 ```
 
-> **Peringatan membaca.** Studi kasus-kontrol menunjukkan **keterkaitan**, bukan bukti sebab-akibat. Data dikumpulkan lewat survei dan catatan medis, sehingga rentan bias ingatan. Peneliti sendiri menyebutnya sebagai panduan bagi klinisi saat berkonsultasi dengan atlet muda dan orang tua `[4]`. Studi ini juga **bukan studi taekwondo**, melainkan atlet muda dari berbagai cabang.
+> **Peringatan membaca.** Studi kasus-kontrol menunjukkan **keterkaitan**, bukan bukti sebab-akibat. Data dikumpulkan lewat survei dan catatan medis, sehingga rentan bias ingatan. Peneliti sendiri menyebutnya sebagai panduan bagi klinisi saat berkonsultasi dengan atlet muda dan orang tua [[4]](#ref-4). Studi ini juga **bukan studi taekwondo**, melainkan atlet muda dari berbagai cabang.
 
 **Level bukti: 🟡 B** (observasional terkontrol; transfer ke taekwondo anak belum diverifikasi).
 
 #### Kerangka Perkembangan: Model YPD
 
-Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical Development (YPD) Model**, sebuah pendekatan perkembangan atletik jangka panjang yang mempertimbangkan kematangan biologis anak, bukan semata-mata usia kalender `[5]`.
+Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical Development (YPD) Model**, sebuah pendekatan perkembangan atletik jangka panjang yang mempertimbangkan kematangan biologis anak, bukan semata-mata usia kalender [[5]](#ref-5).
 
-> **Catatan penyusun.** Rincian isi model YPD (misalnya penekanan komponen di tiap tahap kematangan) harus dibaca langsung dari sumber aslinya `[5]` sebelum dijadikan pedoman program. Pada draf ini hanya DOI yang diverifikasi. Ringkasan rincian akan ditambahkan setelah naskah aslinya ditelaah.
+> **Catatan penyusun.** Rincian isi model YPD (misalnya penekanan komponen di tiap tahap kematangan) harus dibaca langsung dari sumber aslinya [[5]](#ref-5) sebelum dijadikan pedoman program. Pada draf ini hanya DOI yang diverifikasi. Ringkasan rincian akan ditambahkan setelah naskah aslinya ditelaah.
 
 **Level bukti: 🟠 C** (model konseptual).
 
@@ -153,17 +153,17 @@ Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical
 
 | # | Klaim | Level | Sumber | Catatan transfer ke taekwondo |
 |:-:|---|:-:|---|---|
-| 1 | Simulasi 3 × 2 menit: aerobik ±66%, fosfagen ±30%, glikolitik ±4% | 🟠 C | `[1]` | Langsung taekwondo, tetapi n = 10 putra dewasa |
-| 2 | Rasio aksi intens : non-intens ≈ 1 : 7 | 🟠 C | `[1]` | Langsung taekwondo |
-| 3 | Atlet elit: lemak rendah, daya tungkai tinggi, fleksibilitas tinggi, kebugaran aerobik sedang–tinggi | 🟠 C | `[2]` | Langsung taekwondo; deskriptif |
-| 4 | PAP ≠ PAPE; PAP kecil perannya bila pemanasan aktif menyeluruh | 🟠 C | `[3]` | Umum (bukan khusus taekwondo) |
-| 5 | Spesialisasi satu cabang dan jam olahraga > usia meningkatkan odds cedera overuse serius | 🟡 B | `[4]` | Atlet muda lintas cabang |
-| 6 | Perkembangan atletik anak sebaiknya mempertimbangkan kematangan biologis | 🟠 C | `[5]` | Kerangka konseptual |
+| 1 | Simulasi 3 × 2 menit: aerobik ±66%, fosfagen ±30%, glikolitik ±4% | 🟠 C | [[1]](#ref-1) | Langsung taekwondo, tetapi n = 10 putra dewasa |
+| 2 | Rasio aksi intens : non-intens ≈ 1 : 7 | 🟠 C | [[1]](#ref-1) | Langsung taekwondo |
+| 3 | Atlet elit: lemak rendah, daya tungkai tinggi, fleksibilitas tinggi, kebugaran aerobik sedang–tinggi | 🟠 C | [[2]](#ref-2) | Langsung taekwondo; deskriptif |
+| 4 | PAP ≠ PAPE; PAP kecil perannya bila pemanasan aktif menyeluruh | 🟠 C | [[3]](#ref-3) | Umum (bukan khusus taekwondo) |
+| 5 | Spesialisasi satu cabang dan jam olahraga > usia meningkatkan odds cedera overuse serius | 🟡 B | [[4]](#ref-4) | Atlet muda lintas cabang |
+| 6 | Perkembangan atletik anak sebaiknya mempertimbangkan kematangan biologis | 🟠 C | [[5]](#ref-5) | Kerangka konseptual |
 
 ## ❓ Batas Pengetahuan
 
 - **Belum jelas** berapa kontribusi energi sebenarnya pada atlet putri, anak, dan pada pertandingan resmi.
-- **Diperdebatkan**: seberapa besar peran PAP/PAPE dalam praktik nyata `[3]`.
+- **Diperdebatkan**: seberapa besar peran PAP/PAPE dalam praktik nyata [[3]](#ref-3).
 - **Belum diverifikasi** dalam draf ini: perbandingan antar-studi kontribusi energi taekwondo, serta temuan khusus tentang spesialisasi dini di taekwondo anak.
 - **Mengikuti perubahan aturan**: sistem penilaian modern dapat mengubah pola aksi dan pemulihan yang diukur pada studi lama.
 
@@ -173,17 +173,17 @@ Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical
 
 > ℹ️ Skenario berikut adalah **ilustrasi fiktif** untuk membantu membayangkan konsep, bukan data penelitian.
 
-- **Kasus pelatih (ilustrasi):** Seorang pelatih membuat latihan "ronde penuh" berupa 2 menit sparring tanpa jeda, diulang tujuh kali. Atlet kelelahan, pelatih puas. Bila pola pertandingan memang berkisar pada aksi singkat dengan banyak momen intensitas rendah (kira-kira 1 : 7) `[1]`, latihan seperti itu menguji hal yang berbeda dari tuntutan pertandingan. *Pertanyaan yang layak diajukan: apakah latihan ini meniru pola kerja pertandingan, atau hanya membuat atlet lelah?*
-- **Kasus orang tua (ilustrasi):** Orang tua dari anak berusia 10 tahun ingin anaknya latihan taekwondo setiap hari sepanjang tahun "supaya cepat juara". Data atlet muda menunjukkan bahwa jam olahraga terorganisir yang melebihi usia anak dalam tahun dan porsi bermain bebas yang sangat kecil berkaitan dengan risiko cedera *overuse* serius yang lebih tinggi `[4]`. *Pertanyaannya bukan "berapa jam", melainkan "apakah anak masih punya ruang bermain dan beragam gerak?"*
+- **Kasus pelatih (ilustrasi):** Seorang pelatih membuat latihan "ronde penuh" berupa 2 menit sparring tanpa jeda, diulang tujuh kali. Atlet kelelahan, pelatih puas. Bila pola pertandingan memang berkisar pada aksi singkat dengan banyak momen intensitas rendah (kira-kira 1 : 7) [[1]](#ref-1), latihan seperti itu menguji hal yang berbeda dari tuntutan pertandingan. *Pertanyaan yang layak diajukan: apakah latihan ini meniru pola kerja pertandingan, atau hanya membuat atlet lelah?*
+- **Kasus orang tua (ilustrasi):** Orang tua dari anak berusia 10 tahun ingin anaknya latihan taekwondo setiap hari sepanjang tahun "supaya cepat juara". Data atlet muda menunjukkan bahwa jam olahraga terorganisir yang melebihi usia anak dalam tahun dan porsi bermain bebas yang sangat kecil berkaitan dengan risiko cedera *overuse* serius yang lebih tinggi [[4]](#ref-4). *Pertanyaannya bukan "berapa jam", melainkan "apakah anak masih punya ruang bermain dan beragam gerak?"*
 
 ---
 
 ## ⚡ Panduan Aksi Nyata dari Bab Ini (Action Checklist)
 
 1. [ ] **Audit sesi latihan**: catat berapa menit aksi intens dibandingkan menit latihan total. Apakah jeda dan pemulihan dirancang, atau hanya tidak sengaja ada?
-2. [ ] **Pemanasan aktif lengkap**: pastikan rutinitas pemanasan meningkatkan suhu tubuh dan mengaktifkan tungkai serta inti sebelum aksi eksplosif `[3]`.
-3. [ ] **Bangun profil serba-bisa**: periksa apakah program memuat daya tungkai, kekuatan, fleksibilitas, dan kebugaran aerobik, bukan hanya satu `[2]`.
-4. [ ] **Untuk atlet anak**: hitung jam olahraga terorganisir per minggu dibandingkan usia (tahun) dan dibandingkan waktu bermain bebas `[4]`. Beri ruang bagi variasi gerak dan olahraga lain.
+2. [ ] **Pemanasan aktif lengkap**: pastikan rutinitas pemanasan meningkatkan suhu tubuh dan mengaktifkan tungkai serta inti sebelum aksi eksplosif [[3]](#ref-3).
+3. [ ] **Bangun profil serba-bisa**: periksa apakah program memuat daya tungkai, kekuatan, fleksibilitas, dan kebugaran aerobik, bukan hanya satu [[2]](#ref-2).
+4. [ ] **Untuk atlet anak**: hitung jam olahraga terorganisir per minggu dibandingkan usia (tahun) dan dibandingkan waktu bermain bebas [[4]](#ref-4). Beri ruang bagi variasi gerak dan olahraga lain.
 5. [ ] **Libatkan ahli**: konsultasikan beban pada atlet muda dengan tenaga kesehatan olahraga.
 
 ---
@@ -191,7 +191,7 @@ Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Sesi latihan sebaiknya diarahkan terutama pada peningkatan sistem anaerobik alaktat (bertanggung jawab atas aksi berintensitas tinggi) dan sistem aerobik (bertanggung jawab atas proses pemulihan di antara aksi-aksi itu)."*  
-> — Campos dkk. (2012), parafrase terjemahan penyusun dari kesimpulan abstrak `[1]`
+> — Campos dkk. (2012), parafrase terjemahan penyusun dari kesimpulan abstrak [[1]](#ref-1)
 
 **Pertanyaan Refleksi Diri**:
 - *Dari semua yang saya lakukan di sesi latihan, mana yang benar-benar meniru pola kerja pertandingan, dan mana yang hanya "membuat capek"?*
