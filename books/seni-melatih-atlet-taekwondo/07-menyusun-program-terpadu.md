@@ -99,15 +99,23 @@ gantt
 
 Banyak pelatih bingung mendistribusikan sesi dalam satu minggu agar tidak terjadi tabrakan adaptasi. Tabel berikut adalah contoh arsitektur mikrosiklus 7 hari berbasis bukti ilmiah:
 
-| Hari | Sesi Pagi (06.30–08.00) | Sesi Sore (16.00–18.00) | Target Fisiologis Utama | Estimasi Beban (sRPE) |
+| Hari | Sesi Pagi (06.30–08.00) | Sesi Sore (16.00–18.00) | Target Fisiologis Utama | Estimasi&nbsp;Beban&nbsp;(sRPE) |
 |---|---|---|---|:---:|
-| **Senin** | **Kekuatan & PAPE**: Squat berat ($85\%$ 1RM) + Box Jump kontras | **Teknik Kicking & Footwork**: Penajaman sudut serangan & transisi cepat | Neuromuskular + Efisiensi Gerak | **Sedang–Tinggi (600 AU)** |
-| **Selasa** | *Istirahat Mandiri / Peregangan* | **HIIT Spesifik Taekwondo**: Interval pad 4 detik kerja : 16 detik footwork (10 repetisi $\times$ 3 set) [[26]](#ref-26) | Kapasitas Anaerobik Alaktik & Pemulihan Aerobik | **Tinggi (700 AU)** |
-| **Rabu** | *Istirahat Total* | **Pemulihan Aktif & Taktik**: Mobilitas panggul/hamstring 30 menit + Bedah Video Lawan 45 menit | Regenerasi Saraf & Kognitif | **Rendah (150 AU)** |
-| **Kamis** | **Daya Ledak & Reaktif**: Trap Bar Deadlift eksplosif + Depth Jump | **Drill-Sparring Situasional**: Latihan skenario poin (tertinggal 2 poin, sisa 20 detik) | *Power* Maksimal & Antisipasi Taktis | **Tinggi (650 AU)** |
-| **Jumat** | *Istirahat Mandiri* | **Sparring PSS Terkontrol**: 3 ronde $\times$ 2 menit dengan sensor elektronik, penekanan akurasi | Adaptasi Kompetisi Nyata | **Sedang (500 AU)** |
-| **Sabtu** | **Aerobic Flush & Sirkuit Inti**: Jogging santai 20 menit + stabilitas *core* | *Libur Sore* | Pembersihan Sisa Metabolit & Integritas Sendi | **Rendah (200 AU)** |
-| **Minggu** | 🛌 **TOTAL REST**: Bebas latihan fisik, pemulihan mental, tidur cukup $\ge 8,5$ jam | 🛌 **TOTAL REST** | Konsolidasi Sistem Saraf Pusat (CNS) & Rekonstruksi Jaringan | **Nol (0 AU)** |
+| **Senin** | **Kekuatan & PAPE**: Squat berat ($85\%$ 1RM) + Box Jump kontras | **Teknik Kicking & Footwork**: Penajaman sudut serangan & transisi cepat | Neuromuskular + Efisiensi Gerak | **Sedang–Tinggi (600&nbsp;AU)** |
+| **Selasa** | *Istirahat Mandiri / Peregangan* | **HIIT Spesifik Taekwondo**: Interval pad 4 detik kerja : 16 detik footwork (10 repetisi $\times$ 3 set) [[26]](#ref-26) | Kapasitas Anaerobik Alaktik & Pemulihan Aerobik | **Tinggi (700&nbsp;AU)** |
+| **Rabu** | *Istirahat Total* | **Pemulihan Aktif & Taktik**: Mobilitas panggul/hamstring 30 menit + Bedah Video Lawan 45 menit | Regenerasi Saraf & Kognitif | **Rendah (150&nbsp;AU)** |
+| **Kamis** | **Daya Ledak & Reaktif**: Trap Bar Deadlift eksplosif + Depth Jump | **Drill-Sparring Situasional**: Latihan skenario poin (tertinggal 2 poin, sisa 20 detik) | *Power* Maksimal & Antisipasi Taktis | **Tinggi (650&nbsp;AU)** |
+| **Jumat** | *Istirahat Mandiri* | **Sparring PSS Terkontrol**: 3 ronde $\times$ 2 menit dengan sensor elektronik, penekanan akurasi | Adaptasi Kompetisi Nyata | **Sedang (500&nbsp;AU)** |
+| **Sabtu** | **Aerobic Flush & Sirkuit Inti**: Jogging santai 20 menit + stabilitas *core* | *Libur Sore* | Pembersihan Sisa Metabolit & Integritas Sendi | **Rendah (200&nbsp;AU)** |
+| **Minggu** | 🛌 **TOTAL REST**: Bebas latihan fisik, pemulihan mental, tidur cukup $\ge 8,5$ jam | 🛌 **TOTAL REST** | Konsolidasi Sistem Saraf Pusat (CNS) & Rekonstruksi Jaringan | **Nol (0&nbsp;AU)** |
+
+**📌 Catatan Istilah: Apa itu AU (*Arbitrary Units*)?**  
+**AU (*Arbitrary Units* / Satuan Arbitrer)** adalah satuan kuantifikasi beban latihan internal menurut metode **Session-RPE (sRPE)** yang diperkenalkan oleh Carl Foster dkk. (2001) [[10]](#ref-10). Disebut *arbitrary* (satuan relatif tanpa dimensi fisik baku seperti kilogram, detik, atau meter) karena angkanya diperoleh dari perkalian antara **skor persepsi kelelahan subjektif atlet (RPE skala 0–10)** dengan **durasi sesi latihan dalam menit**:
+
+$$\text{Beban Latihan (AU)} = \text{Skor sRPE (0–10)} \times \text{Durasi Latihan (menit)}$$
+
+* **Contoh Perhitungan**: Jika atlet menjalani latihan selama **75 menit** dan menilai tingkat kelelahan sesi tersebut pada angka **RPE 8** (sangat berat), maka beban sesi tersebut adalah $8 \times 75 = \mathbf{600\text{ AU}}$. Apabila dalam satu hari terdapat 2 sesi (pagi dan sore), nilai AU dari kedua sesi dijumlahkan menjadi total beban harian.
+* **Panduan Acuan Beban Harian Taekwondo**: **Rendah / Pemulihan** ($<250\text{ AU}$), **Sedang** ($350–550\text{ AU}$), dan **Tinggi / Keras** ($\ge 600\text{ AU}$). Prosedur pencatatan serta analisis fluktuasi mingguannya dijabarkan lebih rinci pada [Bagian 2.B di bawah](#b-rumus-beban-latihan-harian--mingguan).
 
 > 💡 **Tips Pelatih: Menghindari Efek Hambatan (*Interference Effect*)**  
 > 1. **Pemisahan Sesi**: Jangan pernah menggabungkan latihan ketahanan kardio berat (seperti lari interval panjang) *tepat sebelum* sesi angkat beban atau plyometrik. Kelelahan metabolik kardio menekan jalur pensinyalan molekuler mTOR yang dibutuhkan untuk adaptasi kekuatan dan daya ledak.  

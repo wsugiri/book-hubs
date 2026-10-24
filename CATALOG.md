@@ -313,6 +313,8 @@
 - **Judgment is the Decisive Skill**: Di bawah pengaruh leverage ekstrem, pertimbangan rasional yang 10% lebih akurat menghasilkan selisih nilai bernilai miliaran dolar.
 - **Desire is a Contract for Unhappiness**: Setiap hasrat adalah janji sukarela untuk menderita sampai keinginan terpenuhi; membatasi hasrat dan mengeliminasi status games adalah kunci kedamaian batin (*peace at rest*).
 
+📘 **[Master Hub](books/the-almanack-of-naval-ravikant/index.md)** &nbsp;|&nbsp; **[Part 1](books/the-almanack-of-naval-ravikant/01-membangun-kekayaan-dan-leverage.md)** &nbsp;|&nbsp; **[Part 2](books/the-almanack-of-naval-ravikant/02-pertimbangan-dan-model-mental.md)** &nbsp;|&nbsp; **[Part 3](books/the-almanack-of-naval-ravikant/03-seni-mempelajari-kebahagiaan.md)** &nbsp;|&nbsp; **[Part 4](books/the-almanack-of-naval-ravikant/04-menyelamatkan-diri-sendiri-dan-kebebasan.md)**
+
 ---
 
 ## 🏆 Sains Olahraga & Pembinaan Atlet

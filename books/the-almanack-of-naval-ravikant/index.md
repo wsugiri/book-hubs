@@ -1,5 +1,9 @@
 # 📖 The Almanack of Naval Ravikant: Petunjuk Menuju Kekayaan dan Kebahagiaan
 
+<div align="center">
+  <img src="cover.jpg" width="200" alt="The Almanack of Naval Ravikant Cover" style="border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 12px;" />
+</div>
+
 > 📚 **[Kembali ke Katalog Utama (CATALOG.md)](../../CATALOG.md)**  
 > **Penulis**: Eric Jorgenson (Kurator Gagasan & Percakapan Naval Ravikant) &nbsp;|&nbsp; **Kata Pengantar**: Tim Ferriss  
 > **Tahun Terbit**: 2020 &nbsp;|&nbsp; **Penerbit**: Magrathea Publishing  
@@ -31,27 +35,25 @@ Namun, kekayaan materi hanyalah prasyarat untuk menyelesaikan masalah-masalah ua
 
 ## 💡 2. Peta Konsep & Kerangka Berpikir Utama (Core Frameworks)
 
-```text
-                       ARSITEKTUR HIDUP NAVAL RAVIKANT
-                                      │
-          ┌───────────────────────────┴───────────────────────────┐
-          ▼                                                       ▼
-   [ PILAR KEKAYAAN ]                                      [ PILAR KEBAHAGIAAN ]
-          │                                                       │
- 1. Specific Knowledge (DNA Unik)                         1. Peace at Rest (Tanpa Hasrat Liar)
- 2. High Accountability (Nama Baik)                       2. Eliminasi Status Games
- 3. Modern Leverage:                                      3. 4 Pilar Kesehatan Absolut:
-    • Tenaga Kerja (Labor)                                   • Tidur Cukup & Berkualitas
-    • Modal Uang (Capital)                                   • Nutrisi Alami / Diet Utuh
-    • Kode & Media (Permissionless)                          • Latihan Beban & Kardio
- 4. Equity (Memiliki Bagian Bisnis)                          • Meditasi & Menjinakkan Ego
-          │                                                       │
-          └───────────────────────────┬───────────────────────────┘
-                                      ▼
-                           [ KEMERDEKAAN WAKTU ]
-                    "Freedom TO do what you want,
-                     Freedom FROM doing what you hate."
+```mermaid
+flowchart TD
+    Root["🏛️ ARSITEKTUR HIDUP NAVAL RAVIKANT"] --> W["💰 PILAR KEKAYAAN<br/>(Bebas dari Masalah Finansial)"]
+    Root --> H["🕊️ PILAR KEBAHAGIAAN<br/>(Bebas dari Hasrat & Distraksi)"]
+    
+    W --> W1["1. Specific Knowledge<br/>(Keahlian unik otentik)"]
+    W --> W2["2. High Accountability<br/>(Nama pribadi & risiko)"]
+    W --> W3["3. Modern Leverage<br/>• Tenaga Kerja & Modal<br/>• Kode & Media Digital"]
+    W --> W4["4. Equity Ownership<br/>(Memiliki bagian bisnis)"]
+    
+    H --> H1["1. Peace at Rest<br/>(Batin tenang tanpa hasrat liar)"]
+    H --> H2["2. Eliminasi Status Games<br/>(Fokus positive-sum game)"]
+    H --> H3["3. 4 Pilar Kesehatan Absolut<br/>(Tidur, nutrisi, olahraga, meditasi)"]
+    H --> H4["4. Penjinakan Ego<br/>(Menerima realitas apa adanya)"]
+    
+    W --> Freedom["⏰ KEMERDEKAAN WAKTU HAKIKI<br/>'Freedom TO do what you want,<br/>Freedom FROM doing what you hate.'"]
+    H --> Freedom
 ```
+
 
 - **Pilar 1: Specific Knowledge & Accountability**: Keahlian yang tidak bisa diajarkan lewat kurikulum umum di sekolah, lahir dari rasa penasaran alami sejak kecil. Digabungkan dengan keberanian menaruh nama pribadi di depan publik untuk menanggung risiko sekaligus memanen hasil (*skin in the game*).
 - **Pilar 2: The Three Leverages (Labor, Capital, Code & Media)**: Peralihan dari leverage lama yang membutuhkan izin dan persetujuan orang lain ke leverage baru era digital yang berbiaya marjinal nol (*zero marginal cost of reproduction*).
