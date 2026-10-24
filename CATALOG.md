@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-12%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-12%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-13%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-13%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -288,6 +288,30 @@
 - **Misteri Waktu Warren Buffett**: Bunga majemuk membutuhkan ketahanan waktu panjang, bukan return spektakuler sesaat (96% kekayaan Buffett didapat setelah usia 65).
 - **The Man in the Car Paradox**: Orang mengagumi mobil sport mewah yang lewat, bukan pengemudinya; jangan beli barang mewah demi mengejar rasa hormat.
 - **Menjadi Kaya vs Bertahan Kaya**: Menjadi kaya menuntut keberanian mengambil risiko, sementara bertahan kaya menuntut kerendahan hati dan paranoia yang sehat.
+
+<br/>
+
+### [The Almanack of Naval Ravikant: Petunjuk Menuju Kekayaan dan Kebahagiaan](books/the-almanack-of-naval-ravikant/index.md)
+
+<div align="center">
+  <a href="books/the-almanack-of-naval-ravikant/index.md">
+    <img src="books/the-almanack-of-naval-ravikant/cover.jpg" width="280" alt="The Almanack of Naval Ravikant Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Eric Jorgenson & Naval Ravikant &nbsp;|&nbsp; **Tahun**: 2020 &nbsp;|&nbsp; **Penerbit**: Magrathea Publishing &nbsp;|&nbsp; **Estimasi Baca**: ~60–80 Menit (4 Modul)  
+> `📈 Kebebasan Finansial` `⚡ Permissionless Leverage` `🧠 Specific Knowledge` `🕊️ Seni Kebahagiaan`
+
+> **💡 The Big Idea:**  
+> *"Menciptakan kekayaan bukanlah hasil dari kerja keras fisik membabi-buta, melainkan penguasaan Specific Knowledge dan Permissionless Leverage (kode dan media) yang bekerja saat Anda tidur. Namun kekayaan hanyalah prasyarat untuk menyelesaikan masalah uang; kedamaian batin sejati menuntut penjinakan hasrat dan kebebasan mengendalikan waktu Anda sendiri."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Specific Knowledge & Accountability**: Keahlian unik yang tidak bisa diajarkan lewat kurikulum sekolah, dikombinasikan dengan keberanian menanggung risiko dengan nama pribadi (*skin in the game*).
+- **The Three Leverages**: Beralih dari leverage lama (tenaga kerja dan modal) ke leverage modern era internet (kode software dan media) yang berbiaya reproduksi marjinal nol.
+- **Judgment is the Decisive Skill**: Di bawah pengaruh leverage ekstrem, pertimbangan rasional yang 10% lebih akurat menghasilkan selisih nilai bernilai miliaran dolar.
+- **Desire is a Contract for Unhappiness**: Setiap hasrat adalah janji sukarela untuk menderita sampai keinginan terpenuhi; membatasi hasrat dan mengeliminasi status games adalah kunci kedamaian batin (*peace at rest*).
 
 ---
 
