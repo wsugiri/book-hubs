@@ -8,7 +8,7 @@
 > **Penyusun**: Book Hubs (naskah orisinal berbasis tinjauan literatur ilmiah)  
 > **Tahun Terbit**: 2026 | **Penerbit**: Book Hubs Original  
 > **Genre**: Sains Olahraga, Fisiologi Latihan, Kesehatan Atlet, Psikologi Performa  
-> **Status Naskah**: 🟢 Selesai — Edisi Lengkap (7 dari 7 Bab Selesai Divalidasi)  
+> **Status Naskah**: 🟢 Selesai — Edisi Lengkap (9 Bab Lengkap Divalidasi)  
 > **Sifat Buku**: Buku acuan netral. Tidak mempromosikan produk, aplikasi, maupun merek apa pun.
 
 ---
@@ -38,6 +38,12 @@ Buku ini disusun sebagai **rujukan kerja bagi pelatih, atlet, orang tua, dan pen
 - ✅ 📘 **[Bab 7: Menyusun Program Terpadu: Dari Periodisasi hingga Hari Pertandingan](07-menyusun-program-terpadu.md)**  
   *Sintesis bab 1–6: makrosiklus tahunan 16 minggu, monitoring mandiri bebas alat (kertas/spreadsheet), pohon keputusan penyesuaian beban harian, serta sinergi segitiga pelatih-medis-atlet.*
 
+- ✅ 📘 **[Bab 8: Lanskap Sistem Pendamping: Ekosistem Teknologi Pemantauan & Manajemen Atlet](08-lanskap-sistem-pendamping-dan-teknologi-atlet.md)**  
+  *Tinjauan netral 5 kategori teknologi olahraga (AMS, biometrik, analisis video, manajemen ekosistem dojang, dan spreadsheet mandiri), fenomena psikologis pelaporan atlet ("I lied a little bit"), serta batas penerapan digital.*
+
+- ✅ 📘 **[Bab 9: Alur Kerja Pembinaan Terstruktur: Kerangka Kerja Operasional Lapangan](09-alur-kerja-pembinaan-terstruktur-non-it.md)**  
+  *Cetak biru transformasi intuisi melatih menjadi sistem kerja: siklus 5 gerbang dojang (intake/profiling, periodisasi, daily loop, triage kelelahan, debrief kejuaraan), format papan fisik dojang, serta panduan menyiapkan dojang menuju digitalisasi.*
+
 ---
 
 ## 🎯 1. Tesis & Posisi Buku
@@ -48,7 +54,7 @@ Dunia bela diri kaya akan tradisi pelatihan: sebagian bijak, sebagian lagi hanya
 
 Buku ini sengaja dibedakan dari dua jenis bacaan yang umum:
 
-| Jenis bacaan | Kelemahan umum | Pendekatan buku ini |
+| Jenis&nbsp;bacaan | Kelemahan&nbsp;umum | Pendekatan&nbsp;buku&nbsp;ini |
 |---|---|---|
 | Buku motivasi bela diri | Klise, tanpa dasar fisiologis | Setiap klaim penting disertai sitasi yang dapat dilacak |
 | Katalog teknik & silabus | Tidak menjelaskan adaptasi tubuh di baliknya | Menjelaskan *mengapa* tubuh merespons latihan tertentu |
@@ -127,7 +133,7 @@ Klaim berikut sering beredar tetapi **belum diperiksa ke sumber primer** pada dr
 
 Nomor `[n]` dipakai konsisten di seluruh bab. Setiap bab juga memuat daftar pustakanya sendiri.
 
-| # | Sumber | Dipakai di |
+| # | Sumber | Dipakai&nbsp;di |
 |:-:|---|:-:|
 | [1] | Campos FAD, Bertuzzi R, Dourado AC, Santos VG, Franchini E. Energy demands in taekwondo athletes during combat simulation. *Eur J Appl Physiol*. 2012;112(4):1221–1228. doi:10.1007/s00421-011-2071-4. PMID: 21769736 | Bab 1 |
 | [2] | Bridge CA, Ferreira da Silva Santos J, Chaabène H, Pieter W, Franchini E. Physical and physiological profiles of taekwondo athletes. *Sports Med*. 2014;44(6):713–733. doi:10.1007/s40279-014-0159-9. PMID: 24549477 | Bab 1 |
@@ -151,11 +157,14 @@ Nomor `[n]` dipakai konsisten di seluruh bab. Setiap bab juga memuat daftar pust
 | [20] | Reale R, Slater G, Burke LM. Acute-weight-loss strategies for combat sports and applications to Olympic success. *Int J Sports Physiol Perform*. 2017;12(2):142–151. doi:10.1123/ijspp.2016-0211. PMID: 27347784 | Bab 4 |
 | [21] | Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:10.1136/bjsports-2023-106994. PMID: 37752011 | Bab 4 |
 | [22] | Robazza C, Bertollo M, Filho E, Hanin Y, Bortoli L. Perceived control and hedonic tone dynamics during performance in elite shooters. *Res Q Exerc Sport*. 2016;87(3):284–294. doi:10.1080/02701367.2016.1185081. PMID: 27253427 | Bab 5 |
-| [24] | Halson SL. Monitoring training load to understand fatigue in athletes. *Sports Med*. 2014;44 Suppl 2(Suppl 2):S139–S147. doi:10.1007/s40279-014-0253-z. PMID: 25200666 | Bab 6, Bab 7 |
+| [23] | Robazza C, Pellizzari M, Bertollo M, Hanin YL. Functional impact of emotions on athletic performance: comparing the IZOF model and the directional perception approach. *J Sports Sci*. 2008;26(10):1033–1047. doi:10.1080/02640410802027352. PMID: 18608828 | Bab 5 |
+| [24] | Halson SL. Monitoring training load to understand fatigue in athletes. *Sports Med*. 2014;44 Suppl 2(Suppl 2):S139–S147. doi:10.1007/s40279-014-0253-z. PMID: 25200666 | Bab 6, Bab 7, Bab 8 |
 | [25] | Roberts LA, Raastad T, Markworth JF, et al. Post-exercise cold water immersion attenuates acute anabolic signalling and long-term adaptations in muscle to strength training. *J Physiol*. 2015;593(18):4285–4301. doi:10.1113/JP270570. PMID: 26174323 | Bab 6, Bab 7 |
 | [26] | Franchini E. High-Intensity Interval Training Prescription for Combat-Sport Athletes. *Int J Sports Physiol Perform*. 2020;15(6):767–776. doi:10.1123/ijspp.2020-0289. PMID: 32502972 | Bab 7 |
+| [27] | Bromley S, Drew M, Talpey S, McIntosh A, Finch C. Collecting Health and Exposure Data in Australian Olympic Combat Sports: Feasibility Study Utilizing an Electronic System. *JMIR Hum Factors*. 2018;5(4):e27. doi:10.2196/humanfactors.9541. PMID: 30305257 | Bab 8 |
+| [28] | Coventry M, Timler A, Mosler AB, et al. "I lied a little bit." A qualitative study exploring the perspectives of elite Australian athletes on self-reported data. *Phys Ther Sport*. 2023;60:91–97. doi:10.1016/j.ptsp.2023.01.009. PMID: 36738670 | Bab 8, Bab 9 |
 
-> Bibliografi induk ini merangkum 26 literatur ilmiah rujukan berbobot tinggi (Level A & B) yang telah diverifikasi melalui basis data PubMed dan Crossref.
+> Bibliografi induk ini merangkum 28 literatur ilmiah rujukan berbobot tinggi (Level A & B) yang telah diverifikasi melalui basis data PubMed dan Crossref.
 
 ---
 

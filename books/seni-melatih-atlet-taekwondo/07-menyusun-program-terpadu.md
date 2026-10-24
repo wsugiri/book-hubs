@@ -38,7 +38,7 @@ Bab pamungkas ini dirancang sebagai **manual arsitektur latihan mandiri**. Buku 
 
 ## 🔬 Kotak Bukti Ilmiah Bab 7
 
-| Komponen Program | Klaim / Rekomendasi Praktis | Level Bukti | Rujukan Ilmiah Utama |
+| Komponen&nbsp;Program | Klaim&nbsp;/&nbsp;Rekomendasi&nbsp;Praktis | Level&nbsp;Bukti | Rujukan&nbsp;Ilmiah&nbsp;Utama |
 |---|---|:---:|---|
 | **Periodisasi HIIT Spesifik** | HIIT berbasis rasio kerja-istirahat taekwondo (1:3 hingga 1:7) meningkatkan kapasitas anaerobik tanpa merusak kualitas teknik | 🟡 Level B | Franchini (2020) [[26]](#ref-26) |
 | **Integrasi Beban Subjektif** | Pemantauan harian berbasis Session-RPE dan kuesioner kesejahteraan (*wellness*) mendeteksi kelelahan neuromuskular lebih cepat daripada biomarker darah rutin | 🟢 Level A | Saw dkk. (2016) [[14]](#ref-14); Haddad dkk. (2011) [[11]](#ref-11) |
@@ -104,7 +104,7 @@ Pelatih tidak membutuhkan software analitik berbayar untuk memantau atlet secara
 
 Setiap atlet mengisi 5 kolom ini di papan clipboard dojang atau formulir spreadsheet mandiri:
 
-| Parameter | Cara Pengisian | Skala Nilai | Ambang Waspada |
+| Parameter | Cara&nbsp;Pengisian | Skala&nbsp;Nilai | Ambang&nbsp;Waspada |
 |---|---|:---:|---|
 | **Durasi Tidur Semalam** | Jumlah jam tidur terlelap | Jam riil (misal: 7,5) | $< 7,0$ jam ⚠️ |
 | **Kualitas Tidur** | Bagaimana kesegaran saat bangun tidur | 1 (sangat buruk) – 5 (sangat segar) | Skor $\le 2$ ⚠️ |
@@ -131,17 +131,17 @@ Pelatih kepala harus memiliki protokol objektif ketika mendapati atlet tiba di d
 
 ```mermaid
 flowchart TD
-    Start([Atlet Tiba di Dojang]) --> CheckWellness{Pemeriksaan Kesiapan Harian:<br/>Tidur < 6,5 Jam ATAU<br/>DOMS >= 4 ATAU Stres >= 4?}
+    Start(["Atlet Tiba di Dojang"]) --> CheckWellness{"Pemeriksaan Kesiapan Harian:<br/>Tidur kurang dari 6,5 Jam ATAU<br/>DOMS >= 4 ATAU Stres >= 4?"}
     
-    CheckWellness -- Tidak (Semua Indikator Normal) --> NormalSession[Jalankan Program Sesi Penuh<br/>Intensitas & Volume Normal Sesuai Jadwal]
+    CheckWellness -- "Tidak (Semua Indikator Normal)" --> NormalSession["Jalankan Program Sesi Penuh<br/>Intensitas dan Volume Normal Sesuai Jadwal"]
     
-    CheckWellness -- Ya (Ditemukan Indikator Merah) --> CheckType{Kategori Sesi Hari Ini?}
+    CheckWellness -- "Ya (Ditemukan Indikator Merah)" --> CheckType{"Kategori Sesi Hari Ini?"}
     
-    CheckType -- Sesi Sparring Keras / Max Power --> ModifyHigh[🔴 MODIFIKASI TINGGI:<br/>1. Batalkan sparring kontak keras<br/>2. Ganti drill teknik berkecepatan rendah<br/>3. Alihkan fokus ke analisis video & taktik<br/>4. Selesaikan sesi 30 menit lebih awal]
+    CheckType -- "Sesi Sparring Keras / Max Power" --> ModifyHigh["🔴 MODIFIKASI TINGGI:<br/>1. Batalkan sparring kontak keras<br/>2. Ganti drill teknik berkecepatan rendah<br/>3. Alihkan fokus ke analisis video dan taktik<br/>4. Selesaikan sesi 30 menit lebih awal"]
     
-    CheckType -- Sesi Kondisioning / Lari --> ModifyMed[🟡 MODIFIKASI MODERAT:<br/>1. Kurangi volume lari/interval 40%<br/>2. Pertahankan jeda istirahat 2x lipat<br/>3. Prioritaskan hidrasi & peregangan aktif]
+    CheckType -- "Sesi Kondisioning / Lari" --> ModifyMed["🟡 MODIFIKASI MODERAT:<br/>1. Kurangi volume lari/interval 40 persen<br/>2. Pertahankan jeda istirahat 2x lipat<br/>3. Prioritaskan hidrasi dan peregangan aktif"]
     
-    CheckType -- Sesi Teknik Ringan / Pemulihan --> ProceedLight[🟢 LANJUTKAN DENGAN PEMANTAUAN:<br/>1. Jalankan sesi teknik ringan<br/>2. Tambahkan 15 menit mobilitas panggul<br/>3. Evaluasi kembali pasca-latihan]
+    CheckType -- "Sesi Teknik Ringan / Pemulihan" --> ProceedLight["🟢 LANJUTKAN DENGAN PEMANTAUAN:<br/>1. Jalankan sesi teknik ringan<br/>2. Tambahkan 15 menit mobilitas panggul<br/>3. Evaluasi kembali pasca-latihan"]
 ```
 
 ---
@@ -324,4 +324,4 @@ sequenceDiagram
 
 ## 🧭 Navigasi Bab
 
-⬅️ **[Bab Sebelumnya: Bab 6 — Fisiologi Pemulihan, Neurosains Tidur & Monitoring Kesiapan Atlet](06-fisiologi-pemulihan-dan-kualitas-tidur.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Utama & Bibliografi Induk Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📚 **[Kembali ke Katalog Lengkap Buku (CATALOG.md)](../../CATALOG.md)**
+⬅️ **[Bab Sebelumnya: Bab 6 — Fisiologi Pemulihan, Neurosains Tidur & Monitoring Kesiapan Atlet](06-fisiologi-pemulihan-dan-kualitas-tidur.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Utama & Bibliografi Induk Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Bab 8: Lanskap Sistem Pendamping & Teknologi Pemantauan Atlet](08-lanskap-sistem-pendamping-dan-teknologi-atlet.md)**

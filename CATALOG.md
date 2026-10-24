@@ -300,25 +300,25 @@
     <img src="books/seni-melatih-atlet-taekwondo/cover.jpg" width="280" alt="Seni Melatih Atlet Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
   </a>
   <br/>
-  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Lengkap 7 Bab Divalidasi)</b></sub>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Lengkap 9 Bab Divalidasi)</b></sub>
 </div>
 
-> **Penyusun**: Book Hubs (naskah orisinal berbasis literatur ilmiah) &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Sifat**: Buku acuan netral, bebas promosi produk &nbsp;|&nbsp; **Estimasi Baca**: ~120–150 Menit (7 Bab Lengkap)  
+> **Penyusun**: Book Hubs (naskah orisinal berbasis literatur ilmiah) &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Sifat**: Buku acuan netral, bebas promosi produk &nbsp;|&nbsp; **Estimasi Baca**: ~150–180 Menit (9 Bab Lengkap)  
 > `🔬 Fisiologi Latihan` `🩺 Sports Medicine` `🧠 Psikologi Performa` `🌙 Neurosains Tidur` `🥋 Taekwondo`
 
 > **💡 The Big Idea:**  
 > *"Atlet tidak dibentuk oleh seberapa keras ia dihancurkan, tetapi oleh seberapa tepat beban diberikan, seberapa baik ia pulih, dan seberapa jujur pelatih membedakan yang terbukti dari yang diwariskan."*
 
 **🔑 Kerangka Berpikir Utama:**
-- **Label Level Bukti (A–D)**: 26 literatur ilmiah tervalidasi (PubMed & Crossref), dilengkapi *Kotak Bukti* dan *Batas Pengetahuan* di tiap bab.
+- **Label Level Bukti (A–D)**: 28 literatur ilmiah tervalidasi (PubMed & Crossref), dilengkapi *Kotak Bukti* dan *Batas Pengetahuan* di tiap bab.
 - **Bioenergetika & Fisiologi**: Rasio kerja-istirahat taekwondo, profil fisik atlet Olimpiade, dan aktivasi PAPE.
 - **Beban, Periodisasi & Tapering**: Session-RPE, tinjauan kritis ACWR, serta protokol pemangkasan volume 40–60% dalam 14 hari tapering.
 - **Sports Medicine & Pencegahan**: Protokol akut PEACE & LOVE, kriteria gegar otak Amsterdam 2022, dan tes Return-to-Play objektif.
 - **Nutrisi & Berat Badan**: Diet rendah residu (low-residue) vs pencegahan dehidrasi ekstrem otak, sindrom REDs, serta rehidrasi natrium.
 - **Psikologi & Pemulihan**: Regulasi emosi IZOF, *physiological sigh* di pojok matras, neurobiologi tidur SWS/REM, dan eliminasi mitos mandi es.
-- **Program Terpadu Agnostik Alat**: Cetak biru makrosiklus 16 minggu, lembar log mandiri (kertas/spreadsheet), dan pohon keputusan beban harian.
+- **Program Terpadu & Lanskap Sistem**: Makrosiklus 16 minggu, tinjauan netral sistem pendamping (AMS/biometrik), serta alur kerja 5 gerbang dojang (operasional lapangan).
 
-📘 **[Master Hub](books/seni-melatih-atlet-taekwondo/index.md)** &nbsp;|&nbsp; **[Bab 1](books/seni-melatih-atlet-taekwondo/01-bioenergetika-dan-fisiologi-taekwondo.md)** &nbsp;|&nbsp; **[Bab 2](books/seni-melatih-atlet-taekwondo/02-periodisasi-beban-dan-tapering.md)** &nbsp;|&nbsp; **[Bab 3](books/seni-melatih-atlet-taekwondo/03-sports-medicine-dan-biomekanika-cedera.md)** &nbsp;|&nbsp; **[Bab 4](books/seni-melatih-atlet-taekwondo/04-nutrisi-hidrasi-dan-manajemen-berat-badan.md)** &nbsp;|&nbsp; **[Bab 5](books/seni-melatih-atlet-taekwondo/05-psikologi-performa-dan-ketahanan-mental.md)** &nbsp;|&nbsp; **[Bab 6](books/seni-melatih-atlet-taekwondo/06-fisiologi-pemulihan-dan-kualitas-tidur.md)** &nbsp;|&nbsp; **[Bab 7](books/seni-melatih-atlet-taekwondo/07-menyusun-program-terpadu.md)**
+📘 **[Master Hub](books/seni-melatih-atlet-taekwondo/index.md)** &nbsp;|&nbsp; **[Bab 1](books/seni-melatih-atlet-taekwondo/01-bioenergetika-dan-fisiologi-taekwondo.md)** &nbsp;|&nbsp; **[Bab 2](books/seni-melatih-atlet-taekwondo/02-periodisasi-beban-dan-tapering.md)** &nbsp;|&nbsp; **[Bab 3](books/seni-melatih-atlet-taekwondo/03-sports-medicine-dan-biomekanika-cedera.md)** &nbsp;|&nbsp; **[Bab 4](books/seni-melatih-atlet-taekwondo/04-nutrisi-hidrasi-dan-manajemen-berat-badan.md)** &nbsp;|&nbsp; **[Bab 5](books/seni-melatih-atlet-taekwondo/05-psikologi-performa-dan-ketahanan-mental.md)** &nbsp;|&nbsp; **[Bab 6](books/seni-melatih-atlet-taekwondo/06-fisiologi-pemulihan-dan-kualitas-tidur.md)** &nbsp;|&nbsp; **[Bab 7](books/seni-melatih-atlet-taekwondo/07-menyusun-program-terpadu.md)** &nbsp;|&nbsp; **[Bab 8](books/seni-melatih-atlet-taekwondo/08-lanskap-sistem-pendamping-dan-teknologi-atlet.md)** &nbsp;|&nbsp; **[Bab 9](books/seni-melatih-atlet-taekwondo/09-alur-kerja-pembinaan-terstruktur-non-it.md)**
 
 ---
 
