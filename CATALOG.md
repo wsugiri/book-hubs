@@ -2,9 +2,9 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-11%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-100%25%20Teardown-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
-[![Kategori](https://img.shields.io/badge/Kategori-3%20Bidang-7c3aed?style=for-the-badge)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-12%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-11%20Selesai%20%7C%201%20Draf-d97706?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
@@ -14,6 +14,7 @@
 - [🧠 Pengembangan Diri](#-pengembangan-diri)
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
+- [🏆 Sains Olahraga & Pembinaan Atlet](#-sains-olahraga--pembinaan-atlet)
 - [⏳ Daftar Incaran & Antrean Bedah (TBR: 0 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
@@ -287,6 +288,34 @@
 - **Misteri Waktu Warren Buffett**: Bunga majemuk membutuhkan ketahanan waktu panjang, bukan return spektakuler sesaat (96% kekayaan Buffett didapat setelah usia 65).
 - **The Man in the Car Paradox**: Orang mengagumi mobil sport mewah yang lewat, bukan pengemudinya; jangan beli barang mewah demi mengejar rasa hormat.
 - **Menjadi Kaya vs Bertahan Kaya**: Menjadi kaya menuntut keberanian mengambil risiko, sementara bertahan kaya menuntut kerendahan hati dan paranoia yang sehat.
+
+---
+
+## 🏆 Sains Olahraga & Pembinaan Atlet
+
+### [Seni Melatih Atlet: Fondasi Ilmiah Pembinaan Atlet Taekwondo](books/seni-melatih-atlet-taekwondo/index.md)
+
+<div align="center">
+  <a href="books/seni-melatih-atlet-taekwondo/index.md">
+    <img src="books/seni-melatih-atlet-taekwondo/cover.jpg" width="280" alt="Seni Melatih Atlet Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>🚧 <b>Draf — 2 dari 7 Bab Selesai</b></sub>
+</div>
+
+> **Penyusun**: Book Hubs (naskah orisinal berbasis literatur ilmiah) &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Sifat**: Buku acuan netral, bebas promosi produk &nbsp;|&nbsp; **Estimasi Baca**: ~60–75 Menit (2 Bab Pertama)  
+> `🔬 Fisiologi Latihan` `🩺 Kesehatan Atlet` `🧠 Psikologi Performa` `📚 Berbasis Bukti` `🥋 Taekwondo`
+
+> **💡 The Big Idea:**  
+> *"Atlet tidak dibentuk oleh seberapa keras ia dihancurkan, tetapi oleh seberapa tepat beban diberikan, seberapa baik ia pulih, dan seberapa jujur pelatih membedakan yang terbukti dari yang diwariskan."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Label Level Bukti (A–D)**: Setiap klaim penting ditandai kekuatan buktinya, dilengkapi *Kotak Bukti* dan *Batas Pengetahuan* di tiap bab.
+- **Bioenergetika Taekwondo**: Estimasi kontribusi energi aerobik, fosfagen, dan glikolitik saat simulasi pertandingan, serta profil fisik atlet internasional.
+- **Dosis Latihan yang Jujur**: Periodisasi, rasio beban akut–kronis (beserta kritik metodologisnya), session-RPE, spektrum *overreaching*–*overtraining*, dan *tapering*.
+- **Atlet Muda Bukan Atlet Dewasa Mini**: Bukti tentang spesialisasi dini, jam latihan, dan perlunya ruang bermain bebas.
+
+📘 **[Master Hub](books/seni-melatih-atlet-taekwondo/index.md)** &nbsp;|&nbsp; **[Bab 1: Bioenergetika & Profil Fisik](books/seni-melatih-atlet-taekwondo/01-bioenergetika-dan-fisiologi-taekwondo.md)** &nbsp;|&nbsp; **[Bab 2: Beban, Periodisasi & Tapering](books/seni-melatih-atlet-taekwondo/02-periodisasi-beban-dan-tapering.md)**
 
 ---
 
