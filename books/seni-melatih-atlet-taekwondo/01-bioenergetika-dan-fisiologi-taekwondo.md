@@ -202,20 +202,15 @@ Sebagai kerangka konseptual, Lloyd dan Oliver (2012) mengajukan **Youth Physical
 
 ## 📚 <a id="daftar-pustaka-bab-1"></a>Daftar Pustaka Bab 1
 
-<a id="ref-1"></a>
-1. Campos FAD, Bertuzzi R, Dourado AC, Santos VG, Franchini E. Energy demands in taekwondo athletes during combat simulation. *Eur J Appl Physiol*. 2012;112(4):1221–1228. doi:[10.1007/s00421-011-2071-4](https://doi.org/10.1007/s00421-011-2071-4). PMID: [21769736](https://pubmed.ncbi.nlm.nih.gov/21769736/)
+1. <a id="ref-1"></a>Campos FAD, Bertuzzi R, Dourado AC, Santos VG, Franchini E. Energy demands in taekwondo athletes during combat simulation. *Eur J Appl Physiol*. 2012;112(4):1221–1228. doi:[10.1007/s00421-011-2071-4](https://doi.org/10.1007/s00421-011-2071-4). PMID: [21769736](https://pubmed.ncbi.nlm.nih.gov/21769736/)
 
-<a id="ref-2"></a>
-2. Bridge CA, Ferreira da Silva Santos J, Chaabène H, Pieter W, Franchini E. Physical and physiological profiles of taekwondo athletes. *Sports Med*. 2014;44(6):713–733. doi:[10.1007/s40279-014-0159-9](https://doi.org/10.1007/s40279-014-0159-9). PMID: [24549477](https://pubmed.ncbi.nlm.nih.gov/24549477/)
+2. <a id="ref-2"></a>Bridge CA, Ferreira da Silva Santos J, Chaabène H, Pieter W, Franchini E. Physical and physiological profiles of taekwondo athletes. *Sports Med*. 2014;44(6):713–733. doi:[10.1007/s40279-014-0159-9](https://doi.org/10.1007/s40279-014-0159-9). PMID: [24549477](https://pubmed.ncbi.nlm.nih.gov/24549477/)
 
-<a id="ref-3"></a>
-3. Blazevich AJ, Babault N. Post-activation potentiation versus post-activation performance enhancement in humans: historical perspective, underlying mechanisms, and current issues. *Front Physiol*. 2019;10:1359. doi:[10.3389/fphys.2019.01359](https://doi.org/10.3389/fphys.2019.01359). PMID: [31736781](https://pubmed.ncbi.nlm.nih.gov/31736781/)
+3. <a id="ref-3"></a>Blazevich AJ, Babault N. Post-activation potentiation versus post-activation performance enhancement in humans: historical perspective, underlying mechanisms, and current issues. *Front Physiol*. 2019;10:1359. doi:[10.3389/fphys.2019.01359](https://doi.org/10.3389/fphys.2019.01359). PMID: [31736781](https://pubmed.ncbi.nlm.nih.gov/31736781/)
 
-<a id="ref-4"></a>
-4. Jayanthi NA, LaBella CR, Fischer D, Pasulka J, Dugas LR. Sports-specialized intensive training and the risk of injury in young athletes: a clinical case-control study. *Am J Sports Med*. 2015;43(4):794–801. doi:[10.1177/0363546514567298](https://doi.org/10.1177/0363546514567298). PMID: [25646361](https://pubmed.ncbi.nlm.nih.gov/25646361/)
+4. <a id="ref-4"></a>Jayanthi NA, LaBella CR, Fischer D, Pasulka J, Dugas LR. Sports-specialized intensive training and the risk of injury in young athletes: a clinical case-control study. *Am J Sports Med*. 2015;43(4):794–801. doi:[10.1177/0363546514567298](https://doi.org/10.1177/0363546514567298). PMID: [25646361](https://pubmed.ncbi.nlm.nih.gov/25646361/)
 
-<a id="ref-5"></a>
-5. Lloyd RS, Oliver JL. The Youth Physical Development Model: a new approach to long-term athletic development. *Strength Cond J*. 2012. doi:[10.1519/SSC.0b013e31825760ea](https://doi.org/10.1519/SSC.0b013e31825760ea)
+5. <a id="ref-5"></a>Lloyd RS, Oliver JL. The Youth Physical Development Model: a new approach to long-term athletic development. *Strength Cond J*. 2012. doi:[10.1519/SSC.0b013e31825760ea](https://doi.org/10.1519/SSC.0b013e31825760ea)
 
 > ⚕️ **Catatan medis:** isi bab ini bersifat edukatif dan bukan pengganti penilaian dokter olahraga atau tenaga kesehatan berwenang.
 
