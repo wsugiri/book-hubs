@@ -1,5 +1,6 @@
 # Bab 8: Lanskap Sistem Pendamping: Ekosistem Teknologi Pemantauan & Manajemen Atlet (Tinjauan Netral)
 
+> 📖 Hub Buku: **[Seni Melatih Atlet: Fondasi Ilmiah Pembinaan Atlet Taekwondo](index.md)**  
 > **Status Bab**: Selesai Divalidasi 🟢  
 > **Fokus Utama**: Pemetaan Kategori Sistem Teknologi Olahraga, Tinjauan Netral Platform Pendamping yang Eksis, Fenomena Psikologis Pelaporan Atlet, dan Analisis Kritis Penerapan Digital di Lapangan.
 

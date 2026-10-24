@@ -103,6 +103,8 @@ flowchart TD
     C2 --> E
     D1 --> E
     D2 --> E
+    E --> F["Bab 8: Lanskap sistem pendamping & teknologi"]
+    F --> G["Bab 9: Alur kerja pembinaan operasional lapangan"]
 ```
 
 ---

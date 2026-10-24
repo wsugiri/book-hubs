@@ -166,10 +166,16 @@ timeline
 <a id="ref-21"></a>
 21. Mountjoy M, Ackerman KE, Bailey DM, et al. 2023 International Olympic Committee’s (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). *Br J Sports Med*. 2023;57(17):1073–1097. doi:[10.1136/bjsports-2023-106994](https://doi.org/10.1136/bjsports-2023-106994). PMID: [37752011](https://pubmed.ncbi.nlm.nih.gov/37752011/)
 
+---
+
+### 🔗 Rujukan Silang Bab Sebelumnya
+
+- <span id="ref-4"></span>**[[4]](#ref-4)**: Jayanthi NA dkk. Sports-specialized intensive training and the risk of injury in young athletes (2015) → dibahas mendalam di **[Bab 1: Bioenergetika & Fisiologi Latihan](01-bioenergetika-dan-fisiologi-taekwondo.md#daftar-pustaka-bab-1)**
+
 > ⚕️ **Catatan medis:** Bab ini bersifat edukatif dan bukan pengganti konsultasi dengan dokter spesialis gizi klinis (*clinical nutritionist*) atau dokter kedokteran olahraga berwenang.
 
 ---
 
 ## 🧭 Navigasi Bab Selanjutnya
 
-⬅️ **[Bab Sebelumnya: Bab 3 — Sports Medicine & Biomekanika Cedera](03-sports-medicine-dan-biomekanika-cedera.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Bab 5: Neuropsikologi Bertarung & Ketahanan Mental Matras](05-psikologi-performa-dan-ketahanan-mental.md)**
+⬅️ **[Bab Sebelumnya: Bab 3 — Sports Medicine & Biomekanika Cedera](03-sports-medicine-dan-biomekanika-cedera.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Bab 5: Psikologi Performa & Ketahanan Mental Matras](05-psikologi-performa-dan-ketahanan-mental.md)**

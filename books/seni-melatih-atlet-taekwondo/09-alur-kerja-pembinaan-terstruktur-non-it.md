@@ -1,5 +1,6 @@
 # Bab 9: Alur Kerja Pembinaan Terstruktur: Kerangka Kerja Operasional Lapangan dari Intuisi Menuju Sistem
 
+> 📖 Hub Buku: **[Seni Melatih Atlet: Fondasi Ilmiah Pembinaan Atlet Taekwondo](index.md)**  
 > **Status Bab**: Selesai Divalidasi 🟢  
 > **Fokus Utama**: Cetak Biru Operasional Pembinaan Atlet, Siklus Alur Kerja 5 Gerbang Dojang, Peta Titik Sentuh Data Lapangan, Format Lembar Kerja Praktis Berbasis Diagram, dan Fondasi Menuju Digitalisasi.
 

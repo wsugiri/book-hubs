@@ -162,4 +162,4 @@ flowchart LR
 
 ## 🧭 Navigasi Bab Selanjutnya
 
-⬅️ **[Bab Sebelumnya: Bab 5 — Psikologi Performa & Ketahanan Mental](05-psikologi-performa-dan-ketahanan-mental.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Bab 7: Menyusun Program Terpadu Tanpa Bergantung Aplikasi Tertentu](07-menyusun-program-terpadu.md)**
+⬅️ **[Bab Sebelumnya: Bab 5 — Psikologi Performa & Ketahanan Mental](05-psikologi-performa-dan-ketahanan-mental.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Bab 7: Menyusun Program Terpadu: Dari Periodisasi hingga Hari Pertandingan](07-menyusun-program-terpadu.md)**

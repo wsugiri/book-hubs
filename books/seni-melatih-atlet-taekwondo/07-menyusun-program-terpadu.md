@@ -1,5 +1,6 @@
 # Bab 7: Menyusun Program Terpadu: Dari Periodisasi hingga Hari Pertandingan
 
+> 📖 Hub Buku: **[Seni Melatih Atlet: Fondasi Ilmiah Pembinaan Atlet Taekwondo](index.md)**  
 > **Status Bab**: Selesai Divalidasi 🟢  
 > **Fokus Utama**: Sintesis Kurikulum Terpadu Bab 1–6, Makrosiklus 16 Minggu, Sistem Pemantauan Beban Agnostik Alat (Kertas/Spreadsheet), Pohon Keputusan Beban Harian, dan Sinergi Segitiga Pelatih-Medis-Atlet.
 
@@ -94,6 +95,24 @@ gantt
   * Frekuensi sesi dipertahankan pada 80% dari frekuensi normal.
 * **Manajemen Berat Badan Terakhir**: Transisi ke diet rendah serat (*low-residue diet*) 3–5 hari sebelum timbang badan, membatasi manipulasi cairan akut maksimal 2–3% berat badan untuk menjaga hidrasi otak [[20]](#ref-20).
 
+### 📅 Matriks Jadwal Latihan Mingguan Representatif (Contoh Fase SPP / Minggu ke-7)
+
+Banyak pelatih bingung mendistribusikan sesi dalam satu minggu agar tidak terjadi tabrakan adaptasi. Tabel berikut adalah contoh arsitektur mikrosiklus 7 hari berbasis bukti ilmiah:
+
+| Hari | Sesi Pagi (06.30–08.00) | Sesi Sore (16.00–18.00) | Target Fisiologis Utama | Estimasi Beban (sRPE) |
+|---|---|---|---|:---:|
+| **Senin** | **Kekuatan & PAPE**: Squat berat ($85\%$ 1RM) + Box Jump kontras | **Teknik Kicking & Footwork**: Penajaman sudut serangan & transisi cepat | Neuromuskular + Efisiensi Gerak | **Sedang–Tinggi (600 AU)** |
+| **Selasa** | *Istirahat Mandiri / Peregangan* | **HIIT Spesifik Taekwondo**: Interval pad 4 detik kerja : 16 detik footwork (10 repetisi $\times$ 3 set) [[26]](#ref-26) | Kapasitas Anaerobik Alaktik & Pemulihan Aerobik | **Tinggi (700 AU)** |
+| **Rabu** | *Istirahat Total* | **Pemulihan Aktif & Taktik**: Mobilitas panggul/hamstring 30 menit + Bedah Video Lawan 45 menit | Regenerasi Saraf & Kognitif | **Rendah (150 AU)** |
+| **Kamis** | **Daya Ledak & Reaktif**: Trap Bar Deadlift eksplosif + Depth Jump | **Drill-Sparring Situasional**: Latihan skenario poin (tertinggal 2 poin, sisa 20 detik) | *Power* Maksimal & Antisipasi Taktis | **Tinggi (650 AU)** |
+| **Jumat** | *Istirahat Mandiri* | **Sparring PSS Terkontrol**: 3 ronde $\times$ 2 menit dengan sensor elektronik, penekanan akurasi | Adaptasi Kompetisi Nyata | **Sedang (500 AU)** |
+| **Sabtu** | **Aerobic Flush & Sirkuit Inti**: Jogging santai 20 menit + stabilitas *core* | *Libur Sore* | Pembersihan Sisa Metabolit & Integritas Sendi | **Rendah (200 AU)** |
+| **Minggu** | 🛌 **TOTAL REST**: Bebas latihan fisik, pemulihan mental, tidur cukup $\ge 8,5$ jam | 🛌 **TOTAL REST** | Konsolidasi Sistem Saraf Pusat (CNS) & Rekonstruksi Jaringan | **Nol (0 AU)** |
+
+> 💡 **Tips Pelatih: Menghindari Efek Hambatan (*Interference Effect*)**  
+> 1. **Pemisahan Sesi**: Jangan pernah menggabungkan latihan ketahanan kardio berat (seperti lari interval panjang) *tepat sebelum* sesi angkat beban atau plyometrik. Kelelahan metabolik kardio menekan jalur pensinyalan molekuler mTOR yang dibutuhkan untuk adaptasi kekuatan dan daya ledak.  
+> 2. **Jeda Minimal 6–8 Jam**: Jika dua sesi harus dilakukan pada hari yang sama (Senin/Kamis), jadwalkan sesi saraf/kekuatan di pagi hari dan teknik/sparring di sore hari, dengan asupan karbohidrat yang cukup di antara keduanya untuk mengisi ulang glikogen otot [[20]](#ref-20).
+
 ---
 
 ## 📋 2. Sistem Pemantauan Beban Agnostik Alat (Tool-Agnostic Monitoring)
@@ -120,8 +139,43 @@ $$\text{Beban Sesi (Arbitrary Units / AU)} = \text{Session-RPE (skala 0–10)} \
 Atlet menjalani sesi sparring taekwondo selama 75 menit. 25 menit pasca-latihan, atlet menilai kesulitan sesi pada angka **8** (sangat keras).  
 $$\text{Beban Sesi} = 8 \times 75 = 600\text{ AU}$$
 
-*Catatan Penerapan Praktis*:  
-Kompilasikan total AU selama seminggu (misal: total beban minggu ke-12 = 2.800 AU). Perhatikan kenaikan beban antar-minggu: hindari lonjakan beban mingguan yang terlalu curam ($>15–20\%$) tanpa fase adaptasi pendahulu, sembari tetap mencermati respon individual atlet [[7]](#ref-7), [[8]](#ref-8).
+### C. Menghitung Indeks Monotoni & Ketegangan (Foster's Training Monotony & Strain)
+
+Menghitung total beban mingguan saja tidak cukup. Carl Foster dan rekan (2001) membuktikan bahwa **ketiadaan variasi beban** (latihan keras setiap hari tanpa hari ringan) adalah pemicu utama kelelahan kronis dan penurunan imunitas tubuh [[10]](#ref-10):
+
+$$\text{Monotoni Latihan} = \frac{\text{Rata-rata Beban Harian (Mean AU 7 Hari)}}{\text{Standar Deviasi Beban Harian (SD AU 7 Hari)}}$$
+
+$$\text{Training Strain} = \text{Total Beban Mingguan (AU)} \times \text{Monotoni Latihan}$$
+
+* **Interpretasi Nilai Monotoni**:
+  * $\le 1,5$ (🟢 Sehat): Terdapat variasi yang baik antara hari keras, sedang, dan hari ringan/istirahat.
+  * $1,6 – 1,9$ (🟡 Waspada): Pola latihan mulai monoton; tubuh mulai kesulitan meregenerasi glikogen dan jaringan lunak.
+  * $\ge 2,0$ (🔴 Bahaya Maladaptasi): Latihan terlalu seragam dan keras. Studi menunjukkan nilai monotoni $>2,0$ berkorelasi kuat dengan lonjakan infeksi saluran pernapasan atas (ISPA) dan cedera *overuse* [[10]](#ref-10), [[15]](#ref-15).
+
+### D. Contoh Simulasi Log Beban Mingguan (Mikrosiklus Nyata Atlet)
+
+Berikut adalah simulasi spreadsheet pencatatan 7 hari pada atlet taekwondo kategori tarung (*kyorugi*):
+
+| Hari | Tidur (Jam) | Kesegaran (1–5) | DOMS (1–5) | Stres (1–5) | Durasi (Menit) | sRPE (0–10) | Beban Harian (AU) | Catatan Pelatih |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
+| **Senin** | 7,5 | 4 | 2 | 2 | 80 | 7 | **560 AU** | Sesi beban pagi + teknik sore |
+| **Selasa** | 7,0 | 3 | 3 | 2 | 90 | 8 | **720 AU** | HIIT pad work spesifik taekwondo |
+| **Rabu** | 8,0 | 4 | 3 | 1 | 45 | 3 | **135 AU** | *Recovery active* & taktik video |
+| **Kamis** | 7,5 | 4 | 2 | 2 | 85 | 8 | **680 AU** | Power jumping + drill sparring |
+| **Jumat** | 6,5 | 3 | 4 | 3 | 75 | 7 | **525 AU** | Sparring PSS sensor |
+| **Sabtu** | 8,0 | 4 | 2 | 1 | 40 | 4 | **160 AU** | Aerobic flush santai |
+| **Minggu** | 8,5 | 5 | 1 | 1 | 0 | 0 | **0 AU** | Istirahat penuh |
+
+* **Kalkulasi Analitik Mingguan**:
+  * **Total Beban Mingguan**: $2.780\text{ AU}$
+  * **Rata-rata Beban Harian (Mean)**: $397,1\text{ AU}$
+  * **Standar Deviasi (SD)**: $286,4\text{ AU}$
+  * **Indeks Monotoni**: $\frac{397,1}{286,4} = \mathbf{1,39}$ (🟢 **Optimal & Aman** — terdapat kontras tajam antara hari Rabu/Minggu dan Selasa/Kamis)
+  * **Training Strain**: $2.780 \times 1,39 = \mathbf{3.864\text{ AU}}$
+
+> 💡 **Tips Pelatih: Protokol Pengumpulan Data Beban yang Valid**  
+> 1. **Aturan Jeda 20–30 Menit**: Jangan pernah menanyakan nilai RPE tepat saat atlet baru melangkah keluar dari matras. Kelelahan akut atau emosi sesaat (misal kesal karena kalah saat drill) akan mendistorsi skor (*recency bias*). Tunggu 20–30 menit setelah atlet mandi atau mengganti pakaian agar persepsi sistemik lebih stabil (Lupo dkk., 2017) [[12]](#ref-12).  
+> 2. **Privasi Pengisian**: Pastikan atlet mengisi skor kesiapan dan nyeri otot tanpa saling mengintip. Atlet junior kerap memalsukan skor agar terlihat sekuat seniornya jika lembar log diletakkan secara terbuka tanpa privasi [[28]](#ref-28).
 
 ---
 
@@ -143,6 +197,20 @@ flowchart TD
     
     CheckType -- "Sesi Teknik Ringan / Pemulihan" --> ProceedLight["🟢 LANJUTKAN DENGAN PEMANTAUAN:<br/>1. Jalankan sesi teknik ringan<br/>2. Tambahkan 15 menit mobilitas panggul<br/>3. Evaluasi kembali pasca-latihan"]
 ```
+
+### 🚦 SOP Triage Lapangan (Protokol 3 Menit Sebelum Peluit Pemanasan)
+
+Sebelum meniup peluit pemanasan, pelatih kepala atau asisten memindai lembar check-in pagi selama 2–3 menit dan mengelompokkan atlet ke dalam 3 zona lampu lalu lintas:
+
+| Zona | Kriteria Kesiapan Atlet | Modifikasi Program Latihan | Tindakan Medis / Pemulihan |
+|:---:|---|---|---|
+| 🟢 **Hijau**<br>*(Ready)* | Semua metrik normal (Tidur $\ge 7$ jam, Segar $\ge 3$, DOMS $\le 2$, Stres $\le 2$) | Jalankan program 100% sesuai rancangan mikrosiklus harian. | Pemanasan aktif & aktivasi PAPE standar. |
+| 🟡 **Kuning**<br>*(Caution)* | Ditemukan **1 bendera merah** (misal: tidur hanya 5,5 jam ATAU pegal panggul skala 4) | Kurangi volume total sebesar 25–30%. Pertahankan ketajaman teknik, namun **larang pertarungan benturan keras**. | Tambahkan 10 menit peregangan dinamis dan hidrasi elektrolit. |
+| 🔴 **Merah**<br>*(Protect)* | Ditemukan $\ge \mathbf{2}$ **bendera merah** ATAU adanya **nyeri fokal tajam pada persendian/tulang** | **Tarik dari latihan kontak fisik & loncatan**. Alihkan ke sesi mobilitas lantai, drill teknik statis, atau analisis rekaman video pertandingan. | Rujuk ke tim medis dojang atau fisioterapis untuk asesmen muskuloskeletal [[18]](#ref-18). |
+
+> 💡 **Tips Pelatih: Komunikasi Psikologis Saat Memodifikasi Program**  
+> Ketika menurunkan beban atlet yang masuk ke zona merah/kuning, hindari kalimat yang menjatuhkan harga diri seperti: *"Kamu loyo hari ini, minggir sana!"* Kalimat tersebut akan membuat atlet menyembunyikan rasa sakit di masa depan.  
+> Gunakan pendekatan berbasis fisiologi adaptif: *"Data biologismu pagi ini menunjukkan sistem sarafmu sedang bekerja keras memulihkan otot. Hari ini kita alihkan dari benturan agar tidak terjadi cedera ligamen, dan kita fokus mengasah akurasi mata serta strategi video. Besok saat badanmu segar, kita ledakkan kembali di matras."* Ini menumbuhkan kedewasaan atletik dan kejujuran pelaporan [[28]](#ref-28).
 
 ---
 
@@ -170,6 +238,17 @@ graph TD
    Atlet harus merasa aman melaporkan skor kelelahan tinggi (RPE 9 atau stres 4) tanpa rasa takut dicoret dari skuad kejuaraan. Ketika pelaporan jujur dihukum dengan "cap mental lemah", atlet akan memalsukan skor log harian mereka, menghilangkan fungsi deteksi dini [[14]](#ref-14).
 3. **Peran Orang Tua bagi Atlet Kategori Kadet & Junior**:  
    Bagi atlet pelajar, orang tua adalah manajer tidur dan gizi di rumah. Pelatih wajib menyelenggarakan sesi edukasi periodik agar orang tua memahami pentingnya asupan energi seimbang (mencegah defisit energi REDs) dan tidak memaksa latihan privat tambahan yang merusak siklus pemulihan atlet [[4]](#ref-4), [[21]](#ref-21).
+
+### ⚠️ Kotak Peringatan Medis: 4 Tanda Merah Mutlak (Absolute Medical Red Flags)
+
+Pelatih dan tim medis wajib menghentikan seluruh aktivitas latihan fisik dan **segera merujuk atlet ke fasilitas kesehatan berwenang** apabila mendapati gejala-gejala berikut:
+
+| Kategori Bahaya | Gejala Klinis yang Terlihat | Dugaan Patologis | Tindakan Lapangan Wajib |
+|---|---|---|---|
+| 🧠 **Gegar Otak Berat** | Sakit kepala yang memburuk progresif, leher kaku, muntah berulang, bicara melantur, pandangan ganda, atau kejang [[19]](#ref-19) | Pendarahan intrakranial atau edema serebral | Hentikan latihan, larang atlet tidur sendirian, bawa segera ke IGD rumah sakit terdekat. |
+| 🦴 **Fraktur Stres Fokal** | Nyeri tekan tajam terlokalisir (*point tenderness*) pada tulang kering (tibia) atau punggung kaki (metatarsal) yang bertambah sakit saat menumpu | *Bone Stress Injury* / Retak tulang mikro | Bebaskan dari pembebanan benturan (*non-weight-bearing*), lakukan rontgen/MRI. |
+| 🦵 **Robekan Ligamen Akut** | Bunyi "pop" pada lutut saat mendarat/berputar, diikuti pembengkakan masif dalam 2–4 jam (*hemarthrosis*) dan sendi terasa goyah/terkunci | Robekan ACL, MCL, atau meniskus | Protokol P.E.A.C.E. segera [[18]](#ref-18), jangan paksa berjalan, rujuk ke ortopedi olahraga. |
+| 🩸 **Rabdomiolisis Sistemik** | Otot sangat kaku, bengkak, nyeri ekstrem pasca-latihan fisik berat disertai **urin berwarna teh pekat / cokelat gelap** | Kerusakan sel otot masif yang melepaskan mioglobin ke ginjal | **Gawat darurat ginjal**: Segera bawa ke IGD untuk terapi hidrasi infus intravena masif. |
 
 ---
 
@@ -200,6 +279,55 @@ sequenceDiagram
     P->>A: Berikan 1-2 instruksi teknis kunci (hindari ceramah panjang)
     M->>A: Kompres dingin leher & berikan tegukan air dingin
 ```
+
+### ⏱️ Panduan Kronologis 24 Jam Terperinci (Hour-by-Hour Game Day Protocol)
+
+Berikut adalah panduan aksi jam demi jam yang menjembatani sains nutrisi, fisiologi otot, dan neuropsikologi matras:
+
+#### 1. Fase Pasca-Timbang Badan Resmi (H-24 hingga H-18 Sebelum Laga)
+* **Menit 0–30 Segera Pasca-Timbang**:  
+  Minum larutan rehidrasi oral (*Oral Rehydration Solution* / ORS) bersuhu sejuk (10–15°C) yang mengandung natrium $50–60\text{ mmol/L}$ dan karbohidrat $6\%$. Berikan secara bertahap ($150–250\text{ ml}$ setiap 15 menit), bukan sekaligus meminum 2 liter (mencegah distensi lambung dan diuresis masif) [[20]](#ref-20). Total volume cairan adalah **125–150% dari berat badan yang dipangkas** selama proses *cutting*.
+* **Menit 60–90 Pasca-Timbang**:  
+  Konsumsi makanan padat tinggi karbohidrat indeks glikemik sedang-tinggi, rendah serat (*low-bulk*), dan rendah lemak.  
+  *Contoh Menu Ideal*: Nasi putih hangat, sup kaldu ayam bergaram, daging dada ayam panggang, dan pisang matang. Hindari makanan berserat tinggi (sayuran hijau mentah, kacang-kacangan) dan makanan pedas/berlemak yang memperlambat pengosongan lambung.
+
+#### 2. Fase Malam Pra-Pertandingan (H-12)
+* **Kondisi Tidur**: Ruangan tidur wajib bersuhu dingin ($18–21^\circ\text{C}$), hening, dan gelap gulita. Matikan seluruh gawai digital minimal 45 menit sebelum tidur demi menjamin gelombang lambat *Slow-Wave Sleep* (SWS) dan sekresi hormon pertumbuhan HGH [[24]](#ref-24).
+* **Briefing Mental**: Batasi percakapan taktik maksimal 15 menit. Arahkan atlet pada afirmasi zona emosi optimal pribadinya (IZOF) [[22]](#ref-22), hindari memberikan target medali yang membebani sistem saraf simpatik.
+
+#### 3. Fase Pagi Hari Pertandingan (H-4 hingga H-2 Sebelum Partai Perdana)
+* **Pemeriksaan Status Hidrasi**: Periksa warna urin saat buang air kecil pertama di pagi hari. Target warna adalah kuning jerami pucat (*pale straw*). Jika warna urin kuning pekat, minum $300–500\text{ ml}$ air mineral ber-elektrolit tambahan.
+* **Sarapan Terakhir**: Konsumsi makanan padat 3–4 jam sebelum jadwal partai pertama dengan takaran karbohidrat $2–3\text{ g/kg BB}$ (misal: roti panggang madu, oatmeal pisang, atau bubur ayam tanpa santan).
+
+#### 4. Fase Masuk Gelanggang & Pemanasan (H-60 hingga H-10 Menit)
+* **Menit H-60 s/d H-40**: Pemanasan mobilitas dinamis 15–20 menit (rotasi panggul, lunges, leg swings aktif) untuk menaikkan suhu otot dan melicinkan cairan sinovial sendi.
+* **Menit H-30 s/d H-20**: Pasang seluruh pelindung (deker, pelindung gigi, sensor elektronik PSS). Lakukan drill teknik tendangan ringan ke target pad.
+* **Menit H-10 s/d H-8 (Protokol PAPE)**: Lakukan 3–4 tendangan pad eksplosif dengan niat maksimal (*maximal intent*), lalu istirahat tenang. Rangsangan ini memicu *Post-Activation Performance Enhancement* (PAPE), meningkatkan sensitivitas kalsium miofibril otot sehingga tendangan pertama di matras langsung mencapai kecepatan puncak [[3]](#ref-3).
+* **Menit H-2**: Lakukan 3 kali *physiological sigh* (2 hisapan napas pendek lewat hidung + 1 hembusan panjang lewat mulut) untuk meredakan tremor cemas dan menajamkan fokus visual [[22]](#ref-22).
+
+---
+
+### 🔄 Protokol Jeda Antar-Partai Turnamen (Between-Match Tournament Loop)
+
+Turnamen taekwondo memiliki karakteristik unik: atlet dapat bertanding 3 hingga 5 kali dalam satu hari dengan jeda yang tidak pasti (antara 45 menit hingga 3 jam). Banyak atlet kalah di babak semifinal bukan karena kekurangan fisik, melainkan karena salah mengelola jeda antar-partai:
+
+```mermaid
+flowchart TD
+    FinishMatch["Partai Selesai"] --> Step1["0-10 Menit: Rehidrasi & Cek Medis<br/>Minum 200-300 ml larutan elektrolit; kompres es memar lokal"]
+    Step1 --> Step2["10-30 Menit: Elevasi Kaki & Camilan Glikemik<br/>Berbaring dengan kaki diangkat 30 cm (15 menit)<br/>Konsumsi camilan karbohidrat cair/semi-padat 1-1,2 g/kg BB/jam"]
+    Step2 --> DecisionJeda{"Berapa Lama Sisa Jeda<br/>ke Partai Berikutnya?"}
+    
+    DecisionJeda -- "Jeda Panjang (>60 Menit)" --> LongWait["Pertahankan Kehangatan Otot:<br/>1. Pakai jaket training lengkap & kaos kaki kering<br/>2. Jangan tidur telentang di lantai semen dingin<br/>3. Relaksasi mental / dengarkan musik IZOF"]
+    
+    DecisionJeda -- "Jeda Pendek (<=30 Menit)" --> ShortWait["Rehidrasi Ringan & Pacing Aktif:<br/>Tetap bergerak ringan, berjalan santai"]
+    
+    LongWait --> ReWarmUp["H-15 Menit Sebelum Masuk Matras:<br/>RE-WARM-UP OBLIGATORI<br/>Lakukan skipping ringan 3-5 menit & 4 tendangan pad eksplosif<br/>Kembalikan suhu otot ke >38,5°C!"]
+    ShortWait --> ReWarmUp
+```
+
+> 💡 **Tips Pelatih: Mengapa 'Re-Warm-Up' Wajib Dilakukan?**  
+> Setelah bertanding, jika atlet duduk diam selama $>40$ menit, suhu inti otot akan turun kembali ke suhu istirahat ($<36,5^\circ\text{C}$). Penurunan suhu otot ini meningkatkan viskositas cairan sendi, memperlambat konduksi impuls saraf motorik sebesar $2–5\%$, dan melipatgandakan risiko robekan otot hamstring saat melepaskan tendangan kepala mendadak.  
+> Jangan izinkan atlet langsung naik ke matras berikutnya dari posisi duduk dingin! Selalu lakukan pemanasan ulang dinamis singkat 10–15 menit sebelum nomor partai dipanggil.
 
 ---
 
