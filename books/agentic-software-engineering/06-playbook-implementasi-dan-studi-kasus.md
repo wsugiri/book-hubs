@@ -188,6 +188,65 @@ Sebuah pod backend mengalami lonjakan memori tak terkendali (*Memory Leak*) seti
 
 ---
 
+### Studi Kasus 4: Onboarding Engineer Baru dengan Agentic Codebase Tour
+
+Seorang junior engineer baru bergabung ke tim. Dalam proses onboarding konvensional, memahami arsitektur codebase berskala besar biasanya membutuhkan 2 hingga 3 minggu: membaca dokumentasi yang sering kali sudah usang, mengikuti sesi *shadowing* dengan senior engineer, dan bertanya berulang kali tentang hal yang sama. Dengan agentic workflow, dalam **3 jam pertama**, engineer baru tersebut sudah bisa berkontribusi nyata.
+
+- **Alur Onboarding Berbantuan Agen**:
+  1. Engineer baru memberikan instruksi kepada agen dalam mode *Read-Only Researcher*: *"Berikan saya tur arsitektur codebase ini. Jelaskan alur data dari HTTP request masuk hingga response keluar, sertakan komponen kunci dan dependensi antar modul."*
+  2. Agen menjelajahi struktur folder secara sistematis — membaca `AGENTS.md`, dokumen desain di `docs/`, file konfigurasi, dan file-file kunci seperti entry point aplikasi, router utama, serta definisi model data — semuanya **tanpa mengubah satu baris pun**.
+  3. Agen menghasilkan dokumen `docs/onboarding/architecture-tour.md` yang berisi:
+     - Diagram alur data dari HTTP request masuk hingga response keluar
+     - Daftar 10 file terpenting beserta fungsi dan tanggung jawab masing-masing
+     - Panduan *"Di mana harus mulai jika ingin menambahkan fitur X"* — misalnya cara menambahkan endpoint baru, mendefinisikan model database, atau menulis middleware autentikasi
+  4. Engineer baru kemudian mengajukan pertanyaan spesifik: *"Saya perlu menambahkan endpoint baru untuk ekspor laporan CSV. Apa saja file dan layer yang perlu saya sentuh?"*
+  5. Agen langsung mereferensikan peta arsitektur yang sudah dipelajari dan memberikan rencana implementasi konkret dalam hitungan detik — lengkap dengan nama file target, interface yang harus diimplementasikan, dan urutan pengerjaan yang disarankan.
+  6. **Perbandingan hasil**:
+     - **Sebelumnya**: 2–3 minggu onboarding dengan sesi shadowing, mengganggu produktivitas senior engineer, dan transfer pengetahuan yang tidak pernah sepenuhnya lengkap.
+     - **Sesudahnya**: 3 jam pertama sudah memiliki peta arsitektur yang akurat dan rencana implementasi fitur pertama yang konkret.
+
+> *"Agen tidak menggantikan senior engineer sebagai mentor — ia menghilangkan bottleneck pengetahuan tersembunyi (tribal knowledge) yang selama ini hanya ada di kepala orang-orang tertentu. Senior engineer kini bisa fokus pada keputusan arsitektur tingkat tinggi, bukan menjawab pertanyaan 'di mana file konfigurasi database?' untuk kesepuluh kalinya."*
+
+---
+
+### 3. Anti-Pattern & Failure Modes dalam Implementasi Nyata
+
+Adopsi agentic workflow bukan jaminan otomatis produktivitas meningkat. Seperti halnya metodologi baru lainnya, ada jebakan-jebakan umum yang sering menghantam tim di fase awal. Mengenali dan menghindari keempat anti-pattern berikut akan menghemat berminggu-minggu frustrasi.
+
+---
+
+**⚠️ Anti-Pattern 1: "Zero Test Coverage Trap"**
+
+Tim memutuskan untuk adopsi agen secara langsung tanpa membangun fondasi pengujian terlebih dahulu. Agen menulis kode dengan cepat dan terlihat meyakinkan — namun tidak ada cara otomatis untuk memverifikasi kebenarannya. Hasilnya: codebase dipenuhi kode yang terlihat bersih di permukaan namun menyimpan bug tersembunyi yang baru muncul di production.
+
+*Solusi*: Bangun minimal test suite terlebih dahulu, bahkan jika harus menggunakan **Characterization Tests** seperti di Studi Kasus 2 untuk mengunci perilaku kode warisan sebelum menyerahkan kendali pada agen.
+
+---
+
+**⚠️ Anti-Pattern 2: "God Prompt Syndrome"**
+
+Developer menulis satu prompt raksasa yang meminta agen mengerjakan 15 hal sekaligus: *"Buat endpoint baru, tambah migrasi database, tulis unit test, update dokumentasi API, refactor fungsi lama yang berkaitan, dan tambahkan logging."* Hasilnya: kode setengah jadi, inkonsisten antar bagian, dan sangat sulit di-debug karena banyak konteks yang saling tumpang tindih dalam satu sesi.
+
+*Solusi*: Tegakkan prinsip **satu prompt = satu tugas atomik**. Gunakan `design.md` sebagai dokumen kesepakatan dan pecah pekerjaan menjadi checklist tugas mandiri sebelum agen mulai bekerja.
+
+---
+
+**⚠️ Anti-Pattern 3: "Blind Trust Deployment"**
+
+Developer langsung melakukan `git commit` dan `git push` — bahkan langsung merge dan deploy ke production — tanpa membaca `git diff` hasil kerja agen. Tiba-tiba production mengalami *downtime* karena agen secara tak terduga juga memodifikasi file konfigurasi environment atau mengubah nilai default yang tidak berkaitan langsung dengan tugas.
+
+*Solusi*: **Selalu jalankan `git diff` sebelum commit**. Perlakukan kode hasil agen persis seperti Anda memperlakukan code review dari junior engineer yang cerdas namun kadang terlalu bersemangat — baca setiap baris perubahan dengan teliti sebelum menandatanganinya.
+
+---
+
+**⚠️ Anti-Pattern 4: "Context Amnesia Loop"**
+
+Developer terus mengulang pertanyaan yang sama ke agen di setiap sesi baru karena tidak ada `AGENTS.md` yang mendokumentasikan konteks proyek. Agen memberikan jawaban yang berbeda-beda setiap sesi — kadang merekomendasikan Express, kadang Fastify; kadang menggunakan `async/await`, kadang callback — tergantung apa yang ada di memori konteks saat itu.
+
+*Solusi*: Investasikan 30 menit menulis `AGENTS.md` yang baik sejak hari pertama. Ini adalah **investasi satu kali** yang menghemat ribuan prompt di masa depan. Lihat template di atas sebagai titik awal.
+
+---
+
 ## ⚡ Panduan Aksi Nyata dari Bagian Ini (Action Checklist)
 
 ### Checklist Harian Insinyur Perangkat Lunak Agentic:
@@ -195,6 +254,35 @@ Sebuah pod backend mengalami lonjakan memori tak terkendali (*Memory Leak*) seti
 2. [ ] **Validasi Dokumen Desain Terlebih Dahulu**: Jangan biarkan agen mulai mengedit sebelum `design.md` memiliki tabel skema dan daftar file target yang jelas.
 3. [ ] **Delegasikan Pengujian ke Subagent Khusus**: Minta subagent penguji membuat skenario pengujian ekstrem (*edge cases, fuzz testing, concurrent requests*).
 4. [ ] **Inspeksi Git Diff Secara Kritis**: Selalu lakukan `git diff` manual sebelum membuat commit. Pastikan tidak ada berkas sampah, komentar halusinasi, atau perubahan dependensi yang tidak diinginkan.
+
+---
+
+### ✅ Team Readiness Checklist: Apakah Tim Anda Siap?
+
+Sebelum tim mengadopsi agentic workflow secara penuh, gunakan tabel evaluasi berikut untuk mengukur tingkat kesiapan. Beri tanda ✅ untuk setiap item yang sudah terpenuhi, lalu hitung skornya.
+
+| Kategori | Item Evaluasi | Status |
+|---|---|---|
+| **Fondasi** | `AGENTS.md` sudah ada dan terisi dengan aturan proyek | ☐ |
+| **Fondasi** | Tech stack dan arsitektur terdokumentasi secara tertulis | ☐ |
+| **Fondasi** | Test coverage ≥ 60% (atau minimal characterization tests ada) | ☐ |
+| **Tooling** | Linter dan formatter aktif dan terintegrasi di editor | ☐ |
+| **Tooling** | CI/CD pipeline sudah berjalan dan memblokir merge jika test gagal | ☐ |
+| **Tooling** | Sandbox eksekusi agen aman (tidak bisa langsung deploy ke production) | ☐ |
+| **Proses** | `design.md` selalu dibuat dan disepakati sebelum coding dimulai | ☐ |
+| **Proses** | Proses code review ada dan dijalankan secara konsisten | ☐ |
+| **Proses** | Git workflow terstandar (branching strategy, commit convention) | ☐ |
+| **Budaya** | Tim terbuka untuk bereksperimen dan gagal dengan cepat | ☐ |
+| **Budaya** | Ada waktu iterasi yang dilindungi (bukan selalu dikejar deadline) | ☐ |
+| **Budaya** | Senior engineer siap berperan sebagai "orkestrator", bukan "typist" | ☐ |
+
+**Panduan Interpretasi Skor**:
+
+| Skor | Status Kesiapan |
+|---|---|
+| **0 – 5** | 🔴 **Belum siap** — Fokus membangun fondasi terlebih dahulu sebelum adopsi agen |
+| **6 – 9** | 🟡 **Partially Ready** — Mulai dengan tugas-tugas sederhana dan terisolasi; bangun fondasi yang kurang sambil berjalan |
+| **10 – 12** | 🟢 **Siap adopsi penuh** — Tim memiliki landasan yang kokoh; adopsi agentic workflow secara menyeluruh |
 
 ---
 
@@ -217,8 +305,9 @@ Sebuah pod backend mengalami lonjakan memori tak terkendali (*Memory Leak*) seti
 2. **Idempotency & Fault-Tolerant Distributed APIs**:  
    Stripe Engineering Guides. *Designing Robust and Idempotent Webhook APIs*.  
    🔗 Dokumentasi Resmi Stripe: [https://stripe.com/docs/api/idempotent_requests](https://stripe.com/docs/api/idempotent_requests)
-3. **Continuous Integration Verification for Autonomous Code Generation**:  
-   GitHub Engineering & Antigravity Research Lab. *Automating Safe Pull Request Reviews with Autonomous Agents*.
+3. **Continuous Integration & Automated Code Review for AI-Generated Code**:  
+   Google Engineering Practices. *Google's Code Review Developer Guide*.  
+   🔗 Panduan Resmi: [https://google.github.io/eng-practices/review/](https://google.github.io/eng-practices/review/)
 
 ---
 
