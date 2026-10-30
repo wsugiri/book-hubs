@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-14%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-14%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-15%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-15%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -339,6 +339,32 @@
 - **Desire is a Contract for Unhappiness**: Setiap hasrat adalah janji sukarela untuk menderita sampai keinginan terpenuhi; membatasi hasrat dan mengeliminasi status games adalah kunci kedamaian batin (*peace at rest*).
 
 📘 **[Master Hub](books/the-almanack-of-naval-ravikant/index.md)** &nbsp;|&nbsp; **[Part 1](books/the-almanack-of-naval-ravikant/01-membangun-kekayaan-dan-leverage.md)** &nbsp;|&nbsp; **[Part 2](books/the-almanack-of-naval-ravikant/02-pertimbangan-dan-model-mental.md)** &nbsp;|&nbsp; **[Part 3](books/the-almanack-of-naval-ravikant/03-seni-mempelajari-kebahagiaan.md)** &nbsp;|&nbsp; **[Part 4](books/the-almanack-of-naval-ravikant/04-menyelamatkan-diri-sendiri-dan-kebebasan.md)**
+
+<br/>
+
+### [The Warren Buffett Way: Strategi dan Metode Investasi Investor Terhebat Dunia](books/the-warren-buffett-way/index.md)
+
+<div align="center">
+  <a href="books/the-warren-buffett-way/index.md">
+    <img src="books/the-warren-buffett-way/cover.jpg" width="280" alt="The Warren Buffett Way Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Robert G. Hagstrom (Kata Pengantar: Peter S. Lynch & Kenneth L. Fisher) &nbsp;|&nbsp; **Tahun**: 1994 (Edisi Ketiga: 2013) &nbsp;|&nbsp; **Penerbit**: John Wiley & Sons &nbsp;|&nbsp; **Estimasi Baca**: ~60–75 Menit (4 Modul)  
+> `📈 Value Investing` `🏢 Business Ownership` `🛡️ Margin of Safety` `🎯 Focus Investing` `💰 Alokasi Modal`
+
+> **💡 The Big Idea:**  
+> *"Investasi saham yang sukses bukanlah seni menebak grafik harga atau berspekulasi pada rumor harian, melainkan memperlakukan saham sebagai kepemilikan bisnis riil. Dengan menguasai 12 Prinsip Abadi (Bisnis, Manajemen, Finansial, dan Pasar), seorang investor dapat menyaring kebisingan Mr. Market, membeli waralaba luar biasa di bawah nilai intrinsiknya, dan membiarkan bunga majemuk melipatgandakan kekayaan tanpa stres."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Evolusi Paradigma (Graham + Fisher + Munger)**: Beralih dari taktik berburu 'puntung cerutu' (*cigar-butt*) murah menuju kepemilikan bisnis luar biasa dengan parit pertahanan ekonomi (*economic moat*) lebar di harga wajar.
+- **Saringan 12 Tenets**: Kriteria deduktif komprehensif menguji kesederhanaan bisnis, konsistensi operasi, rasionalitas alokasi modal CEO, kejujuran pelaporan (*candor*), ROE tanpa utang tinggi, dan laba kas riil (*Owner Earnings*).
+- **The One-Dollar Premise**: Menuntut manajemen untuk membuktikan bahwa setiap \$1 laba ditahan mampu menghasilkan minimal \$1 nilai kapitalisasi pasar jangka panjang.
+- **Focus Investing & Ted Williams Sweet Spot**: Menolak diversifikasi buta; memusatkan modal pada 5–10 peluang terbaik dengan probabilitas kemenangan (*expected value*) tertinggi, serta bersabar menunggu di zona manis.
+
+📘 **[Master Hub](books/the-warren-buffett-way/index.md)** &nbsp;|&nbsp; **[Part 1](books/the-warren-buffett-way/01-fondasi-dan-evolusi-pemikiran.md)** &nbsp;|&nbsp; **[Part 2](books/the-warren-buffett-way/02-dua-belas-prinsip-investasi-buffett.md)** &nbsp;|&nbsp; **[Part 3](books/the-warren-buffett-way/03-studi-kasus-investasi-ikonik.md)** &nbsp;|&nbsp; **[Part 4](books/the-warren-buffett-way/04-focus-investing-dan-psikologi-pasar.md)**
 
 ---
 
