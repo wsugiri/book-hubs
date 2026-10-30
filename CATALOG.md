@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-13%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-13%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-14%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-14%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -214,6 +214,31 @@
 - **AI-Assisted TDD (Test-Driven Development)**: Membalik alur kerja: gunakan AI menulis 50 kasus uji ekstrem terlebih dahulu untuk menjadi jaring pengaman matematis sebelum implementasi kode.
 - **Formula 4 Pilar Prompt Kode**: Mengunci peran arsitektur, cuplikan konteks eksisting (*scaffolding*), batasan dependensi ketat, dan kontrak format output.
 - **Seni "Vibe Coding" & Agen Otonom**: Beralih dari copy-paste statis ke agen terintegrasi (seperti Antigravity/Cursor) dengan loop eksekusi terminal dan verifikasi mandiri.
+
+<br/>
+
+### [Agentic Software Engineering: Panduan Komprehensif AI Agents, Skills, Tools, & System Context](books/agentic-software-engineering/index.md)
+
+<div align="center">
+  <a href="books/agentic-software-engineering/index.md">
+    <img src="books/agentic-software-engineering/cover.jpg" width="280" alt="Agentic Software Engineering Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Antigravity Engineering Lab &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Penerbit**: Modern AI Engineering Hub &nbsp;|&nbsp; **Estimasi Baca**: ~75–90 Menit (6 Modul Lengkap)  
+> `🤖 AI Coding Agents` `🛠️ Skills & MCP` `📐 Spec-Driven (design.md)` `🔄 Multi-Agent Orchestration` `🛡️ Sandbox & Feedback Loops`
+
+> **💡 The Big Idea:**  
+> *"AI Agent bukanlah sekadar chatbot pintar yang diajak berdiskusi kode di tab peramban, melainkan sistem kognitif otonom yang dibekali alat eksekusi, memori kerja terstruktur, dan loop verifikasi tertutup. Masa depan rekayasa perangkat lunak bergeser dari juru ketik sintaks manual menjadi orkestrator sistem yang memimpin skuad agen cerdas melalui hierarki aturan (AGENTS.md), cetak biru desain (design.md), dan modul keterampilan prosedural (Skills)."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The ReAct Cycle & Tool Execution**: Menghubungkan nalar probabilistik LLM dengan tindakan nyata di terminal sandbox melalui loop Thought-Action-Observation.
+- **The Context Hierarchy & Spec-Driven Development**: Menata informasi dari aturan sistem global (`AGENTS.md`), dokumen desain fitur (`design.md`), hingga modul prosedural on-demand (`SKILL.md`) untuk mencegah *attention dilution*.
+- **The Model Context Protocol (MCP)**: Standar terbuka menghubungkan agen secara langsung ke PostgreSQL, GitHub, Jira, dan mikroservis internal.
+- **Hierarchical Multi-Agent Teams**: Mencegah *cognitive drift* dengan mendelegasikan tugas ke subagent terisolasi: Lead Orchestrator, Deep Researcher, Worker/Coder, dan QA Reviewer.
+- **Autonomous Self-Correction & Deterministic Ground Truth**: Membenturkan kode agen dengan compiler, test suite, dan linter untuk perbaikan mandiri berbasis *exit code*.
 
 <br/>
 
