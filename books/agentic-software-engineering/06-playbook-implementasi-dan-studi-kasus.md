@@ -81,6 +81,47 @@ Dengan menjalankan inisialisasi ini:
 3. `.agents/skills/` siap menampung modul SOP tim yang dapat dipanggil agen secara *on-demand*.
 4. `.agents/scratch/` terisolasi dari pelacakan Git sehingga eksperimen agen tidak mengotori repositori utama.
 
+#### Contoh Template `AGENTS.md` Minimal yang Siap Pakai
+
+Setelah menjalankan skrip di atas, isi `AGENTS.md` Anda dengan template berikut sebagai titik awal:
+
+```markdown
+# AGENTS.md — Aturan Operasional Agen untuk Proyek Ini
+
+## 🛠️ Tech Stack
+- **Runtime**: Node.js 20 (LTS) dengan TypeScript strict mode (`"strict": true`)
+- **Framework HTTP**: Fastify v4 (bukan Express)
+- **Database**: PostgreSQL 15 dengan Prisma ORM
+- **Test Runner**: Vitest (`npm test`) dengan coverage minimal 80%
+- **Linter & Formatter**: ESLint + Prettier (jalankan `npm run lint` sebelum commit)
+
+## 🚀 Perintah Penting
+- `npm run dev`       → Menjalankan dev server di port 3000 (hot reload aktif)
+- `npm run build`     → Kompilasi TypeScript ke `dist/`
+- `npm test`          → Menjalankan seluruh test suite
+- `npm run lint`      → Linting + auto-fix
+- `npx prisma migrate dev` → Menjalankan migrasi database baru
+- `npx prisma studio` → UI visual untuk melihat isi database lokal
+
+## 🏛️ Aturan Arsitektur (Wajib Diikuti)
+1. Gunakan **Clean Architecture**: pisahkan `domain/`, `application/`, `infrastructure/`, dan `interface/`.
+2. **Dilarang keras** menggunakan tipe `any` di TypeScript. Gunakan `unknown` dan lakukan type narrowing secara eksplisit.
+3. Setiap route Fastify wajib memiliki JSON Schema untuk validasi request dan response.
+4. Business logic **tidak boleh** berada di dalam handler route. Tempatkan di layer `application/usecases/`.
+5. Selalu gunakan **Dependency Injection** via constructor — jangan instantiasi service langsung di dalam handler.
+
+## 🚫 File yang TIDAK BOLEH Diubah oleh Agen
+- `.env` dan `.env.*` — konfigurasi environment sensitif
+- `prisma/migrations/` — migrasi yang sudah pernah di-deploy ke production
+- `package-lock.json` — hanya boleh diubah via `npm install`
+- `tsconfig.json` — ubah hanya dengan persetujuan eksplisit engineer
+
+## 📐 Pola Kode yang Disukai
+- Gunakan `Result<T, E>` pattern (bukan throw exception) untuk error handling di layer domain.
+- Semua interaksi database harus melalui **Repository interface** yang didefinisikan di `domain/repositories/`.
+- Untuk test: gunakan **in-memory repository** sebagai dependency, bukan database sungguhan.
+```
+
 ---
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
