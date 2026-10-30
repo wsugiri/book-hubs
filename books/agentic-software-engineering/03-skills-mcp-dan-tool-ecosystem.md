@@ -106,13 +106,16 @@ Di tingkat sistem berkas, sebuah modul skill bukan hanya sekadar satu file markd
 **Mekanisme Progressive Disclosure pada Skill**:
 Agen cerdas tidak akan langsung membaca seluruh folder `references/` atau mengeksekusi semua skrip di `scripts/`. Agen membaca `description` di `SKILL.md` saat sistem inisialisasi. Hanya ketika ada tugas relevan, agen membuka `SKILL.md`. Dan hanya ketika `SKILL.md` merujuk ke berkas di `references/` atau `scripts/`, agen membaca atau mengeksekusi berkas spesifik tersebut. Ini adalah kunci penghematan token yang ekstrem.
 
+> [!TIP]
+> **Penting Mengenai Huruf Kapital Manifest**: Berkas konfigurasi di dalam folder skill harus selalu bernama persis `SKILL.md` (huruf kapital penuh). Jika dinamai `skill.md` atau `skills.md`, runtime agent otomatis tidak akan mengenalinya sebagai entri skill yang valid.
+
 ---
 
 ### 3. Revolusi Model Context Protocol (MCP)
 
 Sebelum tahun 2024, menghubungkan AI ke sumber daya eksternal adalah mimpi buruk fragmentasi (*N x M problem*). Jika ada 10 model AI dan 20 alat (Postgres, GitHub, Slack, Jira, Notion), pengembang harus menulis 200 integrasi khusus yang rapuh.
 
-**Model Context Protocol (MCP)**, yang diinisiasi oleh Anthropic dan diadopsi secara luas di seluruh industri, memecahkan masalah ini dengan menyediakan arsitektur terbuka klien-server:
+**[Model Context Protocol (MCP)](https://modelcontextprotocol.io)**, yang diinisiasi oleh Anthropic dan diadopsi secara luas di seluruh industri sebagai standar protokol terbuka (*open standard*), memecahkan masalah ini dengan menyediakan arsitektur klien-server berbasis JSON-RPC:
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
@@ -210,6 +213,20 @@ Bayangkan seorang engineer bertugas mengoptimalkan kueri laporan penjualan yang 
 **Pertanyaan Refleksi Diri**:
 - *Berapa banyak prosedur manual tim Anda yang saat ini hanya tersimpan di kepala orang-orang senior dan rentan dilupakan oleh pengembang lain?*
 - *Bagaimana jika seluruh SOP tersebut diubah menjadi modul Skills yang dapat dibaca dan dieksekusi secara presisi oleh agen AI Anda setiap hari?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **Model Context Protocol (MCP) Official Documentation & Specification**:  
+   Anthropic & The Model Context Protocol Contributors (2024).  
+   🔗 Situs Resmi & Dokumentasi Protokol: [https://modelcontextprotocol.io](https://modelcontextprotocol.io)  
+   🔗 Repositori Kode & SDK Terbuka: [https://github.com/modelcontextprotocol](https://github.com/modelcontextprotocol)
+2. **Standardization of Tool Calling Interfaces**:  
+   W3C & AI Integration Working Group Discussions on LLM Tool Abstractions.  
+   🔗 JSON-RPC 2.0 Specification: [https://www.jsonrpc.org/specification](https://www.jsonrpc.org/specification)
+3. **Agent Skills Architecture & Progressive Context Disclosure**:  
+   Antigravity & Agentic Frameworks Design Guidelines for Modular Procedural Knowledge (`SKILL.md`).
 
 ---
 

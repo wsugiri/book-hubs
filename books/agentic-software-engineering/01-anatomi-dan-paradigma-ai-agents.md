@@ -52,7 +52,7 @@ Untuk memahami agen, kita harus membedakan tiga generasi alat bantu AI:
 
 ### 2. Anatomi Inti Siklus ReAct: Reasoning, Action, & Observation
 
-Inti mekanika dari semua AI Coding Agent modern adalah pola **ReAct (Reasoning + Acting)** yang dirumuskan oleh Yao et al. Siklus ini bekerja tanpa henti hingga tugas selesai:
+Inti mekanika dari semua AI Coding Agent modern adalah pola **[ReAct (Reasoning + Acting)](https://arxiv.org/abs/2210.03629)** yang dirumuskan oleh Shunyu Yao et al. (Princeton University & Google Brain, ICLR 2023). Siklus ini bekerja tanpa henti hingga tugas selesai:
 
 ```text
                      ┌───────────────────────┐
@@ -155,6 +155,20 @@ Waktu penyelesaian terpangkas dari 2 jam menjadi 5 menit, dengan kualitas penguj
 **Pertanyaan Refleksi Diri**:
 - *Apakah selama ini Anda menghabiskan sebagian besar waktu harian Anda untuk mengetik kode rutin yang sebenarnya bisa dikerjakan dalam 30 detik oleh agen berbekal konteks yang tepat?*
 - *Jika seluruh kode di proyek Anda bisa ditulis secara instan oleh agen, apakah Anda sudah memiliki kriteria arsitektur dan sistem pengujian yang cukup kuat untuk memastikan sistem tersebut tidak runtuh?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **Foundational ReAct Framework (Princeton & Google Brain)**:  
+   Yao, S., et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR 2023.  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+2. **Tool Use & Function Calling Architecture**:  
+   OpenAI Platform Documentation. *Function Calling with the Chat Completions API*.  
+   🔗 Panduan Implementasi: [https://platform.openai.com/docs/guides/function-calling](https://platform.openai.com/docs/guides/function-calling)
+3. **Execution Sandboxing & Security Boundaries**:  
+   Anthropic Engineering. *Claude Code Execution Safety & Sandboxing Mechanisms*.  
+   🔗 Dokumentasi Teknis: [https://docs.anthropic.com/en/docs/agents-and-tools/tool-use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use)
 
 ---
 

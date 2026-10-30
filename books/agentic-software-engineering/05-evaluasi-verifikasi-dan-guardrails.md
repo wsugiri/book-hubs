@@ -46,7 +46,7 @@ Kunci untuk mengendalikan kecerdasan probabilistik adalah membenturkannya secara
 
 ### 2. Anatomi Autonomous Self-Correction Loop
 
-Bagaimana agen memperbaiki kesalahannya sendiri secara otonom tanpa kepanikan? Siklus ini mengikuti 4 tahap terukur:
+Bagaimana agen memperbaiki kesalahannya sendiri secara otonom tanpa kepanikan? Siklus ini berakar pada kerangka riset terobosan **[Reflexion: Language Agents with Verbal Reinforcement Learning (Shinn et al., NeurIPS 2023)](https://arxiv.org/abs/2303.11366)**, yang menjadi standar evaluasi agen software engineering pada tolok ukur industri seperti **[SWE-bench (Jimenez et al., ICLR 2024)](https://www.swebench.com/)**. Siklus ini mengikuti 4 tahap terukur:
 
 ```text
                      ┌───────────────────────┐
@@ -162,6 +162,21 @@ Sebuah unit test sesekali gagal di pipeline CI karena *race condition* waktu tun
 **Pertanyaan Refleksi Diri**:
 - *Apakah repositori proyek Anda saat ini sudah memiliki jaring pengaman otomatis (linter dan automated tests) yang cukup tangguh untuk memvalidasi kode yang digenerasi oleh agen?*
 - *Apakah Anda sudah menentukan batas yang jelas antara tugas-tugas yang boleh dieksekusi agen secara otomatis dan tugas-tugas kritis yang wajib menunggu lampu hijau dari Anda?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **Reflexion: Language Agents with Verbal Reinforcement Learning (MIT & Northeastern)**:  
+   Shinn, N., Cassano, F., Gopinath, A., et al. (2023). NeurIPS 2023.  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2303.11366](https://arxiv.org/abs/2303.11366)
+2. **SWE-bench: Can Language Models Resolve Real-World GitHub Issues? (Princeton NLP)**:  
+   Jimenez, C. E., Yang, J., Wettig, A., et al. (2024). ICLR 2024 Oral.  
+   🔗 Tautan Benchmark & Leaderboard: [https://www.swebench.com/](https://www.swebench.com/)  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2310.06770](https://arxiv.org/abs/2310.06770)
+3. **OWASP Top 10 for Large Language Model Applications**:  
+   OWASP GenAI Security Project (2023–2025).  
+   🔗 Panduan Kerentanan & Mitigasi: [https://genai.owasp.org/llm-top-10/](https://genai.owasp.org/llm-top-10/)
 
 ---
 

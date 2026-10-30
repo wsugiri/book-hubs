@@ -98,3 +98,33 @@ Langkah taktis bagi individu dan tim rekayasa untuk mengadopsi Agentic Workflow:
 - **Kritik & Titik Buta (Blind Spots)**: Mengandalkan ekosistem agen menuntut disiplin tinggi dalam dokumentasi dan pengujian otomatis. Pada proyek legasi tanpa tes otomatis (*zero test coverage*) dan minim dokumentasi, tingkat otonomi agen harus dibatasi secara ketat untuk menghindari regresi fungsional yang fatal.
 - **Profil Pembaca Ideal**: Insinyur perangkat lunak (Junior hingga Principal), Arsitek Solusi, Engineering Manager, dan Tech Founders yang ingin menggandakan kecepatan pengiriman produk (*shipping velocity*) tanpa mengorbankan kualitas dan keamanan kode.
 
+---
+
+## 🌐 5. Daftar Pustaka & Tautan Rujukan Resmi (Official Cross-Check Bibliography)
+
+Seluruh konsep dalam buku ini berakar pada riset ilmiah terpublikasi dan standar protokol industri yang dapat Anda verifikasi secara langsung melalui tautan resmi berikut:
+
+1. **ReAct Paradigm (Reasoning + Acting)**:  
+   Yao, S., et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models*. ICLR 2023.  
+   🔗 Paper: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+2. **Context Degradation & Attention Limits (Lost in the Middle)**:  
+   Liu, N. F., Lin, K., Hewitt, J., et al. (2024). *Lost in the Middle: How Language Models Use Long Contexts*. TACL.  
+   🔗 Paper: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+3. **Model Context Protocol (MCP) Open Specification**:  
+   Anthropic & Open Source MCP Contributors (2024). *Model Context Protocol Architecture*.  
+   🔗 Situs Resmi & Spek: [https://modelcontextprotocol.io](https://modelcontextprotocol.io) | [GitHub MCP](https://github.com/modelcontextprotocol)
+4. **Autonomous Self-Correction (Reflexion Architecture)**:  
+   Shinn, N., Cassano, F., et al. (2023). *Reflexion: Language Agents with Verbal Reinforcement Learning*. NeurIPS 2023.  
+   🔗 Paper: [https://arxiv.org/abs/2303.11366](https://arxiv.org/abs/2303.11366)
+5. **Real-World Agent Evaluation (SWE-bench)**:  
+   Jimenez, C. E., et al. (2024). *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?* ICLR 2024.  
+   🔗 Benchmark & Dataset: [https://www.swebench.com/](https://www.swebench.com/) | [arXiv:2310.06770](https://arxiv.org/abs/2310.06770)
+6. **Multi-Agent Collaborative Software Development (MetaGPT & ChatDev)**:  
+   Hong, S., et al. (2023) [MetaGPT (arXiv:2308.00352)](https://arxiv.org/abs/2308.00352) & Qian, C., et al. (2023) [ChatDev (arXiv:2307.07924)](https://arxiv.org/abs/2307.07924).
+7. **Characterization Testing & Refactoring**:  
+   Martin Fowler. *Characterization Test*.  
+   🔗 Panduan Arsitektur: [https://martinfowler.com/bliki/CharacterizationTest.html](https://martinfowler.com/bliki/CharacterizationTest.html)
+8. **AI Application Security Standards (OWASP Top 10 for LLMs)**:  
+   OWASP GenAI Working Group.  
+   🔗 Panduan Mitigasi Keamanan: [https://genai.owasp.org/llm-top-10/](https://genai.owasp.org/llm-top-10/)
+

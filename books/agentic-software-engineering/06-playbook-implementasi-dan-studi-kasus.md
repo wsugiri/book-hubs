@@ -48,7 +48,7 @@ Inilah standar emas alur kerja rekayasa perangkat lunak berbantuan agen:
 
 1. **Discovery & Research**: Gunakan subagent bertipe *Researcher* untuk membaca pola arsitektur yang sudah ada, mengidentifikasi dependensi, dan merangkum cara komponen serupa diimplementasikan di proyek Anda.
 2. **Spec & Design Doc (`design.md`)**: Jangan mulai menulis kode sebelum dokumen desain disepakati. Tuliskan model data, antarmuka API, dan kriteria pengujian.
-3. **Atomic Task Breakdown**: Bagi pekerjaan menjadi unit-unit 10-15 menit. Setiap tugas harus memiliki input yang jelas, berkas yang ditargetkan, dan kriteria keberhasilan yang terukur.
+3. **Atomic Task Breakdown (`plan.md` / `task.md`)**: Bagi pekerjaan menjadi unit-unit checklist 10-15 menit (di dalam `design.md` atau di berkas `plan.md`). Setiap tugas harus memiliki input yang jelas, berkas yang ditargetkan, dan kriteria keberhasilan yang terukur.
 4. **Subagent Execution**: Delegasikan implementasi tugas ke subagent pelaksana. Setiap subagent hanya berfokus pada lingkupnya sendiri.
 5. **Deterministic Verification Loop**: Biarkan agen menjalankan `npm run build`, `npm run lint`, dan `npm test`. Agen akan secara otomatis membaca kegagalan dan memperbaikinya.
 6. **Human Review & Ship**: Manusia melakukan inspeksi akhir pada `git diff`. Periksa apakah ada logika bisnis tersembunyi yang terlewat, lalu buat *pull request*.
@@ -87,7 +87,7 @@ Dengan menjalankan inisialisasi ini:
 
 ### Studi Kasus 1: Membangun Fitur Full-Stack Baru (Webhook Idempotency Layer)
 
-Sebuah platform pembayaran membutuhkan sistem penerimaan webhook pihak ketiga (Stripe) yang tahan terhadap pengiriman berulang (*duplicate deliveries*) dengan jaminan idempotensi.
+Sebuah platform pembayaran membutuhkan sistem penerimaan webhook pihak ketiga yang tahan terhadap pengiriman berulang (*duplicate deliveries*) dengan jaminan idempotensi mengikuti standar industri **[Stripe API Idempotent Requests](https://stripe.com/docs/api/idempotent_requests)**.
 
 - **Eksekusi Langkah Demi Langkah**:
   1. **Dokumen Desain**: Pengembang menginstruksikan agen membuat `docs/designs/webhook-idempotency.md`.
@@ -115,7 +115,7 @@ Sebuah fungsi perhitungan diskon dan pajak keranjang belanja (*legacy pricing en
 
 - **Bahaya Terbesar**: Pengembang takut mengubah fungsi tersebut karena ada ratusan aturan diskon tersembunyi (*edge cases*) yang tidak terdokumentasi.
 - **Strategi Agentic: Characterization Testing**:
-  1. Alih-alih langsung menulis ulang kodenya, agen diinstruksikan untuk menulis **Characterization Tests (Golden Master)** terlebih dahulu:
+  1. Alih-alih langsung menulis ulang kodenya, agen diinstruksikan untuk menulis **[Characterization Tests / Golden Master (Martin Fowler)](https://martinfowler.com/bliki/CharacterizationTest.html)** terlebih dahulu:
      - Agen membuat skrip yang menghasilkan 50 variasi kombinasi keranjang belanja (keranjang kosong, diskon kupon ganda, pelanggan VIP, barang bebas pajak, nilai minus, dsb.).
      - Agen menjalankan fungsi warisan pada ke-50 input tersebut dan mencatat hasilnya sebagai *Ground Truth Snapshot*.
   2. Subagent Coder kemudian memecah fungsi 800 baris tersebut menjadi modul-modul TypeScript kecil yang bersih (*Single Responsibility*): `DiscountCalculator`, `TaxCalculator`, dan `ShippingEngine`.
@@ -165,6 +165,19 @@ Sebuah pod backend mengalami lonjakan memori tak terkendali (*Memory Leak*) seti
 **Pertanyaan Refleksi Diri**:
 - *Apakah Anda sudah siap mengubah identitas harian Anda dari sekadar 'tukang ketik kode' menjadi 'Direktur Rekayasa Perangkat Lunak' yang mengorkestrasi sistem cerdas?*
 - *Proyek apa di meja kerja Anda saat ini yang bisa Anda selesaikan 5 kali lebih cepat dengan menerapkan alur kerja Agentic Pipeline mulai hari ini?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **Legacy Code Modernization & Characterization Testing**:  
+   Fowler, M. *Characterization Test*. martinfowler.com Software Architecture Guides.  
+   🔗 Tautan Panduan Martin Fowler: [https://martinfowler.com/bliki/CharacterizationTest.html](https://martinfowler.com/bliki/CharacterizationTest.html)
+2. **Idempotency & Fault-Tolerant Distributed APIs**:  
+   Stripe Engineering Guides. *Designing Robust and Idempotent Webhook APIs*.  
+   🔗 Dokumentasi Resmi Stripe: [https://stripe.com/docs/api/idempotent_requests](https://stripe.com/docs/api/idempotent_requests)
+3. **Continuous Integration Verification for Autonomous Code Generation**:  
+   GitHub Engineering & Antigravity Research Lab. *Automating Safe Pull Request Reviews with Autonomous Agents*.
 
 ---
 

@@ -48,7 +48,7 @@ Mengapa satu agen pintar tidak cukup untuk menangani proyek perangkat lunak skal
 
 ### 2. Pola Arsitektur Hierarkis: Skuad Multi-Agent Terpadu
 
-Solusi arsitektural yang paling tangguh adalah memisahkan tanggung jawab menjadi peran-peran spesifik dengan batasan konteks terisolasi:
+Solusi arsitektural yang paling tangguh—sebagaimana dibuktikan dalam riset multi-agent software engineering ternama seperti **[MetaGPT (Hong et al., 2023)](https://arxiv.org/abs/2308.00352)** dan **[ChatDev (Qian et al., 2023)](https://arxiv.org/abs/2307.07924)**—adalah memisahkan tanggung jawab menjadi peran-peran spesifik dengan batasan konteks terisolasi:
 
 ```text
                         ┌───────────────────────────────┐
@@ -148,6 +148,21 @@ Bayangkan sebuah aplikasi React dengan 80 komponen yang masih menggunakan Redux 
 **Pertanyaan Refleksi Diri**:
 - *Pernahkah Anda frustrasi melihat AI mulai berhalusinasi setelah percakapan berjalan terlalu panjang? Apakah itu salah modelnya, atau Anda yang belum memecah tugasnya ke dalam subagent yang terisolasi?*
 - *Bagaimana Anda bisa membagi pekerjaan rekayasa tim Anda ke dalam peran-peran spesialis yang siap dioperasikan oleh skuad subagent AI?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **MetaGPT: Meta-Programming for A Multi-Agent Collaborative Framework**:  
+   Hong, S., Zheng, X., Chen, J., et al. (2023). ICLR 2024.  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2308.00352](https://arxiv.org/abs/2308.00352)  
+   🔗 Repositori Proyek: [https://github.com/geekan/MetaGPT](https://github.com/geekan/MetaGPT)
+2. **ChatDev: Communicative Agents for Software Development**:  
+   Qian, C., Cong, X., Yang, C., et al. (2023). ACL 2024.  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2307.07924](https://arxiv.org/abs/2307.07924)  
+   🔗 Repositori Proyek: [https://github.com/OpenBMB/ChatDev](https://github.com/OpenBMB/ChatDev)
+3. **Subagents Architecture & Isolated Git Workspaces**:  
+   Antigravity System Architecture Documentation & Branch/Share Worktree Modes.
 
 ---
 

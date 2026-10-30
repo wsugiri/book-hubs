@@ -56,7 +56,7 @@ Untuk mengendalikan agen agar selalu bekerja sesuai rel yang benar, informasi da
 
 Mengapa kita tidak menyuntikkan seluruh kode repositori langsung ke dalam *context window* agen yang berkapasitas 1 juta token?
 
-Penelitian mendalam tentang mekanisme *self-attention* pada model bahasa (seperti riset dari Liu et al. mengenai fenomena *Lost in the Middle*) mengungkap kenyataan pahit:
+Penelitian mendalam tentang mekanisme *self-attention* pada model bahasa (seperti riset terobosan dari **[Nelson F. Liu et al., Stanford University & TACL 2024 (arXiv:2307.03172)](https://arxiv.org/abs/2307.03172)** mengenai fenomena *Lost in the Middle*) mengungkap kenyataan pahit:
 1. **Attention Fatigue**: Semakin besar jumlah token yang dijejalkan ke dalam konteks, semakin menurun kemampuan model untuk memberikan perhatian tajam pada instruksi spesifik.
 2. **Context Contamination**: Menjejali kode lama yang berantakan atau pustaka yang tidak relevan akan "meracuni" gaya generasi kode agen.
 3. **Biaya & Latensi Kognitif**: Membaca 500.000 token untuk setiap siklus ReAct membuat respon agen lambat dan boros sumber daya.
@@ -122,6 +122,34 @@ Permintaan Pengguna
 
 Dengan memisahkan fase perencanaan dan fase eksekusi, Anda menghemat 80% waktu revisi. Memperbaiki kesalahan arsitektur dalam teks dokumen desain membutuhkan waktu 10 detik; memperbaiki kode salah arsitektur yang sudah telanjur ditulis di 15 berkas membutuhkan waktu berjam-jam.
 
+#### Di Mana Seharusnya Kita Menuliskan `plan.md`?
+
+Banyak pengembang bingung membedakan antara `design.md` dan `plan.md`, serta di mana berkas rencana tersebut seharusnya disimpan.
+
+```text
+┌─────────────────────────────────┬─────────────────────────────────┐
+│     design.md (Spesifikasi)     │     plan.md (Rencana Eksekusi)  │
+├─────────────────────────────────┼─────────────────────────────────┤
+│ • Menjawab: WHAT & WHY          │ • Menjawab: HOW & WHEN          │
+│ • Arsitektur, skema data, batas │ • Urutan eksekusi langkah demi  │
+│   sistem, & kontrak antarmuka   │   langkah, daftar file spesifik │
+│ • Dokumen permanen (arsip Git)  │ • Dokumen kerja dinamis (aktif) │
+└─────────────────────────────────┴─────────────────────────────────┘
+```
+
+Dalam praktiknya, terdapat **3 pola penempatan `plan`** yang umum digunakan:
+
+1. **Pola 1: Terintegrasi di dalam `design.md` (Rekomendasi untuk Fitur Standar)**  
+   Untuk sebagian besar fitur baru, Anda tidak perlu membuat berkas terpisah. Cukup sertakan rencana eksekusi langsung di bagian akhir `design.md` (lihat Bagian 5: *Phased Implementation Tasks* pada template di atas). Agen membaca spesifikasi sekaligus mencentang progresnya di satu berkas yang sama (`docs/designs/001-nama-fitur.md`).
+
+2. **Pola 2: Berkas Mandiri di Root Proyek (`plan.md` atau `task.md`)**  
+   Saat Anda mengaktifkan "Plan Mode" pada lingkungan agen modern (seperti Antigravity atau Cursor), agen sering membuat `plan.md` atau `task.md` langsung di *root workspace*. Pola ini sangat efektif untuk sesi pengerjaan aktif:
+   - Agen menandai setiap kotak centang `- [ ]` menjadi `- [x]` begitu langkah selesai diverifikasi.
+   - Setelah seluruh pekerjaan selesai dan di-*merge*, berkas `plan.md` ini dapat dihapus atau diarsipkan ke `docs/plans/`.
+
+3. **Pola 3: Transient Scratchpad (`.agents/scratch/plan.md`)**  
+   Untuk tugas refactoring cepat, perbaikan bug darurat (*hotfix*), atau investigasi performa yang tidak memerlukan dokumentasi permanen, tempatkan `plan.md` di `.agents/scratch/plan.md`. Karena folder `.agents/scratch/` sudah dimasukkan ke `.gitignore`, rencana kerja agen tidak akan mengotori pohon komit Git utama repositori.
+
 ---
 
 ### 5. Standar Struktur & Penempatan Direktori Repositori Berbasis Agen (The Agentic Directory Architecture)
@@ -150,23 +178,32 @@ my-awesome-project/
 │   ├── hooks/                        # Skrip hook otomatis (lifecycle events)
 │   │   ├── pre-commit-check.sh       # Dijalankan agen sebelum membuat commit
 │   │   └── on-error-diagnostic.sh    # Dijalankan saat terminal melempar exit != 0
+│   ├── scratch/                      # Ruang kerja sementara agen (diabaikan oleh git)
+│   │   └── plan.md                   # (Opsi 3) Rencana eksekusi sementara / scratchpad
 │   └── mcp.json                      # Konfigurasi lokal Model Context Protocol
 │
 ├── docs/                             # Dokumentasi Proyek & Spesifikasi
 │   └── designs/                      # Folder arsip dokumen desain (Spec-Driven)
 │       ├── template.md               # Template standar design.md
-│       ├── 001-user-auth.md          # Dokumen desain fitur #1
+│       ├── 001-user-auth.md          # Dokumen desain fitur #1 (memuat task plan terintegrasi)
 │       └── 002-order-checkout.md     # Dokumen desain fitur #2
 │
 ├── AGENTS.md                         # [ROOT LEVEL] Aturan sistem global & konvensi proyek
+├── plan.md                           # (Opsi 2) Rencana aktif sesi saat ini (checklist kerja)
 ├── .cursorrules                      # (Opsional) Alias / mirror untuk IDE berbasis Cursor
-├── .gitignore                        # Konfigurasi pengecualian git
 │
 ├── src/                              # Direktori kode sumber aplikasi
 │   ├── ...
 │   └── ...
 └── package.json                      # Definisi dependensi & build scripts
 ```
+
+> [!IMPORTANT]
+> **Aturan Penamaan & Konvensi Huruf (Casing Rules yang Sering Salah):**
+> 1. **`AGENTS.md` (Kapital Penuh & Jamak)**: Selalu diletakkan di *root* direktori proyek. Ditulis dalam huruf kapital penuh mengikuti konvensi berkas sistem standar repositori seperti `README.md` dan `CONTRIBUTING.md`. Jangan gunakan `agent.md` atau `agents.md` karena sebagian besar *agent runtime* (termasuk Antigravity dan IDE modern) mencari berkas persis bernama `AGENTS.md`.
+> 2. **`SKILL.md` (Kapital Penuh & Tunggal)**: Setiap folder skill di `.agents/skills/<nama-skill>/` wajib memuat berkas utama bernama `SKILL.md` (bukan `skills.md` atau `skill.md`). Nama foldernya jamak (`skills/`), namun nama berkas manifest di dalamnya tunggal (`SKILL.md`).
+> 3. **`design.md` atau `docs/designs/*.md` (Huruf Kecil)**: Dokumen spesifikasi fitur ditulis dalam huruf kecil standar penamaan dokumen teknis. Untuk satu fitur independen, Anda dapat menggunakan `design.md` di root kerja atau mengarsipkannya secara terstruktur di `docs/designs/<nomor>-<nama-fitur>.md`.
+> 4. **`plan.md` (Huruf Kecil & Tunggal)**: Dokumen rencana aksi kerja (*execution checklist*) ditulis dalam huruf kecil. Diletakkan di *root* (`plan.md`) saat sesi aktif atau disatukan langsung di dalam bagian akhir `design.md`.
 
 #### Aturan Pembagian Lingkup: Global Scope vs Workspace Scope
 
@@ -230,6 +267,20 @@ Ketika agen mengeksekusi tugas berdasarkan `design.md` ini, hasilnya adalah impl
 **Pertanyaan Refleksi Diri**:
 - *Apakah instruksi yang selama ini Anda berikan kepada AI sudah cukup spesifik dan terikat batasan, atau Anda masih berharap AI dapat membaca pikiran dan asumsi tersembunyi di kepala Anda?*
 - *Berapa banyak waktu yang bisa Anda hemat jika Anda mengoreksi arsitektur pada selembar dokumen desain 10 menit sebelum agen mulai menulis ratusan baris kode?*
+
+---
+
+## 🌐 Sumber Riset & Tautan Verifikasi (Primary Sources & Cross-Check)
+
+1. **Lost in the Middle: How Language Models Use Long Contexts (Stanford & UC Berkeley)**:  
+   Liu, N. F., Lin, K., Hewitt, J., et al. (2024). *Transactions of the Association for Computational Linguistics (TACL)*, 12, 157–173.  
+   🔗 Tautan Paper Resmi: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+2. **Architecture Decision Records (ADRs) & Spec-Driven Development**:  
+   Nygard, M. (2011). *Documenting Architecture Decisions*. ThoughtWorks & ADR Organization.  
+   🔗 Spesifikasi ADR: [https://adr.github.io/](https://adr.github.io/)
+3. **Repository Context Rules (`AGENTS.md` / Rules for AI)**:  
+   Cursor Documentation & AI Working Group. *Custom Rules & Context Injection Standards*.  
+   🔗 Panduan Konfigurasi: [https://docs.cursor.com/context/rules-for-ai](https://docs.cursor.com/context/rules-for-ai)
 
 ---
 
