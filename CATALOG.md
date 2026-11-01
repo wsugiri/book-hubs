@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-15%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-15%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-16%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-16%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -90,6 +90,32 @@
 - **Hukum WYSIATI (*What You See Is All There Is*)**: Pikiran hanya mengolah bukti yang tampak di depan mata dan mengabaikan informasi kritis yang belum diketahui demi merajut cerita yang koheren.
 - **Heuristik & Bias Sistemik**: Jalan pintas mental yang memicu efek jangkar (*Anchoring*), ilusi ketersediaan (*Availability*), sesat pikir konjungsi Linda, dan buta regresi menuju rata-rata.
 - **Teori Prospek & Dua Diri**: Rasa sakit kehilangan (*Loss Aversion*) terasa 2x lipat lebih tajam daripada kenikmatan menang, serta tirani Diri yang Mengingat (*Remembering Self*) yang hanya menilai peristiwa dari *Peak* dan *End*.
+
+<br/>
+
+### [Think and Grow Rich: Master Formula Sukses dan Akumulasi Kekayaan](books/think-and-grow-rich/index.md)
+
+<div align="center">
+  <a href="books/think-and-grow-rich/index.md">
+    <img src="books/think-and-grow-rich/cover.jpg" width="280" alt="Think and Grow Rich Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: Napoleon Hill &nbsp;|&nbsp; **Tahun**: 1937 &nbsp;|&nbsp; **Penerbit**: The Ralston Society &nbsp;|&nbsp; **Estimasi Baca**: ~60–75 Menit (4 Modul Lengkap)  
+> `🧠 Filosofi Sukses` `💰 Akumulasi Kekayaan` `🎯 Definite Purpose` `⚡ Master Mind`
+
+> **💡 The Big Idea:**  
+> *"Kekayaan dan pencapaian luar biasa bermula dari sebuah kondisi pikiran (state of mind). Apa pun yang dapat dibayangkan dan diyakini oleh pikiran manusia, dapat diwujudkan menjadi ekuivalen fisiknya melalui hasrat membara yang tidak menyisakan opsi untuk mundur, aliansi pikiran yang harmonis (Master Mind), dan ketekunan yang membakar segala keraguan."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **The Definite Major Purpose & 6 Langkah Transformasi**: Mengubah hasrat abstrak menjadi emas fisik melalui spesifikasi nominal, kompensasi nilai, tenggat waktu pasti, dan pembacaan deklarasi bersuara lantang.
+- **Specialized Knowledge & Organized Planning**: Menolak mitos 'knowledge is power'; pengetahuan hanyalah potensi daya sampai diorganisasikan ke dalam rencana kerja konkret menuju tujuan yang pasti.
+- **The Master Mind & Baterai Otak Manusia**: Melipatgandakan kapasitas intelektual melalui aliansi harmonis dua orang atau lebih untuk menciptakan 'otak ketiga' bertenaga raksasa.
+- **Membasmi 6 Hantu Ketakutan**: Mensterilkan alam bawah sadar dari parasit mental pemusnah inisiatif (Kemiskinan, Kritik, Sakit, Hilang Cinta, Usia Tua, dan Kematian).
+
+📘 **[Master Hub](books/think-and-grow-rich/index.md)** &nbsp;|&nbsp; **[Part 1](books/think-and-grow-rich/01-fondasi-mental-dan-hasrat-membara.md)** &nbsp;|&nbsp; **[Part 2](books/think-and-grow-rich/02-bengkel-pikiran-dan-strategi-eksekusi.md)** &nbsp;|&nbsp; **[Part 3](books/think-and-grow-rich/03-penggerak-tindakan-dan-pengganda-kekuatan.md)** &nbsp;|&nbsp; **[Part 4](books/think-and-grow-rich/04-fisika-mental-dan-menaklukkan-ketakutan.md)**
 
 ---
 
