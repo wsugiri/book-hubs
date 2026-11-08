@@ -66,6 +66,12 @@ Practical Method menegaskan: **Yao harus tetap tegak, lurus, dan netral (*Zhong 
 - Sendi panggul adalah sendi peluru (*ball-and-socket*) raksasa yang dikelilingi oleh kelompok otot terkuat dalam tubuh manusia (gluteus maximus, iliopsoas, piriformis, tensor fasciae latae).
 - Ketika Practical Method berbicara tentang "memutar tubuh", mekanika yang terjadi adalah: **Kua satu sisi melipat ke dalam (*Sinking / Retracting Kua*) sementara Kua sisi lainnya membuka dan mendorong ke depan (*Pushing Kua*)** [[1]](#ref-1). Tulang belakang lumbar (*Yao*) hanya menumpang di atas mangkuk panggul seperti tiang bendera di atas fondasi beton, tanpa memelintir dirinya sendiri [[1]](#ref-1), [[9]](#ref-9).
 
+#### Mekanisme *Inner Kua* (*Nei Kua*) vs *Outer Kua* (*Wai Kua*)
+Dalam pembedahan tingkat lanjut oleh Chen Zhonghua, sendi *Kua* tidak bekerja sebagai satu blok tunggal, melainkan memiliki dua kutub anatomis yang bekerja secara berpasangan dalam lingkaran dalam dan luar [[1]](#ref-1):
+1. **Inner Kua (内胯 — Lipatan Inguinal Dalam & *Femoral Head*)**: Merujuk pada titik terdalam di lipatan selangkangan tempat kepala tulang paha (*caput femoris*) bersarang di dalam mangkuk panggul (*acetabulum*). Tugas utama *Inner Kua* adalah **"mengosongkan dan melipat ke belakang-bawah" (*hollowing & sinking inward*)**. Ketika lawan mendorong tubuh Anda, *Inner Kua* mengendur masuk seperti kantong yang menyedot gaya dorong ke arah tumit [[1]](#ref-1).
+2. **Outer Kua (外胯 — Trokanter Mayor / Sisi Luar Pinggul)**: Merujuk pada tonjolan tulang paha bagian luar (*greater trochanter*) dan otot gluteus medius/tensor fasciae latae. Tugas utama *Outer Kua* adalah **"membungkus ke depan-dalam" (*wrapping forward*)** untuk mengunci stabilitas lateral.
+3. **Sinergi Lingkaran Dalam & Luar pada Panggul**: Kesalahan umum pemula saat diminta "melipat Kua" adalah membuang pinggul luarnya ke samping (*hip swaying*). Jika *Outer Kua* bocor keluar garis tumit, sumbu tenaga runtuh. Dalam Practical Method, saat **Inner Kua melipat masuk (Yin)**, **Outer Kua harus membungkus ke depan (Yang)**—menciptakan torsi silinder panggul di tempat tanpa menggeser panggul keluar dari kerangka kaki [[1]](#ref-1), [[7]](#ref-7).
+
 ---
 
 ### 2. Aturan Besi Siku: "Siku Tidak Pernah Melayang Keluar" (*Chen Zhou*)

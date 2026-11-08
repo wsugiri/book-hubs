@@ -106,6 +106,42 @@ Dalam tinjauan sains modern oleh Dr. Peter M. Wayne dari Harvard Medical School 
 
 ---
 
+### 5. Mekanika *Inner Circle* (Lingkaran Dalam) vs *Outer Circle* (Lingkaran Luar): Hukum Poros & Tepi Roda
+
+Selain pembagian *Positive Circle* dan *Negative Circle*, *Practical Method* juga mengajarkan hukum geometri konsentris antara **Inner Circle (内圈 — Lingkaran Dalam)** dan **Outer Circle (外圈 — Lingkaran Luar)** [[1]](#ref-1):
+
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│        MEKANIKA KONSENTRIS: INNER CIRCLE (KUA) vs OUTER CIRCLE         │
+└────────────────────────────────────────────────────────────────────────┘
+                     ╭───────────────────────────╮
+                  ╭──╯   OUTER CIRCLE (Tangan)   ╰──╮
+                 ╱    • Radius besar (r_out)         ╲
+                │     • Kecepatan linier tinggi       │
+                │       ╭─────────────────────╮       │
+                │    ╭──╯ INNER CIRCLE (Kua)  ╰──╮    │
+                │   │   • Radius kecil (r_in)     │   │
+                │   │   • Torsi raksasa (Poros)   │   │
+                │   │         [ POROS ]           │   │
+                │    ╰──╮  (Tulang Belakang)  ╭──╯    │
+                │       ╰─────────────────────╯       │
+                 ╲    • Lawan dipaksa berlari di     ╱
+                  ╰──╮  lintasan luar (Outer)    ╭──╯
+                     ╰───────────────────────────╯
+```
+
+1. **Fisika Kecepatan Sudut vs Torsi ($\tau = F \cdot r$ dan $v = \omega \cdot r$)**:
+   - Bayangkan sebuah roda kereta kuda. Bagian poros tengah roda (**Inner Circle** yang diwakili oleh **Kua** dan **Dantian**) memiliki jari-jari ($r_{\text{in}}$) yang sangat kecil, sedangkan tepi luar roda (**Outer Circle** yang diwakili oleh **pergelangan tangan dan jari**) memiliki jari-jari ($r_{\text{out}}$) yang besar.
+   - Ketika poros *Kua* di **Inner Circle** berputar hanya sebesar **1 sentimeter**, ujung jari tangan di **Outer Circle** secara otomatis telah menempuh lintasan busur sejauh **10 hingga 15 sentimeter** pada kecepatan sudut ($\omega$) yang sama [[1]](#ref-1).
+   - **Kesalahan Pemula**: Menggerakkan tangan secara langsung di *Outer Circle* sementara *Kua* di *Inner Circle* mati. Akibatnya, tangan mudah ditangkap atau dihentikan lawan karena tidak memiliki torsi poros.
+   - **Prinsip Master**: Praktisi *Practical Method* **hanya fokus menggerakkan *Inner Circle* (melipat dan memutar *Kua*)**, dan membiarkan tangan di *Outer Circle* sekadar menjadi perpanjangan pasif dari putaran poros tersebut [[1]](#ref-1), [[8]](#ref-8).
+
+2. **Taktik Perebutan Jalur dalam Pertarungan (*Inner Gate vs Outer Gate*)**:
+   - Dalam aplikasi *Tuishou*, barang siapa yang menguasai **Inner Circle** (jalur tengah terdekat dengan sumbu gravitasi), dialah yang memegang kendali.
+   - Dengan menjaga siku tetap di dalam dan memutar *Kua* pada *Inner Circle*, praktisi memaksa lawan yang menyerang untuk terlempar mengikuti lintasan **Outer Circle** (keliling luar). Lawan harus menempuh jarak yang jauh untuk memperbaiki posisinya, sementara praktisi cukup menggeser poros *Kua* beberapa milimeter untuk menjatuhkan lawan [[1]](#ref-1), [[2]](#ref-2).
+
+---
+
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
 ### Eksperimen Obeng dan Baut: Mengapa Memutar Lebih Kuat Daripada Mendorong?
