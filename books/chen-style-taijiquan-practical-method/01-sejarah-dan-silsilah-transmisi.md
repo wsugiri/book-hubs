@@ -23,6 +23,13 @@ Pengesahan historis tahun 1956 inilah yang melahirkan entitas yang kelak dikenal
 
 ---
 
+<div align="center">
+  <img src="illustrations/part1_transmission_posture.jpg" width="100%" alt="Ilustrasi Transmisi Chen Fake ke Hong Junsheng di Halaman Beijing" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 1: Grandmaster Chen Fake mendemonstrasikan struktur kuda-kuda rendah, tulang belakang vertikal (Zhong Zheng), pelipatan Kua, dan pengalihan vektor dorong lawan 45° menuju tumit belakang di hadapan Hong Junsheng (Beijing, 1930-an).</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text

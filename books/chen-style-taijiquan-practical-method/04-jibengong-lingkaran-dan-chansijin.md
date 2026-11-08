@@ -17,6 +17,13 @@ Di dalam **Chen Style Taijiquan Practical Method**, *Jibengong* (基本功 — L
 
 ---
 
+<div align="center">
+  <img src="illustrations/part4_positive_circle_chansijin.jpg" width="100%" alt="Ilustrasi Gerakan Jibengong Positive Circle dan Mekanika Chan Si Jin" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 4: Dekonstruksi dua fase Jibengong Positive Circle (Zheng Quan) dan torsi spiral Chan Si Jin — memisahkan Fase 1 rotasi poros mandiri pergelangan tangan (self-rotation) dengan siku terkunci stasioner, diikuti Fase 2 pelipatan Kua dan revolusi orbital 45 derajat.</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text

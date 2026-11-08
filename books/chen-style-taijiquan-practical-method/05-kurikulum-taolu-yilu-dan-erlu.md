@@ -19,6 +19,13 @@ Kisah ini menggarisbawahi arsitektur kurikulum yang sangat ketat di dalam **Chen
 
 ---
 
+<div align="center">
+  <img src="illustrations/part5_lanzhayi_danbian.jpg" width="100%" alt="Ilustrasi Postur Kunci Lan Zha Yi dan Dan Bian dalam Kurikulum Yilu" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 5: Koreksi presisi Hong Junsheng atas dua postur fondasi Yilu — Lan Zha Yi (kiri) dengan siku jatuh tepat segaris vertikal di atas lutut kanan, dan Dan Bian (kanan) dengan tangan kait (Diao Shou) sebagai poros tumpu serta regangan dua arah (Dui La) melintasi punggung ke tumit.</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text

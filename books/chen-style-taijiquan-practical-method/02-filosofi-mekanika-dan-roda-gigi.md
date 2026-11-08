@@ -16,6 +16,13 @@ Practical Method menolak mistisisme verbal yang menyesatkan tersebut. Bagi Hong 
 
 ---
 
+<div align="center">
+  <img src="illustrations/part2_lever_and_gears.jpg" width="100%" alt="Ilustrasi Mekanika Tuas Archimedes dan Transmisi Roda Gigi Practical Method" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 2: Tubuh praktisi sebagai sistem transmisi roda gigi tanpa selip (interlocking gears) dan tuas Archimedes — titik kontak pergelangan/siku terkunci diam sebagai titik tumpu (Yin / Bu Dong), sementara rotasi Kua menggerakkan lengan tuas (Yang).</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text

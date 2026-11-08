@@ -19,6 +19,13 @@ Peristiwa ini menyingkap tabir mengapa kosa kata teknis dan anatomi di dalam **C
 
 ---
 
+<div align="center">
+  <img src="illustrations/part3_yao_kua_45deg.jpg" width="100%" alt="Ilustrasi Anatomi Struktur Yao, Kua, Siku, dan Sudut 45 Derajat" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 3: Arsitektur anatomis Practical Method — tulang belakang lumbar (Yao) tegak vertikal seperti tali unting, sendi panggul (Kua) melipat dalam, siku berat berjarak satu kepalan dari rusuk, serta segitiga struktur 45 derajat ke tumit penopang.</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text

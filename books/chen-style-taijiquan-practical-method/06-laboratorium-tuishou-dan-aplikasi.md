@@ -16,6 +16,13 @@ Jika struktur Anda runtuh di bawah dorongan rekan latihan, Anda tidak boleh mara
 
 ---
 
+<div align="center">
+  <img src="illustrations/part6_tuishou_uprooting.jpg" width="100%" alt="Ilustrasi Aplikasi Tuishou dan Mekanika Uprooting (Mencabut Akar Lawan)" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); margin-bottom: 12px;" />
+  <p><sub><em>Ilustrasi Bab 6: Laboratorium Tuishou (Push Hands) dan mekanika Uprooting (Ba Gen) — praktisi mempertahankan titik kontak lengan bawah sebagai poros mati (Bu Dong) sambil menenggelamkan Kua, mengubah vektor dorong lawan menjadi gaya angkat yang mencabut kedua tumit lawan dari lantai.</em></sub></p>
+</div>
+
+---
+
 ## 🔬 Teardown Konsep & Wawasan Utama (Deep-Dive Insights)
 
 ```text
