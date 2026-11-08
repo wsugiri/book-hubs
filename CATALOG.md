@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-16%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-16%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-17%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-17%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -422,6 +422,34 @@
 - **Program Terpadu & Lanskap Sistem**: Makrosiklus 16 minggu, tinjauan netral sistem pendamping (AMS/biometrik), serta alur kerja 5 gerbang dojang (operasional lapangan).
 
 📘 **[Master Hub](books/seni-melatih-atlet-taekwondo/index.md)** &nbsp;|&nbsp; **[Bab 1](books/seni-melatih-atlet-taekwondo/01-bioenergetika-dan-fisiologi-taekwondo.md)** &nbsp;|&nbsp; **[Bab 2](books/seni-melatih-atlet-taekwondo/02-periodisasi-beban-dan-tapering.md)** &nbsp;|&nbsp; **[Bab 3](books/seni-melatih-atlet-taekwondo/03-sports-medicine-dan-biomekanika-cedera.md)** &nbsp;|&nbsp; **[Bab 4](books/seni-melatih-atlet-taekwondo/04-nutrisi-hidrasi-dan-manajemen-berat-badan.md)** &nbsp;|&nbsp; **[Bab 5](books/seni-melatih-atlet-taekwondo/05-psikologi-performa-dan-ketahanan-mental.md)** &nbsp;|&nbsp; **[Bab 6](books/seni-melatih-atlet-taekwondo/06-fisiologi-pemulihan-dan-kualitas-tidur.md)** &nbsp;|&nbsp; **[Bab 7](books/seni-melatih-atlet-taekwondo/07-menyusun-program-terpadu.md)** &nbsp;|&nbsp; **[Bab 8](books/seni-melatih-atlet-taekwondo/08-lanskap-sistem-pendamping-dan-teknologi-atlet.md)** &nbsp;|&nbsp; **[Bab 9](books/seni-melatih-atlet-taekwondo/09-alur-kerja-pembinaan-terstruktur-non-it.md)**
+
+<br/>
+
+### [Chen Style Taijiquan Practical Method: Teori & Biomekanika Shiyong Quanfa](books/chen-style-taijiquan-practical-method/index.md)
+
+<div align="center">
+  <a href="books/chen-style-taijiquan-practical-method/index.md">
+    <img src="books/chen-style-taijiquan-practical-method/cover.jpg" width="280" alt="Chen Style Taijiquan Practical Method Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Lengkap 6 Bab Divalidasi)</b></sub>
+</div>
+
+> **Sumber Primer**: Grandmaster Hong Junsheng & Grandmaster Chen Zhonghua &nbsp;|&nbsp; **Penyusun**: Book Hubs &nbsp;|&nbsp; **Tahun**: 1989 / 2006 / 2026 &nbsp;|&nbsp; **Estimasi Baca**: ~90–120 Menit (6 Bab Lengkap)  
+> `🥋 Taijiquan Gaya Chen` `⚙️ Biomekanika Gerak` `📐 Fisika Tuas & Torsi` `🧬 Anatomi Fasia` `🛡️ Aplikasi Bela Diri`
+
+> **💡 The Big Idea:**  
+> *"Apa yang oleh orang awam dianggap sebagai 'energi internal gaib' sesungguhnya adalah hasil dari presisi geometri tulang, penguncian titik tumpu (fulcrum), dan penyaluran gaya reaksi tanah tanpa kebocoran sendi. Taijiquan adalah rekayasa biomekanika murni di mana tubuh manusia bekerja selayaknya sistem transmisi roda gigi jam mekanis."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Demistifikasi Qi & Fisika Tuas**: Mengganti instruksi mistis kabur dengan hukum tuas Archimedes, titik tumpu stasioner, dan gaya reaksi tanah (GRF).
+- **Tiga Aturan Besi Practical Method**: Aturan 'Jangan Bergerak' (*Bu Dong*), aturan 'Jangan Melawan Tenaga dengan Tenaga' (*No Force vs Force*), dan regangan dua arah (*Dui La*).
+- **Presisi Anatomi Yao vs Kua**: Menjaga lumbar (*Yao*) tetap lurus stabil dan membebankan seluruh rotasi 3D pada sendi panggul (*Kua*), mencegah cedera pinggang kronis.
+- **Fondasi Jibengong Lingkaran Positif & Negatif**: Memisahkan secara ketat antara rotasi poros mandiri (*self-rotation*) dan revolusi orbital (*revolution*) serta mekanika lilitan sutra (*Chan Si Jin*).
+- **Kurikulum Taolu (Yilu & Erlu)**: Yilu 81 jurus untuk membangun bingkai defensif; Erlu Paochui 64 jurus untuk pelepasan tenaga ledak (*Fa Jin*) jarak dekat.
+- **Laboratorium Tuishou & Uprooting**: Menguji kejujuran struktur di bawah dorongan nyata lawan (*feeding force*), mencabut akar gravitasi lawan (*uprooting*), dan mengeliminasi 4 kesalahan fatal (*Ding, Diu, Bian, Kuang*).
+
+📘 **[Master Hub](books/chen-style-taijiquan-practical-method/index.md)** &nbsp;|&nbsp; **[Bab 1](books/chen-style-taijiquan-practical-method/01-sejarah-dan-silsilah-transmisi.md)** &nbsp;|&nbsp; **[Bab 2](books/chen-style-taijiquan-practical-method/02-filosofi-mekanika-dan-roda-gigi.md)** &nbsp;|&nbsp; **[Bab 3](books/chen-style-taijiquan-practical-method/03-anatomi-struktur-dan-kosakata-teknis.md)** &nbsp;|&nbsp; **[Bab 4](books/chen-style-taijiquan-practical-method/04-jibengong-lingkaran-dan-chansijin.md)** &nbsp;|&nbsp; **[Bab 5](books/chen-style-taijiquan-practical-method/05-kurikulum-taolu-yilu-dan-erlu.md)** &nbsp;|&nbsp; **[Bab 6](books/chen-style-taijiquan-practical-method/06-laboratorium-tuishou-dan-aplikasi.md)**
 
 ---
 
