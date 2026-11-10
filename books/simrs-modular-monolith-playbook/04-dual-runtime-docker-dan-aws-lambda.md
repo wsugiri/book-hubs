@@ -37,7 +37,7 @@ Hasilnya, logika aplikasi Anda di `src/app.js` tidak perlu diubah satu karakter 
             │                                                   │
      Long-Running VM                                    Short-Lived Execution
   • Persistent Connection Pool                        • Ephemeral Execution
-    (max: 20, min: 5)                                 • Dynamic Pool (max: 2, min: 0)
+    (max: 20, min: 5)                                 • Dynamic Pool (max: 1, min: 0)
   • Graceful Shutdown (SIGTERM)                       • AWS RDS Proxy Connection Multiplex
 ```
 
@@ -117,13 +117,14 @@ export const getDatabase = () => {
       pool: isLambda
         ? {
             // Konfigurasi Khusus AWS Lambda:
-            // Sifat eksekusi bersifat konkuren per-container.
-            // Gunakan pool sangat kecil dan agresif dalam membuang koneksi idle.
-            max: 2,
+            // Satu execution environment hanya memproses SATU request pada satu waktu,
+            // jadi pool lebih dari 1 tidak menambah throughput. Konkurensi dicapai
+            // lewat banyak instance Lambda, bukan pool besar.
+            max: 1,
             min: 0,
             idle: 1000,
-            acquire: 30000,
-            evict: 1000
+            acquire: 3000,
+            evict: 0 // Matikan timer evict; pembersihan dilakukan per-invocation (lihat lambda.js)
           }
         : {
             // Konfigurasi Khusus Docker / Kubernetes (Long-Running):
@@ -178,21 +179,39 @@ const server = serve(
 
 // GRACEFUL SHUTDOWN (Sangat krusial untuk transaksi medis!)
 // Mencegah pemotongan transaksi di tengah jalan saat container di-restart/redeploy
-const gracefulShutdown = async (signal) => {
-  console.warn(`[SHUTDOWN] Menerima sinyal ${signal}. Menutup server secara aman...`);
+const SHUTDOWN_TIMEOUT_MS = Number(process.env.SHUTDOWN_TIMEOUT_MS) || 25000; // < terminationGracePeriodSeconds K8s (default 30s)
+let isShuttingDown = false;
 
-  // 1. Berhenti menerima request HTTP baru
-  server.close(() => {
-    console.info('[SHUTDOWN] HTTP listener ditutup.');
+const closeHttpServer = () =>
+  new Promise((resolve, reject) => {
+    // server.close() berhenti menerima koneksi baru dan baru memanggil callback
+    // setelah SEMUA request yang sedang berjalan selesai.
+    server.close((err) => (err ? reject(err) : resolve()));
   });
 
-  // 2. Tunggu koneksi database menyelesaikan query aktif lalu tutup pool
+const gracefulShutdown = async (signal) => {
+  if (isShuttingDown) return;
+  isShuttingDown = true;
+  console.warn(`[SHUTDOWN] Menerima sinyal ${signal}. Menutup server secara aman...`);
+
+  // Jaring pengaman: paksa keluar jika ada request yang menggantung terlalu lama
+  const forceExit = setTimeout(() => {
+    console.error('[SHUTDOWN] Batas waktu habis, paksa keluar.');
+    process.exit(1);
+  }, SHUTDOWN_TIMEOUT_MS);
+  forceExit.unref();
+
   try {
+    // 1. TUNGGU request aktif (termasuk transaksi kasir) selesai
+    await closeHttpServer();
+    console.info('[SHUTDOWN] Semua request aktif selesai, HTTP listener ditutup.');
+
+    // 2. Baru tutup pool database setelah tidak ada lagi yang memakainya
     await sequelize.close();
     console.info('[SHUTDOWN] Seluruh koneksi basis data berhasil ditutup.');
     process.exit(0);
   } catch (error) {
-    console.error('[SHUTDOWN ERROR] Terjadi kegagalan saat menutup koneksi database:', error);
+    console.error('[SHUTDOWN ERROR] Gagal menutup server dengan bersih:', error);
     process.exit(1);
   }
 };
@@ -200,6 +219,9 @@ const gracefulShutdown = async (signal) => {
 process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 ```
+
+> [!NOTE]
+> Urutan penting: **tutup HTTP dulu dan tunggu, baru tutup database.** Versi yang memanggil `server.close()` tanpa menunggu lalu langsung `sequelize.close()` justru akan memutus query yang masih berjalan, persis skenario kasir yang ingin dicegah. Di Kubernetes, tambahkan juga `preStop` hook singkat (misalnya `sleep 5`) agar load balancer berhenti mengirim trafik sebelum `SIGTERM` diproses.
 
 ---
 
@@ -211,18 +233,45 @@ Untuk deployment cloud serverless menggunakan AWS Lambda dan API Gateway:
 // lambda.js
 import { handle } from 'hono/aws-lambda';
 import app from './src/app.js';
+import { sequelize } from './src/core/database/index.js';
 
-// Wrapper bawaan Hono yang mengonversi event API Gateway V1/V2 menjadi Web Fetch API
-export const handler = handle(app);
+const honoHandler = handle(app);
+
+export const handler = async (event, context) => {
+  // Pola yang direkomendasikan dokumentasi Sequelize untuk Lambda:
+  // inisialisasi ulang pool di awal invocation (karena koneksi lama bisa sudah
+  // diputus saat environment dibekukan), lalu tutup di akhir invocation.
+  sequelize.connectionManager.initPools();
+  if (Object.prototype.hasOwnProperty.call(sequelize.connectionManager, 'getConnection')) {
+    delete sequelize.connectionManager.getConnection;
+  }
+
+  try {
+    return await honoHandler(event, context);
+  } finally {
+    await sequelize.connectionManager.close();
+  }
+};
 ```
 
-Hanya dengan **4 baris kode** di atas, seluruh sistem SIMRS Anda kompatibel dengan arsitektur serverless modern tanpa mengubah satu baris pun logika bisnis di dalam modul-modul medis Anda.
+> [!NOTE]
+> Detail `initPools()`/`close()` bergantung pada versi Sequelize (v6). Verifikasi ulang terhadap panduan resmi "AWS Lambda" di dokumentasi Sequelize versi yang Anda pakai sebelum masuk produksi. Jika memakai **RDS Proxy**, membuka-tutup koneksi per invocation menjadi murah karena proxy yang memegang koneksi fisik ke database.
+
+Dengan wrapper tipis di atas, seluruh sistem SIMRS kompatibel dengan arsitektur serverless tanpa mengubah satu baris pun logika bisnis di dalam modul-modul medis.
+
+### 5. Entrypoint 3: Outbox Worker di Lambda (`worker.lambda.js`)
+
+Lambda tidak punya proses latar belakang yang berjalan terus. Worker outbox (Part 5) harus **dipicu dari luar**:
+- **EventBridge Scheduler** setiap 1 menit memanggil `worker.lambda.js` untuk memproses batch outbox berstatus `PENDING`.
+- Atau **SQS**: setelah commit, aplikasi mengirim pesan ke antrean; Lambda worker dipicu per pesan, dan kegagalan berulang otomatis masuk *Dead Letter Queue*.
+
+Di Docker, worker yang sama dapat dijalankan sebagai container terpisah (`node worker.js`) dengan loop polling, sehingga tidak berebut sumber daya dengan API.
 
 ---
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Skenario Graceful Shutdown Saat Pasien Membayar di Kasir
+### Ilustrasi Kasus: Skenario Graceful Shutdown Saat Pasien Membayar di Kasir
 
 Bayangkan skenario berikut pada pukul 12.00 siang di rumah sakit:
 1. Pasien sedang menyelesaikan pembayaran operasi jantung senilai Rp45.000.000 di loket kasir.
@@ -241,7 +290,7 @@ Saat sinyal `SIGTERM` diterima, server menolak request baru, memberi waktu hingg
 
 1. [ ] **Pisahkan Entrypoint**: Pastikan Anda memiliki berkas `server.js` untuk Docker dan `lambda.js` untuk AWS Lambda, dengan `src/app.js` sebagai pusat perakitan murni.
 2. [ ] **Verifikasi Singleton Sequelize**: Pastikan inisialisasi Sequelize tidak dipanggil berulang kali di setiap rute atau handler.
-3. [ ] **Konfigurasi Pool Sesuai Lingkungan**: Terapkan logika `isLambda` di file koneksi database Anda untuk membatasi `max: 2` saat berjalan di serverless.
+3. [ ] **Konfigurasi Pool Sesuai Lingkungan**: Terapkan logika `isLambda` di file koneksi database Anda untuk membatasi `max: 1` saat berjalan di serverless, dan bungkus handler Lambda dengan `initPools()`/`close()` per invocation.
 4. [ ] **Implementasikan Graceful Shutdown**: Uji penutupan server lokal Anda dengan menekan `Ctrl+C` (SIGINT) dan pastikan log `sequelize.close()` tereksekusi dengan sukses.
 
 ---
@@ -249,7 +298,7 @@ Saat sinyal `SIGTERM` diterima, server menolak request baru, memberi waktu hingg
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Arsitektur cloud yang tangguh bukanlah arsitektur yang berasumsi server tidak akan pernah mati, melainkan arsitektur yang siap dimatikan kapan saja tanpa merusak satu baris pun data pasien."*  
-> — Cloud Infrastructure Architect
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Apakah sistem backend rumah sakit kita saat ini dapat dipindahkan dari data center on-premise ke cloud AWS dalam hitungan jam tanpa harus menulis ulang kode database?"*

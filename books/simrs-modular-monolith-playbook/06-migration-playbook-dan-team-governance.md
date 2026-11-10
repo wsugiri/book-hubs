@@ -17,7 +17,7 @@ Enam bulan kemudian, apa yang terjadi?
 3. Tenggat waktu meleset menjadi 14 bulan, anggaran membengkak, dan saat sistem baru akhirnya di-deploy, terjadi ratusan bug yang belum pernah diantisipasi sebelumnya. 
 4. Akhirnya, manajemen panik dan kembali ke sistem lama (*rollback*). Reputasi tim engineering hancur.
 
-Martin Fowler, tokoh legendaris rekayasa perangkat lunak, pernah menulis peringatan keras: *"Jika Anda melakukan rewrite total, satu-satunya jaminan yang Anda miliki adalah Anda akan menghasilkan serangkaian bug baru yang sama sekali berbeda dari bug sistem lama."*
+Pengalaman industri berulang kali menunjukkan pola yang sama: *rewrite* total jarang menghilangkan bug, ia hanya menukar bug lama yang sudah dikenal dengan bug baru yang belum dikenal. Martin Fowler mendokumentasikan alternatif yang lebih aman dalam artikelnya tentang *Strangler Fig Application*.
 
 Jalan keluar yang realistis dan terbukti berhasil di berbagai institusi kesehatan global adalah **Strangler Fig Pattern (Pola Pohon Pencekik)**. Kita tidak merobohkan sistem lama secara brutal; kita menumbuhkan modul-modul baru yang bersih di samping sistem lama, memindahkan rute lalu lintas secara bertahap, hingga pada akhirnya sistem lama mengering dan bisa dicabut dengan aman tanpa pernah mengganggu operasional rumah sakit barang satu hari pun.
 
@@ -150,21 +150,28 @@ Sebelum mengajukan Pull Request (PR), pastikan Anda telah mencentang seluruh poi
 5. [ ] **Pure Service**: Apakah fungsi di `services/` Anda 100% bebas dari objek `c` (Hono Context)?
 6. [ ] **Validasi Zod**: Apakah semua input mutasi (`POST`/`PUT`/`PATCH`) telah divalidasi dengan Zod schema?
 7. [ ] **Error Handling**: Apakah Anda melempar `AppError` alih-alih `Error` biasa untuk validasi aturan bisnis?
-8. [ ] **Automated Linting**: Apakah perintah `npm run lint` berjalan sukses tanpa pelanggaran `no-restricted-imports`?
+8. [ ] **Guardrail Batas Modul**: Apakah `npm run lint` dan `npx depcruise src` lulus tanpa pelanggaran batas modul?
+9. [ ] **Transaksi Lintas Modul**: Jika Anda meneruskan `transaction` ke service modul lain, apakah alasannya sudah dicatat di ADR?
+10. [ ] **Audit Trail**: Untuk tabel klinis, apakah tidak ada bulk update/destroy tanpa `individualHooks: true`?
 ```
 
 ---
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Mengubah Budaya Engineering dari "Koboi" Menjadi Profesional
+### Ilustrasi: Mengubah Budaya Engineering dari "Koboi" Menjadi Profesional
+
+> [!NOTE]
+> Skenario berikut adalah **ilustrasi** untuk menggambarkan dinamika adopsi, bukan studi kasus terukur. Tetapkan metrik dasar (*baseline*) tim Anda sendiri sebelum migrasi agar dampaknya bisa diukur secara jujur.
 
 Di sebuah rumah sakit rujukan, tim developer sebelumnya terbiasa bekerja dengan gaya "koboi": siapa pun boleh langsung mengedit database produksi via DBeaver, menulis SQL JOIN 8 tabel langsung di controller, dan melakukan git push langsung ke branch `main`.
 
-Ketika Architecture Guild memperkenalkan Playbook ini bersama ESLint guardrails dan ADR:
-1. Pada 2 minggu pertama, muncul penolakan: *"Dulu kita bikin fitur 1 hari selesai, sekarang harus bikin validator, repository, dan service terpisah, butuh 2 hari!"*
-2. Namun pada bulan ketiga, keajaiban mulai tampak: Jumlah insiden bug di hari rilis turun hingga **85%**. Ketika sistem BPJS mengalami pembaruan API, hanya 1 modul (`bridging`) yang perlu disentuh selama 4 jam, tanpa ada bug sampingan (*side-effect*) di modul pendaftaran atau kasir.
-3. Waktu onboarding engineer baru terpangkas dari yang biasanya 2 bulan menjadi hanya **5 hari kerja**, karena struktur folder yang seragam membuat siapa pun bisa membaca modul apa pun dengan pola pikir yang sama.
+Ketika Architecture Guild memperkenalkan Playbook ini bersama guardrails batas modul dan ADR:
+1. Pada minggu-minggu pertama, muncul penolakan: *"Dulu kita bikin fitur 1 hari selesai, sekarang harus bikin validator, repository, dan service terpisah, butuh 2 hari!"*
+2. Setelah beberapa bulan, manfaatnya mulai terlihat: insiden bug saat rilis berkurang, dan ketika API BPJS berubah, perubahan cukup dilakukan di modul `bridging` tanpa efek samping ke pendaftaran atau kasir.
+3. Engineer baru lebih cepat produktif karena struktur folder yang seragam membuat setiap modul bisa dibaca dengan pola pikir yang sama.
+
+**Metrik yang disarankan untuk diukur sendiri**: jumlah insiden per rilis, *lead time* PR, jumlah pelanggaran batas modul di CI, dan waktu hingga engineer baru mengirim PR pertamanya.
 
 ---
 
@@ -180,13 +187,13 @@ Ketika Architecture Guild memperkenalkan Playbook ini bersama ESLint guardrails 
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Arsitektur perangkat lunak yang hebat bukanlah dokumen PDF tebal 200 halaman yang disimpan di Google Drive lalu dilupakan semua orang. Arsitektur yang hebat adalah kebiasaan harian tim yang tercermin di setiap Pull Request, didukung oleh linter otomatis, dan dipandu oleh alasan yang tercatat jelas di ADR."*  
-> — Engineering Leadership Handbook
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Apakah keputusan arsitektur yang kita sepakati hari ini akan tetap dipahami dan dihormati oleh engineer yang baru bergabung dua tahun dari sekarang?"*
 
 ---
 
-## 🧭 Navigasi Bab Sebelumnya
+## 🧭 Navigasi Bab Selanjutnya
 
-⬅️ **[Kembali ke Part 5: Compliance Kesehatan & Bridging Eksternal](05-audit-trail-rme-dan-bridging-eksternal.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 🏠 **[Kembali ke Katalog Utama (CATALOG.md)](../../CATALOG.md)**
+⬅️ **[Kembali ke Part 5: Compliance Kesehatan & Bridging Eksternal](05-audit-trail-rme-dan-bridging-eksternal.md)** &nbsp;&nbsp;|&nbsp;&nbsp; 📖 **[Hub Buku](index.md)** &nbsp;&nbsp;|&nbsp;&nbsp; ➡️ **[Lanjut ke Lampiran A: Struktur Kode Referensi](07-lampiran-struktur-kode-referensi.md)**

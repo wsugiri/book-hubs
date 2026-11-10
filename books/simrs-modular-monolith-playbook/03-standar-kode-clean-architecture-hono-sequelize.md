@@ -99,74 +99,76 @@ export class ConflictError extends AppError {
 ```
 
 #### B. Helper Respon Standar (`src/core/http/response.js`)
-Semua endpoint wajib mengembalikan amplop data (*data envelope*) yang konsisten. Untuk keperluan audit rumah sakit, kita selalu menyematkan `requestId`:
+Semua endpoint wajib mengembalikan amplop data (*data envelope*) yang konsisten. Untuk keperluan audit rumah sakit, kita selalu menyematkan `requestId`.
+
+> [!NOTE]
+> **Keputusan desain: `statusCode` tidak ditaruh di body JSON.** Part 1 mengkritik duplikasi status di header dan body karena rawan tidak sinkron. Sumber kebenaran tunggal adalah **HTTP status code**. Body hanya memuat `success` (turunan dari status) dan, untuk error, `errorCode` yang dapat dibaca mesin. Jika ada klien lama yang mewajibkan `statusCode` di body, tambahkan hanya di helper ini (satu tempat) dan catat di ADR.
 
 ```javascript
 // src/core/http/response.js
-export const sendSuccess = (c, data = null, message = 'Success', statusCode = 200, meta = {}) => {
-  return c.json(
-    {
-      success: true,
-      statusCode,
-      message,
-      data,
-      meta: {
-        requestId: c.get('requestId') || 'req-untracked',
-        timestamp: new Date().toISOString(),
-        ...meta
-      }
-    },
-    statusCode
-  );
-};
+const buildMeta = (c, extra = {}) => ({
+  requestId: c.get('requestId') || 'req-untracked',
+  timestamp: new Date().toISOString(),
+  ...extra
+});
+
+export const sendSuccess = (c, data = null, message = 'Success', statusCode = 200, meta = {}) =>
+  c.json({ success: true, message, data, meta: buildMeta(c, meta) }, statusCode);
+
+export const sendError = (c, { statusCode, errorCode, message, details = null }) =>
+  c.json({ success: false, errorCode, message, details, meta: buildMeta(c) }, statusCode);
 ```
 
 #### C. Global Error Middleware (`src/core/http/error.middleware.js`)
-Middleware ini menangkap semua error yang dilempar dari lapisan terdalam service tanpa memerlukan blok `try-catch` yang berulang-ulang di setiap handler:
+Middleware ini menangkap semua error yang dilempar dari lapisan terdalam service tanpa memerlukan blok `try-catch` yang berulang-ulang di setiap handler. Selain `AppError`, middleware wajib mengenali **error bawaan Hono, Zod, dan Sequelize**. Tanpa itu, semua kesalahan klien (data duplikat, payload salah) akan keliru dilaporkan sebagai `500`.
 
 ```javascript
 // src/core/http/error.middleware.js
+import { HTTPException } from 'hono/http-exception';
+import { ZodError } from 'zod';
+import { UniqueConstraintError, ForeignKeyConstraintError, ValidationError as SequelizeValidationError } from 'sequelize';
 import { AppError } from '../errors/AppError.js';
+import { sendError } from './response.js';
+import { logger } from '../config/logger.js';
 
 export const globalErrorHandler = (err, c) => {
-  const requestId = c.get('requestId');
-
-  // Jika error adalah AppError yang sengaja kita lempar
   if (err instanceof AppError) {
-    return c.json(
-      {
-        success: false,
-        statusCode: err.statusCode,
-        errorCode: err.errorCode,
-        message: err.message,
-        details: err.details,
-        meta: {
-          requestId,
-          timestamp: new Date().toISOString()
-        }
-      },
-      err.statusCode
-    );
+    return sendError(c, err);
   }
 
-  // Galat tak terduga (Bug sintaks, DB Crash, Network Error)
-  console.error(`[UNHANDLED ERROR] [${requestId}]`, err);
+  if (err instanceof ZodError) {
+    return sendError(c, { statusCode: 422, errorCode: 'VALIDATION_FAILED', message: 'Data tidak valid', details: err.flatten() });
+  }
 
-  return c.json(
-    {
-      success: false,
-      statusCode: 500,
-      errorCode: 'INTERNAL_SERVER_ERROR',
-      message: 'Terjadi kesalahan sistem internal. Silakan hubungi tim IT Rumah Sakit.',
-      meta: {
-        requestId,
-        timestamp: new Date().toISOString()
-      }
-    },
-    500
-  );
+  if (err instanceof UniqueConstraintError) {
+    return sendError(c, { statusCode: 409, errorCode: 'DUPLICATE_RESOURCE', message: 'Data sudah ada', details: err.fields });
+  }
+
+  if (err instanceof ForeignKeyConstraintError) {
+    return sendError(c, { statusCode: 422, errorCode: 'INVALID_REFERENCE', message: 'Referensi data tidak ditemukan' });
+  }
+
+  if (err instanceof SequelizeValidationError) {
+    return sendError(c, { statusCode: 422, errorCode: 'VALIDATION_FAILED', message: 'Data tidak valid', details: err.errors.map((e) => ({ field: e.path, message: e.message })) });
+  }
+
+  if (err instanceof HTTPException) {
+    // Contoh: 401 dari middleware JWT Hono, 413 body terlalu besar
+    return sendError(c, { statusCode: err.status, errorCode: 'HTTP_ERROR', message: err.message });
+  }
+
+  // Galat tak terduga: log detail lengkap, tapi jangan bocorkan stack trace ke klien
+  logger.error({ err, requestId: c.get('requestId') }, 'Unhandled error');
+  return sendError(c, {
+    statusCode: 500,
+    errorCode: 'INTERNAL_SERVER_ERROR',
+    message: 'Terjadi kesalahan sistem internal. Silakan hubungi tim IT Rumah Sakit.'
+  });
 };
 ```
+
+> [!TIP]
+> Secara default `@hono/zod-validator` mengembalikan respons `400` sendiri sebelum sampai ke error handler. Agar formatnya seragam, berikan *hook* ketiga: `zValidator('json', schema, (result) => { if (!result.success) throw result.error; })`, sehingga `ZodError` diteruskan ke `globalErrorHandler`.
 
 ---
 
@@ -291,6 +293,9 @@ export const createOutpatientVisit = async (payload, actor) => {
 
 Fungsi repository membungkus seluruh panggilan ORM Sequelize. Jika suatu saat Anda ingin mengganti query Sequelize dengan raw SQL berkinerja tinggi atau beralih ke Kysely/Prisma, perubahan hanya terjadi di folder `repositories/`, tanpa menyentuh service layer.
 
+> [!TIP]
+> **Testability.** Contoh service di atas meng-import repository secara langsung agar mudah dibaca. Di ES Modules, import langsung sulit di-*mock* saat unit test. Untuk service kritikal (pendaftaran, kasir), gunakan pola **factory dengan dependensi eksplisit** (`makeRegistrationService({ db, visitRepo, billingService })`) seperti dicontohkan di [Lampiran A](07-lampiran-struktur-kode-referensi.md).
+
 ```javascript
 // src/modules/admission/repositories/visit.repository.js
 import { Op } from 'sequelize';
@@ -323,7 +328,7 @@ export const create = async (data, options = {}) => {
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Mengapa Service yang "Bebas dari HTTP" Menyelamatkan Proyek
+### Ilustrasi Kasus: Mengapa Service yang "Bebas dari HTTP" Menyelamatkan Proyek
 
 Tiga bulan setelah sistem SIMRS baru berjalan, tim manajemen mengumumkan kerja sama dengan mesin **Kios Mandiri Antrean (Self-Service Kiosk Machine)** di lobi rumah sakit. Kios tersebut tidak menggunakan REST API biasa, melainkan mengirim event via **MQTT / WebSocket**.
 
@@ -361,7 +366,7 @@ Jika fungsi pendaftaran masih ditulis dengan gaya lama (terikat pada objek `c`),
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Kode yang baik bukanlah kode yang cerdik dengan trik satu baris yang rumit, melainkan kode yang membosankan karena begitu mudah dipahami, sangat mudah diuji, dan tidak mengejutkan siapa pun saat terjadi insiden."*  
-> — Clean Code Architect
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Bisakah fungsi pendaftaran atau pelunasan tagihan di sistem kita dipanggil dari script CLI atau unit test sederhana tanpa menyalakan server HTTP sama sekali?"*

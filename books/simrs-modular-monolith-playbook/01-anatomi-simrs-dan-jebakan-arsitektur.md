@@ -147,7 +147,7 @@ Ketika aplikasi SIMRS di-deploy ke arsitektur serverless (seperti AWS Lambda), S
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Tragedi Resep Farmasi Tanpa Batas Domain
+### Ilustrasi Kasus: Tragedi Resep Farmasi Tanpa Batas Domain
 
 Di sebuah rumah sakit swasta, seorang pasien rawat inap mendapatkan resep obat antibiotik dosis tinggi. Dokter memasukkan resep melalui modul EMR, yang langsung menulis data ke tabel `prescriptions`. 
 
@@ -180,7 +180,7 @@ Segera lakukan audit pada basis kode SIMRS Anda saat ini:
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Menata kode berdasarkan jenis teknis (handlers, models, routes) sama seperti menata rumah dengan menaruh semua gagang pintu di ruang tamu, semua jendela di dapur, dan semua atap di garasi. Terlihat rapi menurut kategori benda, tetapi mustahil untuk ditinggali."*  
-> — Healthcare System Architect
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Jika besok pagi manajemen meminta modul Bridging BPJS dipisahkan menjadi server tersendiri karena sering mengalami timeout, berapa ratus baris kode yang harus kami bongkar di modul-modul lainnya?"*

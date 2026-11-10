@@ -24,6 +24,10 @@ Buku ini disusun secara sistematis ke dalam 6 modul komprehensif yang memandu ti
 - [x] 📘 **[Part 4: Dual-Runtime Architecture: Menjinakkan Docker & AWS Lambda](04-dual-runtime-docker-dan-aws-lambda.md)** — *Satu basis kode untuk dua lingkungan runtime yang bertolak belakang. Konfigurasi connection pooling adaptif di Sequelize (persistent pool Docker vs dynamic min/max di Lambda dengan AWS RDS Proxy), graceful shutdown, dan distributed tracing via Pino.*
 - [x] 📘 **[Part 5: Compliance Kesehatan: Audit Trail RME, BPJS, & SATUSEHAT FHIR](05-audit-trail-rme-dan-bridging-eksternal.md)** — *Memenuhi mandat hukum Permenkes 24/2022 tentang Rekam Medis Elektronik (RME). Merancang audit trail transparan dan immutable (siapa, kapan, sebelum vs sesudah). Mengisolasi integrasi BPJS VClaim/Antrol dan Kemenkes SATUSEHAT dengan Retry, Circuit Breaker, dan Outbox Pattern.*
 - [x] 📘 **[Part 6: Migration Playbook, Team Governance, & Living ADR](06-migration-playbook-dan-team-governance.md)** — *Strategi migrasi inkremental menggunakan Strangler Fig Pattern tanpa melakukan rewrite total yang berisiko. Standarisasi Architecture Decision Records (ADR), checklist onboarding engineer baru, dan otomatisasi CI/CD guardrails.*
+- [x] 📎 **[Lampiran A: Struktur Kode Referensi & Konvensi Proyek](07-lampiran-struktur-kode-referensi.md)** — *Peta repositori resmi `simrs-be/` (root, `db/`, `tests/`, entrypoint), anatomi lengkap satu modul, konvensi penamaan, matriks siapa boleh meng-import siapa, pola factory agar service mudah diuji, dan opsi laporan lintas modul tanpa JOIN.*
+
+> [!NOTE]
+> Skenario "kasus" dan kutipan di setiap bab bersifat **ilustratif** untuk memperjelas konsep, bukan data atau kutipan terverifikasi. Contoh kode adalah referensi desain; verifikasi terhadap versi pustaka yang dipakai (Hono, Sequelize, Zod) sebelum dipakai di produksi.
 
 ---
 
@@ -74,7 +78,7 @@ Dengan menstrukturkan kode berdasarkan **Bounded Contexts** (Domain-First), seti
 Langkah operasional yang siap dieksekusi oleh tim engineering:
 
 ### Fase 1: Hari Ini (Quick Wins & Stop the Bleeding)
-- [ ] Pasang aturan linting ESLint `no-restricted-imports` untuk mencegah impor lintas folder `models/` dan `repositories/` antar modul.
+- [ ] Pasang `eslint-plugin-boundaries` dan `dependency-cruiser` untuk mencegah impor ke folder internal (`models/`, `repositories/`, `handlers/`) milik modul lain.
 - [ ] Terapkan wrapper response terpusat (`sendSuccess`) dan kelas error tunggal (`AppError`) di seluruh endpoint baru.
 - [ ] Pisahkan parameter protokol `c` (Hono Context) dari fungsi business logic di service; pastikan service hanya menerima data murni (*pure payload*).
 

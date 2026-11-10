@@ -143,37 +143,74 @@ Jika modul `billing` membutuhkan informasi nama pasien atau status kunjungan saa
 
 ### 3. Otomasi Penegakan Aturan Menggunakan ESLint
 
-Kebaikan hati developer tidak cukup untuk menjaga arsitektur; kita membutuhkan **mesin pemeriksa otomatis** di pipeline CI/CD. Pasang aturan `no-restricted-imports` di dalam file `.eslintrc.cjs` atau `eslint.config.js`:
+Kebaikan hati developer tidak cukup untuk menjaga arsitektur; kita membutuhkan **mesin pemeriksa otomatis** di pipeline CI/CD.
+
+> [!WARNING]
+> **Jebakan `no-restricted-imports` berbasis path relatif.** Pola seperti `'../**/models/*'` terlihat benar, tetapi juga cocok dengan import **sah di dalam modul sendiri** (misalnya `services/` meng-import `../models/Visit.js`). Aturan ini tidak bisa membedakan "modul sendiri" dan "modul lain" karena hanya mencocokkan string path. Gunakan alat yang sadar batas modul.
+
+**Opsi 1 – `eslint-plugin-boundaries` (umpan balik langsung di editor):**
 
 ```javascript
 // eslint.config.js
+import boundaries from 'eslint-plugin-boundaries';
+
 export default [
   {
-    files: ['src/modules/**/*.js'],
-    rules: {
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['../**/models/*', '../../**/models/*'],
-              message: 'DILARANG meng-import models milik modul lain! Akses data via service modul terkait.'
-            },
-            {
-              group: ['../**/repositories/*', '../../**/repositories/*'],
-              message: 'DILARANG meng-import repositories milik modul lain! Gunakan public service.'
-            },
-            {
-              group: ['../**/handlers/*', '../../**/handlers/*'],
-              message: 'DILARANG meng-import handlers milik modul lain!'
-            }
-          ]
-        }
+    files: ['src/**/*.js'],
+    plugins: { boundaries },
+    settings: {
+      'boundaries/elements': [
+        { type: 'core', pattern: 'src/core/*' },
+        { type: 'module-public', pattern: 'src/modules/*/index.js', mode: 'file', capture: ['module'] },
+        { type: 'module-internal', pattern: 'src/modules/*/**', capture: ['module'] }
       ]
+    },
+    rules: {
+      'boundaries/element-types': ['error', {
+        default: 'disallow',
+        rules: [
+          { from: 'core', allow: ['core'] },
+          // Internal modul boleh ke core, ke internal modul SENDIRI, dan ke index.js modul LAIN
+          { from: 'module-internal', allow: [
+            'core',
+            ['module-internal', { module: '${from.module}' }],
+            'module-public'
+          ] },
+          { from: 'module-public', allow: ['core', ['module-internal', { module: '${from.module}' }]] }
+        ]
+      }]
     }
   }
 ];
 ```
+
+**Opsi 2 – `dependency-cruiser` (penjaga di CI, juga bisa menggambar grafik dependensi):**
+
+```javascript
+// .dependency-cruiser.cjs
+module.exports = {
+  forbidden: [
+    {
+      name: 'no-cross-module-internals',
+      severity: 'error',
+      comment: 'Modul hanya boleh mengakses modul lain via index.js',
+      from: { path: '^src/modules/([^/]+)/' },
+      to: {
+        path: '^src/modules/([^/]+)/(?!index\\.js$)',
+        pathNot: '^src/modules/$1/'
+      }
+    },
+    {
+      name: 'core-must-not-depend-on-modules',
+      severity: 'error',
+      from: { path: '^src/core/', pathNot: '^src/core/database/register-models\\.js$' },
+      to: { path: '^src/modules/' }
+    }
+  ]
+};
+```
+
+Jalankan `npx depcruise src --config .dependency-cruiser.cjs` di pipeline CI. Struktur lengkap konfigurasi dan letaknya ada di [Lampiran A](07-lampiran-struktur-kode-referensi.md).
 
 Setiap kali ada engineer yang mencoba jalan pintas dengan meng-import model milik modul tetangga, perintah `npm run lint` atau GitHub Actions akan langsung menolak PR (*Pull Request*) tersebut dengan pesan galat yang jelas.
 
@@ -181,7 +218,7 @@ Setiap kali ada engineer yang mencoba jalan pintas dengan meng-import model mili
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Skenario Transaksi Admisi Pasien & Pembuatan Invoice Awal
+### Ilustrasi Kasus: Skenario Transaksi Admisi Pasien & Pembuatan Invoice Awal
 
 Bayangkan seorang pasien datang ke loket pendaftaran rawat jalan:
 1. Petugas pendaftaran memilih Poli Penyakit Dalam dan Dokter Spesialis.
@@ -208,7 +245,15 @@ Bagaimana modul `admission` berkomunikasi dengan modul `billing` tanpa melanggar
                                          (Simpan invoice di billing_invoices, trx: t)
 ```
 
-Dengan meneruskan objek Sequelize `{ transaction: t }` melalui kontrak Service, integritas data tingkat enterprise tetap terjaga 100% tanpa ada tabel yang saling bertabrakan atau tumpang tindih.
+Dengan meneruskan objek Sequelize `{ transaction: t }` melalui kontrak Service, pendaftaran dan invoice awal tetap atomik selama keduanya masih berada di satu database fisik.
+
+> [!WARNING]
+> **Trade-off yang harus disadari tim.** Meneruskan `transaction` Sequelize lewat kontrak publik berarti **detail infrastruktur bocor ke dalam kontrak antar modul**. Ini bertentangan dengan janji "siap dicabut menjadi microservice": begitu `billing` pindah ke database lain, transaksi bersama ini mustahil dan kontraknya harus diubah.
+>
+> Aturan praktis yang kami sarankan:
+> - **Boleh** berbagi transaksi hanya jika kegagalan langkah kedua memang harus membatalkan langkah pertama secara bisnis (misalnya pendaftaran tidak sah tanpa invoice karcis). Catat setiap kasus seperti ini di ADR.
+> - **Utamakan** pola event: `admission` menyimpan kunjungan dan menulis event `admission.visit.registered` ke tabel outbox dalam transaksi lokalnya sendiri, lalu `billing` membuat invoice saat menerima event tersebut (konsistensi eventual).
+> - Saat modul benar-benar dipecah, transaksi bersama diganti dengan **Saga** (langkah kompensasi, misalnya membatalkan kunjungan jika invoice gagal dibuat).
 
 ---
 
@@ -217,14 +262,14 @@ Dengan meneruskan objek Sequelize `{ transaction: t }` melalui kontrak Service, 
 1. [ ] **Buat Struktur Folder Modul Baru**: Restrukturisasi direktori `src/` menjadi `src/core/` dan `src/modules/`.
 2. [ ] **Definisikan Batas 6 Modul Utama**: Petakan tabel-tabel database yang ada saat ini ke dalam 6 folder domain: `master-data`, `admission`, `emr`, `pharmacy`, `billing`, dan `bridging`.
 3. [ ] **Hapus Eager Loading Cross-Module**: Cari semua deklarasi `include: [...]` pada query Sequelize yang memuat tabel milik domain lain. Ubah menjadi pemanggilan fungsi Service melalui `index.js`.
-4. [ ] **Konfigurasi ESLint Guardrail**: Tambahkan aturan `no-restricted-imports` ke konfigurasi linter proyek Anda agar pelanggaran batas modul terdeteksi seketika di editor VSCode.
+4. [ ] **Konfigurasi Guardrail Batas Modul**: Pasang `eslint-plugin-boundaries` (umpan balik di editor) dan `dependency-cruiser` (penjaga di CI) agar pelanggaran batas modul terdeteksi otomatis. Jangan mengandalkan `no-restricted-imports` berbasis path relatif saja.
 
 ---
 
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Batas arsitektur yang baik bukanlah tembok yang kaku, melainkan pintu gerbang dengan penjaga yang disiplin. Jadikan `index.js` sebagai penjaga pintu domain Anda."*  
-> — Domain-Driven Design Practitioner
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Apakah di dalam codebase SIMRS kita hari ini, seorang developer baru bisa mengetahui batas sebuah modul hanya dengan melihat struktur folder, ataukah ia harus membaca ribuan baris kode untuk menebak ketergantungannya?"*

@@ -128,7 +128,19 @@ export const registerAuditHooks = (sequelize) => {
 };
 ```
 
-Dengan arsitektur ini, bahkan jika seorang developer magang lupa memikirkan audit trail, basis data SIMRS secara otomatis dan deterministik mencatat setiap perubahan data medis.
+Dengan arsitektur ini, developer tidak perlu menulis kode audit secara manual di setiap endpoint. Namun hook **bukan jaminan mutlak**. Ada celah yang wajib diketahui tim:
+
+> [!WARNING]
+> **Kapan Sequelize hook TIDAK terpanggil:**
+> - `Model.update(values, { where })` dan `Model.destroy({ where })` (operasi bulk) **tidak** memicu `afterUpdate`/`afterDestroy` per baris, kecuali diberi opsi `individualHooks: true`. Yang terpanggil adalah `afterBulkUpdate`/`afterBulkDestroy`, yang tidak membawa nilai lama per baris.
+> - `bulkCreate` tanpa `individualHooks: true`.
+> - `sequelize.query(...)` (raw SQL) dan perubahan langsung via klien database (DBeaver, migration manual).
+>
+> **Mitigasi yang disarankan:**
+> 1. Di repository model klinis, **larang** bulk update/destroy tanpa `individualHooks: true` (tegakkan lewat code review atau wrapper repository).
+> 2. Untuk tabel yang paling kritikal secara hukum (CPPT, resep, diagnosis), tambahkan lapisan kedua di level database: **trigger** atau *Change Data Capture* (misalnya `pgaudit`/trigger audit di PostgreSQL, binlog di MySQL). Lapisan ini menangkap perubahan dari jalur mana pun, termasuk akses langsung ke DB.
+> 3. Verifikasi perilaku `instance.previous()` di dalam `afterUpdate` pada versi Sequelize yang dipakai melalui **integration test**. Jika nilainya sudah ikut berubah, tangkap snapshot nilai lama di hook `beforeUpdate` lalu simpan di `options`.
+> 4. Jadikan tabel audit *append-only*: user database aplikasi hanya diberi hak `INSERT` dan `SELECT`, tanpa `UPDATE`/`DELETE`.
 
 ---
 
@@ -170,12 +182,12 @@ export class SimpleCircuitBreaker {
 
   async execute(asyncAction, fallbackAction) {
     if (this.state === 'OPEN') {
-      if (Date.now() > this.nextAttempt) {
-        this.state = 'HALF_OPEN';
-      } else {
+      if (Date.now() < this.nextAttempt) {
         console.warn('[CIRCUIT BREAKER] Sirkuit sedang OPEN. Mengalihkan ke fallback.');
         return fallbackAction();
       }
+      // Masa cooldown habis: izinkan SATU percobaan uji
+      this.state = 'HALF_OPEN';
     }
 
     try {
@@ -192,12 +204,18 @@ export class SimpleCircuitBreaker {
   }
 
   recordFailure() {
+    // Di HALF_OPEN, satu kegagalan sudah cukup untuk membuka sirkuit lagi.
+    // Di CLOSED, sirkuit baru terbuka setelah mencapai ambang kegagalan.
     this.failureCount += 1;
-    if (this.failureCount >= this.failureThreshold) {
-      this.state = 'OPEN';
-      this.nextAttempt = Date.now() + this.cooldownPeriodMs;
-      console.error(`[CIRCUIT BREAKER] Terbuka! Kegagalan mencapai ${this.failureCount}. Cooldown selama ${this.cooldownPeriodMs}ms`);
+    if (this.state === 'HALF_OPEN' || this.failureCount >= this.failureThreshold) {
+      this.trip();
     }
+  }
+
+  trip() {
+    this.state = 'OPEN';
+    this.nextAttempt = Date.now() + this.cooldownPeriodMs;
+    console.error(`[CIRCUIT BREAKER] Terbuka! Kegagalan: ${this.failureCount}. Cooldown ${this.cooldownPeriodMs}ms`);
   }
 
   reset() {
@@ -207,11 +225,19 @@ export class SimpleCircuitBreaker {
 }
 ```
 
+> [!NOTE]
+> Implementasi di atas sengaja dibuat sederhana untuk menjelaskan konsep. Versi ini hanya berlaku per proses: di Lambda, setiap instance punya status sirkuitnya sendiri, dan percobaan HALF_OPEN yang berjalan bersamaan tidak dibatasi. Untuk produksi, pertimbangkan pustaka yang sudah teruji seperti `opossum`, atau simpan status sirkuit di Redis agar dipakai bersama semua instance.
+
+#### Cara Worker Outbox Dijalankan
+- **Docker**: container terpisah (`node worker.js`) yang melakukan polling tabel `bridging_outbox` setiap beberapa detik dengan `SELECT ... FOR UPDATE SKIP LOCKED` agar beberapa worker tidak mengambil baris yang sama.
+- **AWS Lambda**: tidak ada proses latar belakang, jadi worker dipicu oleh **EventBridge Scheduler** (misalnya setiap 1 menit) atau oleh **SQS** dengan *Dead Letter Queue* untuk pesan yang terus gagal. Lihat Part 4 bagian `worker.lambda.js`.
+- Setiap pengiriman wajib **idempoten**: simpan `outboxId` sebagai kunci unik, sehingga retry tidak menghasilkan SEP ganda atau bundle FHIR duplikat.
+
 ---
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
-### Kasus Nyata: Kegagalan Masal Saat Server Rujukan BPJS Down
+### Ilustrasi Kasus: Kegagalan Masal Saat Server Rujukan BPJS Down
 
 Pada hari Selasa pukul 08:30 pagi, server bridging rujukan BPJS mengalami pemeliharaan jaringan tak terencana (*unannounced downtime*). 
 
@@ -235,7 +261,7 @@ Modul `admission` menyimpan pendaftaran pasien secara lokal di database rumah sa
 ## 💬 Kutipan Pilihan & Catatan Reflektif
 
 > *"Dalam rekayasa sistem kesehatan, audit trail bukan sekadar fitur log untuk debugging programmer; audit trail adalah instrumen perlindungan hukum bagi dokter, kepastian hak bagi pasien, dan benteng pertahanan integritas institusi rumah sakit."*  
-> — Health Informatics Legal Expert
+> — Catatan Architecture Guild (kutipan ilustratif)
 
 **Pertanyaan Refleksi Tim**:
 * *"Jika server BPJS atau SATUSEHAT mengalami downtime selama 2 jam besok pagi, apakah loket pendaftaran dan kasir di rumah sakit kita masih tetap bisa melayani pasien secara normal?"*
