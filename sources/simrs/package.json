@@ -1,0 +1,41 @@
+{
+  "name": "simrs-be",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend SIMRS Enterprise Berbasis Modular Monolith (Node.js, Hono, Sequelize)",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "worker": "node worker.js",
+    "test": "node --test tests/unit/**/*.test.js",
+    "test:integration": "node --test tests/integration/**/*.test.js",
+    "test:boundaries": "depcruise src --config .dependency-cruiser.cjs",
+    "lint": "eslint src/",
+    "lint:boundaries": "eslint src/ --rule 'boundaries/element-types: error'",
+    "make:module": "node scripts/make-module.js",
+    "db:migrate": "sequelize-cli db:migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "@hono/zod-validator": "^0.4.1",
+    "hono": "^4.6.0",
+    "mysql2": "^3.11.0",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "pino": "^9.4.0",
+    "pino-pretty": "^11.2.2",
+    "sequelize": "^6.37.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^16.4.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-boundaries": "^4.2.2",
+    "sequelize-cli": "^6.6.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
+

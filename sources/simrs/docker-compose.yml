@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # OPSI A: PostgreSQL 16 (Direkomendasikan untuk Enterprise & JSONB RME)
+  postgres:
+    image: postgres:16-alpine
+    container_name: simrs-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: simrs_dev
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    command: postgres -c max_connections=150 -c shared_buffers=256MB
+
+  # OPSI B: MySQL 8.0 (Alternatif Relasional Populer)
+  mysql:
+    image: mysql:8.0
+    container_name: simrs-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: simrs_dev
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --max_connections=150
+
+  simrs-api:
+    build: .
+    container_name: simrs-backend
+    restart: unless-stopped
+    ports:
+      - '3300:3000'
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_URI: postgresql://postgres:rootpassword@postgres:5432/simrs_dev
+      # DB_URI: mysql://root:rootpassword@mysql:3306/simrs_dev
+      DB_DIALECT: postgres
+      SHUTDOWN_TIMEOUT_MS: 25000
+    depends_on:
+      - postgres
+      # - mysql
+
+volumes:
+  pg_data:
+  mysql_data:
+
