@@ -2,8 +2,8 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-17%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-17%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-18%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-18%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
 [![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
@@ -289,6 +289,32 @@
 - **Context Window Scaffolding & Budgeting**: Mengisolasi konteks statis, dynamic few-shot, dan data RAG dengan delimiter terstruktur (XML/Markdown) untuk mencegah fenomena *Lost in the Middle*.
 - **Deterministic Taming & Guardrails**: Mengunci parameter inferensi (temperatur mendekati 0, logprobs, stop sequences) dan menegakkan skema terstruktur (JSON Schema/Pydantic) anti-injeksi.
 - **Agency, Workflows & Rigorous Evals**: Mentransformasikan LLM pasif menjadi agen proaktif (ReAct, Tool Calling) dan mengganti 'vibes-based testing' dengan Golden Datasets serta evaluasi otomatis bertingkat.
+
+<br/>
+
+### [The SIMRS Backend Playbook: Cetak Biru Arsitektur Modular Monolith Berbasis Node.js, Hono, dan Sequelize](books/simrs-modular-monolith-playbook/index.md)
+
+<div align="center">
+  <a href="books/simrs-modular-monolith-playbook/index.md">
+    <img src="books/simrs-modular-monolith-playbook/cover.jpg" width="280" alt="The SIMRS Backend Playbook Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
+</div>
+
+> **Penulis**: SIMRS Engineering Team & Architecture Guild &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Penerbit**: Modern Healthcare Engineering Press &nbsp;|&nbsp; **Estimasi Baca**: ~80–100 Menit (6 Modul Lengkap)  
+> `🏥 Sistem Informasi RS (SIMRS)` `🏛️ Modular Monolith` `⚡ Hono & Sequelize` `☁️ Dual Runtime (Docker/Lambda)` `🛡️ Kepatuhan Permenkes RME`
+
+> **💡 The Big Idea:**  
+> *"Jebakan terbesar dalam arsitektur sistem rumah sakit bukanlah pilihan bahasa pemrograman, melainkan mencampuradukkan domain medis di bawah folder teknis klasik (MVC), membiarkan query database melintasi batas domain tanpa kontrak, dan mengikat logika klinis pada protokol HTTP. Modular Monolith menghadirkan titik temu optimal: kemudahan operasional monolit dengan disiplin isolasi domain sekeras microservices."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Domain-First Bounded Contexts**: Mengelompokkan kode berdasarkan domain fungsional rumah sakit (`admission`, `emr`, `pharmacy`, `billing`, `bridging`) dan melarang keras SQL JOIN atau cross-import models antar modul.
+- **Protocol-Agnostic Core Logic**: Menjaga HTTP handler tetap ramping (*skinny handlers*) dan menaruh logika bisnis murni di lapisan service tanpa keterikatan pada objek HTTP context `c`.
+- **Dual-Runtime Cloud Readiness**: Menjalankan satu basis kode aplikasi yang identik di container Docker on-premise maupun AWS Lambda serverless dengan Sequelize adaptive connection pool dan AWS RDS Proxy.
+- **Healthcare Regulatory Compliance by Design**: Mengotomatiskan audit trail rekam medis elektronik (Permenkes No. 24/2022) via `AsyncLocalStorage` & Sequelize Global Hooks, serta mengisolasi integrasi eksternal (BPJS VClaim & SATUSEHAT FHIR) dengan Outbox Pattern & Circuit Breaker.
+
+📘 **[Master Hub](books/simrs-modular-monolith-playbook/index.md)** &nbsp;|&nbsp; **[Part 1](books/simrs-modular-monolith-playbook/01-anatomi-simrs-dan-jebakan-arsitektur.md)** &nbsp;|&nbsp; **[Part 2](books/simrs-modular-monolith-playbook/02-prinsip-modular-monolith-dan-bounded-context.md)** &nbsp;|&nbsp; **[Part 3](books/simrs-modular-monolith-playbook/03-standar-kode-clean-architecture-hono-sequelize.md)** &nbsp;|&nbsp; **[Part 4](books/simrs-modular-monolith-playbook/04-dual-runtime-docker-dan-aws-lambda.md)** &nbsp;|&nbsp; **[Part 5](books/simrs-modular-monolith-playbook/05-audit-trail-rme-dan-bridging-eksternal.md)** &nbsp;|&nbsp; **[Part 6](books/simrs-modular-monolith-playbook/06-migration-playbook-dan-team-governance.md)**
 
 ---
 
