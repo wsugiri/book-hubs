@@ -175,6 +175,71 @@ Ketika Architecture Guild memperkenalkan Playbook ini bersama guardrails batas m
 
 ---
 
+## 🛠️ Hands-On Automation: CI/CD Pipeline & Pull Request Template
+
+Berikut adalah berkas pipeline otomatis untuk menjaga integritas arsitektur di setiap Pull Request:
+
+### 1. GitHub Actions Pipeline (`.github/workflows/ci.yml`)
+```yaml
+name: SIMRS Backend CI
+
+on:
+  push:
+    branches: [ main, staging ]
+  pull_request:
+    branches: [ main, staging ]
+
+jobs:
+  verify-architecture:
+    name: Lint, Architecture Boundaries & Tests
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: simrs_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # Langkah 1: Cek batas modul otomatis (Ditolak jika ada cross-module internal imports)
+      - name: Verify Architecture Boundaries (dependency-cruiser)
+        run: npx depcruise src --config .dependency-cruiser.cjs
+
+      # Langkah 2: Jalankan ESLint
+      - name: Run ESLint
+        run: npm run lint
+
+      # Langkah 3: Jalankan Database Migration untuk Test DB
+      - name: Run Migrations
+        env:
+          DB_URI: mysql://root:root@127.0.0.1:3306/simrs_test
+        run: npm run db:migrate
+
+      # Langkah 4: Jalankan Test Suite
+      - name: Run Automated Tests
+        env:
+          DB_URI: mysql://root:root@127.0.0.1:3306/simrs_test
+        run: npm test
+```
+
+---
+
 ## ⚡ Panduan Aksi Nyata dari Bagian Ini (Action Checklist)
 
 1. [ ] **Buat Direktori ADR**: Inisialisasi folder `docs/adr/` dan buat `ADR-001` yang mendokumentasikan keputusan adopsi arsitektur Modular Monolith untuk tim Anda.

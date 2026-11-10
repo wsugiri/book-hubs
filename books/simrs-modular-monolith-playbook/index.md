@@ -1,9 +1,9 @@
-# 📖 The SIMRS Backend Playbook: Cetak Biru Arsitektur Modular Monolith Berbasis Node.js, Hono, dan Sequelize
+# 📖 The SIMRS Backend Playbook: Manual Hands-On & Cetak Biru Arsitektur Modular Monolith (Node.js, Hono, Sequelize)
 
 > 📚 **[Kembali ke Katalog Utama (CATALOG.md)](../../CATALOG.md)**  
 > **Penulis**: SIMRS Engineering Team & Architecture Guild  
 > **Tahun Terbit**: 2026 | **Penerbit**: Modern Healthcare Engineering Press  
-> **Genre**: Rekayasa Perangkat Lunak, Enterprise Architecture & Healthcare Systems | **Estimasi Waktu Baca Keseluruhan**: ~80–100 Menit (6 Modul Lengkap)  
+> **Genre**: Rekayasa Perangkat Lunak, Enterprise Architecture & Healthcare Systems | **Estimasi Waktu Baca Keseluruhan**: ~90–120 Menit (6 Modul + 1 Lampiran Hands-On)  
 > **Rating Rekomendasi**: ⭐⭐⭐⭐⭐ (5.0 / 5.0)  
 
 ---
@@ -14,20 +14,46 @@
 
 ---
 
-## 🧭 Peta Eksplorasi Buku (Reading Roadmap)
+## 🧭 Peta Eksplorasi Buku (Reading & Hands-On Roadmap)
 
-Buku ini disusun secara sistematis ke dalam 6 modul komprehensif yang memandu tim rekayasa perangkat lunak bertransformasi dari arsitektur monolit klasik berlapis (*layer-first MVC*) menuju arsitektur modular berbasis domain (*domain-driven modular monolith*) yang tangguh, patuh regulasi, dan siap diekstrak menjadi microservices:
+Buku ini bukan sekadar risalah konsep teoritis, melainkan **Manual Praktis & Panduan Lapangan (Field Manual)** siap eksekusi. Setiap bab memuat studi kasus nyata, baris kode siap pakai (*functional zero-class*), skrip terminal, skema database, skenario uji cURL, dan resep penanganan insiden produksi:
 
-- [x] 📘 **[Part 1: Anatomi Kompleksitas SIMRS & Jebakan Arsitektur Klasik](01-anatomi-simrs-dan-jebakan-arsitektur.md)** — *Membongkar mengapa pola MVC teknis (handlers/models/routes) menjadi anti-pattern mematikan di rumah sakit. Analisis fat handlers, database coupling, semantik HTTP response yang cacat, hingga krisis connection pool exhaustion di AWS Lambda saat peak hour poliklinik.*
-- [x] 📘 **[Part 2: Paradigma Modular Monolith & Bounded Contexts](02-prinsip-modular-monolith-dan-bounded-context.md)** — *Mendefinisikan batas domain medis (Admission, EMR, Pharmacy, Billing, Bridging). Menegakkan "The Golden Rules" isolasi modul: larangan cross-module SQL joins/imports, relasi berbasis foreign ID tanpa eager loading, dan penegakan batas via ESLint guardrails.*
-- [x] 📘 **[Part 3: Clean Implementation: Delivery, Domain, dan Data Layer](03-standar-kode-clean-architecture-hono-sequelize.md)** — *Praktek terbaik implementasi kode bersih menggunakan Hono dan Sequelize. Memisahkan handler tipis (skinny handlers) dari pure business logic di service layer, isolasi query di repository, penanganan error terpusat (`AppError`), serta validasi fail-fast dengan Zod.*
-- [x] 📘 **[Part 4: Dual-Runtime Architecture: Menjinakkan Docker & AWS Lambda](04-dual-runtime-docker-dan-aws-lambda.md)** — *Satu basis kode untuk dua lingkungan runtime yang bertolak belakang. Konfigurasi connection pooling adaptif di Sequelize (persistent pool Docker vs dynamic min/max di Lambda dengan AWS RDS Proxy), graceful shutdown, dan distributed tracing via Pino.*
-- [x] 📘 **[Part 5: Compliance Kesehatan: Audit Trail RME, BPJS, & SATUSEHAT FHIR](05-audit-trail-rme-dan-bridging-eksternal.md)** — *Memenuhi mandat hukum Permenkes 24/2022 tentang Rekam Medis Elektronik (RME). Merancang audit trail transparan dan immutable (siapa, kapan, sebelum vs sesudah). Mengisolasi integrasi BPJS VClaim/Antrol dan Kemenkes SATUSEHAT dengan Retry, Circuit Breaker, dan Outbox Pattern.*
-- [x] 📘 **[Part 6: Migration Playbook, Team Governance, & Living ADR](06-migration-playbook-dan-team-governance.md)** — *Strategi migrasi inkremental menggunakan Strangler Fig Pattern tanpa melakukan rewrite total yang berisiko. Standarisasi Architecture Decision Records (ADR), checklist onboarding engineer baru, dan otomatisasi CI/CD guardrails.*
+- [x] 📘 **[Part 1: Anatomi Kompleksitas SIMRS & Jebakan Arsitektur Klasik](01-anatomi-simrs-dan-jebakan-arsitektur.md)** — *Membongkar mengapa pola MVC teknis (handlers/models/routes) menjadi anti-pattern mematikan di rumah sakit. Dilengkapi skrip simulasi reproduksi connection pool exhaustion di AWS Lambda dan audit checklist kode warisan.*
+- [x] 📘 **[Part 2: Paradigma Modular Monolith & Bounded Contexts](02-prinsip-modular-monolith-dan-bounded-context.md)** — *Mendefinisikan batas domain medis (Admission, EMR, Pharmacy, Billing, Bridging). Dilengkapi panduan arsitektur panggilan API/service antar-modul (in-process contract, remote microservice adapter via Anti-Corruption Layer, pemutus circular dependency), skrip otomasi `make-module.js`, serta konfigurasi `eslint-plugin-boundaries` dan `dependency-cruiser`.*
+- [x] 📘 **[Part 3: Clean Implementation: Delivery, Domain, dan Data Layer](03-standar-kode-clean-architecture-hono-sequelize.md)** — *Tutorial implementasi kode bersih Hono + Sequelize tanpa class. Memisahkan handler tipis dari pure business logic, skema validasi Zod fail-fast, isolasi repository, simulasi lengkap pemanggil & penerima API antar-modul, dan pengujian end-to-end via cURL (skenario sukses 201, penolakan kunjungan aktif 409, dan payload cacat 422).*
+- [x] 📘 **[Part 4: Dual-Runtime Architecture: Menjinakkan Docker & AWS Lambda](04-dual-runtime-docker-dan-aws-lambda.md)** — *Satu basis kode untuk dua lingkungan runtime yang dioptimalkan penuh untuk basis data relasional PostgreSQL 16 (JSONB, GIN Index, statement timeout) dan MySQL 8.0+ (decimal currency handling). Dilengkapi berkas produksi `Dockerfile` multi-stage, `docker-compose.yml` dual-DB, Sequelize adaptive singleton, graceful shutdown test, serta integrasi AWS RDS Proxy.*
+- [x] 📘 **[Part 5: Compliance Kesehatan: Audit Trail RME, BPJS, & SATUSEHAT FHIR](05-audit-trail-rme-dan-bridging-eksternal.md)** — *Memenuhi mandat hukum Permenkes 24/2022. Implementasi audit trail transparan via `AsyncLocalStorage` & Sequelize Hook, skema migrasi DDL lengkap untuk PostgreSQL dan MySQL, plus runnable Background Outbox Worker (`SELECT FOR UPDATE SKIP LOCKED`) dan Circuit Breaker.*
+- [x] 📘 **[Part 6: Migration Playbook, Team Governance, & Living ADR](06-migration-playbook-dan-team-governance.md)** — *Strategi migrasi inkremental menggunakan Strangler Fig Pattern tanpa melakukan rewrite total. Dilengkapi template ADR resmi, pull request checklist, dan pipeline CI automated verification.*
 - [x] 📎 **[Lampiran A: Struktur Kode Referensi & Konvensi Proyek](07-lampiran-struktur-kode-referensi.md)** — *Peta repositori resmi `simrs-be/` (root, `db/`, `tests/`, entrypoint), anatomi lengkap satu modul, konvensi penamaan, matriks siapa boleh meng-import siapa, pola factory agar service mudah diuji, dan opsi laporan lintas modul tanpa JOIN.*
 
-> [!NOTE]
-> Skenario "kasus" dan kutipan di setiap bab bersifat **ilustratif** untuk memperjelas konsep, bukan data atau kutipan terverifikasi. Contoh kode adalah referensi desain; verifikasi terhadap versi pustaka yang dipakai (Hono, Sequelize, Zod) sebelum dipakai di produksi.
+---
+
+## 🚀 Quickstart Hands-On: Menjalankan Sistem dalam 5 Menit
+
+Untuk membuktikan bahwa panduan ini dapat dijalankan langsung di mesin lokal engineer:
+
+```bash
+# 1. Clone repositori & masuk ke direktori backend
+git clone https://github.com/your-hospital/simrs-be.git
+cd simrs-be
+
+# 2. Salin environment & jalankan database lokal via Docker
+cp .env.example .env
+docker compose up -d mysql
+
+# 3. Pasang dependensi & jalankan migrasi database
+npm install
+npm run db:migrate
+
+# 4. Jalankan arsitektur guardrail test (linter batas modul)
+npm run lint:boundaries
+
+# 5. Jalankan server lokal (Docker mode)
+npm run dev
+
+# 6. Jalankan automated unit & integration test
+npm test
+```
 
 ---
 

@@ -83,11 +83,15 @@ export default app;
 
 ---
 
-### 2. Menjinakkan Koneksi Database: Sequelize Adaptive Singleton
+### 2. Menjinakkan Koneksi Relasional: Sequelize Adaptive Singleton (MySQL & PostgreSQL)
 
 Inilah titik paling rawan yang sering menggagalkan migrasi SIMRS ke serverless. Sequelize secara default didesain untuk server persisten. Jika kita tidak membedakan lingkungan eksekusi, AWS Lambda akan membuka ribuan koneksi dan menghancurkan basis data.
 
-Solusinya adalah **Adaptive Database Singleton**:
+Selain itu, rumah sakit memiliki preferensi basis data relasional yang berbeda:
+* **MySQL 8.0+**: Sangat populer di rumah sakit daerah berkat ketersediaan talenta lokal dan kemudahan administrasi.
+* **PostgreSQL 15/16+**: Menjadi standar emas untuk sistem rumah sakit enterprise berkat dukungan tipe data `JSONB` yang sangat cepat dengan *GIN indexing* (cocok untuk form rekam medis dinamis CPPT/SOAP) serta kepatuhan ACID yang ketat.
+
+Solusinya adalah **Adaptive Database Singleton** yang dioptimalkan secara spesifik untuk kedua dialek:
 
 ```javascript
 // src/core/database/index.js
@@ -109,36 +113,52 @@ export const getDatabase = () => {
       throw new Error('Variabel lingkungan DB_URI belum didefinisikan!');
     }
 
+    // Deteksi Dialek: 'postgres' atau 'mysql'
+    const dialect = process.env.DB_DIALECT || (dbUri.startsWith('postgres') ? 'postgres' : 'mysql');
+
+    // 1. Opsi Khusus Dialek (Dialect-Specific Optimizations)
+    const dialectOptions = dialect === 'postgres'
+      ? {
+          // OPTIMASI KHUSUS POSTGRESQL:
+          statement_timeout: 30000, // 30s: Batasi query poliklinik liar agar tidak menggantung database
+          idle_in_transaction_session_timeout: 10000, // 10s: Matikan koneksi jika developer lupa commit/rollback
+          application_name: 'simrs-backend-service', // Mempermudah pelacakan di pg_stat_activity
+          ssl: process.env.DB_SSL === 'true' ? { require: true, rejectUnauthorized: false } : false
+        }
+      : {
+          // OPTIMASI KHUSUS MYSQL (8.0+):
+          charset: 'utf8mb4',
+          timezone: '+07:00', // Kunci ke zona waktu WIB untuk keakuratan jam admisi
+          decimalNumbers: true, // PENTING: Mencegah nilai rupiah kasir dibulatkan jadi float JS cacat
+          connectTimeout: 10000
+        };
+
+    // 2. Konfigurasi Pool Adaptif (Docker vs AWS Lambda)
+    const poolConfig = isLambda
+      ? {
+          // Mode Serverless: 1 koneksi per instance container Lambda
+          max: 1,
+          min: 0,
+          idle: 1000,
+          acquire: 3000,
+          evict: 0
+        }
+      : {
+          // Mode Container Docker / VM: Persistent pool untuk latensi ultra-cepat
+          max: Number(process.env.DB_POOL_MAX) || 20,
+          min: Number(process.env.DB_POOL_MIN) || 5,
+          idle: 10000,
+          acquire: 30000
+        };
+
     sequelizeInstance = new Sequelize(dbUri, {
-      dialect: 'mysql', // atau 'postgres'
+      dialect,
+      dialectOptions,
       logging: process.env.NODE_ENV === 'development' ? console.log : false,
-      
-      // KONFIGURASI ADAPTIF CONNECTION POOL
-      pool: isLambda
-        ? {
-            // Konfigurasi Khusus AWS Lambda:
-            // Satu execution environment hanya memproses SATU request pada satu waktu,
-            // jadi pool lebih dari 1 tidak menambah throughput. Konkurensi dicapai
-            // lewat banyak instance Lambda, bukan pool besar.
-            max: 1,
-            min: 0,
-            idle: 1000,
-            acquire: 3000,
-            evict: 0 // Matikan timer evict; pembersihan dilakukan per-invocation (lihat lambda.js)
-          }
-        : {
-            // Konfigurasi Khusus Docker / Kubernetes (Long-Running):
-            // Satu instance melayani ribuan request bergantian.
-            // Pertahankan koneksi hangat (min pool) untuk latensi ultra-cepat.
-            max: 20,
-            min: 5,
-            idle: 10000,
-            acquire: 30000
-          }
+      pool: poolConfig
     });
 
-    // Logging status inisialisasi koneksi
-    console.info(`[DATABASE] Inisialisasi Sequelize Singleton. Mode: ${isLambda ? 'AWS_LAMBDA (Serverless)' : 'PERSISTENT (Docker)'}`);
+    console.info(`[DATABASE] Inisialisasi Sequelize Singleton. Dialek: ${dialect.toUpperCase()} | Mode: ${isLambda ? 'AWS_LAMBDA (Serverless)' : 'PERSISTENT (Docker)'}`);
   }
 
   return sequelizeInstance;
@@ -148,9 +168,21 @@ export const getDatabase = () => {
 export const sequelize = getDatabase();
 ```
 
+---
+
+### Perbandingan Fitur Kunci: PostgreSQL vs MySQL untuk SIMRS
+
+| Kebutuhan Klinis / SIMRS | PostgreSQL (15+) | MySQL (8.0+) | Catatan Arsitektur |
+| :--- | :--- | :--- | :--- |
+| **Penyimpanan Formulir Rekam Medis (CPPT / SOAP)** | `JSONB` (Binary format) | `JSON` (Text-based) | Di PostgreSQL, `JSONB` mendukung **GIN Indexing**, memungkinkan pencarian diagnosa di dalam dokumen rekam medis berjalan instan tanpa full-table scan. |
+| **Primary Key ID Global** | `UUID` native (`gen_random_uuid()`) | `CHAR(36)` atau `BINARY(16)` | Keduanya didukung Sequelize via `DataTypes.UUID`. PostgreSQL lebih hemat ruang penyimpanan disk secara native. |
+| **Penguncian Antrean Outbox BPJS** | `FOR UPDATE SKIP LOCKED` | `FOR UPDATE SKIP LOCKED` | **Didukung di kedua database** (MySQL 8.0+ & PG 9.5+). Sangat krusial agar banyak worker outbox tidak berebut baris data yang sama. |
+| **Nilai Finansial Kasir** | `NUMERIC(14, 2)` | `DECIMAL(14, 2)` | Wajib mengaktifkan `decimalNumbers: true` di MySQL agar Sequelize tidak mengubah angka presisi rupiah menjadi float. |
+| **Zona Waktu Kunjungan** | `TIMESTAMPTZ` | `DATETIME` / `TIMESTAMP` | Disarankan menyimpan semua waktu dalam UTC di level basis data, dan mengonversinya ke WIB (+07) saat presentasi ke klien. |
+
 > [!IMPORTANT]
 > **Rekomendasi Wajib untuk AWS Lambda: Pasang AWS RDS Proxy!**  
-> Di lingkungan produksi rumah sakit dengan ratusan loket poliklinik, connection pool Sequelize di sisi aplikasi saja tidak cukup menjamin basis data aman dari *connection exhaustion*. Gunakan **AWS RDS Proxy** di depan Amazon Aurora/RDS. RDS Proxy bertindak sebagai *connection multiplexer* terpusat yang menjaga koneksi fisik ke basis data tetap stabil meskipun puluhan ribu fungsi Lambda memanggilnya secara bersamaan.
+> Baik Anda menggunakan Amazon Aurora PostgreSQL maupun Aurora MySQL, connection pool Sequelize di sisi aplikasi saja tidak cukup menjamin basis data aman dari *connection exhaustion* saat poliklinik dibuka serentak. Gunakan **AWS RDS Proxy** di depan basis data. RDS Proxy bertindak sebagai *connection multiplexer* terpusat yang menjaga koneksi fisik ke basis data tetap stabil meskipun puluhan ribu fungsi Lambda memanggilnya secara bersamaan.
 
 ---
 
@@ -266,6 +298,122 @@ Lambda tidak punya proses latar belakang yang berjalan terus. Worker outbox (Par
 - Atau **SQS**: setelah commit, aplikasi mengirim pesan ke antrean; Lambda worker dipicu per pesan, dan kegagalan berulang otomatis masuk *Dead Letter Queue*.
 
 Di Docker, worker yang sama dapat dijalankan sebagai container terpisah (`node worker.js`) dengan loop polling, sehingga tidak berebut sumber daya dengan API.
+
+---
+
+## 🛠️ Hands-On Lab: Berkas Produksi Docker & Pengujian Graceful Shutdown
+
+Berikut adalah artefak konfigurasi lengkap yang siap Anda salin ke proyek:
+
+### 1. `Dockerfile` Produksi Multi-Stage (Non-Root User)
+```dockerfile
+# Stage 1: Build & Dependencies
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+# Stage 2: Runtime Minimalis
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+# Pasang dumb-init untuk menangani sinyal PID 1 (SIGTERM/SIGINT) secara presisi
+RUN apk add --no-cache dumb-init
+
+# Jalankan sebagai non-root user demi keamanan kepatuhan rumah sakit
+USER node
+
+COPY --chown=node:node --from=builder /app/node_modules ./node_modules
+COPY --chown=node:node package*.json ./
+COPY --chown=node:node src/ ./src/
+COPY --chown=node:node server.js ./
+
+ENV NODE_ENV=production \
+    PORT=3000
+
+EXPOSE 3000
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["node", "server.js"]
+```
+
+### 2. `docker-compose.yml` (Pilihan Basis Data: MySQL 8 atau PostgreSQL 16)
+```yaml
+version: '3.8'
+
+services:
+  # OPSI A: PostgreSQL 16 (Direkomendasikan untuk Enterprise & JSONB RME)
+  postgres:
+    image: postgres:16-alpine
+    container_name: simrs-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: simrs_dev
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    command: postgres -c max_connections=150 -c shared_buffers=256MB
+
+  # OPSI B: MySQL 8.0 (Alternatif Relasional Populer)
+  mysql:
+    image: mysql:8.0
+    container_name: simrs-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: simrs_dev
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password --max_connections=150
+
+  simrs-api:
+    build: .
+    container_name: simrs-backend
+    restart: unless-stopped
+    ports:
+      - '3300:3000'
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      # Pilih salah satu koneksi sesuai kebutuhan tim:
+      DB_URI: postgresql://postgres:rootpassword@postgres:5432/simrs_dev
+      # DB_URI: mysql://root:rootpassword@mysql:3306/simrs_dev
+      DB_DIALECT: postgres # atau 'mysql'
+      SHUTDOWN_TIMEOUT_MS: 25000
+    depends_on:
+      - postgres
+      # - mysql
+
+volumes:
+  pg_data:
+  mysql_data:
+```
+
+### 3. Skenario Uji Graceful Shutdown (Terminal Hands-On)
+Jalankan pengujian ini untuk memvalidasi bahwa transaksi medis yang sedang berjalan tidak akan terputus saat deploy container baru:
+
+```bash
+# 1. Jalankan container
+docker compose up -d
+
+# 2. Kirim request transaksi panjang (simulasi 5 detik)
+curl -X POST http://localhost:3000/api/v1/admissions/outpatient ... &
+
+# 3. Seketika kirim perintah stop container (simulasi rolling update Kubernetes)
+docker stop --time 30 simrs-backend
+
+# 4. Amati log container:
+docker logs simrs-backend
+# Output log yang benar:
+# [SHUTDOWN] Menerima sinyal SIGTERM. Menutup server secara aman...
+# [SHUTDOWN] Semua request aktif selesai, HTTP listener ditutup.
+# [SHUTDOWN] Seluruh koneksi basis data berhasil ditutup.
+```
 
 ---
 

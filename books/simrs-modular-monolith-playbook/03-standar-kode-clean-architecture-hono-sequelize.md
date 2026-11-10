@@ -69,33 +69,29 @@ Bab ini menyajikan standar kode bersih (*clean implementation standards*) berbas
 
 Sebelum menyentuh modul apa pun, kita harus membangun **Shared Kernel** yang bertugas menyeragamkan komunikasi keluar.
 
-#### A. Kelas Kesalahan Bisnis Terstandar (`src/core/errors/AppError.js`)
-Jangan melempar error bawaan JavaScript generik seperti `throw new Error('Pasien tidak ditemukan')`. Buat kelas error khusus domain yang membawa konteks kode status HTTP dan kode mesin (*error code*):
+#### A. Factory Kesalahan Bisnis Terstandar (`src/core/errors/AppError.js`)
+Alih-alih menggunakan ES6 `class` yang kaku, gunakan **Factory Function fungsional**. Pola ini menghasilkan error murni (*pure JavaScript Error instance*) yang diperkaya metadata HTTP tanpa mewajibkan penggunaan keyword `new` atau inheritance `class`:
 
 ```javascript
 // src/core/errors/AppError.js
-export class AppError extends Error {
-  constructor(message, statusCode = 400, errorCode = 'BAD_REQUEST', details = null) {
-    super(message);
-    this.name = 'AppError';
-    this.statusCode = statusCode;
-    this.errorCode = errorCode;
-    this.details = details;
-    Error.captureStackTrace(this, this.constructor);
-  }
-}
+// Factory function murni (Functional & Zero-Class)
+export const createAppError = (message, statusCode = 400, errorCode = 'BAD_REQUEST', details = null) => {
+  const error = new Error(message);
+  error.name = 'AppError';
+  error.statusCode = statusCode;
+  error.errorCode = errorCode;
+  error.details = details;
+  error.isAppError = true;
+  return error;
+};
 
-export class NotFoundError extends AppError {
-  constructor(message = 'Resource not found', errorCode = 'RESOURCE_NOT_FOUND') {
-    super(message, 404, errorCode);
-  }
-}
+export const createNotFoundError = (message = 'Resource not found', errorCode = 'RESOURCE_NOT_FOUND') =>
+  createAppError(message, 404, errorCode);
 
-export class ConflictError extends AppError {
-  constructor(message = 'Conflict state', errorCode = 'CONFLICT_STATE') {
-    super(message, 409, errorCode);
-  }
-}
+export const createConflictError = (message = 'Conflict state', errorCode = 'CONFLICT_STATE', details = null) =>
+  createAppError(message, 409, errorCode, details);
+
+export const isAppError = (err) => Boolean(err && (err.isAppError === true || err.name === 'AppError'));
 ```
 
 #### B. Helper Respon Standar (`src/core/http/response.js`)
@@ -127,12 +123,12 @@ Middleware ini menangkap semua error yang dilempar dari lapisan terdalam service
 import { HTTPException } from 'hono/http-exception';
 import { ZodError } from 'zod';
 import { UniqueConstraintError, ForeignKeyConstraintError, ValidationError as SequelizeValidationError } from 'sequelize';
-import { AppError } from '../errors/AppError.js';
+import { isAppError } from '../errors/AppError.js';
 import { sendError } from './response.js';
 import { logger } from '../config/logger.js';
 
 export const globalErrorHandler = (err, c) => {
-  if (err instanceof AppError) {
+  if (isAppError(err)) {
     return sendError(c, err);
   }
 
@@ -243,7 +239,7 @@ Lapisan service adalah jantung dari aplikasi rumah sakit. Fungsi di sini sepenuh
 ```javascript
 // src/modules/admission/services/registration.service.js
 import { sequelize } from '../../../core/database/index.js';
-import { AppError } from '../../../core/errors/AppError.js';
+import { createAppError } from '../../../core/errors/AppError.js';
 import * as visitRepo from '../repositories/visit.repository.js';
 import { billingService } from '../../billing/index.js'; // Kontrak publik modul Billing
 
@@ -253,7 +249,7 @@ export const createOutpatientVisit = async (payload, actor) => {
     // 1. Validasi Aturan Medis: Pasien tidak boleh punya kunjungan aktif ganda di hari yang sama
     const activeVisit = await visitRepo.findActiveVisitToday(payload.patientId, { transaction: t });
     if (activeVisit) {
-      throw new AppError(
+      throw createAppError(
         'Pasien masih terdaftar dalam kunjungan aktif hari ini di poli lain',
         409,
         'ACTIVE_VISIT_EXISTS',
@@ -287,9 +283,37 @@ export const createOutpatientVisit = async (payload, actor) => {
 };
 ```
 
+#### Sisi Penerima Panggilan Antar-Modul (`src/modules/billing/services/invoice.service.js`)
+Perhatikan bagaimana sisi penerima (Modul Billing) menyambut panggilan kontrak ini secara independen, memvalidasi tarif pendaftaran, dan menyimpan invoice tanpa tahu siapa yang memanggilnya:
+
+```javascript
+// src/modules/billing/services/invoice.service.js
+import { createAppError } from '../../../core/errors/AppError.js';
+import * as invoiceRepo from '../repositories/invoice.repository.js';
+
+export const initializeAdmissionInvoice = async (dto, options = {}) => {
+  const { visitId, patientId, paymentType } = dto;
+
+  if (!visitId || !patientId) {
+    throw createAppError('Kontrak pemanggilan modul tidak valid: visitId dan patientId wajib ada', 400, 'INVALID_INTER_MODULE_PAYLOAD');
+  }
+
+  // Tarif karcis pendaftaran rumah sakit (Bisa di-lookup dari modul master-data)
+  const registrationFee = paymentType === 'BPJS' ? 0.00 : 25000.00;
+
+  return await invoiceRepo.create({
+    visitId,
+    patientId,
+    totalAmount: registrationFee,
+    status: paymentType === 'BPJS' ? 'PAID' : 'UNPAID',
+    paymentType
+  }, options);
+};
+```
+
 ---
 
-### 5. Repository Layer: Isolasi Akses Basis Data
+### 5. Repository Layer: Isolasi Akses Basis Data (Kompatibel PostgreSQL & MySQL)
 
 Fungsi repository membungkus seluruh panggilan ORM Sequelize. Jika suatu saat Anda ingin mengganti query Sequelize dengan raw SQL berkinerja tinggi atau beralih ke Kysely/Prisma, perubahan hanya terjadi di folder `repositories/`, tanpa menyentuh service layer.
 
@@ -326,6 +350,133 @@ export const create = async (data, options = {}) => {
 
 ---
 
+### 6. Rangkaian Rute & Middleware Binding (`src/modules/admission/routes.js`)
+
+Inilah bagaimana validator Zod dan handler dihubungkan ke dalam sub-router Hono:
+
+```javascript
+// src/modules/admission/routes.js
+import { Hono } from 'hono';
+import { zValidator } from '@hono/zod-validator';
+import { createOutpatientSchema } from './validators/registration.validator.js';
+import * as registrationHandler from './handlers/registration.handler.js';
+
+export const admissionRoutes = new Hono();
+
+// POST /api/v1/admissions/outpatient
+admissionRoutes.post(
+  '/outpatient',
+  zValidator('json', createOutpatientSchema, (result) => {
+    // Teruskan ZodError ke globalErrorHandler agar envelope error seragam
+    if (!result.success) throw result.error;
+  }),
+  registrationHandler.registerOutpatient
+);
+```
+
+---
+
+## 🛠️ Hands-On Verification: Uji Lapangan via cURL
+
+Setelah kode dipasang, jalankan pengujian end-to-end menggunakan terminal cURL:
+
+### Skenario 1: Pendaftaran Pasien Berhasil (HTTP 201 Created)
+```bash
+curl -X POST http://localhost:3000/api/v1/admissions/outpatient \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <TOKEN_JWT_PETUGAS>" \
+  -d '{
+    "patientId": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+    "polyclinicId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "doctorScheduleId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+    "paymentType": "PRIBADI"
+  }'
+```
+
+**Respon JSON yang Diterima:**
+```json
+{
+  "success": true,
+  "message": "Pendaftaran rawat jalan berhasil dibuat",
+  "data": {
+    "id": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+    "patientId": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+    "polyclinicId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "status": "WAITING_FOR_TRIAGE",
+    "registeredBy": "usr-nurse-01",
+    "registeredAt": "2026-11-10T08:30:00.000Z"
+  },
+  "meta": {
+    "requestId": "req-987abc123",
+    "timestamp": "2026-11-10T08:30:00.125Z"
+  }
+}
+```
+
+### Skenario 2: Pasien Mencoba Daftar Dobel di Hari yang Sama (HTTP 409 Conflict)
+Ulangi perintah cURL yang sama untuk kedua kalinya. Sistem akan menolak secara deterministik:
+
+**Respon JSON yang Diterima:**
+```json
+{
+  "success": false,
+  "errorCode": "ACTIVE_VISIT_EXISTS",
+  "message": "Pasien masih terdaftar dalam kunjungan aktif hari ini di poli lain",
+  "details": {
+    "existingVisitId": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+    "polyclinicId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e"
+  },
+  "meta": {
+    "requestId": "req-987abc124",
+    "timestamp": "2026-11-10T08:31:00.040Z"
+  }
+}
+```
+
+### Skenario 3: Validasi Gagal - Metode BPJS tanpa Nomor Kartu (HTTP 422 Unprocessable)
+```bash
+curl -X POST http://localhost:3000/api/v1/admissions/outpatient \
+  -H "Content-Type: application/json" \
+  -d '{
+    "patientId": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+    "polyclinicId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "doctorScheduleId": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+    "paymentType": "BPJS"
+  }'
+```
+
+**Respon JSON yang Diterima:**
+```json
+{
+  "success": false,
+  "errorCode": "VALIDATION_FAILED",
+  "message": "Data tidak valid",
+  "details": {
+    "fieldErrors": {
+      "bpjsCardNumber": [
+        "Nomor Kartu BPJS wajib diisi untuk metode pembayaran BPJS"
+      ]
+    }
+  },
+  "meta": {
+    "requestId": "req-987abc125",
+    "timestamp": "2026-11-10T08:32:00.015Z"
+  }
+}
+```
+
+### Verifikasi Atomisitas Basis Data (SQL Terminal)
+Periksa database lokal Anda untuk memastikan invoice awal karcis admisi otomatis dibuat oleh modul `billing` dalam transaksi yang sama:
+```sql
+-- Cek kunjungan
+SELECT id, patientId, status, createdAt FROM admission_visits WHERE patientId = 'a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d';
+
+-- Cek invoice yang otomatis terbit di modul billing
+SELECT id, visitId, totalAmount, status FROM billing_invoices WHERE visitId = 'd4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a';
+```
+
+---
+
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 
 ### Ilustrasi Kasus: Mengapa Service yang "Bebas dari HTTP" Menyelamatkan Proyek
@@ -357,7 +508,7 @@ Jika fungsi pendaftaran masih ditulis dengan gaya lama (terikat pada objek `c`),
 ## ⚡ Panduan Aksi Nyata dari Bagian Ini (Action Checklist)
 
 1. [ ] **Hapus `c` dari Service Layer**: Periksa seluruh fungsi di `src/modules/*/services/`. Jika ada parameter `c` yang masuk ke dalam fungsi service, segera refactor dan gantikan dengan parameter data murni.
-2. [ ] **Hilangkan Try-Catch Manual di Handler**: Delegasikan semua penanganan error ke `globalErrorHandler`. Jika terjadi kesalahan bisnis, cukup tulis `throw new AppError(...)`.
+2. [ ] **Hilangkan Try-Catch Manual di Handler**: Delegasikan semua penanganan error ke `globalErrorHandler`. Jika terjadi kesalahan bisnis, cukup tulis `throw createAppError(...)` tanpa perlu sintaks class `new`.
 3. [ ] **Terapkan Skema Validasi Zod**: Buat file validator untuk setiap rute mutasi (`POST`, `PUT`, `PATCH`) dan pasang middleware `@hono/zod-validator`.
 4. [ ] **Gunakan Managed Transactions**: Selalu gunakan `sequelize.transaction(async (t) => { ... })` agar rollback terjadi otomatis saat timbul error tak terduga.
 

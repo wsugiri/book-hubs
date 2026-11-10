@@ -166,6 +166,70 @@ Perubahan kecil pada modul Admisi menghancurkan modul Farmasi hanya karena **mod
 
 ---
 
+## 🛠️ Hands-On Lab: Skrip Audit Kode & Reproduksi Masalah
+
+Sebelum memulai refactoring, setiap tim wajib menjalankan dua skrip diagnosa lapangan ini pada basis kode mereka:
+
+### 1. Skrip Diagnosa Spaghetti Imports (Terminal Bash)
+Jalankan satu baris perintah ini di terminal root repositori Anda untuk memetakan berapa banyak impor terlarang antar folder:
+
+```bash
+# Menghitung impor langsung ke folder models/ atau repositories/ dari luar foldernya
+echo "=== AUDIT IMPORT MODEL LIAR ==="
+grep -rnE "from ['\"].*(models|repositories)" src/ | grep -v "\.\./models" | grep -v "\.\./repositories" | head -n 30
+```
+Jika terminal Anda memuntahkan puluhan baris, sistem Anda saat ini berada dalam stadium kritis *tight-coupling*.
+
+### 2. Skrip Uji Reproduksi Connection Pool Exhaustion (`scripts/test-pool-stress.js`)
+Skrip mandiri ini dapat Anda jalankan untuk melihat bagaimana koneksi Lambda tanpa manajemen pool melumpuhkan basis data:
+
+```javascript
+// scripts/test-pool-stress.js
+// Jalankan: node scripts/test-pool-stress.js
+import { Sequelize } from 'sequelize';
+
+const DB_URI = process.env.DB_URI || 'mysql://root:password@localhost:3306/simrs_dev';
+
+console.info('⚡ Memulai simulasi 60 eksekusi konkuren fungsi Lambda tanpa adaptive pool...');
+
+// Menyimulasikan 60 instance Lambda yang masing-masing membuka pool mandiri
+const simulateLambdaInvocations = async () => {
+  const tasks = Array.from({ length: 60 }).map(async (_, idx) => {
+    // Simulasi inisialisasi salah: membuka pool default max 5 per instance
+    const naiveInstance = new Sequelize(DB_URI, {
+      logging: false,
+      pool: { max: 5, min: 1, acquire: 3000 }
+    });
+
+    try {
+      await naiveInstance.authenticate();
+      // Simulasi query kasir / pendaftaran yang memakan waktu 500ms
+      await naiveInstance.query('SELECT SLEEP(0.5);');
+      return { id: idx, status: 'SUCCESS' };
+    } catch (err) {
+      return { id: idx, status: 'FAILED', error: err.name };
+    } finally {
+      await naiveInstance.close().catch(() => {});
+    }
+  });
+
+  const results = await Promise.all(tasks);
+  const failed = results.filter((r) => r.status === 'FAILED');
+  console.table({
+    TotalRequests: results.length,
+    Sukses: results.length - failed.length,
+    Gagal: failed.length,
+    SampleError: failed[0]?.error || 'None'
+  });
+};
+
+simulateLambdaInvocations();
+```
+
+Hasil eksekusi di atas akan langsung membuktikan munculnya galat `SequelizeConnectionAcquireTimeoutError` atau `Too many connections`, memberikan bukti empiris kepada tim dan manajemen mengapa konfigurasi di Part 4 mutlak diperlukan.
+
+---
+
 ## ⚡ Panduan Aksi Nyata dari Bagian Ini (Action Checklist)
 
 Segera lakukan audit pada basis kode SIMRS Anda saat ini:

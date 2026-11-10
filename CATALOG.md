@@ -302,16 +302,16 @@
   <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0</b></sub>
 </div>
 
-> **Penulis**: SIMRS Engineering Team & Architecture Guild &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Penerbit**: Modern Healthcare Engineering Press &nbsp;|&nbsp; **Estimasi Baca**: ~80–100 Menit (6 Modul Lengkap)  
-> `🏥 Sistem Informasi RS (SIMRS)` `🏛️ Modular Monolith` `⚡ Hono & Sequelize` `☁️ Dual Runtime (Docker/Lambda)` `🛡️ Kepatuhan Permenkes RME`
+> **Penulis**: SIMRS Engineering Team & Architecture Guild &nbsp;|&nbsp; **Tahun**: 2026 &nbsp;|&nbsp; **Penerbit**: Modern Healthcare Engineering Press &nbsp;|&nbsp; **Estimasi Baca**: ~90–120 Menit (6 Modul + 1 Lampiran Hands-On)  
+> `🏥 Sistem Informasi RS (SIMRS)` `🏛️ Modular Monolith` `⚡ Hono & Sequelize` `🐘 PostgreSQL & MySQL 8` `🔄 Inter-Module API` `🛠️ Manual Hands-On` `☁️ Dual Runtime`
 
 > **💡 The Big Idea:**  
 > *"Jebakan terbesar dalam arsitektur sistem rumah sakit bukanlah pilihan bahasa pemrograman, melainkan mencampuradukkan domain medis di bawah folder teknis klasik (MVC), membiarkan query database melintasi batas domain tanpa kontrak, dan mengikat logika klinis pada protokol HTTP. Modular Monolith menghadirkan titik temu optimal: kemudahan operasional monolit dengan disiplin isolasi domain sekeras microservices."*
 
 **🔑 Kerangka Berpikir Utama:**
-- **Domain-First Bounded Contexts**: Mengelompokkan kode berdasarkan domain fungsional rumah sakit (`admission`, `emr`, `pharmacy`, `billing`, `bridging`) dan melarang keras SQL JOIN atau cross-import models antar modul.
+- **Domain-First Bounded Contexts & Inter-Module API**: Mengelompokkan domain fungsional rumah sakit (`admission`, `emr`, `pharmacy`, `billing`, `bridging`), melarang keras cross-database JOIN, dan menstandarisasi panggilan API antar-modul via Public Contract in-memory atau remote Anti-Corruption Layer (ACL).
 - **Protocol-Agnostic Core Logic**: Menjaga HTTP handler tetap ramping (*skinny handlers*) dan menaruh logika bisnis murni di lapisan service tanpa keterikatan pada objek HTTP context `c`.
-- **Dual-Runtime Cloud Readiness**: Menjalankan satu basis kode aplikasi yang identik di container Docker on-premise maupun AWS Lambda serverless dengan Sequelize adaptive connection pool dan AWS RDS Proxy.
+- **Relational Optimization (PostgreSQL 16 & MySQL 8.0+)**: Konfigurasi koneksi adaptif Sequelize untuk Docker & AWS Lambda, penanganan presisi mata uang rupiah kasir, GIN indexing pada rekam medis JSONB, dan row locking `FOR UPDATE SKIP LOCKED`.
 - **Healthcare Regulatory Compliance by Design**: Mengotomatiskan audit trail rekam medis elektronik (Permenkes No. 24/2022) via `AsyncLocalStorage` & Sequelize Global Hooks, serta mengisolasi integrasi eksternal (BPJS VClaim & SATUSEHAT FHIR) dengan Outbox Pattern & Circuit Breaker.
 
 📘 **[Master Hub](books/simrs-modular-monolith-playbook/index.md)** &nbsp;|&nbsp; **[Part 1](books/simrs-modular-monolith-playbook/01-anatomi-simrs-dan-jebakan-arsitektur.md)** &nbsp;|&nbsp; **[Part 2](books/simrs-modular-monolith-playbook/02-prinsip-modular-monolith-dan-bounded-context.md)** &nbsp;|&nbsp; **[Part 3](books/simrs-modular-monolith-playbook/03-standar-kode-clean-architecture-hono-sequelize.md)** &nbsp;|&nbsp; **[Part 4](books/simrs-modular-monolith-playbook/04-dual-runtime-docker-dan-aws-lambda.md)** &nbsp;|&nbsp; **[Part 5](books/simrs-modular-monolith-playbook/05-audit-trail-rme-dan-bridging-eksternal.md)** &nbsp;|&nbsp; **[Part 6](books/simrs-modular-monolith-playbook/06-migration-playbook-dan-team-governance.md)** &nbsp;|&nbsp; **[Lampiran A](books/simrs-modular-monolith-playbook/07-lampiran-struktur-kode-referensi.md)**

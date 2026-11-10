@@ -120,21 +120,29 @@ Jika relasi ini dibuat, developer billing akan terbiasa melakukan *deep eager lo
 Ketika kelak modul `admission` dipisah menjadi database mikro terpisah di AWS Aurora terpisah, seluruh query di modul `billing` seketika hancur dan harus ditulis ulang.
 
 **Pola yang Benar**:
-Simpan foreign key sebagai tipe data murni (`UUID` atau `BIGINT`):
+Simpan foreign key sebagai tipe data murni (`UUID` atau `BIGINT`) menggunakan factory function `defineModel` (gaya fungsional tanpa class):
 
 ```javascript
-// ✅ BERSIH & DECOUPLED: Foreign Key murni tanpa ORM Join
+// ✅ BERSIH, FUNGSIONAL & DECOUPLED: Foreign Key murni tanpa ORM Join
 // src/modules/billing/models/Invoice.js
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes } from 'sequelize';
 
-export class Invoice extends Model {}
-Invoice.init({
-  id: { type: DataTypes.UUID, primaryKey: true, defaultValue: DataTypes.UUIDV4 },
-  visitId: { type: DataTypes.UUID, allowNull: false }, // ID referensi murni
-  patientId: { type: DataTypes.UUID, allowNull: false },
-  totalAmount: { type: DataTypes.DECIMAL(14, 2), defaultValue: 0 },
-  status: { type: DataTypes.ENUM('UNPAID', 'PARTIALLY_PAID', 'PAID'), defaultValue: 'UNPAID' }
-}, { sequelize, tableName: 'billing_invoices' });
+export const defineInvoiceModel = (sequelize) => {
+  return sequelize.define(
+    'Invoice',
+    {
+      id: { type: DataTypes.UUID, primaryKey: true, defaultValue: DataTypes.UUIDV4 },
+      visitId: { type: DataTypes.UUID, allowNull: false }, // ID referensi murni
+      patientId: { type: DataTypes.UUID, allowNull: false },
+      totalAmount: { type: DataTypes.DECIMAL(14, 2), defaultValue: 0 },
+      status: { type: DataTypes.ENUM('UNPAID', 'PARTIALLY_PAID', 'PAID'), defaultValue: 'UNPAID' }
+    },
+    {
+      tableName: 'billing_invoices',
+      timestamps: true
+    }
+  );
+};
 ```
 
 Jika modul `billing` membutuhkan informasi nama pasien atau status kunjungan saat mencetak kuitansi, panggil `admissionService.getVisitSummary(invoice.visitId)` di service layer, bukan melakukan SQL JOIN otomatis.
@@ -213,6 +221,184 @@ module.exports = {
 Jalankan `npx depcruise src --config .dependency-cruiser.cjs` di pipeline CI. Struktur lengkap konfigurasi dan letaknya ada di [Lampiran A](07-lampiran-struktur-kode-referensi.md).
 
 Setiap kali ada engineer yang mencoba jalan pintas dengan meng-import model milik modul tetangga, perintah `npm run lint` atau GitHub Actions akan langsung menolak PR (*Pull Request*) tersebut dengan pesan galat yang jelas.
+
+---
+
+### 4. Arsitektur Komunikasi Antar-Modul (Inter-Module API & Service Calls)
+
+Pertanyaan paling penting dalam arsitektur Modular Monolith adalah: **"Jika Modul A dilarang mengakses basis data Modul B secara langsung, bagaimana cara Modul A meminta data atau memerintahkan aksi ke Modul B?"**
+
+Ada **tiga pola komunikasi resmi** yang diizinkan, disesuaikan dengan derajat desentralisasi sistem:
+
+```text
+               TIGA POLA KOMUNIKASI ANTAR-MODUL DI SIMRS
+  
+  [ POLA 1: IN-PROCESS SERVICE CONTRACT ] (Fase Monolith - Zero Network Latency)
+  admissionService ──► import { billingService } ──► billingService.initializeInvoice()
+                                                      (In-Memory Function Call)
+  
+  ─────────────────────────────────────────────────────────────────────────────
+  
+  [ POLA 2: REMOTE HTTP API / ANTI-CORRUPTION LAYER ] (Fase Ekstraksi Microservice)
+  admissionService ──► [ billing/index.js (Adapter) ] 
+                                  │
+                                  ├─► Jika Lokal: Panggil service lokal
+                                  └─► Jika Remote: HTTP POST https://billing.internal/api/v1/invoices
+  
+  ─────────────────────────────────────────────────────────────────────────────
+  
+  [ POLA 3: ASYNCHRONOUS DOMAIN EVENTS ] (Event-Driven / Decoupled)
+  admissionService ──► emit('visit.registered', payload) ──► billingEventListener
+```
+
+#### Pola 1: In-Process Synchronous Call via Public Contract (`index.js`)
+Saat seluruh modul berada di dalam repositori dan proses server yang sama, pemanggilan antar-modul dilakukan melalui **pemanggilan fungsi JavaScript in-memory**. Ini memberikan keunggulan performa mutlak: **0 milidetik network latency**.
+
+Aturan pemanggilan:
+1. Hanya boleh meng-import objek service dari `src/modules/<nama-modul>/index.js`.
+2. Input dan output harus berupa objek JavaScript murni (POJO / DTO), bukan instance model Sequelize.
+3. Service yang dipanggil wajib memvalidasi input kontraknya.
+
+```javascript
+// src/modules/admission/services/registration.service.js
+import { billingService } from '../../billing/index.js'; // Kontrak resmi
+
+export const registerOutpatient = async (payload, actor) => {
+  // 1. Logika lokal admisi...
+  const visit = await visitRepo.create({ ...payload });
+
+  // 2. Panggil API Modul Billing via kontrak publik in-memory
+  const invoice = await billingService.initializeAdmissionInvoice({
+    visitId: visit.id,
+    patientId: payload.patientId,
+    paymentType: payload.paymentType,
+    registrationFee: 25000
+  });
+
+  return { visit, invoiceId: invoice.id };
+};
+```
+
+#### Pola 2: Siap Microservice Tanpa Mengubah Kode Pemanggil (Adapter / Anti-Corruption Layer)
+Kelemahan terbesar tim saat memecah monolith menjadi microservices adalah harus mencari dan mengubah ratusan baris kode `import` di seluruh sistem.
+
+Dengan pola **Adapter di `index.js`**, kita mengisolasi cara komunikasi di dalam gerbang modul. Jika suatu hari manajemen memutuskan modul `billing` dipindahkan ke server atau container microservice independen (misalnya di URL `https://billing-service.internal`), **Modul `admission` sama sekali tidak perlu diubah satu baris pun!**
+
+Cukup ubah implementasi di dalam `src/modules/billing/index.js` menjadi adapter cerdas:
+
+```javascript
+// src/modules/billing/index.js
+// ADAPTER PATTERN: Otomatis mendeteksi apakah Billing berjalan lokal atau remote!
+import * as localBillingService from './services/invoice.service.js';
+
+const BILLING_MICROSERVICE_URL = process.env.BILLING_SERVICE_URL; // e.g. "http://billing-service:3001"
+
+export const billingService = {
+  async initializeAdmissionInvoice(dto, options = {}) {
+    // KASUS A: Modul Billing sudah diekstrak menjadi Microservice independen
+    if (BILLING_MICROSERVICE_URL) {
+      const response = await fetch(`${BILLING_MICROSERVICE_URL}/api/v1/invoices/admission-init`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Request-Id': options.requestId || 'inter-module-call',
+          'Authorization': `Bearer ${process.env.INTERNAL_SERVICE_SECRET}`
+        },
+        body: JSON.stringify(dto),
+        signal: AbortSignal.timeout(5000) // Timeout ketat 5 detik
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Gagal memanggil Remote Billing Microservice');
+      }
+
+      return await response.json();
+    }
+
+    // KASUS B: Masih berada dalam satu proses Modular Monolith (In-Memory)
+    return await localBillingService.initializeAdmissionInvoice(dto, options);
+  }
+};
+```
+Perhatikan kekuatan desain ini: Modul `admission` tetap memanggil `billingService.initializeAdmissionInvoice()`. Ia tidak peduli apakah fungsi itu dieksekusi di memori lokal atau ditembakkan via HTTP REST API ke server lain di Kubernetes. Inilah esensi sejati dari *Microservices-Ready Architecture*.
+
+#### Pola 3: Mengatasi Masalah Ketergantungan Melingkar (Cyclic Dependency)
+Salah satu kesalahan paling umum:
+* Modul `admission` meng-import `billingService` (untuk membuat invoice).
+* Modul `billing` meng-import `admissionService` (untuk mengecek status kepulangan pasien).
+
+Node.js akan mengalami masalah *circular reference* (`undefined object at runtime`), dan `dependency-cruiser` akan membunyikan alarm bahaya di pipeline CI.
+
+**Cara Memutus Siklus Ketergantungan (Break the Cycle):**
+1. **Inversion via Domain Events**: Modul `admission` tidak memanggil `billing` secara langsung, melainkan memancarkan event `eventBus.emit('admission.visit.created', { visitId, patientId })`. Modul `billing` bertindak sebagai pendengar (*subscriber*).
+2. **Keluarkan Entitas Bersama ke Modul `master-data`**: Jika Modul Billing hanya butuh informasi nama pasien atau nomor NIK, ambil data tersebut dari modul `master-data` (atau `patient-registry`), bukan memanggil modul pendaftaran transaksional.
+
+---
+
+## 🛠️ Hands-On Tooling: Generator Modul Otomatis (`scripts/make-module.js`)
+
+Agar engineer tidak perlu membuat 7 folder dan file secara manual setiap kali menambah modul baru, sediakan skrip generator mandiri ini di root proyek:
+
+```javascript
+// scripts/make-module.js
+// Penggunaan: node scripts/make-module.js <nama-modul>
+// Contoh: node scripts/make-module.js laboratory
+import fs from 'node:fs';
+import path from 'node:path';
+
+const moduleName = process.argv[2];
+if (!moduleName) {
+  console.error('❌ Mohon sertakan nama modul! Contoh: node scripts/make-module.js laboratory');
+  process.exit(1);
+}
+
+const baseDir = path.resolve('src/modules', moduleName);
+const folders = ['handlers', 'services', 'repositories', 'models', 'validators', 'events'];
+
+if (fs.existsSync(baseDir)) {
+  console.error(`❌ Modul "${moduleName}" sudah ada di ${baseDir}!`);
+  process.exit(1);
+}
+
+// 1. Buat struktur folder
+folders.forEach((f) => fs.mkdirSync(path.join(baseDir, f), { recursive: true }));
+
+// 2. Buat file template routes.js
+fs.writeFileSync(
+  path.join(baseDir, 'routes.js'),
+  `import { Hono } from 'hono';
+
+export const ${moduleName}Routes = new Hono();
+
+${moduleName}Routes.get('/health', (c) => c.json({ module: '${moduleName}', status: 'UP' }));
+`
+);
+
+// 3. Buat file template index.js (Public Contract)
+fs.writeFileSync(
+  path.join(baseDir, 'index.js'),
+  `// Public API untuk modul ${moduleName}
+export { ${moduleName}Routes } from './routes.js';
+
+export const ${moduleName}Service = {
+  // Daftarkan fungsi kontrak publik yang diizinkan dipanggil oleh modul lain di sini
+};
+`
+);
+
+console.info(`✅ Berhasil membuat scaffold modul "${moduleName}" di:`);
+console.info(`   src/modules/${moduleName}/`);
+console.info(`   ├── handlers/ | services/ | repositories/ | models/ | validators/ | events/`);
+console.info(`   ├── routes.js`);
+console.info(`   └── index.js (Public Contract)`);
+```
+
+Cukup jalankan:
+```bash
+node scripts/make-module.js laboratory
+```
+Dalam hitungan detik, modul baru siap digunakan dengan struktur yang 100% patuh pada aturan arsitektur.
 
 ---
 

@@ -96,7 +96,8 @@ export const registerAuditHooks = (sequelize) => {
   // Hook setelah pembaruan data (UPDATE)
   sequelize.addHook('afterUpdate', async (instance, options) => {
     // Abaikan jika model bukan entitas klinis/audit (misal tabel log itu sendiri)
-    if (instance.constructor.name === 'AuditLog') return;
+    const modelName = options.model?.name || instance._modelOptions?.name?.singular || '';
+    if (modelName === 'ClinicalAuditTrail' || modelName === 'AuditLog') return;
 
     const context = requestContext.getStore() || { actorId: 'SYSTEM', requestId: 'auto' };
     const changedFields = instance.changed();
@@ -112,8 +113,9 @@ export const registerAuditHooks = (sequelize) => {
     });
 
     // Simpan ke tabel audit log
+    const tableName = options.model?.tableName || instance._modelOptions?.tableName || 'unknown_table';
     await sequelize.models.ClinicalAuditTrail.create({
-      tableName: instance.constructor.tableName,
+      tableName,
       recordId: instance.id,
       action: 'UPDATE',
       actorId: context.actorId,
@@ -167,62 +169,65 @@ API pihak ketiga adalah entitas yang tidak berada di bawah kendali kita:
 ```
 
 #### Implementasi Circuit Breaker pada Modul Bridging:
-Jika API eksternal mengalami kegagalan berturut-turut (misal 5 kali berturut-turut gagal), *Circuit Breaker* harus terbuka (*OPEN*) untuk menolak panggilan eksternal sementara waktu dan mengembalikan pesan fallback (*degraded mode*) tanpa membebani jaringan rumah sakit:
+Jika API eksternal mengalami kegagalan berturut-turut (misal 5 kali berturut-turut gagal), *Circuit Breaker* harus terbuka (*OPEN*) untuk menolak panggilan eksternal sementara waktu dan mengembalikan pesan fallback (*degraded mode*) tanpa membebani jaringan rumah sakit. Berikut implementasi menggunakan **Factory Function & Closure (Functional JS tanpa class)**:
 
 ```javascript
 // src/modules/bridging/services/circuit-breaker.js
-export class SimpleCircuitBreaker {
-  constructor(failureThreshold = 5, cooldownPeriodMs = 30000) {
-    this.failureThreshold = failureThreshold;
-    this.cooldownPeriodMs = cooldownPeriodMs;
-    this.failureCount = 0;
-    this.state = 'CLOSED'; // CLOSED, OPEN, HALF_OPEN
-    this.nextAttempt = Date.now();
-  }
+export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 30000 } = {}) => {
+  let failureCount = 0;
+  let state = 'CLOSED'; // 'CLOSED' | 'OPEN' | 'HALF_OPEN'
+  let nextAttempt = Date.now();
 
-  async execute(asyncAction, fallbackAction) {
-    if (this.state === 'OPEN') {
-      if (Date.now() < this.nextAttempt) {
+  const reset = () => {
+    failureCount = 0;
+    state = 'CLOSED';
+  };
+
+  const trip = () => {
+    state = 'OPEN';
+    nextAttempt = Date.now() + cooldownPeriodMs;
+    console.error(`[CIRCUIT BREAKER] Terbuka! Kegagalan: ${failureCount}. Cooldown ${cooldownPeriodMs}ms`);
+  };
+
+  const recordFailure = () => {
+    // Di HALF_OPEN, satu kegagalan sudah cukup untuk membuka sirkuit lagi.
+    // Di CLOSED, sirkuit baru terbuka setelah mencapai ambang kegagalan.
+    failureCount += 1;
+    if (state === 'HALF_OPEN' || failureCount >= failureThreshold) {
+      trip();
+    }
+  };
+
+  const execute = async (asyncAction, fallbackAction) => {
+    if (state === 'OPEN') {
+      if (Date.now() < nextAttempt) {
         console.warn('[CIRCUIT BREAKER] Sirkuit sedang OPEN. Mengalihkan ke fallback.');
         return fallbackAction();
       }
       // Masa cooldown habis: izinkan SATU percobaan uji
-      this.state = 'HALF_OPEN';
+      state = 'HALF_OPEN';
     }
 
     try {
       const result = await asyncAction();
-      this.reset();
+      reset();
       return result;
     } catch (err) {
-      this.recordFailure();
-      if (this.state === 'OPEN') {
+      recordFailure();
+      if (state === 'OPEN') {
         return fallbackAction();
       }
       throw err;
     }
-  }
+  };
 
-  recordFailure() {
-    // Di HALF_OPEN, satu kegagalan sudah cukup untuk membuka sirkuit lagi.
-    // Di CLOSED, sirkuit baru terbuka setelah mencapai ambang kegagalan.
-    this.failureCount += 1;
-    if (this.state === 'HALF_OPEN' || this.failureCount >= this.failureThreshold) {
-      this.trip();
-    }
-  }
-
-  trip() {
-    this.state = 'OPEN';
-    this.nextAttempt = Date.now() + this.cooldownPeriodMs;
-    console.error(`[CIRCUIT BREAKER] Terbuka! Kegagalan: ${this.failureCount}. Cooldown ${this.cooldownPeriodMs}ms`);
-  }
-
-  reset() {
-    this.failureCount = 0;
-    this.state = 'CLOSED';
-  }
-}
+  return {
+    execute,
+    reset,
+    getState: () => state,
+    getFailureCount: () => failureCount
+  };
+};
 ```
 
 > [!NOTE]
@@ -232,6 +237,184 @@ export class SimpleCircuitBreaker {
 - **Docker**: container terpisah (`node worker.js`) yang melakukan polling tabel `bridging_outbox` setiap beberapa detik dengan `SELECT ... FOR UPDATE SKIP LOCKED` agar beberapa worker tidak mengambil baris yang sama.
 - **AWS Lambda**: tidak ada proses latar belakang, jadi worker dipicu oleh **EventBridge Scheduler** (misalnya setiap 1 menit) atau oleh **SQS** dengan *Dead Letter Queue* untuk pesan yang terus gagal. Lihat Part 4 bagian `worker.lambda.js`.
 - Setiap pengiriman wajib **idempoten**: simpan `outboxId` sebagai kunci unik, sehingga retry tidak menghasilkan SEP ganda atau bundle FHIR duplikat.
+
+---
+
+## 🛠️ Hands-On Lab: Skema SQL & Background Outbox Worker Siap Pakai
+
+Berikut adalah implementasi konkret dari dua pilar ketahanan rumah sakit:
+
+### 1. Migrasi SQL untuk Kepatuhan Permenkes RME & Outbox (PostgreSQL & MySQL)
+
+#### A. Versi PostgreSQL (Dioptimalkan dengan `JSONB` & `GIN Index`):
+```sql
+-- db/migrations/postgres/20261110_create_audit_and_outbox.sql
+CREATE EXTENSION IF NOT EXISTS "pgcrypto"; -- Untuk gen_random_uuid()
+
+-- 1. Tabel Audit Trail Rekam Medis (Append-Only dengan GIN Index)
+CREATE TABLE IF NOT EXISTS clinical_audit_trails (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  table_name VARCHAR(64) NOT NULL,
+  record_id VARCHAR(64) NOT NULL,
+  action VARCHAR(16) NOT NULL CHECK (action IN ('CREATE', 'UPDATE', 'DELETE')),
+  actor_id VARCHAR(64) NOT NULL,
+  actor_role VARCHAR(32) NOT NULL,
+  request_id VARCHAR(64) NOT NULL,
+  client_ip VARCHAR(45) NOT NULL,
+  old_values JSONB NULL,
+  new_values JSONB NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indeks B-Tree Standar
+CREATE INDEX IF NOT EXISTS idx_audit_record ON clinical_audit_trails (table_name, record_id);
+CREATE INDEX IF NOT EXISTS idx_audit_actor ON clinical_audit_trails (actor_id);
+CREATE INDEX IF NOT EXISTS idx_audit_time ON clinical_audit_trails (created_at);
+
+-- Indeks GIN Khusus PostgreSQL: Mengizinkan query cepat ke dalam JSON riwayat medis!
+-- Contoh query super-cepat: SELECT * FROM clinical_audit_trails WHERE new_values @> '{"diagnosisCode": "I10"}';
+CREATE INDEX IF NOT EXISTS idx_audit_new_values_gin ON clinical_audit_trails USING GIN (new_values);
+
+-- 2. Tabel Transaksional Outbox Bridging
+CREATE TABLE IF NOT EXISTS bridging_outbox (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  destination VARCHAR(32) NOT NULL CHECK (destination IN ('BPJS_VCLAIM', 'BPJS_ANTROL', 'SATUSEHAT_FHIR')),
+  event_type VARCHAR(64) NOT NULL,
+  idempotency_key VARCHAR(128) UNIQUE NOT NULL,
+  payload JSONB NOT NULL,
+  status VARCHAR(16) DEFAULT 'PENDING' CHECK (status IN ('PENDING', 'PROCESSING', 'DELIVERED', 'FAILED')),
+  retry_count INT DEFAULT 0,
+  max_retries INT DEFAULT 5,
+  last_error TEXT NULL,
+  next_attempt_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_outbox_queue ON bridging_outbox (status, next_attempt_at);
+```
+
+#### B. Versi MySQL 8.0+ (InnoDB & utf8mb4):
+```sql
+-- db/migrations/mysql/20261110_create_audit_and_outbox.sql
+
+-- 1. Tabel Audit Trail Rekam Medis (Append-Only)
+CREATE TABLE IF NOT EXISTS clinical_audit_trails (
+  id CHAR(36) PRIMARY KEY,
+  tableName VARCHAR(64) NOT NULL,
+  recordId VARCHAR(64) NOT NULL,
+  action ENUM('CREATE', 'UPDATE', 'DELETE') NOT NULL,
+  actorId VARCHAR(64) NOT NULL,
+  actorRole VARCHAR(32) NOT NULL,
+  requestId VARCHAR(64) NOT NULL,
+  clientIp VARCHAR(45) NOT NULL,
+  oldValues JSON NULL,
+  newValues JSON NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_audit_record (tableName, recordId),
+  INDEX idx_audit_actor (actorId),
+  INDEX idx_audit_time (createdAt)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2. Tabel Transaksional Outbox Bridging
+CREATE TABLE IF NOT EXISTS bridging_outbox (
+  id CHAR(36) PRIMARY KEY,
+  destination ENUM('BPJS_VCLAIM', 'BPJS_ANTROL', 'SATUSEHAT_FHIR') NOT NULL,
+  eventType VARCHAR(64) NOT NULL,
+  idempotencyKey VARCHAR(128) UNIQUE NOT NULL,
+  payload JSON NOT NULL,
+  status ENUM('PENDING', 'PROCESSING', 'DELIVERED', 'FAILED') DEFAULT 'PENDING',
+  retryCount INT DEFAULT 0,
+  maxRetries INT DEFAULT 5,
+  lastError TEXT NULL,
+  nextAttemptAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_outbox_queue (status, nextAttemptAt)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+### 2. Implementasi Runnable Outbox Worker (`src/modules/bridging/workers/outbox.worker.js`)
+Skrip worker ini bertugas mengambil data outbox berstatus `PENDING` dengan aman menggunakan locking `SKIP LOCKED`:
+
+```javascript
+// src/modules/bridging/workers/outbox.worker.js
+import { Op } from 'sequelize';
+import { sequelize } from '../../../core/database/index.js';
+import { sendToBpjsOrSatusehat } from '../clients/api.client.js';
+
+export const processOutboxBatch = async (batchSize = 10) => {
+  // Gunakan transaksi untuk menjamin locking baris
+  return await sequelize.transaction(async (t) => {
+    // 1. Ambil pesan pending dengan baris terkunci (anti-duplikasi antar worker)
+    const pendingItems = await sequelize.models.BridgingOutbox.findAll({
+      where: {
+        status: 'PENDING',
+        nextAttemptAt: { [Op.lte]: new Date() }
+      },
+      limit: batchSize,
+      lock: t.LOCK.UPDATE,
+      skipLocked: true, // Worker lain tidak akan memproses baris yang sama!
+      transaction: t
+    });
+
+    if (pendingItems.length === 0) return 0;
+
+    for (const item of pendingItems) {
+      try {
+        // Tandai sedang diproses
+        item.status = 'PROCESSING';
+        await item.save({ transaction: t });
+
+        // 2. Eksekusi pengiriman ke pihak ketiga (BPJS / SATUSEHAT)
+        await sendToBpjsOrSatusehat(item.destination, item.eventType, item.payload);
+
+        // 3. Sukses
+        item.status = 'DELIVERED';
+        await item.save({ transaction: t });
+      } catch (err) {
+        item.retryCount += 1;
+        item.lastError = err.message;
+
+        if (item.retryCount >= item.maxRetries) {
+          item.status = 'FAILED';
+          console.error(`🚨 [OUTBOX DEAD-LETTER] Item ${item.id} gagal setelah ${item.maxRetries} percobaan!`);
+        } else {
+          item.status = 'PENDING';
+          // Exponential backoff: 2s, 4s, 8s, 16s...
+          const delaySeconds = Math.pow(2, item.retryCount);
+          item.nextAttemptAt = new Date(Date.now() + delaySeconds * 1000);
+        }
+        await item.save({ transaction: t });
+      }
+    }
+
+    return pendingItems.length;
+  });
+};
+```
+
+Untuk Docker, jalankan worker ini via loop sederhana:
+```javascript
+// worker.js
+import { processOutboxBatch } from './src/modules/bridging/workers/outbox.worker.js';
+
+const startWorker = async () => {
+  console.info('🚀 [OUTBOX WORKER] Berjalan mendengarkan antrean bridging...');
+  while (true) {
+    try {
+      const processed = await processOutboxBatch(10);
+      // Jika antrean kosong, istirahat 3 detik
+      if (processed === 0) await new Promise((r) => setTimeout(r, 3000));
+    } catch (err) {
+      console.error('[OUTBOX ERROR]', err);
+      await new Promise((r) => setTimeout(r, 5000));
+    }
+  }
+};
+
+startWorker();
+```
 
 ---
 
