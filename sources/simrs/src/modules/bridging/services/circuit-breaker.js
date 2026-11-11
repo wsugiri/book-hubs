@@ -1,5 +1,7 @@
 // src/modules/bridging/services/circuit-breaker.js
-export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 30000 } = {}) => {
+import { logger } from '../../../core/config/logger.js';
+
+export const createCircuitBreaker = ({ name = 'default', failureThreshold = 5, cooldownPeriodMs = 30000 } = {}) => {
   let failureCount = 0;
   let state = 'CLOSED'; // 'CLOSED' | 'OPEN' | 'HALF_OPEN'
   let nextAttempt = Date.now();
@@ -12,7 +14,7 @@ export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 
   const trip = () => {
     state = 'OPEN';
     nextAttempt = Date.now() + cooldownPeriodMs;
-    console.error(`[CIRCUIT BREAKER] Terbuka! Kegagalan: ${failureCount}. Cooldown ${cooldownPeriodMs}ms`);
+    logger.error({ name, failureCount, cooldownPeriodMs }, '[CIRCUIT BREAKER] Sirkuit terbuka (OPEN)!');
   };
 
   const recordFailure = () => {
@@ -25,8 +27,9 @@ export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 
   const execute = async (asyncAction, fallbackAction) => {
     if (state === 'OPEN') {
       if (Date.now() < nextAttempt) {
-        console.warn('[CIRCUIT BREAKER] Sirkuit sedang OPEN. Mengalihkan ke fallback.');
-        return fallbackAction();
+        logger.warn({ name }, '[CIRCUIT BREAKER] Sirkuit sedang OPEN. Mengalihkan ke fallback.');
+        if (typeof fallbackAction === 'function') return fallbackAction();
+        throw new Error(`Circuit breaker [${name}] sedang OPEN`);
       }
       state = 'HALF_OPEN';
     }
@@ -37,7 +40,7 @@ export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 
       return result;
     } catch (err) {
       recordFailure();
-      if (state === 'OPEN') {
+      if (state === 'OPEN' && typeof fallbackAction === 'function') {
         return fallbackAction();
       }
       throw err;
@@ -51,4 +54,3 @@ export const createCircuitBreaker = ({ failureThreshold = 5, cooldownPeriodMs = 
     getFailureCount: () => failureCount
   };
 };
-

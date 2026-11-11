@@ -1,6 +1,10 @@
 import { processOutboxBatch } from './src/modules/bridging/workers/outbox.worker.js';
 import { logger } from './src/core/config/logger.js';
 import { sequelize } from './src/core/database/index.js';
+import { registerModels } from './src/core/database/register-models.js';
+
+// Inisialisasi model Sequelize sebelum worker berjalan
+registerModels(sequelize);
 
 let isRunning = true;
 
@@ -31,4 +35,3 @@ process.on('SIGTERM', stopWorker);
 process.on('SIGINT', stopWorker);
 
 startWorker();
-

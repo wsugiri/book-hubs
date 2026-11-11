@@ -7,6 +7,7 @@ import { authMiddleware } from './core/middlewares/auth.middleware.js';
 import { idempotencyMiddleware } from './core/middlewares/idempotency.middleware.js';
 import { sequelize } from './core/database/index.js';
 import { registerModels } from './core/database/register-models.js';
+import { eventBus } from './core/events/event-bus.js';
 
 // Inisialisasi model-model domain dan hook database
 registerModels(sequelize);
@@ -14,12 +15,18 @@ registerModels(sequelize);
 // Import router resmi dari masing-masing Bounded Context
 import { masterDataRoutes } from './modules/master-data/index.js';
 import { admissionRoutes } from './modules/admission/index.js';
-import { emrRoutes } from './modules/emr/index.js';
+import { emrRoutes, registerEmrSubscribers } from './modules/emr/index.js';
 import { pharmacyRoutes } from './modules/pharmacy/index.js';
-import { billingRoutes } from './modules/billing/index.js';
-import { bridgingRoutes } from './modules/bridging/index.js';
+import { billingRoutes, registerBillingSubscribers } from './modules/billing/index.js';
+import { bridgingRoutes, registerBridgingSubscribers } from './modules/bridging/index.js';
+
+// Daftarkan event subscribers domain lintas-modul
+registerBillingSubscribers(eventBus);
+registerBridgingSubscribers(eventBus);
+registerEmrSubscribers(eventBus);
 
 const app = new Hono();
+
 
 // Global Middleware Stack
 app.use('*', requestId());

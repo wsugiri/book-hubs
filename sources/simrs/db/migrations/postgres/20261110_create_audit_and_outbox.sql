@@ -18,6 +18,12 @@ CREATE TABLE IF NOT EXISTS admission_visits (
 
 CREATE INDEX IF NOT EXISTS idx_admission_visits_patient ON admission_visits (patient_id, created_at);
 
+-- Jaring pengaman level DB (Anti Race-Condition / TOCTOU):
+-- Mencegah 1 pasien memiliki lebih dari 1 kunjungan aktif secara bersamaan
+CREATE UNIQUE INDEX IF NOT EXISTS uq_admission_active_visit_per_patient
+  ON admission_visits (patient_id)
+  WHERE status IN ('WAITING_FOR_TRIAGE', 'IN_CONSULTATION', 'WAITING_FOR_MEDICINE');
+
 -- 2. Tabel Billing Invoices
 CREATE TABLE IF NOT EXISTS billing_invoices (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

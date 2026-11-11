@@ -1,7 +1,14 @@
 // src/modules/admission/services/registration.service.js
 import { createAppError } from '../../../core/errors/AppError.js';
+import { noopEventBus } from '../../../core/events/event-bus.js';
+import { createVisitRegisteredEvent } from '../events/visit-registered.event.js';
 
-export const makeRegistrationService = ({ db, visitRepo, billingService, clock = () => new Date() }) => ({
+export const makeRegistrationService = ({
+  db,
+  visitRepo,
+  eventBus = noopEventBus,
+  clock = () => new Date()
+}) => ({
   async createOutpatientVisit(payload, actor) {
     return await db.transaction(async (t) => {
       // 1. Validasi Aturan Medis: Pasien tidak boleh punya kunjungan aktif ganda di hari yang sama
@@ -26,23 +33,14 @@ export const makeRegistrationService = ({ db, visitRepo, billingService, clock =
         { transaction: t }
       );
 
-      // 3. Komunikasi Antar-Modul: Terbitkan tagihan awal karcis admisi melalui modul Billing
-      if (billingService && typeof billingService.initializeAdmissionInvoice === 'function') {
-        await billingService.initializeAdmissionInvoice(
-          {
-            visitId: newVisit.id,
-            patientId: payload.patientId,
-            paymentType: payload.paymentType
-          },
-          { transaction: t }
-        );
-      }
+      // 3. Publikasikan Domain Event (Subscriber Billing, Bridging Outbox, & EMR merespons secara independen)
+      await eventBus.publish(createVisitRegisteredEvent(newVisit), { transaction: t });
 
       return newVisit;
     });
   },
 
-  async dischargePatient(visitId, actor) {
+  async dischargePatient(visitId) {
     const visit = await visitRepo.findById(visitId);
     if (!visit) {
       throw createAppError('Data kunjungan tidak ditemukan', 404, 'VISIT_NOT_FOUND');
@@ -50,4 +48,3 @@ export const makeRegistrationService = ({ db, visitRepo, billingService, clock =
     return await visitRepo.updateStatus(visitId, 'DISCHARGED');
   }
 });
-

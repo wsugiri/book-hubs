@@ -9,9 +9,9 @@ export const processOutboxBatch = async (batchSize = 10) => {
     return 0;
   }
 
-  // Gunakan transaksi untuk menjamin locking baris
-  return await sequelize.transaction(async (t) => {
-    // 1. Ambil pesan pending dengan baris terkunci (anti-duplikasi antar worker)
+  // FASE 1: Claim & Lock baris secara cepat di dalam transaksi DB singkat (< 5ms)
+  // Jangan pernah melakukan panggilan HTTP eksternal di dalam transaksi DB yang sedang menahan row lock!
+  const claimedItems = await sequelize.transaction(async (t) => {
     const pendingItems = await sequelize.models.BridgingOutbox.findAll({
       where: {
         status: 'PENDING',
@@ -19,40 +19,42 @@ export const processOutboxBatch = async (batchSize = 10) => {
       },
       limit: batchSize,
       lock: t.LOCK.UPDATE,
-      skipLocked: true, // Worker lain tidak akan memproses baris yang sama
+      skipLocked: true, // Worker lain tidak akan mengambil baris yang sama
       transaction: t
     });
 
-    if (pendingItems.length === 0) return 0;
-
     for (const item of pendingItems) {
-      try {
-        item.status = 'PROCESSING';
-        await item.save({ transaction: t });
-
-        // 2. Eksekusi pengiriman ke pihak ketiga (BPJS / SATUSEHAT)
-        await sendToBpjsOrSatusehat(item.destination, item.eventType, item.payload);
-
-        // 3. Sukses
-        item.status = 'DELIVERED';
-        await item.save({ transaction: t });
-      } catch (err) {
-        item.retryCount += 1;
-        item.lastError = err.message;
-
-        if (item.retryCount >= item.maxRetries) {
-          item.status = 'FAILED';
-          logger.error(`🚨 [OUTBOX DEAD-LETTER] Item ${item.id} gagal setelah ${item.maxRetries} percobaan!`);
-        } else {
-          item.status = 'PENDING';
-          const delaySeconds = Math.pow(2, item.retryCount);
-          item.nextAttemptAt = new Date(Date.now() + delaySeconds * 1000);
-        }
-        await item.save({ transaction: t });
-      }
+      item.status = 'PROCESSING';
+      await item.save({ transaction: t });
     }
 
-    return pendingItems.length;
+    return pendingItems;
   });
-};
 
+  if (claimedItems.length === 0) return 0;
+
+  // FASE 2: Eksekusi pengiriman HTTP di luar transaksi database
+  for (const item of claimedItems) {
+    try {
+      await sendToBpjsOrSatusehat(item.destination, item.eventType, item.payload);
+
+      item.status = 'DELIVERED';
+      await item.save();
+    } catch (err) {
+      item.retryCount += 1;
+      item.lastError = err.message;
+
+      if (item.retryCount >= item.maxRetries) {
+        item.status = 'FAILED';
+        logger.error({ outboxId: item.id }, `🚨 [OUTBOX DEAD-LETTER] Item gagal setelah ${item.maxRetries} percobaan!`);
+      } else {
+        item.status = 'PENDING';
+        const delaySeconds = Math.pow(2, item.retryCount);
+        item.nextAttemptAt = new Date(Date.now() + delaySeconds * 1000);
+      }
+      await item.save();
+    }
+  }
+
+  return claimedItems.length;
+};

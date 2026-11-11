@@ -8,7 +8,7 @@ if (!moduleName) {
 }
 
 const baseDir = path.resolve('src/modules', moduleName);
-const folders = ['handlers', 'services', 'repositories', 'models', 'validators', 'events'];
+const folders = ['handlers', 'services', 'repositories', 'models', 'validators', 'events', 'subscribers'];
 
 if (fs.existsSync(baseDir)) {
   console.error(`❌ Modul "${moduleName}" sudah ada di ${baseDir}!`);

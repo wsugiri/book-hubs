@@ -51,6 +51,9 @@ export const getDatabase = () => {
     sequelizeInstance = new Sequelize(dbUri, {
       dialect,
       dialectOptions,
+      define: {
+        underscored: true // Standarisasi mapping camelCase di JS ke snake_case di SQL
+      },
       logging: process.env.NODE_ENV === 'development' ? (msg) => console.log(`[SQL] ${msg}`) : false,
       pool: poolConfig
     });

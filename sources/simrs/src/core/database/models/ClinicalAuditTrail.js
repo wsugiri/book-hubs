@@ -1,4 +1,4 @@
-// src/modules/bridging/models/ClinicalAuditTrail.js
+// src/core/database/models/ClinicalAuditTrail.js
 import { DataTypes } from 'sequelize';
 
 export const defineClinicalAuditTrailModel = (sequelize) => {

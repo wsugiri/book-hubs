@@ -2,21 +2,27 @@
 // ADAPTER PATTERN: Otomatis mendeteksi apakah Billing berjalan lokal atau remote!
 export { billingRoutes } from './routes.js';
 export { defineBillingModels } from './models/index.js';
+export { registerBillingSubscribers } from './subscribers/index.js';
 
 import * as localBillingService from './services/invoice.service.js';
-
-const BILLING_MICROSERVICE_URL = process.env.BILLING_SERVICE_URL;
+import { requestContext } from '../../core/http/context.js';
+import { env } from '../../core/config/env.js';
 
 export const billingService = {
   async initializeAdmissionInvoice(dto, options = {}) {
+    const billingServiceUrl = env.BILLING_SERVICE_URL;
+
     // KASUS A: Modul Billing sudah diekstrak menjadi Microservice independen
-    if (BILLING_MICROSERVICE_URL) {
-      const response = await fetch(`${BILLING_MICROSERVICE_URL}/api/v1/invoices/admission-init`, {
+    if (billingServiceUrl) {
+      const store = requestContext.getStore();
+      const requestId = options.requestId || store?.requestId || 'inter-module-call';
+
+      const response = await fetch(`${billingServiceUrl}/api/v1/invoices/admission-init`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-Request-Id': options.requestId || 'inter-module-call',
-          'Authorization': `Bearer ${process.env.INTERNAL_SERVICE_SECRET}`
+          'X-Request-Id': requestId,
+          'Authorization': `Bearer ${env.INTERNAL_SERVICE_SECRET}`
         },
         body: JSON.stringify(dto),
         signal: AbortSignal.timeout(5000)
@@ -38,4 +44,3 @@ export const billingService = {
     return await localBillingService.getInvoiceByVisit(visitId);
   }
 };
-

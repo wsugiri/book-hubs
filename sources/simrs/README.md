@@ -49,7 +49,8 @@ sources/simrs/
 │   ├── make-module.js                 # Otomasi scaffold modul baru
 │   └── test-pool-stress.js            # Simulasi stress-test connection pool
 ├── docs/adr/                          # Living Architecture Decision Records
-│   └── ADR-001-modular-monolith.md
+│   ├── ADR-001-modular-monolith.md
+│   └── ADR-002-domain-events-and-transactional-outbox.md
 ├── .github/
 │   ├── workflows/ci.yml               # Automated CI test & boundary checker
 │   └── pull_request_template.md       # Checklist kepatuhan PR
@@ -67,6 +68,7 @@ sources/simrs/
     │   ├── config/ (env.js, logger.js)
     │   ├── database/ (index.js, audit-hook.js, register-models.js)
     │   ├── errors/ (AppError.js)
+    │   ├── events/ (event-bus.js)
     │   ├── http/ (response.js, context.js, error.middleware.js)
     │   └── middlewares/ (auth.middleware.js, rbac.middleware.js, idempotency.middleware.js)
     └── modules/                       # BOUNDED CONTEXTS

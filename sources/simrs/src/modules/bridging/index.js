@@ -2,11 +2,11 @@
 export { bridgingRoutes } from './routes.js';
 export { defineBridgingModels } from './models/index.js';
 export { processOutboxBatch } from './workers/outbox.worker.js';
+export { registerBridgingSubscribers } from './subscribers/index.js';
 
-import * as outboxRepo from './repositories/outbox.repository.js';
+import * as outboxService from './services/outbox.service.js';
 
 export const bridgingService = {
-  queueTask: outboxRepo.queueOutbox,
-  getStatus: outboxRepo.getOutboxStatus
+  queueTask: outboxService.scheduleOutboxTask,
+  getStatus: outboxService.getOutboxStatusByKey
 };
-

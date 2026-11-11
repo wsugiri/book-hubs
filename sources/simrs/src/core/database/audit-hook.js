@@ -2,16 +2,55 @@
 import { requestContext } from '../http/context.js';
 import { logger } from '../config/logger.js';
 
+const IGNORED_MODELS = new Set(['ClinicalAuditTrail', 'BridgingOutbox']);
+
+const getContextMetadata = () =>
+  requestContext.getStore() || {
+    actorId: 'SYSTEM',
+    actorRole: 'SYSTEM',
+    requestId: 'auto',
+    clientIp: '127.0.0.1'
+  };
+
+const resolveTableInfo = (instance, options) => ({
+  modelName: options?.model?.name || instance?._modelOptions?.name?.singular || '',
+  tableName: options?.model?.tableName || instance?._modelOptions?.tableName || 'unknown_table'
+});
+
 export const registerAuditHooks = (sequelize) => {
-  // Hook setelah pembaruan data (UPDATE)
+  // 1. Hook setelah pembuatan data (CREATE)
+  sequelize.addHook('afterCreate', async (instance, options) => {
+    try {
+      const { modelName, tableName } = resolveTableInfo(instance, options);
+      if (IGNORED_MODELS.has(modelName) || !sequelize.models.ClinicalAuditTrail) return;
+
+      const context = getContextMetadata();
+      await sequelize.models.ClinicalAuditTrail.create(
+        {
+          tableName,
+          recordId: String(instance.id),
+          action: 'CREATE',
+          actorId: context.actorId,
+          actorRole: context.actorRole,
+          requestId: context.requestId,
+          clientIp: context.clientIp,
+          oldValues: null,
+          newValues: instance.toJSON ? instance.toJSON() : instance.dataValues
+        },
+        { transaction: options.transaction }
+      );
+    } catch (err) {
+      logger.error({ err }, '[AUDIT HOOK ERROR] Gagal mencatat log audit CREATE');
+    }
+  });
+
+  // 2. Hook setelah pembaruan data (UPDATE)
   sequelize.addHook('afterUpdate', async (instance, options) => {
     try {
-      const modelName = options.model?.name || instance._modelOptions?.name?.singular || '';
-      if (modelName === 'ClinicalAuditTrail' || modelName === 'BridgingOutbox') return;
+      const { modelName, tableName } = resolveTableInfo(instance, options);
+      if (IGNORED_MODELS.has(modelName) || !sequelize.models.ClinicalAuditTrail) return;
 
-      const context = requestContext.getStore() || { actorId: 'SYSTEM', actorRole: 'SYSTEM', requestId: 'auto', clientIp: '127.0.0.1' };
       const changedFields = instance.changed();
-
       if (!changedFields || changedFields.length === 0) return;
 
       const oldValues = {};
@@ -22,10 +61,9 @@ export const registerAuditHooks = (sequelize) => {
         newValues[field] = instance.get(field);
       });
 
-      const tableName = options.model?.tableName || instance._modelOptions?.tableName || 'unknown_table';
-
-      if (sequelize.models.ClinicalAuditTrail) {
-        await sequelize.models.ClinicalAuditTrail.create({
+      const context = getContextMetadata();
+      await sequelize.models.ClinicalAuditTrail.create(
+        {
           tableName,
           recordId: String(instance.id),
           action: 'UPDATE',
@@ -35,11 +73,37 @@ export const registerAuditHooks = (sequelize) => {
           clientIp: context.clientIp,
           oldValues,
           newValues
-        }, { transaction: options.transaction });
-      }
+        },
+        { transaction: options.transaction }
+      );
     } catch (err) {
-      logger.error({ err }, '[AUDIT HOOK ERROR] Gagal mencatat log audit rekam medis');
+      logger.error({ err }, '[AUDIT HOOK ERROR] Gagal mencatat log audit UPDATE');
+    }
+  });
+
+  // 3. Hook setelah penghapusan data (DELETE)
+  sequelize.addHook('afterDestroy', async (instance, options) => {
+    try {
+      const { modelName, tableName } = resolveTableInfo(instance, options);
+      if (IGNORED_MODELS.has(modelName) || !sequelize.models.ClinicalAuditTrail) return;
+
+      const context = getContextMetadata();
+      await sequelize.models.ClinicalAuditTrail.create(
+        {
+          tableName,
+          recordId: String(instance.id),
+          action: 'DELETE',
+          actorId: context.actorId,
+          actorRole: context.actorRole,
+          requestId: context.requestId,
+          clientIp: context.clientIp,
+          oldValues: instance.toJSON ? instance.toJSON() : instance.dataValues,
+          newValues: {}
+        },
+        { transaction: options.transaction }
+      );
+    } catch (err) {
+      logger.error({ err }, '[AUDIT HOOK ERROR] Gagal mencatat log audit DELETE');
     }
   });
 };
-
