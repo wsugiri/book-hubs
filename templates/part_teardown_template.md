@@ -53,8 +53,12 @@ Langkah konkret yang bisa diambil khusus dari pembelajaran bab ini:
 
 Bagian ini merangkum sumber primer, eksperimen ilmiah, dan literatur yang menjadi fondasi argumen penulis pada bagian ini:
 
-[^1]: **[Nama Tokoh / Peristiwa / Studi Pembuka]** — [Nama Peneliti / Tokoh] ([Tahun]), *[Judul Studi / Konteks Peristiwa]*. [Penjelasan singkat 1-2 kalimat mengenai metodologi atau fakta sejarah yang dirujuk penulis di bab ini].
-[^2]: **[Nama Eksperimen / Teori Ilmiah]** — Merujuk pada riset oleh **[Nama Peneliti]** ([Tahun]), *"[Judul Paper / Buku Referensi]"*, yang dipublikasikan di *[Nama Jurnal / Universitas]*. Temuan inti: [Jelaskan hasil riset secara akurat]. *(Catatan Konteks Ilmiah: Tambahkan catatan jika studi ini memiliki pembaruan atau kritik metodologis di era modern).*
+[^1]: **[Nama Tokoh / Peristiwa / Studi Pembuka]** — [Nama Peneliti / Tokoh] ([Tahun]), *[Judul Studi / Konteks Peristiwa]*.  
+[Penjelasan singkat 1-2 kalimat mengenai metodologi atau fakta sejarah yang dirujuk penulis di bab ini].
+
+[^2]: **[Nama Eksperimen / Teori Ilmiah]** — Merujuk pada riset oleh **[Nama Peneliti]** ([Tahun]), *"[Judul Paper / Buku Referensi]"*, yang dipublikasikan di *[Nama Jurnal / Universitas]*. Temuan inti: [Jelaskan hasil riset secara akurat].  
+*(Catatan Konteks Ilmiah: Tambahkan catatan jika studi ini memiliki pembaruan atau kritik metodologis di era modern).*
+
 [^3]: **[Referensi Tambahan / Studi Kasus]** — [Detail atribusi riset, data statistik, atau dokumentasi kasus nyata yang dikutip dalam bab ini].
 
 ---

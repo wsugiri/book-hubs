@@ -152,13 +152,26 @@ Ketika dorongan bertenaga penuh dilepaskan, Hong tidak tegang menahan dorongan t
 
 Bagian ini merangkum literatur primer sejarah, kanon bela diri, dan studi ilmiah yang menjadi rujukan Bab 1:
 
-[^1]: **Hong Junsheng (洪均生).** *Chen Style Taijiquan Practical Method: Volume One — Theory* (Terjemahan Inggris oleh Chen Zhonghua). Edmonton, AB: Hunyuantaiji Press; 2006. ISBN: 978-0-9730045-5-7. Rujukan otentik bab *Memoir of Learning (学拳回忆录)* mengenai masa berguru 15 tahun di Beijing dan pengesahan teknik tahun 1956.
-[^2]: **Hong Junsheng (洪均生).** *Chen Shi Taijiquan Shiyong Quanfa: Shiqidai Zongshi Chen Fake Wannian Chuanshou Jiji Jingcui* (陈式太极拳实用拳法). Jinan: Shandong Science and Technology Publishing House; 1989. ISBN: 978-7-5331-0640-9. Teks primer bahasa Mandarin mengenai pertarungan terbuka Chen Fake di Teater Xidan dan prinsip meminjam poros lawan.
-[^3]: **Chen Xin (陈鑫).** *The Illustrated Canon of Chen Family Taijiquan* (陈式太极拳图说 / *Chenshi Taijiquan Tushuo*). Melbourne: INBI Matrix Pty Ltd; 2007. ISBN: 978-5-98687-008-3. Kanon klasik teori spiral keluarga Chen.
-[^4]: **Tang Hao (唐豪), Gu Liuxin (顾留馨).** *Taijiquan Yanjiu* (太极拳研究). Beijing: People's Sports Publishing House; 1964. Kajian historiografi resmi mengenai kedatangan Chen Fake ke Beijing pada tahun 1928 atas undangan Chen Zhaopei.
-[^5]: **Sim DSV, Gaffney D.** *Chen Style Taijiquan: The Source of Taiji Boxing*. Berkeley, CA: North Atlantic Books; 2002. ISBN: 978-1-55643-377-1. Dokumentasi sejarah transmisi Chen Fake di ibu kota.
-[^6]: **Wile D.** *Lost T'ai-chi Classics from the Late Ch'ing Dynasty*. Albany, NY: State University of New York Press; 1996. ISBN: 978-0-7914-2654-8. Analisis teks klasik dan evolusi bela diri Tiongkok akhir Dinasti Qing.
-[^8]: **Hua H, Zhu D, Wang Y.** Comparative Study on the Joint Biomechanics of Different Skill Level Practitioners in Chen-Style Tai Chi Punching. *Int J Environ Res Public Health*. 2022;19(10):5915. doi:[10.3390/ijerph19105915](https://doi.org/10.3390/ijerph19105915). Studi kinematika 3D mengenai transmisi gaya reaksi tanah (GRF) pada praktisi tingkat tinggi tanpa kontraksi bahu berlebih.
+[^1]: **Hong Junsheng (洪均生).** *Chen Style Taijiquan Practical Method: Volume One — Theory* (Terjemahan Inggris oleh Chen Zhonghua). Edmonton, AB: Hunyuantaiji Press; 2006. ISBN: 978-0-9730045-5-7.  
+Rujukan otentik bab *Memoir of Learning (学拳回忆录)* mengenai masa berguru 15 tahun di Beijing dan pengesahan teknik tahun 1956.
+
+[^2]: **Hong Junsheng (洪均生).** *Chen Shi Taijiquan Shiyong Quanfa: Shiqidai Zongshi Chen Fake Wannian Chuanshou Jiji Jingcui* (陈式太极拳实用拳法). Jinan: Shandong Science and Technology Publishing House; 1989. ISBN: 978-7-5331-0640-9.  
+Teks primer bahasa Mandarin mengenai pertarungan terbuka Chen Fake di Teater Xidan dan prinsip meminjam poros lawan.
+
+[^3]: **Chen Xin (陈鑫).** *The Illustrated Canon of Chen Family Taijiquan* (陈式太极拳图说 / *Chenshi Taijiquan Tushuo*). Melbourne: INBI Matrix Pty Ltd; 2007. ISBN: 978-5-98687-008-3.  
+Kanon klasik teori spiral keluarga Chen.
+
+[^4]: **Tang Hao (唐豪), Gu Liuxin (顾留馨).** *Taijiquan Yanjiu* (太极拳研究). Beijing: People's Sports Publishing House; 1964.  
+Kajian historiografi resmi mengenai kedatangan Chen Fake ke Beijing pada tahun 1928 atas undangan Chen Zhaopei.
+
+[^5]: **Sim DSV, Gaffney D.** *Chen Style Taijiquan: The Source of Taiji Boxing*. Berkeley, CA: North Atlantic Books; 2002. ISBN: 978-1-55643-377-1.  
+Dokumentasi sejarah transmisi Chen Fake di ibu kota.
+
+[^6]: **Wile D.** *Lost T'ai-chi Classics from the Late Ch'ing Dynasty*. Albany, NY: State University of New York Press; 1996. ISBN: 978-0-7914-2654-8.  
+Analisis teks klasik dan evolusi bela diri Tiongkok akhir Dinasti Qing.
+
+[^8]: **Hua H, Zhu D, Wang Y.** Comparative Study on the Joint Biomechanics of Different Skill Level Practitioners in Chen-Style Tai Chi Punching. *Int J Environ Res Public Health*. 2022;19(10):5915. doi:[10.3390/ijerph19105915](https://doi.org/10.3390/ijerph19105915).  
+Studi kinematika 3D mengenai transmisi gaya reaksi tanah (GRF) pada praktisi tingkat tinggi tanpa kontraksi bahu berlebih.
 
 ---
 
