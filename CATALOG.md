@@ -2,10 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-20%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-20%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-21%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-21%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
-[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-1%20Buku-f59e0b?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku-f59e0b?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -15,7 +15,7 @@
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
 - [🏆 Sains Olahraga & Pembinaan Atlet](#-sains-olahraga--pembinaan-atlet)
-- [⏳ Daftar Incaran & Antrean Bedah (TBR: 1 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 0 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -531,6 +531,33 @@
 
 📘 **[Master Hub](books/chen-family-taijiquan-illustrated-canon/index.md)** &nbsp;|&nbsp; **[Bab 1](books/chen-family-taijiquan-illustrated-canon/01-konteks-historis-dan-kosmologi-iching.md)** &nbsp;|&nbsp; **[Bab 2](books/chen-family-taijiquan-illustrated-canon/02-teori-lilitan-sutra-chansijin.md)** &nbsp;|&nbsp; **[Bab 3](books/chen-family-taijiquan-illustrated-canon/03-integrasi-medis-zangfu-dan-meridian.md)** &nbsp;|&nbsp; **[Bab 4](books/chen-family-taijiquan-illustrated-canon/04-arsitektur-taolu-xiaojia-dan-anotasi.md)** &nbsp;|&nbsp; **[Bab 5](books/chen-family-taijiquan-illustrated-canon/05-laboratorium-tempur-dan-warisan-abadi.md)**
 
+<br/>
+
+### [Chen Style Taijiquan: The Source of Taiji Boxing](books/chen-style-taijiquan-the-source-of-taiji-boxing/index.md)
+
+<div align="center">
+  <a href="books/chen-style-taijiquan-the-source-of-taiji-boxing/index.md">
+    <img src="books/chen-style-taijiquan-the-source-of-taiji-boxing/cover.jpg" width="280" alt="Chen Style Taijiquan The Source of Taiji Boxing Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Kanonis Lengkap 5 Bab Divalidasi)</b></sub>
+</div>
+
+> **Penulis**: Davidine Siaw-Voon Sim & David Gaffney &nbsp;|&nbsp; **Tahun**: 2002 &nbsp;|&nbsp; **Penerbit**: Blue Snake Books / North Atlantic Books &nbsp;|&nbsp; **Estimasi Baca**: ~75–90 Menit (5 Bab Lengkap)  
+> `🏛️ Asal-Usul Chenjiagou` `🌀 Heliks Chan Si Jin` `📐 11 Penyelarasan Postur` `🥋 5 Tingkatan Chen Xiaowang` `💥 Laojia Yilu & Paocui` `⚔️ Tuishou & Senjata Tradisional`
+
+> **💡 The Big Idea:**  
+> *"Taijiquan bukanlah senam lambat pasif untuk lansia, melainkan sistem beladiri canggih berbasis fisika terapan, dialektika Yin-Yang, dan penyelarasan biomekanika tubuh manusia secara total yang berakar langsung di Desa Chenjiagou. Kekuatan sejati lahir dari relaksasi teredukasi (Song), perputaran poros panggul (Kua), dan transmisi gaya spiral tiga dimensi (Chan Si Jin) laksana laras senapan."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Historiografi Autentik Chenjiagou**: Rekonstruksi peran Jenderal Chen Wangting, sintesis manual militer Qi Jiguang, silsilah Chen Changxing (Laojia) & Chen Youben (Xiaojia), hingga dekonstruksi mitos Zhang Sanfeng.
+- **Dialektika Yin-Yang & Dinamika Chan Si Jin**: Menghilangkan patahan sudut melalui spiral masuk (*Shun Chan*) dan spiral keluar (*Ni Chan*), menghubungkan Dantian dengan rantai fasia biotensegrity.
+- **Penyelarasan Tubuh & 5 Tingkat Keahlian Chen Xiaowang**: Membedakan *Song* (relaksasi elastis) vs *Ta* (lemas roboh), memosisikan *Kua*, dan peta jalan objektif dari pemula kaku hingga spontanitas murni (*Shen Hua*).
+- **Dua Pilar Taolu Tradisional**: Kelembutan meditatif dan penguatan akar dalam *Laojia Yilu* (74 postur) yang dikomplementasi oleh daya ledak kinetik *Fajin* dalam *Laojia Paocui* (Tinju Meriam).
+- **Laboratorium Tempur Tuishou & Qinna**: 8 gerak energi (*Peng, Lu, Ji, An, Cai, Lie, Zhou, Kao*), 5 langkah taktis kaki, kuncian sendi tanpa otot, serta pengkondisian senjata pedang, golok, dan tombak 13 bunga.
+
+📘 **[Master Hub](books/chen-style-taijiquan-the-source-of-taiji-boxing/index.md)** &nbsp;|&nbsp; **[Part 1](books/chen-style-taijiquan-the-source-of-taiji-boxing/01-akar-sejarah-dan-historiografi.md)** &nbsp;|&nbsp; **[Part 2](books/chen-style-taijiquan-the-source-of-taiji-boxing/02-fondasi-filosofis-dan-chansijin.md)** &nbsp;|&nbsp; **[Part 3](books/chen-style-taijiquan-the-source-of-taiji-boxing/03-penyelarasan-anatomi-dan-lima-tingkat-kemahiran.md)** &nbsp;|&nbsp; **[Part 4](books/chen-style-taijiquan-the-source-of-taiji-boxing/04-kurikulum-latihan-dan-taolu.md)** &nbsp;|&nbsp; **[Part 5](books/chen-style-taijiquan-the-source-of-taiji-boxing/05-laboratorium-tempur-dan-senjata-tradisional.md)**
+
 ---
 
 ## ⏳ Daftar Incaran & Antrean Bedah (To-Be-Read)
@@ -539,7 +566,7 @@
 
 | No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **Chen Style Taijiquan: The Source of Taiji Boxing**<br/><sub>Davidine Sim & David Gaffney</sub> | 🏆 Sains Olahraga & Bela Diri | Kajian historiografi dan perbandingan mendalam antara tradisi Chenjiagou (*Laojia*), era Beijing Chen Fake (*Xinjia*), dan garis Hong Junsheng. | ⏳ `Dalam Antrean` |
+| - | *Saat ini seluruh antrean telah selesai dibedah.* | - | - | ✅ `Selesai` |
 
 ```text
 💡 Panduan Alur Bacaan:
