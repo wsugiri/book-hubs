@@ -2,10 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-18%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-18%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-19%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-19%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
-[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-0%20Buku%20(Kosong)-16a34a?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-2%20Buku-f59e0b?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -15,7 +15,7 @@
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
 - [🏆 Sains Olahraga & Pembinaan Atlet](#-sains-olahraga--pembinaan-atlet)
-- [⏳ Daftar Incaran & Antrean Bedah (TBR: 0 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 2 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -477,6 +477,33 @@
 
 📘 **[Master Hub](books/chen-style-taijiquan-practical-method/index.md)** &nbsp;|&nbsp; **[Bab 1](books/chen-style-taijiquan-practical-method/01-sejarah-dan-silsilah-transmisi.md)** &nbsp;|&nbsp; **[Bab 2](books/chen-style-taijiquan-practical-method/02-filosofi-mekanika-dan-roda-gigi.md)** &nbsp;|&nbsp; **[Bab 3](books/chen-style-taijiquan-practical-method/03-anatomi-struktur-dan-kosakata-teknis.md)** &nbsp;|&nbsp; **[Bab 4](books/chen-style-taijiquan-practical-method/04-jibengong-lingkaran-dan-chansijin.md)** &nbsp;|&nbsp; **[Bab 5](books/chen-style-taijiquan-practical-method/05-kurikulum-taolu-yilu-dan-erlu.md)** &nbsp;|&nbsp; **[Bab 6](books/chen-style-taijiquan-practical-method/06-laboratorium-tuishou-dan-aplikasi.md)**
 
+<br/>
+
+### [The Way of Hunyuan: A Personal Odyssey](books/the-way-of-hunyuan/index.md)
+
+<div align="center">
+  <a href="books/the-way-of-hunyuan/index.md">
+    <img src="books/the-way-of-hunyuan/cover.jpg" width="280" alt="The Way of Hunyuan Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Lengkap 5 Part Divalidasi)</b></sub>
+</div>
+
+> **Penulis**: Master Chen Zhonghua &nbsp;|&nbsp; **Tahun**: 2002 &nbsp;|&nbsp; **Penerbit**: Hunyuantaiji Press &nbsp;|&nbsp; **Estimasi Baca**: ~75–90 Menit (5 Part Lengkap)  
+> `🧘 Hunyuan Qigong` `🧬 Biotensegrity Fasia` `🧠 Neurosains fNIRS` `🌲 Meditasi Zhan Zhuang` `☯️ Kosmologi Daois`
+
+> **💡 The Big Idea:**  
+> *"Kekuatan mekanis tanpa kelembutan internal akan melahirkan kekakuan yang mudah patah; sebaliknya, kelembutan internal tanpa presisi struktur hanyalah angan-angan kosong. Hunyuan Qigong memulihkan tubuh ke keadaan primordial (Hunyuan) di mana jaringan fasia, pernapasan diafragma, dan kesadaran korteks prefrontal melebur menjadi satu kesatuan utuh (One Grain of Hunyuan Qi)."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Sisi Yin Pelengkap Practical Method**: Mengimbangi ketegasan roda gigi baja *Shiyong Quanfa* dengan kelembutan elastis sistem *Hunyuan* warisan Grandmaster Feng Zhiqiang.
+- **Pijakan Filosofis I-Ching & 9 Tahap Alkimia**: Mengurai metafora klasik menjadi 9 prinsip transformasi nyata (*Wu Zhong Sheng You* hingga *Lian Xu He Dao*).
+- **Arsitektur Tensegrity Zhan Zhuang**: Berdiri tiang memeluk pohon (*Three-Circle Post*) untuk membebaskan ketegangan otot permukaan, menstimulasi rantai fasia, dan mengaktifkan DLPFC otak (dibuktikan studi fNIRS PubMed).
+- **Kurikulum 4 Gerak Inti Hunyuan**: Menghimpun & buka-tutup Tiga Dantian, memutar meridian sabuk panggul (*Dai Mai Grinding*), dan menyelaraskan keterbukaan Langit & Bumi.
+- **Demistifikasi Keabadian (Immortality)**: Mengklasifikasikan 5 kategori *Xian* secara ilmiah menjadi pencapaian kualitas rentang hidup sehat (*healthspan*) dan ketenangan batin bebas rasa cemas.
+
+📘 **[Master Hub](books/the-way-of-hunyuan/index.md)** &nbsp;|&nbsp; **[Part 1](books/the-way-of-hunyuan/01-odisea-pribadi-dan-esensi-hunyuan.md)** &nbsp;|&nbsp; **[Part 2](books/the-way-of-hunyuan/02-fondasi-filosofis-dan-pergeseran-paradigma.md)** &nbsp;|&nbsp; **[Part 3](books/the-way-of-hunyuan/03-postur-dan-meditasi-zhan-zhuang.md)** &nbsp;|&nbsp; **[Part 4](books/the-way-of-hunyuan/04-kurikulum-hunyuan-qigong-dan-dantian.md)** &nbsp;|&nbsp; **[Part 5](books/the-way-of-hunyuan/05-fisiologi-meridian-dan-rahasia-kamar-dalam.md)**
+
 ---
 
 ## ⏳ Daftar Incaran & Antrean Bedah (To-Be-Read)
@@ -485,7 +512,8 @@
 
 | No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
 | :-: | :--- | :--- | :--- | :-: |
-| - | *Saat ini antrean kosong — seluruh incaran telah berhasil dibedah secara komprehensif!* | 🎉 Koleksi Lengkap | Silakan usulkan judul buku baru untuk dimasukkan ke antrean riset berikutnya. | ✅ `Selesai` |
+| 1 | **The Illustrated Canon of Chen Family Taijiquan (*Chenshi Taijiquan Tushuo*)**<br/><sub>Chen Xin (陈鑫)</sub> | 🏆 Sains Olahraga & Bela Diri | Kanon klasik Dinasti Qing terlengkap (selesai 1919) yang menjadi fondasi teori spiral *Chan Si Jin* rujukan utama Hong Junsheng. | ⏳ `Dalam Antrean` |
+| 2 | **Chen Style Taijiquan: The Source of Taiji Boxing**<br/><sub>Davidine Sim & David Gaffney</sub> | 🏆 Sains Olahraga & Bela Diri | Kajian historiografi dan perbandingan mendalam antara tradisi Chenjiagou (*Laojia*), era Beijing Chen Fake (*Xinjia*), dan garis Hong Junsheng. | ⏳ `Dalam Antrean` |
 
 ```text
 💡 Panduan Alur Bacaan:
