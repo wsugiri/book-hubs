@@ -26,7 +26,7 @@
 
 <div align="center">
   <a href="articles/green-belt-mystery-retensi-murid/index.md">
-    <img src="articles/green-belt-mystery-retensi-murid/cover.jpg" width="420" alt="The Green Belt Mystery Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+    <img src="articles/green-belt-mystery-retensi-murid/cover.jpg" width="420" alt="The Green Belt Mystery Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 22px rgba(0,0,0,0.18); margin-bottom: 8px;" />
   </a>
 </div>
 
