@@ -16,25 +16,68 @@
 
 ## 🧭 Peta Eksplorasi Buku (Reading Roadmap)
 
-Buku panduan komprehensif ini disusun khusus bagi praktisi **Chen Style Taijiquan Practical Method (*Shiyong Quanfa* / 實用拳法)**. Setiap bab memadukan riwayat historis yang terverifikasi, terjemahan prinsip mekanika dari Hong Junsheng dan Chen Zhonghua, serta pembuktian biomekanika modern lengkap dengan **catatan kaki (`[^n]`) dan referensi ilmiah (`[[n]](#bibliografi-induk)`)**:
+Buku panduan komprehensif ini disusun khusus bagi praktisi **Chen Style Taijiquan Practical Method (*Shiyong Quanfa* / 實用拳法)**. Setiap modul memadukan riwayat historis terverifikasi, terjemahan mekanika Hong Junsheng dan Chen Zhonghua, serta pembuktian biomekanika modern lengkap dengan catatan kaki dan referensi ilmiah:
 
 - [x] 📘 **[Bab 1: Dari Desa Chenjiagou ke Jinan — Sejarah & Silsilah Transmisi Practical Method](01-sejarah-dan-silsilah-transmisi.md)**  
-  *Akar militer Jenderal Chen Wangting, gebrakan tak terkalahkan Chen Fake di Beijing (1928–1957), dedikasi 15 tahun Hong Junsheng, hingga kodifikasi global oleh Chen Zhonghua.*
+  *Cakupan Asli: Memoir of Learning (学拳回忆录) & Bab Pembuka Sejarah. Akar militer Jenderal Chen Wangting, era keemasan Chen Fake di Beijing (1928–1957), dedikasi 15 tahun Hong Junsheng, hingga kodifikasi global oleh Chen Zhonghua.*
 
 - [x] 📘 **[Bab 2: Mendemistifikasi Taiji — Filosofi Mekanika, Roda Gigi & Pemisahan Yin-Yang](02-filosofi-mekanika-dan-roda-gigi.md)**  
-  *Mengapa Practical Method menolak mistisisme Qi yang kabur dan menggantinya dengan hukum fisika tuas (lever), sistem transmisi roda gigi (gears), aturan "Jangan Bergerak" (Bu Dong), dan pemisahan Yin-Yang absolut.*
+  *Cakupan Asli: Introduction (概论) & Anotasi Risalah Wang Zongyue. Menolak mistisisme Qi kabur dan menggantinya dengan fisika tuas (lever), transmisi roda gigi (gears), aturan "Jangan Bergerak" (Bu Dong), dan pemisahan Yin-Yang absolut.*
 
 - [x] 📘 **[Bab 3: Anatomi Struktur & Kosa Kata Teknis — Yao, Kua, Siku, dan Sudut 45 Derajat](03-anatomi-struktur-dan-kosakata-teknis.md)**  
-  *Membedah kamus anatomi khas Practical Method: pemisahan fungsi Yao (pinggang) vs Kua (lipatan paha), aturan Siku Tidak Pernah Keluar, regangan dua arah (Dui La), dan arsitektur kuda-kuda 45 derajat.*
+  *Cakupan Asli: San Zi Jing (三字经: Bagian Torso, Kuda-kuda & Tangan). Membedah kamus anatomi Practical Method: fungsi Yao (pinggang) vs Kua (panggul), aturan Siku Tidak Pernah Keluar, regangan dua arah (Dui La), dan arsitektur kuda-kuda 45 derajat.*
 
 - [x] 📘 **[Bab 4: Fondasi Latihan (Jibengong) — Positive/Negative Circles & Mekanika Chan Si Jin](04-jibengong-lingkaran-dan-chansijin.md)**  
-  *Panduan teknis melatih Lingkaran Positif (Shun) dan Lingkaran Negatif (Ni), rotasi ganda (rotasi poros vs revolusi orbital), serta mekanika lilitan sutra (Chan Si Jin) dalam melindungi sendi.*
+  *Cakupan Asli: The Basic Principle (Chan Fa / 缠丝法) & San Zi Jing (Silk Reeling). Panduan teknis Lingkaran Positif (Shun) dan Lingkaran Negatif (Ni), rotasi poros vs revolusi orbital, serta mekanika lilitan sutra (Chan Si Jin) dalam melindungi sendi.*
 
 - [x] 📘 **[Bab 5: Kurikulum Taolu — Bedah Struktur Yilu (81 Jurus) & Erlu Paochui (64 Jurus)](05-kurikulum-taolu-yilu-dan-erlu.md)**  
-  *Perbedaan strategis antara Yilu (membangun bingkai defensif & mengurai tenaga) dengan Erlu/Tinju Meriam (ofensif jarak dekat & ledakan Fa Jin), lengkap dengan koreksi presisi Hong Junsheng atas jurus-jurus kunci.*
+  *Cakupan Asli: Chen Style Taijiquan Characters (太极拳品) & Silabus Bentuk. Perbedaan Yilu (membangun bingkai defensif/laras meriam) dengan Erlu (ofensif jarak dekat/Fa Jin), lengkap dengan koreksi presisi Hong Junsheng atas postur kunci.*
 
 - [x] 📘 **[Bab 6: Laboratorium Tuishou (Push Hands), Aplikasi Bela Diri & Kurikulum Latihan Mandiri](06-laboratorium-tuishou-dan-aplikasi.md)**  
-  *Tuishou sebagai ujian kejujuran struktur di bawah tekanan ("feeding force"), mekanika pengungkitan (uprooting) tanpa adu otot, kesalahan fatal pemula, dan jadwal latihan harian/mingguan.*
+  *Cakupan Asli: Thirteen Postures in Push Hands & San Zi Jing (Push Hands & Double Heavy). Tuishou sebagai ujian struktur di bawah tekanan ("feeding force"), mekanika uprooting tanpa adu otot, eliminasi 4 kesalahan fatal, dan jadwal latihan mandiri.*
+
+---
+
+## 📜 Struktur Asli Kanon Shiyong Quanfa (Table of Contents Mapping)
+
+Agar pembaca dan peneliti dapat melacak hubungan modul-modul ini dengan naskah aslinya (*Volume One: Theory* oleh Hong Junsheng & Chen Zhonghua), berikut adalah pemetaan struktur bab asli kanon:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│             STRUKTUR KANON ASLI: CHEN STYLE TAIJIQUAN PRACTICAL METHOD (VOL. 1)        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+1. INTRODUCTION (概论 / Pendahuluan Teoretis)
+   ├── Perkembangan & Evolusi Sejarah (Development & Evolution)
+   ├── Prinsip Dasar: Metode Lilitan Sutra (Chan Fa / 缠丝法)
+   ├── Koordinasi Seluruh Tubuh & Kesatuan Dua Kutub Berlawanan (Unity of Opposites)
+   └── Tiga Belas Postur dalam Dorong Tangan (Thirteen Postures in Push Hands)
+
+2. CHAPTER 1: THREE-CHARACTER CANONS (三字经 / San Zi Jing)
+   ├── 12 Bagian Metrik: Pengantar, Sutra, Mata, Torso, Kuda-kuda, Teknik Tangan,
+   └── Koordinasi, Push Hands, Bobot Ganda (Double Heavy), Dong Jin, Belajar & Mengajar.
+
+3. CHAPTER 2: ON CHEN STYLE TAIJIQUAN (太极拳品并序 / Tinjauan Kualitas & Karakter Taiji)
+   └── 13 Kualitas Pembawaan: Khidmat, Membulat, Lincah, Kokoh, Bertenaga, Luhur, 
+       Kompleks, Lentur-Lembut, Berjiwa, Terkendali, Anggun, Bermakna, dan Alami.
+
+4. CHAPTER 3: ANNOTATIONS ON WANG ZONGYUE'S TREATISE (王宗岳太极拳论臆解)
+   └── Anotasi & Koreksi Kritis 22 Bait Risalah Klasik Wang Zongyue dari Sudut Mekanika Nyata.
+
+5. CHAPTER 4: MEMOIR OF LEARNING (学拳回忆录 / Memoar Berguru pada Chen Fake)
+   └── Catatan Historis 15 Tahun di Beijing: Latar Belakang Chen Fake, Pemulihan Kesehatan Hong,
+       Etika Bela Diri Tanpa Cacat, hingga Pengujian Akhir Tahun 1956.
+```
+
+### 🥋 Mutiara Pedagogi: Intisari Syair *San Zi Jing* (三字经) Hong Junsheng
+Di dalam Bab 1 Kanon Asli, Grandmaster Hong Junsheng menyusun instruksi latihan dalam bentuk bait 3-karakter (*San Zi Jing*) agar mudah dihafal dan diresapi praktisi:
+
+> **关于缠丝 (Tentang Chan Si / Lilitan Sutra):**  
+> 「划圆圈，分顺逆。里往外，是为顺。外往里，是为逆。非平圆，非立圆。立与平，角度间。」  
+> *(Membuat lingkaran, bedakan Shun dan Ni. Dari dalam ke luar, itu adalah Shun (Positif). Dari luar ke dalam, itu adalah Ni (Negatif). Bukan lingkaran datar murni, bukan pula lingkaran vertikal murni. Selalu berada di antara sudut keduanya — spiral 3 dimensi).*
+>
+> **关于双重 (Tentang Bobot Ganda / Double Heavy):**  
+> 「重非病，病双重。何谓双？偏无偏。何谓重？实无实。分虚实，免双重。」  
+> *(Memiliki bobot berat bukanlah cacat; yang menjadi penyakit adalah bobot ganda. Apa itu ganda? Condong tanpa poros sejati. Apa itu berat? Mengisi tanpa ruang kosong. Pisahkan kosong (Yin) dan isi (Yang) secara mutlak, niscaya Anda terbebas dari jebakan bobot ganda).*
 
 ---
 
