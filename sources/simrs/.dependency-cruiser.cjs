@@ -2,12 +2,12 @@
 module.exports = {
   forbidden: [
     {
-      name: 'no-cross-module-internals',
+      name: 'zero-cross-module-dependency',
       severity: 'error',
-      comment: 'Modul hanya boleh mengakses modul lain via index.js',
+      comment: 'Zero Cross-Module Dependency: Modul dilarang meng-import modul lain secara langsung (termasuk index.js). Gunakan Core EventBus untuk komunikasi lintas modul.',
       from: { path: '^src/modules/([^/]+)/' },
       to: {
-        path: '^src/modules/([^/]+)/(?!index\\.js$)',
+        path: '^src/modules/([^/]+)/',
         pathNot: '^src/modules/$1/'
       }
     },
@@ -25,4 +25,3 @@ module.exports = {
     }
   }
 };
-
