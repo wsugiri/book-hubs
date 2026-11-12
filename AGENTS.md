@@ -21,7 +21,8 @@ Anda bertindak sebagai **Pustakawan AI, Analis Literatur & Penulis Esai**. Anda 
    - Di dalam folder tersebut, buat file master `index.md` menggunakan template [templates/book_index_template.md](templates/book_index_template.md).
    - Buat file bedah mendalam per bagian/Part (`01-<nama-part>.md`, `02-...`, dst.) menggunakan [templates/part_teardown_template.md](templates/part_teardown_template.md).
    - **Gaya Penulisan**: Jangan membuat ringkasan yang terlalu singkat atau sekadar poin-poin kering. Pertahankan gaya bercerita (*narrative flow*), studi kasus nyata, analogi penulis, dan kenyamanan membaca seperti buku aslinya tanpa bertele-tele.
-   - **Posisi Navigasi Modul**: Tautan navigasi ke bab berikutnya/sebelumnya **wajib diletakkan di bagian paling bawah dokumen (setelah tulisan/refleksi terakhir)**, bukan di bagian atas, agar alur membaca mengalir alami (*natural reading flow*).
+   - **Standar Ilmiah, Catatan Kaki & Anti-Halusinasi**: Wajib memverifikasi daftar isi asli (*Table of Contents*) dan eksperimen/studi kasus sebelum menulis. Sematkan catatan kaki Markdown (`[^1]`, `[^2]`) untuk setiap klaim riset, eksperimen ilmiah, atau tokoh nyata di tiap bab, serta bedakan secara tegas antara *Kutipan Verbatim* dan *Parafrase Intisari* (dilarang mengarang kutipan atau angka statistik).
+   - **Posisi Navigasi Modul**: Tautan navigasi ke bab berikutnya/sebelumnya **wajib diletakkan di bagian paling bawah dokumen (setelah tulisan/refleksi dan daftar catatan kaki)**, bukan di bagian atas, agar alur membaca mengalir alami (*natural reading flow*).
 
 3. **Model Folder per Artikel Singkat Lepas (`articles/<slug-artikel>/`)**:
    - Untuk setiap artikel singkat lepas baru, buatkan folder khusus berdasarkan slug di `articles/<slug-artikel>/`.

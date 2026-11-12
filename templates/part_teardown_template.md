@@ -1,11 +1,12 @@
 # Part [X]: [Judul Bagian / Part]
 
-> 📖 Hub Buku: **[[Judul Buku]](index.md)**
+> 📖 **Hub Buku**: **[[Judul Buku]](index.md)**  
+> 📑 **Cakupan Bab Asli**: *[Sebutkan bab asli yang dirangkum di bagian ini, misal: Part I — Chapter 1 s.d. Chapter 3]*
 
 ---
 
 ## 📖 Narasi Pembuka & Latar Belakang (The Narrative Context)
-*[Tuliskan 2-3 paragraf naratif yang merangkum cerita pengantar, eksperimen, atau studi kasus nyata yang digunakan penulis untuk membuka bab ini. Pertahankan gaya penceritaan yang mengalir agar pembaca tetap merasakan kenyamanan dan kehangatan seperti membaca buku aslinya.]*
+*[Tuliskan 2-3 paragraf naratif yang merangkum cerita pengantar, eksperimen, atau studi kasus nyata yang digunakan penulis untuk membuka bab ini. Sematkan catatan kaki `[^1]` saat merujuk pada peristiwa sejarah, tokoh, atau riset spesifik. Pertahankan gaya penceritaan yang mengalir agar pembaca tetap merasakan kenyamanan dan kehangatan seperti membaca buku aslinya.]*
 
 ---
 
@@ -14,12 +15,12 @@
 ### 1. [Nama Konsep / Argumen Pertama]
 - **Esensi Gagasan**: [Ulasan lugas dan mendalam tentang konsep ini]
 - **Mengapa Ini Berlawanan dengan Intuisi Umum (Counter-intuitive)**: [Apa salah kaprah yang selama ini diyakini masyarakat vs kebenaran yang dibuktikan penulis]
-- **Cerita & Studi Kasus Pendukung**: [Ulasan studi kasus atau data riset nyata yang dibahas penulis]
+- **Bukti Ilmiah & Studi Kasus Pendukung**: [Ulasan eksperimen, paper akademik, atau studi kasus nyata yang dibahas penulis, lengkap dengan atribusi peneliti/tahun dan catatan kaki `[^2]`]
 
 ### 2. [Nama Konsep / Argumen Kedua]
 - **Esensi Gagasan**: ...
 - **Mekanisme Kerja**: ...
-- **Analogi Kunci Penulis**: [Analogi kuat yang dipakai penulis agar konsep menempel di kepala]
+- **Analogi Kunci & Studi Pendukung**: [Analogi kuat yang dipakai penulis serta rujukan risetnya `[^3]`]
 
 *(Tambahkan konsep lainnya yang ada di bagian ini)*
 
@@ -27,8 +28,8 @@
 
 ## 🧠 Eksperimen Pikiran & Contoh Kasus di Dunia Nyata
 Bagaimana konsep di bagian ini bekerja dalam skenario kehidupan nyata:
-- **Kasus Profesional / Pekerjaan**: [Contoh penerapan di kantor / bisnis]
-- **Kasus Kehidupan Pribadi & Hubungan**: [Contoh di rumah tangga, kesehatan, atau hubungan antar manusia]
+- **Kasus Profesional / Pekerjaan**: [Contoh penerapan di kantor / bisnis / organisasi]
+- **Kasus Kehidupan Pribadi & Hubungan**: [Contoh di rumah tangga, kesehatan, latihan fisik, atau hubungan antar manusia]
 
 ---
 
@@ -40,11 +41,21 @@ Langkah konkret yang bisa diambil khusus dari pembelajaran bab ini:
 ---
 
 ## 💬 Kutipan Pilihan & Catatan Reflektif
-> *"Kutipan berbobot dari bagian ini."*  
-> — [Nama Penulis]
+> *"[Tuliskan kutipan verbatim jika terverifikasi 100%, ATAU tuliskan intisari pemikiran penulis dengan label jelas di bawahnya]"*  
+> — **[Nama Penulis]** *(Kutipan Verbatim / Parafrase Intisari Bab [X])*
 
 **Pertanyaan Refleksi Diri**:
 - *[Pertanyaan introspektif bagi pembaca untuk menguji dirinya sendiri berdasarkan materi bab ini]*
+
+---
+
+## 📚 Referensi, Studi Ilmiah & Catatan Kaki Bab Ini
+
+Bagian ini merangkum sumber primer, eksperimen ilmiah, dan literatur yang menjadi fondasi argumen penulis pada bagian ini:
+
+[^1]: **[Nama Tokoh / Peristiwa / Studi Pembuka]** — [Nama Peneliti / Tokoh] ([Tahun]), *[Judul Studi / Konteks Peristiwa]*. [Penjelasan singkat 1-2 kalimat mengenai metodologi atau fakta sejarah yang dirujuk penulis di bab ini].
+[^2]: **[Nama Eksperimen / Teori Ilmiah]** — Merujuk pada riset oleh **[Nama Peneliti]** ([Tahun]), *"[Judul Paper / Buku Referensi]"*, yang dipublikasikan di *[Nama Jurnal / Universitas]*. Temuan inti: [Jelaskan hasil riset secara akurat]. *(Catatan Konteks Ilmiah: Tambahkan catatan jika studi ini memiliki pembaruan atau kritik metodologis di era modern).*
+[^3]: **[Referensi Tambahan / Studi Kasus]** — [Detail atribusi riset, data statistik, atau dokumentasi kasus nyata yang dikutip dalam bab ini].
 
 ---
 

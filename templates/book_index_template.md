@@ -50,7 +50,16 @@ Langkah operasional yang siap dieksekusi:
 
 ---
 
-## ⚖️ 4. Evaluasi Kritis & Ulasan Objektif
-- **Kekuatan Terbesar**: [Ulasan kekuatan narasi, bukti ilmiah, atau kepraktisan]
-- **Kritik & Titik Buta (Blind Spots)**: [Kritik objektif, konteks di mana buku ini kurang relevan atau butuh penyesuaian]
+## ⚖️ 4. Evaluasi Kritis & Tinjauan Metodologi Ilmiah
+- **Kekuatan Terbesar**: [Ulasan kekuatan narasi, sintesis bukti ilmiah, atau kepraktisan kerangka kerja]
+- **Audit Metodologi & Validitas Ilmiah (*Scientific Rigor*)**: [Evaluasi objektif terhadap kualitas bukti yang digunakan penulis: apakah berbasis meta-analisis/studi klinis/eksperimen terkontrol, atau cenderung mengandalkan anekdot/*survivorship bias*? Apakah ada klaim yang mengalami revisi di literatur sains modern?]
+- **Kritik & Titik Buta (Blind Spots)**: [Konteks di mana argumen buku ini kurang relevan, menyederhanakan masalah kompleks, atau butuh penyesuaian budaya/kondisi]
 - **Profil Pembaca Ideal**: [Siapa yang paling diuntungkan dari buku ini]
+
+---
+
+## 📚 5. Daftar Literatur & Referensi Primer Terpenting
+Beberapa riset ilmiah, paper akademik, dan buku fondasi paling krusial yang menjadi tulang punggung argumen dalam buku ini:
+1. **[Nama Peneliti / Penulis] ([Tahun])** — *"[Judul Paper / Buku / Studi]"* ([Nama Jurnal / Institusi]). Kontribusi pada buku: *[Menjadi dasar untuk konsep X di Part Y]*.
+2. **[Nama Peneliti / Penulis] ([Tahun])** — *"[Judul Paper / Buku / Studi]"* ([Nama Jurnal / Institusi]). Kontribusi pada buku: *[Menjadi dasar untuk konsep Z di Part Y]*.
+3. **[Nama Peneliti / Penulis] ([Tahun])** — *"[Judul Paper / Buku / Studi]"* ([Nama Jurnal / Institusi]). Kontribusi pada buku: *[Menjadi dasar untuk studi kasus/eksperimen di Part Y]*.

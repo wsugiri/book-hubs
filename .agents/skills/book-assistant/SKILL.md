@@ -36,17 +36,35 @@ Setiap kali pengguna menyebutkan atau meminta informasi tentang buku tertentu:
   - Berikan ulasan/informasi lengkap tentang buku tersebut kepada pengguna.
   - Buat direktori baru `books/<slug-judul>/`.
   - Hapus buku dari tabel antrean TBR di `CATALOG.md` dan pindahkan ke showcase koleksi aktif.
-  - Lanjut ke Langkah 3.
+  - Lanjut ke **Langkah 3 (Protokol Riset & Anti-Halusinasi)** sebelum mulai menulis.
 
-### Langkah 3: Membuat Hub & Teardown Mendalam per Part
+---
+
+### Langkah 3: Protokol Riset & Anti-Halusinasi (Wajib Sebelum Menulis)
+Untuk menjamin akurasi akademik dan mencegah halusinasi (*hallucination*), AI **dilarang hanya mengandalkan ingatan internal** dan wajib menjalankan verifikasi berikut:
+
+1. **Verifikasi Daftar Isi (*Table of Contents*) Asli**:
+   - Gunakan pencarian web (`search_web`) untuk memeriksa struktur *Part* dan *Chapter* asli dari buku yang dibedah.
+   - Pastikan pembagian file `01-[part].md`, `02-[part].md`, dst., merepresentasikan urutan bab buku aslinya dan mencantumkan cakupan bab asli (misal: *Mencakup Chapter 1–3*).
+2. **Verifikasi Eksperimen, Studi Ilmiah & Tokoh Nyata per Bab**:
+   - Cari dan cocokkan studi kasus, nama peneliti, tahun publikasi, dan institusi/jurnal yang benar-benar dikutip penulis pada bagian tersebut.
+   - **Cegah Kontaminasi Silang (*Cross-Book Contamination*)**: Pastikan studi kasus atau eksperimen yang ditulis memang berasal dari buku dan bab tersebut, bukan tertukar dengan buku populer lain yang bertopik serupa.
+3. **Kejujuran Epistemik & Aturan Kutipan**:
+   - **Dilarang Mengarang Kutipan (*Zero Fabricated Quotes*)**: Hanya gunakan tanda kutip langsung (`"..."`) jika kalimat *verbatim* penulis terverifikasi. Jika merangkum gagasan penulis dengan kalimat sendiri, wajib gunakan label **Parafrase Intisari**.
+   - **Dilarang Mengarang Angka/Statistik**: Jika angka persentase atau tahun eksperimen tidak ditemukan secara pasti dari hasil verifikasi, jelaskan mekanisme temuannya secara kualitatif tanpa mengarang angka fiktif.
+   - **Kritik Metodologi (Konteks Sains Modern)**: Jika sebuah buku mengutip riset klasik yang di kemudian hari mengalami koreksi ilmiah atau terdampak krisis replikasi (*replication crisis*), berikan catatan konteks ilmiah secara objektif di bagian catatan kaki atau evaluasi kritis.
+
+---
+
+### Langkah 4: Membuat Hub, Teardown Mendalam & Catatan Kaki per Part
 1. Simpan cover buku di `books/<slug-judul>/cover.jpg` (atau `.png`).
-2. Buat `books/<slug-judul>/index.md` menggunakan [templates/book_index_template.md](templates/book_index_template.md).
+2. Buat `books/<slug-judul>/index.md` menggunakan [templates/book_index_template.md](templates/book_index_template.md), lengkap dengan **Audit Metodologi & Bukti Ilmiah** serta **Daftar Literatur Primer**.
 3. Buat file teardown naratif per bagian (`01-[part].md`, `02-[part].md`, dst.) menggunakan [templates/part_teardown_template.md](templates/part_teardown_template.md).
-4. **Standar Penulisan**:
-   - Jangan membuat ringkasan yang terlalu singkat atau hanya bullet points kering.
-   - Pertahankan kenyamanan membaca seperti buku aslinya: sertakan cerita latar belakang (*narrative context*), analogi kunci, studi kasus nyata, dan refleksi mendalam tanpa bertele-tele.
+4. **Standar Penulisan & Referensi Ilmiah**:
+   - Jangan membuat ringkasan yang terlalu singkat atau hanya bullet points kering. Pertahankan kenyamanan membaca seperti buku aslinya (*narrative context*, analogi kunci, studi kasus nyata, dan refleksi mendalam).
+   - **Wajib Menyematkan Catatan Kaki (`[^1]`, `[^2]`)**: Setiap kali menyebutkan eksperimen ilmiah, studi psikologi/medis/ekonomi, klaim statistik, atau tokoh sejarah di dalam teks, sematkan penanda *footnote* Markdown (`[^1]`) dan tuliskan detail referensinya (Nama Peneliti, Tahun, Judul/Konteks Riset, dan Temuan Inti) pada seksi `📚 Referensi, Studi Ilmiah & Catatan Kaki Bab Ini` di bagian akhir bab (sebelum navigasi bawah).
 
-### Langkah 4: Perbarui `CATALOG.md` (Visual Showcase Card)
+### Langkah 5: Perbarui `CATALOG.md` (Visual Showcase Card)
 Setelah modul buku dibuat:
 1. Tambahkan kartu visual (*Showcase Card*) ke kategori yang sesuai di [CATALOG.md](CATALOG.md):
    - Tampilkan thumbnail cover (`books/<slug-judul>/cover.jpg`).
@@ -57,6 +75,6 @@ Setelah modul buku dibuat:
 3. Pastikan semua path berformat **relative path**: contoh `books/<slug-judul>/index.md`, `books/<slug-judul>/cover.jpg`.
    > ⚠️ **PENTING**: DILARANG KERAS menggunakan full path/absolute path lokal sistem (seperti `file:///Users/...` atau `/absolute/path/...`) di dalam file apa pun.
 
-### Langkah 5: Berikan Respon kepada Pengguna
+### Langkah 6: Berikan Respon kepada Pengguna
 - Berikan intisari atau jawaban informatif langsung di chat.
 - Berikan tautan ke direktori index buku baru dan katalog.
