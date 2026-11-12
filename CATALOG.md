@@ -2,10 +2,10 @@
 
 > Katalog terpusat koleksi buku pilihan, dilengkapi ringkasan eksekutif (*playbook*) dan bedah mendalam per bagian (*narrative teardown*) dengan studi kasus nyata.
 
-[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-19%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
-[![Status](https://img.shields.io/badge/Status-19%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
+[![Total Koleksi](https://img.shields.io/badge/Total%20Koleksi-20%20Buku-2563eb?style=for-the-badge&logo=gitbook&logoColor=white)](#)
+[![Status](https://img.shields.io/badge/Status-20%20Selesai%20(100%25)-16a34a?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
 [![Kategori](https://img.shields.io/badge/Kategori-4%20Bidang-7c3aed?style=for-the-badge)](#)
-[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-2%20Buku-f59e0b?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
+[![Antrean Baca (TBR)](https://img.shields.io/badge/Antrean%20Baca%20(TBR)-1%20Buku-f59e0b?style=for-the-badge&logo=bookstack&logoColor=white)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -15,7 +15,7 @@
 - [💼 Bisnis & Teknologi](#-bisnis--teknologi)
 - [📈 Finansial & Investasi](#-finansial--investasi)
 - [🏆 Sains Olahraga & Pembinaan Atlet](#-sains-olahraga--pembinaan-atlet)
-- [⏳ Daftar Incaran & Antrean Bedah (TBR: 2 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
+- [⏳ Daftar Incaran & Antrean Bedah (TBR: 1 Buku)](#-daftar-incaran--antrean-bedah-to-be-read)
 
 ---
 
@@ -504,6 +504,33 @@
 
 📘 **[Master Hub](books/the-way-of-hunyuan/index.md)** &nbsp;|&nbsp; **[Part 1](books/the-way-of-hunyuan/01-odisea-pribadi-dan-esensi-hunyuan.md)** &nbsp;|&nbsp; **[Part 2](books/the-way-of-hunyuan/02-fondasi-filosofis-dan-pergeseran-paradigma.md)** &nbsp;|&nbsp; **[Part 3](books/the-way-of-hunyuan/03-postur-dan-meditasi-zhan-zhuang.md)** &nbsp;|&nbsp; **[Part 4](books/the-way-of-hunyuan/04-kurikulum-hunyuan-qigong-dan-dantian.md)** &nbsp;|&nbsp; **[Part 5](books/the-way-of-hunyuan/05-fisiologi-meridian-dan-rahasia-kamar-dalam.md)**
 
+<br/>
+
+### [The Illustrated Canon of Chen Family Taijiquan: Chenshi Taijiquan Tushuo](books/chen-family-taijiquan-illustrated-canon/index.md)
+
+<div align="center">
+  <a href="books/chen-family-taijiquan-illustrated-canon/index.md">
+    <img src="books/chen-family-taijiquan-illustrated-canon/cover.jpg" width="280" alt="Chenshi Taijiquan Tushuo Cover" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-bottom: 8px;" />
+  </a>
+  <br/>
+  <sub>⭐⭐⭐⭐⭐ <b>5.0 / 5.0 (Edisi Kanonis Lengkap 5 Bab Divalidasi)</b></sub>
+</div>
+
+> **Penulis**: Grandmaster Chen Xin (陈鑫 / Chen Pinsan) &nbsp;|&nbsp; **Tahun**: 1933 (Selesai 1919) &nbsp;|&nbsp; **Penerbit**: Kaiming Book Bureau / INBI Matrix &nbsp;|&nbsp; **Estimasi Baca**: ~90–120 Menit (5 Bab Lengkap)  
+> `📜 Kanon Dinasti Qing` `🌀 Teori Chan Si Jin Spiral` `☯️ Matematika I-Ching` `🩺 Pengobatan TCM & Zang-Fu` `🥋 Kurikulum Xiaojia`
+
+> **💡 The Big Idea:**  
+> *"Taijiquan adalah perwujudan fisik dari Kitab Perubahan (I-Ching). Tidak boleh ada gerakan garis lurus murni di dalam tubuh manusia; setiap pergerakan harus berupa lilitan spiral (Chan Si Jin) laksana filamen sutra yang ditarik dari kepompong berputar. Seluruh teknik beladiri terintegrasi harmonis dengan pemeliharaan organ dalam (Zang-Fu) dan pemetaan 12 meridian."*
+
+**🔑 Kerangka Berpikir Utama:**
+- **Dedikasi 12 Tahun Chen Xin di Chenjiagou**: Penyelamatan tradisi lisan leluhur ke dalam 4 jilid (*Juan*) ensiklopedis dengan 400+ diagram kayu dan anotasi margin (*Tishi*).
+- **Hukum Besi Chan Si Jin (Shun vs Ni Chan)**: Pembagian spiral masuk (*Shun*) dan spiral keluar (*Ni*), serta pembuktian anatomis modern yang 100% identik dengan jalur *The Spiral Line* Thomas Myers.
+- **Kesatuan Wushu dan Pengobatan Tradisional (TCM)**: Menyelaraskan organ padat *Zang* (Hati, Jantung, Limpa, Paru, Ginjal) dengan dinamika pukulan, serta mekanisme hidrolik sumbu *Dantian-Mingmen*.
+- **Kurikulum Taolu Xiaojia (Bingkai Kecil)**: Dekonstruksi jurus kunci *Dan Bian*, *Lan Zha Yi*, pola langkah *Jiu Gong Bu (Luoshu)*, dan eliminasi kesalahan struktural.
+- **Aplikasi Tempur Qin Na & Tuishou**: Mengunci persendian via dua titik tumpu tanpa otot, meminjam tenaga lawan (*She Ji Cong Ren*), dan fenomena mencabut akar tumpuan lawan (*Ba Gen / Uprooting*).
+
+📘 **[Master Hub](books/chen-family-taijiquan-illustrated-canon/index.md)** &nbsp;|&nbsp; **[Bab 1](books/chen-family-taijiquan-illustrated-canon/01-konteks-historis-dan-kosmologi-iching.md)** &nbsp;|&nbsp; **[Bab 2](books/chen-family-taijiquan-illustrated-canon/02-teori-lilitan-sutra-chansijin.md)** &nbsp;|&nbsp; **[Bab 3](books/chen-family-taijiquan-illustrated-canon/03-integrasi-medis-zangfu-dan-meridian.md)** &nbsp;|&nbsp; **[Bab 4](books/chen-family-taijiquan-illustrated-canon/04-arsitektur-taolu-xiaojia-dan-anotasi.md)** &nbsp;|&nbsp; **[Bab 5](books/chen-family-taijiquan-illustrated-canon/05-laboratorium-tempur-dan-warisan-abadi.md)**
+
 ---
 
 ## ⏳ Daftar Incaran & Antrean Bedah (To-Be-Read)
@@ -512,8 +539,7 @@
 
 | No | Judul Buku & Penulis | Target Kategori | Alasan Kurasi (*Value Hook*) | Status Antrean |
 | :-: | :--- | :--- | :--- | :-: |
-| 1 | **The Illustrated Canon of Chen Family Taijiquan (*Chenshi Taijiquan Tushuo*)**<br/><sub>Chen Xin (陈鑫)</sub> | 🏆 Sains Olahraga & Bela Diri | Kanon klasik Dinasti Qing terlengkap (selesai 1919) yang menjadi fondasi teori spiral *Chan Si Jin* rujukan utama Hong Junsheng. | ⏳ `Dalam Antrean` |
-| 2 | **Chen Style Taijiquan: The Source of Taiji Boxing**<br/><sub>Davidine Sim & David Gaffney</sub> | 🏆 Sains Olahraga & Bela Diri | Kajian historiografi dan perbandingan mendalam antara tradisi Chenjiagou (*Laojia*), era Beijing Chen Fake (*Xinjia*), dan garis Hong Junsheng. | ⏳ `Dalam Antrean` |
+| 1 | **Chen Style Taijiquan: The Source of Taiji Boxing**<br/><sub>Davidine Sim & David Gaffney</sub> | 🏆 Sains Olahraga & Bela Diri | Kajian historiografi dan perbandingan mendalam antara tradisi Chenjiagou (*Laojia*), era Beijing Chen Fake (*Xinjia*), dan garis Hong Junsheng. | ⏳ `Dalam Antrean` |
 
 ```text
 💡 Panduan Alur Bacaan:
